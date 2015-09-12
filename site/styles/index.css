@@ -1,0 +1,237 @@
+body{
+    min-width:1173px;
+    font-family:Helvetica, sans-serif;
+}
+/* Begin Header Top */
+.headerRow .col{
+    margin-right:0;
+    margin-left:0;
+    height:158px;
+}
+.containerTopHeaderNavs{
+    background:url(../images/headerTopBackgroundA.png) center -59px no-repeat transparent;
+    height:247px;
+}
+.headColLeftLogo{
+    background:url(../images/logoSaskatoon.png) center 50px no-repeat transparent;
+    background-size:40%;
+}
+.headColRightLogo{
+    background:url(../images/logoCFUW.png) left 54px no-repeat transparent;
+    background-size:40%;
+}
+.headColCenter{ 
+    margin-top:47px;
+}
+    .headColCenter div{
+        float:left;
+        line-height:24px;
+        height:61px; 
+    }
+    .headColCenter div span{
+        
+        display:inline-block;
+        vertical-align:middle;
+    }
+    .textTop{
+        font-size:3em;
+    }
+    .textMiddle{
+        font-size:1.3em;
+    }
+    .textBottom{
+        font-size:2.0em;
+        position:relative;
+        top:-25px;
+    }
+
+/* End Header Top */
+/* Begin top nav bar */
+.navBarContainer{
+    
+}
+    .navBarTop{
+        text-align:center;
+        float:left;
+        display:block;
+        margin-left:36%;
+    }
+        .navBarTop li{
+            float:left;
+            text-align:center;
+            color:#FFFFFF;
+            display:inline-block;
+            margin:0;
+            padding:2px 1px;
+            vertical-align:top;
+            width:13%;
+        }
+/* End top nav bar */
+
+/* Begin Row Main */
+.rowMain{
+    background-color:#CCCCCC;
+    height:300px   
+}
+    .colMainLeft{
+        background-color:red;
+    }
+    .colMainCenter{
+        
+    }
+    .colMainRight{
+        background-color:blue;
+    }
+/* End Row Main */
+
+/* Begin Row Address */
+.rowAddress{
+    padding-top:20px;
+}
+    .rowAddress .colAddress{
+        height:100px;
+    }
+.colAddress{
+    padding:0 4%;
+}
+    .colAddress .text{
+        margin:0;
+        padding:0 4%;
+    }
+/* End Row Address */
+
+/* Begin Generics */
+.hide{
+    display:none;
+}
+.opaque{
+    opacity:1.0;
+}
+.btnOrange{
+    color:#FFFFFF;
+    background-color:#E28D14;
+    border-color:#E28D14;
+}
+.transparent{
+    background-color:#B9CFFD;
+}
+.clearRight{
+    clear:right;
+}
+.clearLeft{
+    clear:left;
+}
+.bold{
+    font-weight:bold;
+}
+.serif{
+    font-family:serif;
+}
+.textAlignRight{
+    text-align:right;
+}
+.bookSale{
+    background:url(../images/bookSale.png) center 0 no-repeat transparent;    
+    width:692px;
+    height:612px;
+}
+.cfuwBackground{
+    background:url(../images/bridgeBigCenter.png) center 0 no-repeat transparent;    
+    background-blend-mode:color;
+    height:777px;
+}
+.cfuwBackground.jsOpacity{
+    background:url(../images/bridgeBigCenterB.png) center 0 no-repeat transparent;    
+    background-blend-mode:color;
+    height:777px;
+}
+.cfuwGrayBlue{
+    color:#121114;
+}
+.tableFontMedium{
+    font-size:1.3em;
+}
+.colMainCenter table tr{
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+}
+.colMainCenter table tr td{
+    width:67%;
+}
+
+.cfuwWhite, ul.cfuwWhite>li>a {
+    color:#FFFFFF;
+}
+ul>li>a:hover{
+    text-align:left;
+    width:10em;
+    background-color:#FFFFFF;    
+}
+.cfuwOrange{
+    background-color:#E28D14;   
+}
+.cfuwBlue{
+    background-color:#041D7B;   
+}
+
+/* End Generics */
+
+/* Begin Media Queries */
+ @media (min-width:360px) and (max-width:767px){ /* Mobile all */
+    body{
+        min-width:60%;
+    }
+    .headColCenter{ 
+        margin-top:6px;
+    }    
+    .containerTopHeaderNavs{
+        background-position:center -56px; 
+    }        
+    .navBarTop li{
+        font-size:80%;
+    }    
+    .responsiveScale{
+        background-size:50%;
+    }
+    .textMiddle{
+        font-size:100%;
+        padding-top:33px;
+    }
+    .textBottom{
+        font-size:85%;
+    }
+    .headColCenter div{
+        padding-top:37%;
+        line-height:17px;
+        height:32px; 
+    }
+}
+@media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
+
+    .headColCenter div{
+        padding-top:32px;
+        line-height:27px;
+        height:2px; 
+    }
+    .textTop{
+        font-size:166%;
+    }
+    .textBottom{
+        top:-4px;
+    }        
+
+}
+@media (max-width:767px) and (orientation:portrait){ /* mobile portrait */
+
+    .textTop{
+        font-size:100%;
+    }
+    .textMiddle{
+        font-size:80%;
+    }
+    .textBottom{
+        font-size:60%;
+    }    
+
+}
+/* End Media Queries */
