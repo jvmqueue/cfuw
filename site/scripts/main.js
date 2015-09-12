@@ -1,6 +1,7 @@
 require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
 
   var w = window, d = document;
+  var modelHome = null;
 
 
   var Models = Backbone.Collection.extend({
@@ -26,8 +27,18 @@ require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
       var strInnerHtml = node.firstChild.nodeValue.toLowerCase();
 
       switch(strInnerHtml){
-        case 'board':
-          var modelHome = new home.fnc.Model();
+        case 'board':          
+          /*!modelHome ? modelHome = new home.fnc.Model() : console.log('is instantiated');*/
+          modelHome = home.fnc.getInstance();
+          modelHome.fetch({
+            url:'data/board.xml',
+            success:function(paramXhr){
+              /*modelHome.set('data', );*/
+              console.group('FETCH');
+                console.log('paramXhr:\t', paramXhr);
+               console.groupEnd(); 
+            }
+          });
           this.models.add(modelHome);
           console.group('CASE BOARD');
             console.log('models 1:\t', this.models.models[0].get('author'));
