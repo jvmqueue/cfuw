@@ -1,15 +1,6 @@
 require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
 
   var w = window, d = document;
- 
-  
-  var Model = Backbone.Model.extend({
-    defaults:{
-      author:'',
-      title:'',
-      url:''
-    }
-  });
 
 
   var Models = Backbone.Collection.extend({
