@@ -32,7 +32,8 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
       var strUrl = '';
 
       switch(strInnerHtml){
-        case 'board':          
+        case 'board':
+          /*TODO: we don't need {url:data/board.xml} passed to the Model instance*/
           modelHome = homeModel.fnc.getInstance({url:'data/board.xml'}); // only one instance allowed, singleton
           this.models.add(modelHome);
           strUrl = 'data/board.xml';
