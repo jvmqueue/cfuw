@@ -1,0 +1,8 @@
+.exception{
+    position:absolute;
+    z-index:3333;
+    top:10%;
+    left:50%;
+    width:300px;
+    height:400px;
+}

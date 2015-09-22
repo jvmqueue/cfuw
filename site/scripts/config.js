@@ -4,7 +4,10 @@ requirejs.config({
         "Backbone":["../bower_components/backbone/backbone"],
         "underscore":["../bower_components/underscore/underscore"],
         "bootstrap":["../bower_components/bootstrap/dist/js/bootstrap"],
-        "home":["model/home"]
+        "util":["util/util"],
+        "exception":["exception/exception"],
+        "homeModel":["model/home"],
+        "homeView":["view/home"]
     },
     shim:{
         'jQuery':{
@@ -23,7 +26,7 @@ requirejs.config({
             deps:['jQuery']
         },
         'main':{
-            deps:['jQuery', 'Backbone', 'home']
+            deps:['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception']
         },
         'template':{ // loading template will load dependencies, even if template.js does not call bootstrap explicitly
             deps:['underscore', 'regex', 'bootstrap']

@@ -1,8 +1,8 @@
-require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
+require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'], 
+  function($, Backbone, homeModel, homeView, util, exception, undefined){
 
   var w = window, d = document;
   var modelHome = null;
-
 
   var Models = Backbone.Collection.extend({
 
@@ -15,6 +15,10 @@ require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
       'click #navBarTop':'getModel',
       'click #headColRightLogo':'getHome'
     },
+    successHttpResponse:function hasSuccess(paramXmlResponse){
+      var xmlResponse = paramXmlResponse;
+       util.fnc.parseXmlToJson(xmlResponse);
+    },    
     models:new Models(),
     initialize:function(){
       this.render();
@@ -25,31 +29,36 @@ require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
     getModel:function(e){ // event delegate for navigation
       var node = e.target;
       var strInnerHtml = node.firstChild.nodeValue.toLowerCase();
+      var strUrl = '';
 
       switch(strInnerHtml){
         case 'board':          
-          /*!modelHome ? modelHome = new home.fnc.Model() : console.log('is instantiated');*/
-          modelHome = home.fnc.getInstance();
-          modelHome.fetch({
-            url:'data/board.xml',
-            success:function(paramXhr){
-              /*modelHome.set('data', );*/
-              console.group('FETCH');
-                console.log('paramXhr:\t', paramXhr);
-               console.groupEnd(); 
-            }
-          });
+          modelHome = homeModel.fnc.getInstance({url:'data/board.xml'}); // only one instance allowed, singleton
           this.models.add(modelHome);
-          console.group('CASE BOARD');
-            console.log('models 1:\t', this.models.models[0].get('author'));
-           console.groupEnd(); 
+          strUrl = 'data/board.xml';
           break;
         default:
           console.group('DEFAULT');
             console.log(':\t', 'Discovered undefined case');
            console.groupEnd(); 
+      } // End switch
+
+      var that = this;
+
+      if(strUrl.length > 3){ // only fetch if strUrl has been set in switch block
+        this.models.models[0].fetch({ // calls Backbone sync
+          url:strUrl,
+          dataType:'xml',
+          success:function(paramModel){
+             that.successHttpResponse(paramModel.get('data')); // model.parse sets the data on the instance 
+          },
+          error:function(paramThisView, paramException){
+            throw new exception.fnc.http({that:paramThisView, exception:paramException}); 
+          }
+        });
       }
-    },
+
+    }, // End getModel
     getHome:function(e){
       console.group('GET Home');
         console.log(':\t', 'Reached');
@@ -57,16 +66,12 @@ require(['jQuery', 'Backbone', 'home'], function($, Backbone, home, undefined){
     }            
   });  
 
- 
-
-
-
-  $(document).ready(
-    function(){
-      /*$('#navBarTop').on('click', function(){console.log('Reached nav bar click:\t', '');});*/
-      var view = new View();
+  var interval = w.setInterval(function(){ // we don't need jQuery to wait for DOM
+    if(d.getElementsByTagName('div').length > 1){
+      w.clearInterval(interval);
+      var view = new View(); // TODO: refactor main.js - - > mainController.js then define homeView.js
     }
-  );
+  }, 33);
   
 
 
