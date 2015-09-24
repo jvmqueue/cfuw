@@ -1,12 +1,19 @@
-define(['jQuery', 'Backbone'], function($, Backbone, undefined){
+define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
   
     var Model = Backbone.Model.extend({ // private
       defaults:{
         author:'Halle',
         title:'Barry',
         url:null,
+        idAttribute:'homeId',
+        arryTemplateData:'',
         data:null
       },
+      successHttpResponse:function hasSuccess(paramXmlResponse){
+        var xmlResponse = paramXmlResponse;
+         var arry = util.fnc.parseXmlToJson(xmlResponse);
+         this.set('arryTemplateData', arry);
+      },          
       parse:function(xmlResponse) {
         this.set('data', xmlResponse);
         var xml = this.get('data');

@@ -68,42 +68,9 @@
         <section id="sectionCfuwBackground" class="row rowMain cfuwBackground">
             <div class="col-xs-3 colMainLeft"></div>
             <div id="colMainCenter" class="col-xs-6 colMainCenter opaque">
-                <div id="boardMembers" class="boardMembers hide">
+                <div id="boardMembers" class="boardMembers">
                     <h3>BOARD</h3>
-                    <table class="tableFontMedium">
-                        <tr>
-                            <td>President&#160;&#160;&#160;</td><td>Janie Charbonneau</td>
-                        </tr>
-                        <tr>
-                            <td>Past President&#160;&#160;&#160;</td><td>Gerlinde Sarkar</td>
-                        </tr>
-                        <tr>
-                            <td>Vice President&#160;&#160;&#160;</td><td>Alix Tumback</td>
-                        </tr>
-                        <tr>
-                            <td>Treasurer&#160;&#160;&#160;</td><td>Michelle Rogers</td>
-                        </tr>
-                        <tr>
-                            <td>Secretaries&#160;&#160;&#160;</td><td>Angela Schmidt (Board Meetings)
-               Victoria Neufeld (General Meetings)</td>
-                        </tr>
-                        <tr>
-                            <td>Membership&#160;&#160;&#160;</td><td>Marlene Chatterson (Chair)</td>
-                        </tr>             
-                        <tr>
-                            <td>Membership Committee&#160;&#160;&#160;</td><td>Dorma Guedo, Melinda Waltz, Rita Priestley</td>
-                        </tr>             
-                        <tr>
-                            <td>Program&#160;&#160;&#160;</td><td>Freda Toffolo (Chair)</td>
-                        </tr>             
-                        <tr>
-                            <td>Program Committee&#160;&#160;&#160;</td><td>Penny-Lynn Micklewright, Phyllis Austman, Sherry Smith</td>
-                        </tr>             
-                        <tr>
-                            <td>Publicity&#160;&#160;&#160;</td><td>Malaika Charbonneau (Chair)
-           Sherry Smith</td>
-                        </tr>                                                                                                                         
-                    </table>                    
+                    <table class="tableFontMedium"></table>                    
                 </div> <!-- End #boardMembers -->
 
                 <div id="bookSale" class="bookSale hide"></div>
@@ -127,6 +94,9 @@
             </div>
         </section>
     </div> <!-- .container -->
+<script type="text/template" id="templateBoardMembers">    
+<tr><td><%= strName%></td><td><%= strNameTitle%></td></tr>    
+</script>       
     <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>

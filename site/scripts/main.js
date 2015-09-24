@@ -15,16 +15,40 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
       'click #navBarTop':'getModel',
       'click #headColRightLogo':'getHome'
     },
-    successHttpResponse:function hasSuccess(paramXmlResponse){
-      var xmlResponse = paramXmlResponse;
-       util.fnc.parseXmlToJson(xmlResponse);
-    },    
     models:new Models(),
     initialize:function(){
       this.render();
     },
     render:function(){
-      this.delegateEvents();
+      
+    },
+    setTemplate:function(){
+      var that = this; /*TODO: use interfaces so that we avoid having to scope*/
+      var interval = w.setInterval(function(){
+
+        if( !!that.models.models[0].get('arryTemplateData') ){ /*TOOD: replace this interval with a listener*/
+          w.clearInterval(interval);
+          var arry = that.models.models[0].get('arryTemplateData');
+          console.group('VIEW SET TEMPLATE');
+            console.log('arry:\t', arry);
+           console.groupEnd(); 
+
+          var template = d.getElementById('templateBoardMembers');
+          var strTemplateHtml = $(template).html(); // our custom template, not the entire response text      
+
+          var _template = _.template(strTemplateHtml);
+          var strHtml = '';
+          
+          for(var i = 0, len = arry.length; i < len; i++){
+            strHtml += _template(arry[i]);
+          }
+
+          var $nodeExist = $('#boardMembers table');
+          $nodeExist.html(strHtml);
+
+          
+        }
+      }, 333);
     },
     getModel:function(e){ // event delegate for navigation
       var node = e.target;
@@ -37,6 +61,7 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
           modelHome = homeModel.fnc.getInstance({url:'data/board.xml'}); // only one instance allowed, singleton
           this.models.add(modelHome);
           strUrl = 'data/board.xml';
+          this.setTemplate();
           break;
         default:
           console.group('DEFAULT');
@@ -51,7 +76,7 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
           url:strUrl,
           dataType:'xml',
           success:function(paramModel){
-             that.successHttpResponse(paramModel.get('data')); // model.parse sets the data on the instance 
+             that.models.models[0].successHttpResponse(paramModel.get('data'));
           },
           error:function(paramThisView, paramException){
             throw new exception.fnc.http({that:paramThisView, exception:paramException}); 
