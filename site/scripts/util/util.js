@@ -1,5 +1,8 @@
 define(['jQuery'], function($undefined){
     var _fnc = {
+        noCache:function(){
+            return new Date().getMilliseconds();
+        },
         getElementNode:function(paramNode, paramArray){
             var node = paramNode;
             var ELEMENT = 1;
