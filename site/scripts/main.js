@@ -11,6 +11,8 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
   var View = Backbone.View.extend({
     tagName:'div',
     el:'div',
+    selectorViewContainer:'#boardMembers table',
+    selectorViewPageTitle:'#pageTitle',
     events:{ // must define View.el which is to #navBarTop
       'click #navBarTop':'getModel',
       'click #headColRightLogo':'getHome'
@@ -29,10 +31,7 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
         if( !!that.models.models[0].get('arryTemplateData') ){ /*TOOD: replace this interval with a listener*/
           w.clearInterval(interval);
           var arry = that.models.models[0].get('arryTemplateData');
-          console.group('VIEW SET TEMPLATE');
-            console.log('arry:\t', arry);
-           console.groupEnd(); 
-
+          var strPageTitle = that.models.models[0].get('pageTitle');
           var template = d.getElementById('templateBoardMembers');
           var strTemplateHtml = $(template).html(); // our custom template, not the entire response text      
 
@@ -43,8 +42,11 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
             strHtml += _template(arry[i]);
           }
 
-          var $nodeExist = $('#boardMembers table');
+          var $nodeExist = $(that.selectorViewContainer);
+          var $nodeTitle = $(that.selectorViewPageTitle);
           $nodeExist.html(strHtml);
+          $nodeTitle.html(strPageTitle);
+
 
           
         }
@@ -55,6 +57,11 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
       var strInnerHtml = node.firstChild.nodeValue.toLowerCase();
       var strUrl = '';
 
+      var $nodeExist = $(this.selectorViewContainer);
+      var $nodePageTitle = $(this.selectorViewPageTitle);
+      $nodeExist.html('');
+      $nodePageTitle.html('');
+
       switch(strInnerHtml){
         case 'board':
           /*TODO: we don't need {url:data/board.xml} passed to the Model instance*/
@@ -64,9 +71,7 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
           this.setTemplate();
           break;
         default:
-          console.group('DEFAULT');
-            console.log(':\t', 'Discovered undefined case');
-           console.groupEnd(); 
+
       } // End switch
 
       var that = this;
@@ -86,9 +91,7 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
 
     }, // End getModel
     getHome:function(e){
-      console.group('GET Home');
-        console.log(':\t', 'Reached');
-       console.groupEnd(); 
+
     }            
   });  
 
