@@ -1,7 +1,10 @@
-@import url('theme.css') screen;
 body{
+    background-color:#0066AB;
     min-width:1173px;
     font-family:Helvetica, sans-serif;
+}
+.container{
+    width:1282px;
 }
 /* Begin Header Top */
 .headerRow .col{
@@ -72,10 +75,11 @@ body{
 /* Begin Row Main */
 .rowMain{
     background-color:#CCCCCC;
-    height:300px   
+    height:300px; 
 }
     .colMainLeft{
         background-color:red;
+        width:22%;
     }
     .colMainCenter{
         
@@ -131,20 +135,26 @@ body{
 .textAlignRight{
     text-align:right;
 }
-.bookSale{
-    background:url(../images/bookSale.png) center 0 no-repeat transparent;    
-    width:692px;
-    height:612px;
-}
 .cfuwBackground{
     background:url(../images/bridgeBigCenter.png) center 0 no-repeat transparent;    
     background-blend-mode:color;
     height:777px;
 }
 .cfuwBackground.jsOpacity{
-    background:url(../images/bridgeBigCenterB.png) center 0 no-repeat transparent;    
+    background:url(../images/bridgeBigCenterC.png) center 0 no-repeat transparent;    
     background-blend-mode:color;
     height:777px;
+}
+.jsBookSale{
+    background:url(../images/BookSaleScaled2015Sept24.png) center 0 no-repeat transparent;    
+    background-blend-mode:color;
+    margin:2em auto;
+    border-radius:10px;
+    width:713px;
+    height:777px;    
+}
+.jsBookSale h3, .jsBookSale table{
+    display:none;        
 }
 .cfuwGrayBlue{
     color:#121114;
@@ -157,7 +167,7 @@ body{
     border-bottom-style:solid;
 }
 .colMainCenter table tr td{
-    width:67%;
+    width:53%;
 }
 
 .cfuwWhite, ul.cfuwWhite>li>a {
