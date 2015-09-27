@@ -19,7 +19,7 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
             }else{
                 $node = $(paramSelectorContainerToAppend).removeClass(paramCssJsClass);
                 $('.tableFontMedium').removeClass('hide');
-                $node.removeClass('hide');
+                $node.removeClass('hide').addClass('cfuwWhite');
                 $('.colMainCenter h3').removeClass('hide');
             }
 
@@ -98,12 +98,15 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
             break;                                        
         case 'board':
           template.showImage('jsBookSale', '#colMainCenter', true);
+          $('#sectionCfuwBackground').addClass('jsOpacity');
           modelHome = homeModel.fnc.getInstance(); // only one instance allowed, singleton
           this.models.add(modelHome);
-          strUrl = this.models.models[0].get('url');
+          strUrl = this.models.models[0].get('url') + '?noCache=' + util.fnc.noCache();
           this.setTemplate();
           break;
         default:
+            template.showImage('jsBookSale', '#colMainCenter', false);
+            $('#sectionCfuwBackground').removeClass('jsOpacity');        
 
       } // End switch
 
