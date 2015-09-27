@@ -4,7 +4,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
       defaults:{
         author:'Halle',
         title:'Barry',
-        url:null,
+        url:'data/board.xml',
         idAttribute:'homeId',
         arryTemplateData:'',
         data:null
@@ -31,7 +31,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
       if(!!_fnc.instance){
         return _fnc.instance;
       }else{
-        _fnc.instance = new Model({url:options.url});        
+        _fnc.instance = new Model();        
       }
       return _fnc.instance;
     }
