@@ -4,6 +4,28 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
   var w = window, d = document;
   var modelHome = null;
 
+
+      var template = {
+        populateContent:function(paramSelectorContainerToShow){
+            $(paramSelectorContainerToShow).removeClass('hide');
+        },
+        showImage:function(paramCssJsClass, paramSelectorContainerToAppend, paramBlnHide){
+            var $node = null;
+            if(paramBlnHide === false){
+                $node = $(paramSelectorContainerToAppend).addClass(paramCssJsClass);
+                $('.tableFontMedium').addClass('hide');
+                $node.removeClass('hide');
+                $('.' + paramCssJsClass + ' h3').addClass('hide');
+            }else{
+                $node = $(paramSelectorContainerToAppend).removeClass(paramCssJsClass);
+                $('.tableFontMedium').removeClass('hide');
+                $node.removeClass('hide');
+                $('.colMainCenter h3').removeClass('hide');
+            }
+
+        }
+    };
+
   var Models = Backbone.Collection.extend({
 
   });
@@ -55,16 +77,27 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
     getModel:function(e){ // event delegate for navigation
       var node = e.target;
       var strInnerHtml = node.firstChild.nodeValue.toLowerCase();
+
       var strUrl = '';
 
       var $nodeExist = $(this.selectorViewContainer);
       var $nodePageTitle = $(this.selectorViewPageTitle);
       $nodeExist.html('');
       $nodePageTitle.html('');
+      var nodeParent = e.target.parentNode;
+      var strIdParent = nodeParent.getAttribute('id');
 
       switch(strInnerHtml){
+        case 'home':
+            template.showImage('jsBookSale', '#colMainCenter', false);
+            $('#sectionCfuwBackground').removeClass('jsOpacity');
+            break;
+        case 'book sale':
+            template.showImage('jsBookSale', '#colMainCenter', false);
+            $('#sectionCfuwBackground').addClass('jsOpacity');
+            break;                                        
         case 'board':
-          /*TODO: we don't need {url:data/board.xml} passed to the Model instance*/
+          template.showImage('jsBookSale', '#colMainCenter', true);
           modelHome = homeModel.fnc.getInstance(); // only one instance allowed, singleton
           this.models.add(modelHome);
           strUrl = this.models.models[0].get('url');
