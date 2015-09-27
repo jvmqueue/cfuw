@@ -8,7 +8,6 @@ define(['jQuery'], function($undefined){
             var strValueTitle = '';
             var strName = '';
             var strValue = '';
-
             if(node.firstChild === ELEMENT){
                 console.group('GET ELEMENT NODE');
                     console.log('node.firstChild:\t', node.firstChild);
@@ -27,12 +26,13 @@ define(['jQuery'], function($undefined){
             var title = $xmlDoc.find('page title')[0].innerHTML;
             var members = $xmlDoc.find('members member');
             var nodeTagName = '';
-            var nodeValue = '';
+            var nodeValue = ''; 
 
             for(var i = 0, len = members.length; i < len; i++){
                 var node = _fnc.getElementNode(members[i], arry);
             }
-            return arry;
+
+            return {pageTitle:title, pageData:arry};
         } // End parseXmlToJson
     };
     return{
