@@ -11,16 +11,13 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
       },
       successHttpResponse:function hasSuccess(paramXmlResponse){
         var xmlResponse = paramXmlResponse;
-         var arry = util.fnc.parseXmlToJson(xmlResponse);
-         this.set('arryTemplateData', arry);
+        var hash = util.fnc.parseXmlToJson(xmlResponse);
+        this.set('arryTemplateData', hash.pageData);
+        this.set('pageTitle', hash.pageTitle);
       },          
       parse:function(xmlResponse) {
         this.set('data', xmlResponse);
         var xml = this.get('data');
-        
-        console.group('PARSE');
-          console.log('xml:\t', xml);
-         console.groupEnd(); 
       },
       initialize:function(){
 
