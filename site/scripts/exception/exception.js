@@ -7,7 +7,7 @@ define(['jQuery'], function($, undefined){
             var nodeExist = d.getElementsByTagName('body')[0];
             var frag = d.createDocumentFragment();
             var nodeText = d.createTextNode(strCfuwException);
-            var nodeNew = d.createElement('div');
+            var nodeNew = d.createElement('h2');
             nodeNew.setAttribute('class', 'exception');
             nodeNew.appendChild(nodeText);
 
