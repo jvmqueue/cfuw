@@ -1,9 +1,10 @@
 .exception{
+    color:#FF0000;
+    background-color:#FFFFFF; 
     position:absolute;
     z-index:3333;
     top:1.0em;
-    padding:1.0em;
+    padding:2.0em;
     left:10%;
-    width:53%;
-    background-color:#FFFFFF;    
+    width:53%;   
 }
