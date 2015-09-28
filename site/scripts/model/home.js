@@ -2,8 +2,6 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
-        author:'Halle',
-        title:'Barry',
         url:'data/board.xml',
         idAttribute:'homeId',
         arryTemplateData:'',
