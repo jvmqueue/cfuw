@@ -1,20 +1,24 @@
 define(['jQuery'], function($, undefined){
     var w = window, d = document;
     var _fnc = {
-        _createDocumentFragment:function(paramStrInnerHtml){
-            var frag = d.createDocumentFragment();
-            var nodeNew = d.createElement('div');
-            var strException = paramStrInnerHtml;
-
-            nodeNew.setAttribute('class', 'exception');
-            nodeNew.innerHTML = strException;
-            frag.appendChild(nodeNew);
-            return frag;
-        },
         http:function(options){
+            var strServerException = options.exception.responseText;
+            var strCfuwException = options.cfuwException; // custom exception in JS
             var nodeExist = d.getElementsByTagName('body')[0];
-            var strException = options.exception.responseText;
-            var frag = _fnc._createDocumentFragment(strException);
+            var frag = d.createDocumentFragment();
+            var nodeText = d.createTextNode(strCfuwException);
+            var nodeNew = d.createElement('div');
+            nodeNew.setAttribute('class', 'exception');
+            nodeNew.appendChild(nodeText);
+
+            if(strServerException.indexOf('<div') > 0){ // server exception thrown
+                var nodeServerException = d.createElement('p');
+                nodeServerException.setAttribute('class', 'exception');
+                nodeServerException.innerHTML = strServerException;
+                frag.appendChild(nodeServerException);
+            }
+            
+            frag.appendChild(nodeNew);
             nodeExist.appendChild(frag);
         }
     };
