@@ -120,7 +120,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
              that.models.models[0].successHttpResponse(paramModel.get('data'));
           },
           error:function(paramThisView, paramException){
-            throw new exception.fnc.http({that:paramThisView, exception:paramException}); 
+            throw new exception.fnc.http({that:paramThisView, exception:paramException, cfuwException:'Fetch in home View Failed'}); 
           }
         });
       }
