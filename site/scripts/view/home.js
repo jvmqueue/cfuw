@@ -41,7 +41,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
     },
     models:new Models(),
     initialize:function(){
-      this.render();
+      /*This View is event driven by the visitor. We only need to register the events in events attribute above*/
     },
     render:function(){
       
@@ -67,14 +67,11 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
           var $nodeExist = $(that.selectorViewContainer);
           var $nodeTitle = $(that.selectorViewPageTitle);
           $nodeExist.html(strHtml);
-          $nodeTitle.html(strPageTitle);
-
-
-          
+          $nodeTitle.html(strPageTitle);          
         }
       }, 333);
     },
-    getModel:function(e){ // event delegate for navigation
+    getModel:function(e){ // event delegate for navigation is registered during instantiation ie events attribute above
       var node = e.target;
       var strInnerHtml = node.firstChild.nodeValue.toLowerCase();
 
