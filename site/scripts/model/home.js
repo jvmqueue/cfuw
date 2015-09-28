@@ -1,5 +1,5 @@
 define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
-  
+    
     var Model = Backbone.Model.extend({ // private
       defaults:{
         author:'Halle',
