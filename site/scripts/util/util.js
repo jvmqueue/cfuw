@@ -35,14 +35,13 @@ define(['jQuery'], function($undefined){
             var tagNameContainer = paramOptionTags.childContainerTag;
             var tagNameFirstChild = paramOptionTags.firstChildTag;
             selector = tagNameContainer + ' ' + tagNameFirstChild;
-            var members = $xmlDoc.find(selector);
+            var members = $xmlDoc.find(selector);          
             var nodeTagName = '';
             var nodeValue = ''; 
 
             for(var i = 0, len = members.length; i < len; i++){
                 var node = _fnc.getElementNode(members[i], arry);
             }
-
             return {pageTitle:title, pageData:arry};
         } // End parseXmlToJson
     };
