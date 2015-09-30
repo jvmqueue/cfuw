@@ -31,7 +31,7 @@ body{
     .headColCenter div{
         float:left;
         line-height:24px;
-        height:61px; 
+        height:36px; 
     }
     .headColCenter div span{
         
@@ -59,7 +59,7 @@ body{
         text-align:center;
         float:left;
         display:block;
-        margin-left:36%;
+        margin-left:29%;
     }
         .navBarTop li{
             float:left;
@@ -69,7 +69,10 @@ body{
             margin:0;
             padding:2px 1px;
             vertical-align:top;
-            width:13%;
+            width:10%;
+        }
+        .navBarTop li.hasShortText{
+            width:6%;
         }
 /* End top nav bar */
 
