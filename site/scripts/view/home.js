@@ -80,8 +80,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
       var strUrl = '';
       var $nodeExist = $(this.selectorViewContainer);
       var $nodePageTitle = $(this.selectorViewPageTitle);
-      $nodeExist.html('');
-      $nodePageTitle.html('');
+
       var nodeParent = e.target.parentNode;
       var strIdParent = nodeParent.getAttribute('id');
       var model = null;
@@ -94,6 +93,9 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
             template.showImage('jsBookSale', '#colMainCenter', false);
             $('#sectionCfuwBackground').removeClass('jsOpacity');
             break;
+        case 'about us':
+            // Do Nothing
+            break;            
         case 'book sale':
             template.showImage('jsBookSale', '#colMainCenter', false);
             $('#sectionCfuwBackground').addClass('jsOpacity');
