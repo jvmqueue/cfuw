@@ -12,6 +12,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         var xmlResponse = paramXmlResponse;
         var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'paragraphs', firstChildTag:'paragraph'});
 
+
         this.set('arryTemplateData', hash.pageData);
         this.set('pageTitle', hash.pageTitle);
       },          
