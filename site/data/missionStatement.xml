@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title></title>
+	<title>Mission Statement</title>
 	<paragraphs>
 		<paragraph>
             <heading>MISSION STATEMENT:</heading>
@@ -12,33 +12,19 @@
         </paragraph>        
         <paragraph>
             <heading>VALUES:</heading>
-            <text>
-                Providing a sense of belonging
-            </text>
+            <li>Providing a sense of belonging</li>
         </paragraph>
         <paragraph>
-            <heading>-</heading>
-            <text>
-                Promoting life-long learning and achievement               
-            </text>
+            <li>Promoting life-long learning and achievement</li>
         </paragraph>
         <paragraph>
-            <heading>-</heading>
-            <text>
-                Making a difference in the wider community
-            </text>
+            <li>Making a difference in the wider community</li>
         </paragraph>     
         <paragraph>
-            <heading>-</heading>
-            <text>
-                Advocating for women's issues
-            </text>
+            <li>Advocating for women's issues</li>
         </paragraph>                                                     
         <paragraph>
-            <heading>-</heading>
-            <text>
-                Working together                
-            </text>
+            <li>Working together</li>
         </paragraph>                                             
 	</paragraphs>
 </page>
