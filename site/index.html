@@ -41,10 +41,10 @@
                   </button>
                   <ul class="dropdown-menu transparent">
                     <li class="" for="btnMissionStatement"><a id="btnMissionStatement" href="JavaScript:void(0);">Mission Statement</a></li>
-                    <li class="clearLeft"><a href="JavaScript:void(0);">Contact Us</a></li>
+                    <li for="btnContactUs" class="clearLeft"><a id="btnContactUs" href="JavaScript:void(0);">Contact Us</a></li>
                     <li id="dropDownMenuBoard" class="clearLeft" for="btnBoadMembers"><a id="btnBoadMembers" href="JavaScript:void(0);">Board</a></li>
-                    <li class="clearLeft"><a href="JavaScript:void(0);">Affiliations</a></li>
-                    <li class="clearLeft"><a href="JavaScript:void(0);">Membership Application</a></li>
+                    <li for="btnAffiliations" class="clearLeft"><a id="btnAffiliations" href="JavaScript:void(0);">Affiliations</a></li>
+                    <li for="btnMembershipApplication" class="clearLeft"><a id="btnMembershipApplication" href="JavaScript:void(0);">Membership Application</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
@@ -101,10 +101,13 @@
         </section>
     </div> <!-- .container -->
 <script type="text/template" id="templateBoardMembers">    
-<tr><td><%= strName%></td><td><%= strNameTitle%></td></tr>    
+<tr><td><%= strName%></td><td></td></tr>    
 </script>  
+<script type="text/template" id="templatePageTitle">    
+<h3><%= strNameTitle%></h3>
+</script>       
 <script type="text/template" id="templateMissionStatement">    
-<h3><%= strNameTitle%></h3><p><%= strName%></p>
+<p class="<%= strTagName%>"><%= strName%></p>
 </script>       
     <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
 </body>
