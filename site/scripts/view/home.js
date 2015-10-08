@@ -97,10 +97,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
 
       var nodeParent = e.target.parentNode;
       var strIdParent = nodeParent.getAttribute('id') || nodeParent.getAttribute('for');
-      console.group('GET MODEL');
-        console.log('nodeParent:\t', nodeParent);
-        console.log('strIdParent:\t', strIdParent);
-       console.groupEnd(); 
+
       var model = null;
       var modelBoard = null;
       var modelMissionStatement = null;
