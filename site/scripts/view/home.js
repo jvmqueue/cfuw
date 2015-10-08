@@ -4,6 +4,20 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
   var w = window, d = document;
   var modelHome = null;
 
+  var constants = {
+    btnId:{
+      HOME:'btnHome',
+      ABOUT_US:{
+        ONE:'btnMissionStatement',
+        TWO:'btnContactUs',
+        THREE:'dropDownMenuBoard',
+        FOUR:'btnAffiliations',
+        FIVE:'btnMembershipApplication'
+      },
+      BOOK_SALE:'btnBookSale'
+    }
+  };
+
 
       var template = {
         populateContent:function(paramSelectorContainerToShow){
@@ -82,25 +96,26 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
       var $nodePageTitle = $(this.selectorViewPageTitle);
 
       var nodeParent = e.target.parentNode;
-      var strIdParent = nodeParent.getAttribute('id');
+      var strIdParent = nodeParent.getAttribute('id') || nodeParent.getAttribute('for');
+      console.group('GET MODEL');
+        console.log('nodeParent:\t', nodeParent);
+        console.log('strIdParent:\t', strIdParent);
+       console.groupEnd(); 
       var model = null;
       var modelBoard = null;
       var modelMissionStatement = null;
       var strCid = null;
 
-      switch(strInnerHtml){
-        case 'home':
+      switch(strIdParent){
+        case constants.btnId.HOME:
             template.showImage('jsBookSale', '#colMainCenter', false);
             $('#sectionCfuwBackground').removeClass('jsOpacity');
             break;
-        case 'about us':
-            // Do Nothing
-            break;            
-        case 'book sale':
+        case constants.btnId.BOOK_SALE:
             template.showImage('jsBookSale', '#colMainCenter', false);
             $('#sectionCfuwBackground').addClass('jsOpacity');
             break;                
-        case 'mission statement':
+        case constants.btnId.ABOUT_US.ONE:
             template.showImage('jsBookSale', '#colMainCenter', true);
             $('#sectionCfuwBackground').addClass('jsOpacity');
             modelMissionStatement = missionStatementModel.fnc.getInstance(); // only one instance allowed, singleton
@@ -112,7 +127,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
             strCid = 'missionStatementId';
             this.setTemplate({idTemplate:'templateMissionStatement', cid:strCid});            
             break;                                                    
-        case 'board':
+        case constants.btnId.ABOUT_US.THREE:
             template.showImage('jsBookSale', '#colMainCenter', true);
             $('#sectionCfuwBackground').addClass('jsOpacity');
 
