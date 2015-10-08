@@ -2,14 +2,6 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
   function($, Backbone, homeModel, homeView, util, exception, undefined){
 
   var w = window, d = document;
-  var modelHome = null;
-
-
-  var Models = Backbone.Collection.extend({
-
-  });
-
-
 
   var interval = w.setInterval(function(){ // we don't need jQuery to wait for DOM
     if(d.getElementsByTagName('div').length > 1){
@@ -17,8 +9,6 @@ require(['jQuery', 'Backbone', 'homeModel', 'homeView', 'util', 'exception'],
       var view = new homeView.View();
     }
   }, 33);
-  
-
 
 }); // End require(['jQuery', 'Backbone'] ...
 
