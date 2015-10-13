@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<page>
+	<title>BOARD</title>
+	<members>
+		<member>
+			<position hashName="title">President</position>
+			<name hashName="name">Janie Charbonneau</name>
+		</member>
+        <member>
+            <position hashName="title">Past President</position>
+            <name hashName="name">Gerlinde Sarkar</name>
+        </member>        
+        <member>
+            <position hashName="title">Vice President</position>
+            <name hashName="name">Alix Tumback</name>
+        </member>
+        <member>
+            <position hashName="title">Treasurer</position>
+            <name hashName="name">Michelle Rogers</name>
+        </member>
+        <member>
+            <position hashName="title">Secretaries</position>
+            <name hashName="name">Angela Schmidt (Board Meetings) Victoria Neufeld (General Meetings)</name>
+        </member>
+        <member>
+            <position hashName="title">Membership</position>
+            <name hashName="name">Marlene Chatterson (Chair)</name>
+        </member>
+        <member>
+            <position hashName="title">Membership Committee</position>
+            <name hashName="name">Dorma Guedo, Melinda Waltz, Rita Priestley</name>
+        </member>        
+        <member>
+            <position hashName="title">Program</position>
+            <name hashName="name">Freda Toffolo (Chair)</name>
+        </member>        
+        <member>
+            <position hashName="title">Program Committee</position>
+            <name hashName="name">Penny-Lynn Micklewright, Phyllis Austman, Sherry Smith</name>
+        </member>        
+        <member>
+            <position hashName="title">Publicity</position>
+            <name hashName="name">Chair: Malaika Charbonneau, Sherry Smith</name>
+        </member>   
+	</members>
+</page>
