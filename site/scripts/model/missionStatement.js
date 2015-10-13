@@ -1,8 +1,8 @@
-define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
+define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, base, undefined){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
-        url:'../CFUW_Malaika/data/missionStatement.xml',
+        url:base.basePath() + 'missionStatement.xml',
         idAttribute:'missionStatementId',
         cid:'missionStatementId',
         arryTemplateData:'',
