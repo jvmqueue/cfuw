@@ -1,8 +1,8 @@
-define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
+define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, base){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
-        url:'../CFUW_Malaika/data/board.xml',
+        url:base.basePath() + 'board.xml',
         idAttribute:'homeId',
         arryTemplateData:'',
         cid:'boardMembersId',
