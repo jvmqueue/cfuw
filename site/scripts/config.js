@@ -10,6 +10,10 @@ requirejs.config({
         "missionStatementModel":["model/missionStatement"],
         "homeView":["view/home"]
     },
+    basePath:function(){
+        return 'my base Path'
+    },
+
     shim:{
         'jQuery':{
             exports:'$'
