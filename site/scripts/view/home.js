@@ -19,26 +19,26 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
   };
 
 
-      var template = {
-        populateContent:function(paramSelectorContainerToShow){
-            $(paramSelectorContainerToShow).removeClass('hide');
-        },
-        showImage:function(paramCssJsClass, paramSelectorContainerToAppend, paramBlnHide){
-            var $node = null;
-            if(paramBlnHide === false){
-                $node = $(paramSelectorContainerToAppend).addClass(paramCssJsClass);
-                $('.tableFontMedium').addClass('hide');
-                $node.removeClass('hide');
-                $('.' + paramCssJsClass + ' h3').addClass('hide');
-            }else{
-                $node = $(paramSelectorContainerToAppend).removeClass(paramCssJsClass);
-                $('.tableFontMedium').removeClass('hide');
-                $node.removeClass('hide').addClass('cfuwWhite');
-                $('.colMainCenter h3').removeClass('hide');
-            }
-
+  var template = {
+    populateContent:function(paramSelectorContainerToShow){
+        $(paramSelectorContainerToShow).removeClass('hide');
+    },
+    showImage:function(paramCssJsClass, paramSelectorContainerToAppend, paramBlnHide){
+        var $node = null;
+        if(paramBlnHide === false){
+            $node = $(paramSelectorContainerToAppend).addClass(paramCssJsClass);
+            $('.tableFontMedium').addClass('hide');
+            $node.removeClass('hide');
+            $('.' + paramCssJsClass + ' h3').addClass('hide');
+        }else{
+            $node = $(paramSelectorContainerToAppend).removeClass(paramCssJsClass);
+            $('.tableFontMedium').removeClass('hide');
+            $node.removeClass('hide').addClass('cfuwWhite');
+            $('.colMainCenter h3').removeClass('hide');
         }
-    };
+
+    }
+  };
 
   var Models = Backbone.Collection.extend({
 
@@ -90,7 +90,6 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
     },
     getModel:function(e){ // event delegate for navigation is registered during instantiation ie events attribute above
       var node = e.target;
-      var strInnerHtml = node.firstChild.nodeValue.toLowerCase();
       var strUrl = '';
       var $nodeExist = $(this.selectorViewContainer);
       var $nodePageTitle = $(this.selectorViewPageTitle);
