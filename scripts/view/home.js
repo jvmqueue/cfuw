@@ -88,31 +88,31 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
         }
       }, 333);
     },
-    getModel:function(e){ // event delegate for navigation is registered during instantiation ie events attribute above
+    getModel:function(e){ // event delegate for navigation. Registered during instantiation in events attribute above
       var node = e.target;
       var strUrl = '';
       var $nodeExist = $(this.selectorViewContainer);
       var $nodePageTitle = $(this.selectorViewPageTitle);
-
       var nodeParent = e.target.parentNode;
       var strIdParent = nodeParent.getAttribute('id') || nodeParent.getAttribute('for');
-
       var model = null;
       var modelBoard = null;
       var modelMissionStatement = null;
       var strCid = null;
+      var showImageVals = {strClassName:'jsBookSale', 
+        $nodeColumnContainer:$('#colMainCenter'),
+        blnHideCenterColumn:false
+      };
 
       switch(strIdParent){
         case constants.btnId.HOME:
-            template.showImage('jsBookSale', '#colMainCenter', false);
             $('#sectionCfuwBackground').removeClass('jsOpacity');
             break;
-        case constants.btnId.BOOK_SALE:
-            template.showImage('jsBookSale', '#colMainCenter', false);
+        case constants.btnId.BOOK_SALE:     
             $('#sectionCfuwBackground').addClass('jsOpacity');
             break;                
         case constants.btnId.ABOUT_US.ONE:
-            template.showImage('jsBookSale', '#colMainCenter', true);
+            showImageVals.blnHideCenterColumn = true;      
             $('#sectionCfuwBackground').addClass('jsOpacity');
             modelMissionStatement = missionStatementModel.fnc.getInstance(); // only one instance allowed, singleton
             this.models.add(modelMissionStatement);
@@ -124,7 +124,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
             this.setTemplate({idTemplate:'templateMissionStatement', cid:strCid});            
             break;                                                    
         case constants.btnId.ABOUT_US.THREE:
-            template.showImage('jsBookSale', '#colMainCenter', true);
+            showImageVals.blnHideCenterColumn = true;        
             $('#sectionCfuwBackground').addClass('jsOpacity');
 
             modelBoard = homeModel.fnc.getInstance(); // only one instance allowed, singleton
@@ -135,11 +135,15 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
             this.setTemplate({idTemplate:'templateBoardMembers', cid:'boardMembersId'});            
           break;
         default:
-            template.showImage('jsBookSale', '#colMainCenter', false);
+            showImageVals.strClassName = 'jsBookSale';
+            showImageVals.$nodeColumnContainer = $('#colMainCenter');
+            showImageVals.blnHideCenterColumn = false;                
             $('#sectionCfuwBackground').removeClass('jsOpacity');        
 
       } // End switch
 
+      // Optimization: DRY 
+      template.showImage(showImageVals.strClassName, showImageVals.$nodeColumnContainer, showImageVals.blnHideCenterColumn);
       var that = this;
 
       if(strUrl.length > 3){ // only fetch if strUrl has been set in switch block
