@@ -2,24 +2,22 @@ define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, b
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
-        url:base.basePath() + 'board.xml',
+        url:base.basePath() + 'home.xml',
         idAttribute:'homeId',
         arryTemplateData:'',
-        cid:'boardMembersId',
+        cid:'homeId',
         data:null
       },
-      successHttpResponse:function hasSuccess(paramXmlResponse){
+      parse:function(paramXmlResponse){
         var xmlResponse = paramXmlResponse;   
         var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'members', firstChildTag:'member'});
         this.set('arryTemplateData', hash.pageData);                 
         this.set('pageTitle', hash.pageTitle);
-      },          
-      parse:function(xmlResponse) {
-        this.set('data', xmlResponse);
-        var xml = this.get('data');
       },
       initialize:function(){
-
+        console.group('MODEL INITIALIZE');
+          console.log(':\t', 'Reached');
+         console.groupEnd(); 
       }
 
     }); // End Model = Backbone.Model.extend    
@@ -27,10 +25,11 @@ define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, b
   var _fnc = {
     instance:null,
     getInstance:function(options){ // defines Model as a singleton
+      var strModelId = options.modelId;
       if(!!_fnc.instance){
         return _fnc.instance;
       }else{
-        _fnc.instance = new Model();        
+        _fnc.instance = new Model({id:strModelId});
       }
       return _fnc.instance;
     }
