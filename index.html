@@ -30,13 +30,13 @@
             <ul id="navBarTop" class="nav nav-justified navBarTop">
                 
                 <li class="dropdown hasShortText" for="btnHome">
-                  <button id="btnHome" class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
-                    <span>Home</span>
+                  <button for="btnHome" class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
+                    <span id="btnHome">Home</span>
                   </button>
                 </li>
                 <li class="dropdown">
-                  <button class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
-                    <span>About Us</span>
+                  <button class="btn dropdown-toggle btnOrange" type="button" for="btnAboutUs" data-toggle="dropdown">
+                    <span id="btnAboutUs">About Us</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu transparent">
@@ -100,6 +100,9 @@
             </div>
         </section>
     </div> <!-- .container -->
+<script type="text/template" id="templateHome">    
+<tr><td><%= strName%></td><td></td></tr>    
+</script> 
 <script type="text/template" id="templateBoardMembers">    
 <tr><td><%= strName%></td><td></td></tr>    
 </script>  
