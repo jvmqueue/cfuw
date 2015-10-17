@@ -5,23 +5,26 @@ define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, b
         url:base.basePath() + 'missionStatement.xml',
         idAttribute:'missionStatementId',
         cid:'missionStatementId',
-        arryTemplateData:'',
+        arryTemplateData:null,
+        pageTitle:{},
         data:null
       },
-      successHttpResponse:function hasSuccess(paramXmlResponse){
+      successHttpResponse:function hasSuccess(paramXmlResponse){ // interface
+        var xmlResponse = paramXmlResponse;
+      },          
+      parse:function(paramXmlResponse){ // override parse, because response is XML
         var xmlResponse = paramXmlResponse;
         var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'paragraphs', firstChildTag:'paragraph'});
 
-
         this.set('arryTemplateData', hash.pageData);
         this.set('pageTitle', hash.pageTitle);
-      },          
-      parse:function(xmlResponse) {
-        this.set('data', xmlResponse);
-        var xml = this.get('data');
       },
-      initialize:function(){
-
+      initialize:function(paramStrDataPath){
+        console.group('MODEL INITILIZE');
+          console.log(':\t', 'Reached');
+         console.groupEnd(); 
+/*        var strDataPath = paramStrDataPath;
+        this.set('url', strDataPath);*/
       }
 
     }); // End Model = Backbone.Model.extend    
@@ -29,10 +32,11 @@ define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, b
   var _fnc = {
     instance:null,
     getInstance:function(options){ // defines Model as a singleton
+      var strModelId = options.modelId;
       if(!!_fnc.instance){
         return _fnc.instance;
       }else{
-        _fnc.instance = new Model();        
+        _fnc.instance = new Model({id:strModelId});
       }
       return _fnc.instance;
     }
