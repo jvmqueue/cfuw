@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<page>
+	<title>DEFAULT</title>
+	<members>
+		<member>
+			<position hashName="title">President</position>
+			<name hashName="name">Janie Charbonneau</name>
+		</member>
+	</members>
+</page>
