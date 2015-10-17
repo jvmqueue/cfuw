@@ -34,5 +34,5 @@ requirejs.config({
             deps:['underscore', 'regex', 'bootstrap']
         } 
     },
-    deps:['controller'] // where our program begins execution
+    deps:['main'] // where our program begins execution
 });
