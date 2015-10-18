@@ -50,16 +50,12 @@ define(['jQuery'], function($, undefined){
                            nodeValue = elm.firstChild.nodeValue; 
                            nodeTagName = elm.nodeName;
 
-                           hashElementNodes = {'strTagName':nodeTagName, 'strName':nodeValue, 'strNameTitle':'Util Fix Title'};
+                           hashElementNodes = {'strTagName':nodeTagName, 'strName':nodeValue, 'strNameTitle':title};
                            arryElementNodes.push(hashElementNodes);                         
                         }
                     }); 
                 
-            } // End for
-
-                           console.group('PARSE XML TO JSON');
-                            console.log('arryElementNodes:\t', arryElementNodes);
-                           console.groupEnd();               
+            } // End for               
 
             return {pageTitle:title, pageData:arryElementNodes};
         } // End parseXmlToJson
