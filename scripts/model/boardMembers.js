@@ -1,8 +1,7 @@
-define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, base){
+define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
-        url:base.basePath() + 'board.xml',
         idAttribute:'boardId',
         arryTemplateData:'',
         cid:'boardId',

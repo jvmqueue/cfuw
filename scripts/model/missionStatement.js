@@ -1,8 +1,7 @@
-define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, base, undefined){
+define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
-        url:base.basePath() + 'missionStatement.xml',
         idAttribute:'missionStatementId',
         cid:'missionStatementId',
         arryTemplateData:null,
