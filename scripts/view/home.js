@@ -25,14 +25,14 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar'
     },
-    renderDefalult:function(){
+    renderDefault:function(){
       var $nodeContainer = $('#colMainCenter');
       $nodeContainer.addClass('jsBookSale');
     },
     render:function(options){
 
       if('blnShowDefault' in options){
-        this.renderDefalult();
+        this.renderDefault();
         return false;
       }
 
