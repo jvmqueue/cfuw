@@ -7,13 +7,11 @@ requirejs.config({
         "util":["util/util"],
         "exception":["exception/exception"],
         "homeModel":["model/home"],
+        "boardModel":["model/boardMembers"],
         "missionStatementModel":["model/missionStatement"],
-        "homeView":["view/home"]
+        "homeView":["view/home"],
+        "basePath":["basePath"]
     },
-    basePath:function(){
-        return 'my base Path'
-    },
-
     shim:{
         'jQuery':{
             exports:'$'
