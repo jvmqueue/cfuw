@@ -15,9 +15,7 @@ define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, b
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(){
-        console.group('MODEL INITIALIZE');
-          console.log(':\t', 'Reached');
-         console.groupEnd(); 
+
       }
 
     }); // End Model = Backbone.Model.extend    
