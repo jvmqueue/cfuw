@@ -1,32 +1,50 @@
-define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 'util', 'exception'], 
-  function($, Backbone, homeModel, homeView, missionStatementModel, util, exception, undefined){
+define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel', 'util', 'basePath', 'exception'], 
+  function($, Backbone, homeModel, boardModel, missionStatementModel, util, basePath, exception, undefined){
 
   var w = window, d = document;
   var Collection = Backbone.Collection.extend({});
   var _View = Backbone.View.extend({
-    el:'div',
-    selectorViewContainer:'#boardMembers table',
-    model:null,
     collection:new Collection(),
-    initialize:function(){
+    el:'div',
+    model:null,
+    nav:{
+        id:[],
+        data:[]
     },
-    NAV:{ID:{
-      HOME:'btnHome',
-      MISSION_STATEMENT:'btnMissionStatement',
-      CONTACT_US:'btnContactUs',
-      BOARD:'btnBoadMembers',
-      AFFILIATIONS:'btnAffiliations',
-      MEMBERSHIP_APPLICATION:'btnMembershipApplication'
-    }},
+    selectorViewContainer:'#boardMembers table',
+    selectorViewTitle:'#pageTitle',
+    initialize:function(options){
+      var hash = options;
+      for(var name in hash){ // initilize _View mappings
+         
+         /*this.nav[hash[name].control] = hash[name].data;*/
+        this.nav.id.push(hash[name].control);
+        this.nav.data.push(hash[name].data);         
+      }
+    },
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar'
     },
+    renderDefalult:function(){
+      var $nodeContainer = $('#colMainCenter');
+      $nodeContainer.addClass('jsBookSale');
+    },
     render:function(options){
+
+      if('blnShowDefault' in options){
+        this.renderDefalult();
+        return false;
+      }
+
       var json = options.data;
       var strSelectorTemplate = '#'+ options.idTemplate;
+      var strSelectorTemplateTitle = '#templatePageTitle';
       var $nodeTemplate = $(strSelectorTemplate);
+      var $nodeTemplateTitle = $(strSelectorTemplateTitle);
       var html = $nodeTemplate.html();
+      var htmlTitle = $nodeTemplateTitle.html();
       var _template = _.template(html);
+      var _templateTitle = _.template(htmlTitle);
       var strHtml = '';
 
       for(var i = 0, len = json.length; i < len; i++){
@@ -34,74 +52,72 @@ define(['jQuery', 'Backbone', 'homeModel', 'homeView', 'missionStatementModel', 
       }
 
       var $nodeExist = $(this.selectorViewContainer);
+      var $nodeExistTitle = $(this.selectorViewTitle);
       $nodeExist.html(strHtml);
+      strHtml = _templateTitle(json[0]);
+      $nodeExistTitle.html(strHtml);
       $('#colMainCenter').removeClass('jsBookSale');
-
-
-      console.group('RENDER');
-        console.log('$nodeTemplate:\t', $nodeTemplate);
-        console.log('$nodeExist:\t', $nodeExist);
-        console.log('html:\t', html);
-        console.log('options.data:\t', options.data);
-       console.groupEnd(); 
     },
     listenerNavBar:function(e){
       var nodeTarget = e.target;
       var strId = nodeTarget.getAttribute('id') || nodeTarget.parentNode.getAttribute('for');
-      var thisNavId = this.NAV.ID;
+      var thisNav = this.nav;
       var model = null;
       var strDataPath = null;
       var strCid = null;
       var strIdTemplate = null;
+      var blnShowDefault = false;
+
 
       switch(strId){
-        case thisNavId.HOME:
+        case thisNav.id[0]:
           model = homeModel.fnc.getInstance({modelId:'home'});
           strCid = 'homeId';
           strIdTemplate = 'templateHome';
-          strDataPath = 'data/home.xml';
-          this.collection.add(model);
+          strDataPath = thisNav.data[0];
           break;
-        case thisNavId.MISSION_STATEMENT:
-          // get model instance
+        case thisNav.id[1]:
           model = missionStatementModel.fnc.getInstance({modelId:'missionStatement'});
           strCid = 'missionStatementId';
           strIdTemplate = 'templateMissionStatement';
-          strDataPath = 'data/missionStatement.xml';
-          // add to collection
-          this.collection.add(model);
-          // now get data through the model
+          strDataPath = thisNav.data[1];
           break;
-        case thisNavId.CONTACT_US:
+        case thisNav.id[2]:
+          break;
+        case thisNav.id[3]:
+          model = boardModel.fnc.getInstance({modelId:'boardId'});
+          strCid = 'boardId';
+          strIdTemplate = 'templateBoardMembers';
+          strDataPath = thisNav.data[3];
+          break;
+        case thisNav.id[4]:
           
           break;
-        case thisNavId.BOARD:
-          
-          break;
-        case thisNavId.AFFILIATIONS:
-          
-          break;
-        case thisNavId.MEMBERSHIP_APPLICATION:
+        case thisNav.id[5]:
 
           break;          
         default:
-          model = homeModel.fnc.getInstance({modelId:'home'});
-          strDataPath = 'data/home.xml';
-          this.collection.add(model);
+          blnShowDefault = true;          
       } // End switch
+      this.collection.add(model);
       var that = this;
-      model.fetch({
-        url:strDataPath,
-        dataType:'xml',
-        success:function(){
-          var modelSuccess = that.collection.where({'cid':strCid})[0];
-          var json = modelSuccess.get('arryTemplateData'); // data to merge with template
-          that.render({idTemplate:strIdTemplate, data:json});
-        },
-        error:function(paramThisView, paramException){
-          throw new exception.fnc.http({that:paramThisView, exception:paramException, cfuwException:'Fetch in home View Failed'}); 
-        }        
-      });
+
+      if(blnShowDefault === false){
+        model.fetch({
+          url:basePath.basePath() + strDataPath,
+          dataType:'xml',
+          success:function(){
+            var modelSuccess = that.collection.where({'cid':strCid})[0];
+            var json = modelSuccess.get('arryTemplateData'); // data to merge with template
+            that.render({idTemplate:strIdTemplate, data:json});
+          },
+          error:function(paramThisView, paramException){
+            throw new exception.fnc.http({that:paramThisView, exception:paramException, cfuwException:'Fetch in home View Failed'}); 
+          }        
+        });        
+      }else{
+        that.render({blnShowDefault:blnShowDefault});
+      }
     } // End listenerNavBar 
   });
 
