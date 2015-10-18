@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<page>
+	<title>Book Sale</title>
+	<members>
+		<member>
+			<position hashName="title">&#160;</position>
+			<name hashName="name">&#160;</name>
+		</member>
+	</members>
+</page>
