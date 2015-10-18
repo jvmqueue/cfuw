@@ -20,9 +20,6 @@ define(['jQuery', 'Backbone', 'util', 'basePath'], function($, Backbone, util, b
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(paramStrDataPath){
-        console.group('MODEL INITILIZE');
-          console.log(':\t', 'Reached');
-         console.groupEnd(); 
 /*        var strDataPath = paramStrDataPath;
         this.set('url', strDataPath);*/
       }
