@@ -11,19 +11,19 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         id:[],
         data:[]
     },
+    newWindow:0,
     selectorViewContainer:'#boardMembers table',
     selectorViewTitle:'#pageTitle',
     initialize:function(options){
       var hash = options;
       for(var name in hash){ // initilize _View mappings
-         
-         /*this.nav[hash[name].control] = hash[name].data;*/
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);         
       }
     },
     events:{ // events depends on defining _View.el 
-      'click #navBarTop':'listenerNavBar'
+      'click #navBarTop':'listenerNavBar',
+      'click #headColRightLogo':'listenerCfuwLogo'
     },
     renderDefault:function(){
       var $nodeContainer = $('#colMainCenter');
@@ -57,6 +57,13 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       strHtml = _templateTitle(json[0]);
       $nodeExistTitle.html(strHtml);
       $('#colMainCenter').removeClass('jsBookSale');
+    },
+    listenerCfuwLogo:function(e){
+      var strUrl = 'http://www.cfuw.org/';
+      var windows = {width:827, height:363};
+      this.newWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
+      if (window.focus) {this.newWindow.focus()}
+      return false;
     },
     listenerNavBar:function(e){
       var nodeTarget = e.target;
