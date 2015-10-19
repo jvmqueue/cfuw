@@ -21,9 +21,18 @@ body{
     background:url(../images/logoSaskatoon.png) center 50px no-repeat transparent;
     background-size:40%;
 }
-.headColRightLogo{
-    background:url(../images/logoCFUW.png) left 54px no-repeat transparent;
-    background-size:40%;
+.logo.headColRightLogo{
+    margin:3.1em 0 0 0;
+    width:95px;
+    height:95px;
+  
+    
+    
+    background:url(../images/logoCFUWSprite.png) left 0 no-repeat transparent;
+
+}
+.logo.headColRightLogo:hover{
+    background:url(../images/logoCFUWSprite.png) left -109px no-repeat ;
 }
 .headColCenter{ 
     margin-top:47px;
