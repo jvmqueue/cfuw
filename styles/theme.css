@@ -13,3 +13,6 @@
     margin-left:1.3em;
     list-style-type:disc;  
 }
+.isLink{
+    cursor:pointer;
+}
