@@ -1,4 +1,4 @@
-<h1>Backbone App Prototype Only</h1> 
+<h1>Backbone App CFUW Saskatoon</h1> 
 <p>Experimental Backbone Application</p>
 <p><a href="http://malaikazcharbonneau.com/CFUW_Dev/">Live URL</a></p>
 <h2>Current State</h2>
