@@ -1,6 +1,6 @@
 @import url(theme.css);
 body{
-    background-color:#007194;    
+    background-color:#0066AB;    
     font-family:Helvetica, sans-serif;
 }
 
@@ -162,23 +162,24 @@ body{
             width:6%;
         }
 /* End top nav bar */
+
 /* Begin Bridge image opacity */
-.containerPageLowerBody{
-    padding:0;
-    width:100%;
+body{
+    background-color:#222;
 }
-.pageBackgroundImage{
-  background-image:url('../images/bridgeBigCenter.png');
+
+.hero-unit {
+  background-image:url('../images/bridgeBigCenterB.png');
   background-size:cover;
   height:300px;
+  opacity: .5;
 }
-.jsOpacity.pageBackgroundImage{
-  opacity:0.4;
-}
-.containerPageText{
+
+h1 {
   position: relative;
-  top:-285px;
-  color:#FFFFFF;
+  top: -350px;
+  left: 40px;
+  color:#fff;
 }
 /* End Bridge image opacity */
 

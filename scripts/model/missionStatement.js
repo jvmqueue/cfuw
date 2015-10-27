@@ -8,9 +8,6 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         pageTitle:{},
         data:null
       },
-      successHttpResponse:function hasSuccess(paramXmlResponse){ // interface
-        var xmlResponse = paramXmlResponse;
-      },          
       parse:function(paramXmlResponse){ // override parse, because response is XML
         var xmlResponse = paramXmlResponse;
         var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'paragraphs', firstChildTag:'paragraph'});
@@ -18,9 +15,9 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         this.set('arryTemplateData', hash.pageData);
         this.set('pageTitle', hash.pageTitle);
       },
-      initialize:function(paramStrDataPath){
-/*        var strDataPath = paramStrDataPath;
-        this.set('url', strDataPath);*/
+      initialize:function(options){
+
+        this.set('cid', options.id); // used by view to access model
       }
 
     }); // End Model = Backbone.Model.extend    
@@ -28,7 +25,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
   var _fnc = {
     instance:null,
     getInstance:function(options){ // defines Model as a singleton
-      var strModelId = options.modelId;
+      var strModelId = options.modelCid;
       if(!!_fnc.instance){
         return _fnc.instance;
       }else{

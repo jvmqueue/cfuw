@@ -3,7 +3,7 @@ requirejs.config({
         "jQuery":["../bower_components/jquery/dist/jquery.min"],
         "Backbone":["../bower_components/backbone/backbone"],
         "underscore":["../bower_components/underscore/underscore"],
-        "bootstrap":["../bower_components/bootstrap/dist/js/bootstrap"],
+        "bootstrap":["../bower_components/bootstrap/dist/js/bootstrap.min"],
         "util":["util/util"],
         "exception":["exception/exception"],
         "homeModel":["model/home"],
@@ -32,5 +32,5 @@ requirejs.config({
             deps:['underscore', 'regex', 'bootstrap']
         } 
     },
-    deps:['main'] // where our program begins execution
+    deps:['main', 'bootstrap'] // where our program begins execution
 });

@@ -13,93 +13,69 @@
     <![endif]-->
 
 </head>
+
+
 <body id="index">
-    <div id="container" class="container containerTopHeaderNavs">
-        <section class="row headerRow cfuwWhite">
-            <div id="headColLeftLogo" class="col-xs-2 col responsiveScale headColRight headColLeftLogo"></div>
-            <div id="headColRightLogo" class="col-xs-2 col responsiveScale headColLeft logo headColRightLogo isLink"></div>
-            <div class="col-xs-8 col headColCenter">
-                <div class="col-xs-12 textTop bold"><span>CFUW Saskatoon Ltd.</span></div>
-                <div class="col-xs-12 textMiddle"><span>CANADIAN FEDERATION OF UNIVERSITY WOMEN</span></div>
-            </div>
-        </section>
-        <section class="row headerRow cfuwWhite">
-            <div class="col-xs-12 textBottom"><span>The Power Of Women Working Together</span></div>
-        </section>
-        <nav class="row navBarContainer cfuwOrange">
-            <ul id="navBarTop" class="nav nav-justified navBarTop">
-                
-                <li class="dropdown hasShortText" for="btnHome">
-                  <button for="btnHome" class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
-                    <span id="btnHome">Home</span>
-                  </button>
-                </li>
-                <li class="dropdown">
-                  <button class="btn dropdown-toggle btnOrange" type="button" for="btnAboutUs" data-toggle="dropdown">
-                    <span id="btnAboutUs">About Us</span>
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu transparent">
-                    <li class="" for="btnMissionStatement"><a id="btnMissionStatement" href="JavaScript:void(0);">Mission Statement</a></li>
-                    <li for="btnContactUs" class="clearLeft"><a id="btnContactUs" href="JavaScript:void(0);">Contact Us</a></li>
-                    <li id="dropDownMenuBoard" class="clearLeft" for="btnBoadMembers"><a id="btnBoadMembers" href="JavaScript:void(0);">Board</a></li>
-                    <li for="btnAffiliations" class="clearLeft"><a id="btnAffiliations" href="JavaScript:void(0);">Affiliations</a></li>
-                    <li for="btnMembershipApplication" class="clearLeft"><a id="btnMembershipApplication" href="JavaScript:void(0);">Membership Application</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <button class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
-                    <span>Announcements</span>
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu transparent">
-                    <li class=""><a href="#">News</a></li>
-                    <li class="clearLeft"><a href="#">Meetings</a></li>
-                    <li class="clearLeft"><a href="#">Events</a></li>
-                    <li class="clearLeft"><a href="#">Interest Groups</a></li>
-                  </ul>
-                </li>                                
-                <li class="dropdown" for="btnBookSale">
-                  <button id="btnBookSale" class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
-                    <span>Book Sale</span>
-                  </button>
-                </li>
-                <li class="dropdown">
-                  <button class="btn dropdown-toggle btnOrange" type="button" data-toggle="dropdown">
-                    <span>Scholarships</span>
-                  </button>
-                </li>
+<!-- http://www.cheatography.com/masonjo/cheat-sheets/bootstrap/ -->
+  <div class="container mainContainer">
+    <h3 id="jumbotron" class="jumbotron jumbotronHeaderImage marginTopZero marginBottomZero">
+      <div class="row headColLogos">
+        <div class="col-xs-2 center-block logo headColLeftLogo">&#160;</div>
+        <div id="headColRightLogo" class="col-xs-2 logo headColRightLogo">&#160;</div>      
+        <div id="" class="col-xs-8 cfuwWhite">        
+          <h2 class="marginTopZero cfuwSaskatoon boldest">CFUW Saskatoon Ltd.</h2>
+          <p class="marginTopZero canadianFederationOfUniversity letterSpacing">CANADIAN FEDERATION OF UNIVERSITY WOMEN</p>
+        </div>                    
+      </div>
+      <div class="row powerOfWomen cfuwWhite">
+        <h2 class="col-xs-12">The Power Of Women Working Together</h2>
+      </div>
+    </h3><!-- .jumbotron -->
+  <!-- Begin Nav -->
+  <nav class="navbar navbar-inverse marginBottomZero">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBarTop">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+        </button>
+      </div>
+      <div id="navBarTop" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a id="btnHome" href="JavaScript:void(0);">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="JavaScript:void(0);">About Us<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="btnMissionStatement" href="JavaScript:void(0);">Mission Statement</a></li>
+              <li><a href="JavaScript:void(0);">Contact Us</a></li>
+              <li><a href="JavaScript:void(0);">Board</a></li>
+              <li><a href="JavaScript:void(0);">Affiliations</a></li>
+              <li><a href="JavaScript:void(0);">Membership Application</a></li>
             </ul>
-        </nav>
-        <section id="sectionCfuwBackground" class="row rowMain cfuwBackground">
-            <div class="col-xs-3 colMainLeft"></div>
-            <div id="colMainCenter" class="col-xs-6 colMainCenter opaque jsBookSale">
-                <div id="boardMembers" class="boardMembers">
-                    <h3 id="pageTitle"class="pageTitle"></h3>
-                    <table class="tableFontMedium"></table>                    
-                </div> <!-- End #boardMembers -->
-
-                <div id="bookSale" class="bookSale hide"></div>
-
-
-
-            </div> <!-- End .colMainCenter -->
-            <div class="col-xs-3 colMainRight"></div>
-        </section>
-        <section class="row rowAddress cfuwBlue">
-            <div class="col-xs-5 colAddress cfuwWhite">
-                <p class="textAlignLeft text">CFUW Saskatoon Inc.</p>
-                <p class="textAlignLeft text">P.O. Box 7405</p>
-                <p class="textAlignLeft text">Saskatoon, SK S7K 4J3</p>
-            </div>
-            <div class="col-xs-2 colCenter"></div>
-            <div class="col-xs-5 colUrl cfuwWhite">
-                <p class="">&#160;</p>
-                <p class="textAlignRight">www.fcfdu.org</p>
-                <p class="">&#160;</p>                
-            </div>
-        </section>
-    </div> <!-- .container -->
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="JavaScript:void(0);">Announcements<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="JavaScript:void(0);">News</a></li>
+              <li><a href="JavaScript:void(0);">Meetings</a></li>
+              <li><a href="JavaScript:void(0);">Events</a></li>
+              <li><a href="JavaScript:void(0);">Interest Groups</a></li>
+            </ul>
+          </li>
+          <li><a href="JavaScript:void(0);">Book Sale</a></li> 
+          <li><a href="JavaScript:void(0);">Scholarships</a></li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Nav -->
+  <div class="container containerPageLowerBody">
+    <div id="pageBackgroundImage"class="pageBackgroundImage"></div>
+    <div id="pageTitle"class="containerPageText"></div>
+    <div id="boardMembers" class="containerPageText">&#160;</div> 
+  </div> <!-- End .container.containerPageLowerBody -->  
+</div> <!-- .container.mainContainer -->
 <script type="text/template" id="templateHome">    
 <tr><td><%= strName%></td><td></td></tr>    
 </script> 
@@ -112,6 +88,7 @@
 <script type="text/template" id="templateMissionStatement">    
 <p class="<%= strTagName%>"><%= strName%></p>
 </script>       
-    <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
+  <!-- scripts / config defines script dependencies in a single location -->
+  <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>
