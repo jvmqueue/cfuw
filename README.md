@@ -17,6 +17,7 @@
 <h3>Stategies and Techniques</h3>
 <ul>
     <li>XML for page content via Backbone fetch</li>
+    <li>Custom Utility for converting readable XML to JSON</li>
     <li>Backbone.js for employing Model View workflow</li>
     <li>underscore.js for HTML templates</li>
     <li>jQuery for DOM access</li>
