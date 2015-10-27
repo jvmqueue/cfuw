@@ -170,15 +170,19 @@ body{
 .pageBackgroundImage{
   background-image:url('../images/bridgeBigCenter.png');
   background-size:cover;
-  height:300px;
+  height:777px;
 }
 .jsOpacity.pageBackgroundImage{
   opacity:0.4;
 }
-.containerPageText{
+.containerPageTitle, .containerPageText{
   position: relative;
-  top:-285px;
+  top:-777px;
   color:#FFFFFF;
+  padding:0 10%;
+}
+.containerPageTitle{
+  padding:0 2%;
 }
 /* End Bridge image opacity */
 
@@ -255,9 +259,10 @@ body{
 .jsBookSale{
     background:url(../images/BookSaleScaled2015Oct08.png) center 0 no-repeat transparent;    
     background-blend-mode:color;
-    margin:2em auto;
+    background-size:90% auto;
+    margin:2em 0;
+    padding:0 0 72% 0;
     border-radius:10px;
-    height:777px;    
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        

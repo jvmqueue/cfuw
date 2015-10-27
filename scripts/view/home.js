@@ -15,6 +15,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     selectorViewContainer:'#boardMembers',
     idViewContainer:'boardMembers',
     selectorViewTitle:'#pageTitle',
+    idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
     cssClassBackgroundOpacity:'jsOpacity',
     cssClassShowBookSale:'jsBookSale',
@@ -29,16 +30,25 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo':'listenerCfuwLogo'
     },
-    renderDefault:function(){
-      var $nodeContainer = $('#colMainCenter');
-      $nodeContainer.addClass(this.cssClassShowBookSale);
+    renderDefault:function(paraBlnRenderDefault){
+      var $nodeContainer = $('#boardMembers');
+      if(paraBlnRenderDefault === true){
+        $nodeContainer.addClass(this.cssClassShowBookSale);
+        $('#boardMembers>*').addClass('hide');
+        $('#pageTitle').addClass('hide');
+      }else{
+        $nodeContainer.removeClass(this.cssClassShowBookSale);
+        $('#boardMembers>*').removeClass('hide');
+        $('#pageTitle').removeClass('hide');
+      }
+
     },
     render:function(options){
 
-      if('blnShowDefault' in options){
-        this.renderDefault();
-        return false;
-      }
+
+
+      this.renderDefault(!options.data);
+
 
       var json = options.data;
       var strSelectorTemplate = '#'+ options.idTemplate;
@@ -66,7 +76,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       $('#colMainCenter').removeClass(this.cssClassShowBookSale);
 
       
-      d.getElementById('pageTitle').scrollIntoView();
+      d.getElementById(this.idViewTitle).scrollIntoView();
 
       if(blnSetBackgroundOpacity === true){
         $(this.selectorViewCfuwBackground).addClass(this.cssClassBackgroundOpacity);
@@ -95,6 +105,10 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var strJsCssClass = 'jsOpacity';
       var blnSetBackgroundOpacity = false;
 
+      console.group('LISTENER NAV BAR');
+        console.log('strId:\t', strId);
+       console.groupEnd(); 
+
       switch(strId){
         case thisNav.id[0]:
           strCid = 'homeId';
@@ -111,6 +125,9 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           model.set('blnSetBackgroundOpacity', true);          
           break;
         case thisNav.id[2]:
+          console.group('THIS NAV ID [2]');
+            console.log('thisNav[2]:\t', thisNav[2]);
+           console.groupEnd(); 
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           break;
         case thisNav.id[3]:
