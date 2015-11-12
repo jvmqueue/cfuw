@@ -3,7 +3,13 @@ body{
     background-color:#007194;    
     font-family:Helvetica, sans-serif;
 }
-
+.positionRelative{
+    position:relative;
+}
+.rotateGoLeft{
+    transform:rotate(-90deg);
+    transform-origin:left top 0;
+}
 .visibilityNone{
     visibility:hidden;
 }
@@ -12,6 +18,12 @@ body{
 }
 .boldest{
     font-weight:900;
+}
+.notBold{
+    font-weight:normal;
+}
+.inlineBlock{
+    display:inline-block;
 }
 .jumbotron{
     background-color:transparent;
@@ -23,8 +35,17 @@ body{
 .marginBottomZero{
     margin-bottom:0;
 }
-.container{
-    
+.paddingRightZero{
+    padding-right:0;
+}
+.paddingLeftZero{
+    padding-left:0;
+}
+.paddingZero{
+    padding:0;
+}
+.textAlignRight{
+    text-align:right;
 }
 .headerRow{
     background-color:transparent;
@@ -32,6 +53,12 @@ body{
 .positionAbsolute{
     position:relative;
     z-index:1;
+}
+.cfuwBackgroundColor{
+    background-color:#FFFFFF;
+}
+.cfuwTextColor{
+    color:#000000;
 }
 /* Begin Header Top */
 .cfuwSaskatoon{
@@ -45,7 +72,6 @@ body{
     background:url(../images/headerTopBackgroundA.png) center center no-repeat transparent;
     background-position-y:1px;
     height:355px;
-    min-width:1150px;
 }
 .headColLogos{
     height:100px;
@@ -167,6 +193,9 @@ body{
     padding:0;
     width:100%;
 }
+.containerPageMiddleBody{
+
+}
 .pageBackgroundImage{
   background-image:url('../images/bridgeBigCenter.png');
   background-size:cover;
@@ -176,13 +205,28 @@ body{
   opacity:0.4;
 }
 .containerPageTitle, .containerPageText{
-  position: relative;
-  top:-777px;
-  color:#FFFFFF;
   padding:0 10%;
 }
+.jsContainerPageText{
+  top:-777px;
+  box-shadow:10px -7px 27px #094E77;
+  border-radius:10px;
+}
+.jsPaddingTopSmallest{
+    padding-top:30px;
+}
+.jsIsSubHeading, p.jsIsSubHeading{
+    color:#EF4136;
+    text-align:center;
+    font-weight:900;
+    font-size:1.5em;
+    position:relative;
+    top:25px;
+}
 .containerPageTitle{
-  padding:0 2%;
+    top:-42em;
+    padding:0 2%;
+    width:52em;
 }
 /* End Bridge image opacity */
 
@@ -257,18 +301,27 @@ body{
     height:777px;
 }
 .jsBookSale{
-    background:url(../images/BookSaleScaled2015Oct08.png) center 0 no-repeat transparent;    
+  top:-777px;
+    background:url(../images/BookSaleFor2016_2015Nov04.png) center 0 no-repeat transparent;    
     background-blend-mode:color;
-    background-size:90% auto;
+    background-size:32% auto;
     margin:2em 0;
     padding:0 0 72% 0;
     border-radius:10px;
+    height:700px;
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        
 }
+.jsCfuwBackgroundColor{
+    background-color:#FFFFFF;
+}
 .cfuwGrayBlue{
     color:#121114;
+}
+.cfuwWhiteBackground{
+    background-image:url(../images/cfuwWhite.png);
+    background-repeat: repeat;    
 }
 .tableFontMedium{
     font-size:1.3em;
@@ -345,6 +398,9 @@ ul>li>a:hover{
         line-height:17px;
         height:32px; 
     }
+    .jsBookSale{
+        background-size:58% auto;
+    }    
 }
 @media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
     .powerOfWomen{
