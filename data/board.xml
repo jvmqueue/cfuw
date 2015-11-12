@@ -1,46 +1,72 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>BOARD</title>
-	<members>
-		<member>
-			<position hashName="title">President</position>
-			<name hashName="name">Janie Charbonneau</name>
-		</member>
+    <title>BOARD</title>
+    <members catagory="board">
         <member>
-            <position hashName="title">Past President</position>
-            <name hashName="name">Gerlinde Sarkar</name>
-        </member>        
-        <member>
-            <position hashName="title">Vice President</position>
-            <name hashName="name">Alix Tumback</name>
+            <position>President</position>
+            <name>Janie Charbonneau</name>
+            <phone>306.242.5912</phone>
+            <email>ajzedc@gmail.com</email>
         </member>
         <member>
-            <position hashName="title">Treasurer</position>
-            <name hashName="name">Michelle Rogers</name>
-        </member>
-        <member>
-            <position hashName="title">Secretaries</position>
-            <name hashName="name">Angela Schmidt (Board Meetings) Victoria Neufeld (General Meetings)</name>
-        </member>
-        <member>
-            <position hashName="title">Membership</position>
-            <name hashName="name">Marlene Chatterson (Chair)</name>
-        </member>
-        <member>
-            <position hashName="title">Membership Committee</position>
-            <name hashName="name">Dorma Guedo, Melinda Waltz, Rita Priestley</name>
+            <position>Past President</position>
+            <name>Gerlinde Sarkar</name>
+            <phone>306.374.3006</phone>
+            <email>gerlinde.sarkar@gmail.com</email>
         </member>        
         <member>
-            <position hashName="title">Program</position>
-            <name hashName="name">Freda Toffolo (Chair)</name>
-        </member>        
+            <position>Vice President</position>
+            <name>Alix Tumback</name>
+            <phone>306.612.1150</phone>
+            <email>alix-tumback@hotmail.com</email>
+        </member>                
         <member>
-            <position hashName="title">Program Committee</position>
-            <name hashName="name">Penny-Lynn Micklewright, Phyllis Austman, Sherry Smith</name>
-        </member>        
+            <position>Treasurer</position>
+            <name>Michelle Rogers</name>
+            <phone>306.370.7313</phone>
+            <email>michelle.rogers015@gmail.com</email>
+        </member>                        
         <member>
-            <position hashName="title">Publicity</position>
-            <name hashName="name">Chair: Malaika Charbonneau, Sherry Smith</name>
-        </member>   
-	</members>
+            <position>Secretary (Board Meetings)</position>
+            <name>Angela Schmidt</name>
+            <phone>306.242.2319</phone>
+            <email>schmidt@sasktel.net</email>
+        </member>                        
+        <member>
+            <position>(General Meetings)</position>
+            <name>Victoria NeufeldtSecretary</name>
+            <phone>306.955.8910</phone>
+            <email>v.neufeldt@sasktel.net</email>
+        </member>
+        <member>
+            <position>Membership (Chair)</position>
+            <name>Marlene Chatterson</name>
+            <phone>306.978.9784</phone>
+            <email>mchatterson@sasktel.net</email>
+        </member>
+        <member>
+            <position>Membership Committee</position>
+            <name>Dorma Guedo</name>
+            <phone>Melinda Waltz</phone>
+            <email>Rita Priestley</email>
+        </member>
+        <member>
+            <position>Program (Chair)</position>
+            <name>Freda Toffolo</name>
+            <phone>306.374.6114</phone>
+            <email>ftoff@shaw.ca</email>
+        </member>
+        <member>
+            <position>Program Committee</position>
+            <name>Penny-Lynn, Micklewright</name>
+            <phone>Phyllis Austman</phone>
+            <email>Sherry Smith</email>
+        </member>
+        <member>
+            <position>Publicity (Chair)</position>
+            <name>Malaika Charbonneau, Sherry Smith</name>
+            <phone>306.262.4393</phone>
+            <email>mzc33.3@gmail.com</email>
+        </member>
+    </members>
 </page>
