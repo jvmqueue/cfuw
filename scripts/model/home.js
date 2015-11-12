@@ -4,17 +4,20 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
       defaults:{
         idAttribute:'homeId',
         arryTemplateData:'',
+        blnSetBackgroundOpacity:false,
         cid:'homeId',
-        data:null
+        data:null,
+        tagsXml:null
       },
       parse:function(paramXmlResponse){
         var xmlResponse = paramXmlResponse;   
+        var tagsXml = this.get('tagsXml');
         var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'members', firstChildTag:'member'});
         this.set('arryTemplateData', hash.pageData);                 
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(){
-
+        this.set('blnSetBackgroundOpacity', false);
       }
 
     }); // End Model = Backbone.Model.extend    

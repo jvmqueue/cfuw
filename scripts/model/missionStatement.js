@@ -5,18 +5,22 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         idAttribute:'missionStatementId',
         cid:'missionStatementId',
         arryTemplateData:null,
+        blnSetBackgroundOpacity:false,
         pageTitle:{},
-        data:null
+        data:null,
+        tagsXml:null
       },
       parse:function(paramXmlResponse){ // override parse, because response is XML
         var xmlResponse = paramXmlResponse;
-        var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'paragraphs', firstChildTag:'paragraph'});
+        var tagsXml = this.get('tagsXml');
+        var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:tagsXml[0], firstChildTag:tagsXml[1]}); 
+
 
         this.set('arryTemplateData', hash.pageData);
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(options){
-
+        this.set('blnSetBackgroundOpacity', false);
         this.set('cid', options.id); // used by view to access model
       }
 

@@ -4,17 +4,28 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
       defaults:{
         idAttribute:'boardId',
         arryTemplateData:'',
+        blnSetBackgroundOpacity:false,
+        blnAddPaddingTopSmallest:false,
+        hashCssClassToSet:{},
         cid:'boardId',
-        data:null
+        data:null,
+        tagsXml:null,
+        tagsXmlChildsCommon:null
       },
       parse:function(paramXmlResponse){
-        var xmlResponse = paramXmlResponse;   
-        var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'members', firstChildTag:'member'});
+        var xmlResponse = paramXmlResponse;
+        var tagsXml = this.get('tagsXml'); // set in View 
+        var tagsXmlChildsCommon = this.get('tagsXmlChildsCommon');
+        var hash = util.fnc.parseXmlToJson(xmlResponse, 
+              {childContainerTag:tagsXml[0], 
+                firstChildTag:tagsXml[1],
+                tagsXmlChildsCommon:tagsXmlChildsCommon});          
         this.set('arryTemplateData', hash.pageData);                 
         this.set('pageTitle', hash.pageTitle);
+        this.set('hashCssClassToSet', hash.hashNodeClass);
       },
       initialize:function(){
-
+        this.set('blnSetBackgroundOpacity', false);
       }
 
     }); // End Model = Backbone.Model.extend    
