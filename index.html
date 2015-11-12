@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CFUW Saskatoon Ltd.</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/index.css?version=0" />
+    <link rel="stylesheet" href="styles/index.css?version=1" />
 
     <!--[if lt IE 9]>
         <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -18,7 +18,7 @@
 <body id="index">
 <!-- http://www.cheatography.com/masonjo/cheat-sheets/bootstrap/ -->
   <div class="container mainContainer">
-    <h3 id="jumbotron" class="jumbotron jumbotronHeaderImage marginTopZero marginBottomZero">
+    <section id="jumbotron" class="jumbotron jumbotronHeaderImage marginTopZero marginBottomZero">
       <div class="row headColLogos">
         <div class="col-xs-2 center-block logo headColLeftLogo">&#160;</div>
         <div id="headColRightLogo" class="col-xs-2 logo headColRightLogo">&#160;</div>      
@@ -30,7 +30,7 @@
       <div class="row powerOfWomen cfuwWhite">
         <h2 class="col-xs-12">The Power Of Women Working Together</h2>
       </div>
-    </h3><!-- .jumbotron -->
+    </section><!-- .jumbotron -->
   <!-- Begin Nav -->
   <nav class="navbar navbar-inverse marginBottomZero">
     <div class="container-fluid">
@@ -49,7 +49,7 @@
             <ul class="dropdown-menu">
               <li><a id="btnMissionStatement" href="JavaScript:void(0);">Mission Statement</a></li>
               <li><a href="JavaScript:void(0);">Contact Us</a></li>
-              <li><a href="JavaScript:void(0);">Board</a></li>
+              <li><a id="btnBoadMembers" href="JavaScript:void(0);">Board</a></li>
               <li><a href="JavaScript:void(0);">Affiliations</a></li>
               <li><a href="JavaScript:void(0);">Membership Application</a></li>
             </ul>
@@ -71,19 +71,30 @@
   </nav>
   <!-- End Nav -->
   <div class="container-fluid containerPageLowerBody">
-    <div id="pageBackgroundImage"class="pageBackgroundImage"></div>
-    <div id="pageTitle"class="containerPageTitle"></div>
-    <section class="row">
-      <div id="boardMembers" class="col-xs-12 containerPageText">&#160;</div> 
-    </section>
+    <div id="pageBackgroundImage"class="pageBackgroundImage"></div>    
+    <div class="row containerPageMiddleBody positionRelative cfuwWhite">
+      <div id="pageTitle"class="text-right containerPageTitle rotateGoLeft"></div>
+      <div id="boardMembers" class="col-xs-10 col-xs-offset-1 containerPageText cfuwTextColor">&#160;</div>       
+    </div>
   </div> <!-- End .container.containerPageLowerBody -->  
 </div> <!-- .container.mainContainer -->
 <script type="text/template" id="templateHome">    
 <tr><td><%= strName%></td><td></td></tr>    
 </script> 
 <script type="text/template" id="templateBoardMembers">    
-<tr><td><%= strName%></td><td></td></tr>    
-</script>  
+<section class="container-fluid">
+  <div class="row">
+    <p class="col-xs-5 bold paddingZero"><%=positionTitle%></p>
+  </div>
+  <dl class="">
+    <dt class="row"><span class="col-md-5 paddingZero notBold"><%=name%></span></dt>
+    <dd class="row">
+      <span class="col-md-4 paddingRightZero textAlignRight"><%=phone%></span>
+      <a class="col-md-4" href="mailto:<%=email%>" target="_top"><%=email%></a>
+    </dd>
+  </dl>
+  </section>
+</script> 
 <script type="text/template" id="templatePageTitle">    
 <h3><%= strNameTitle%></h3>
 </script>       
