@@ -5,6 +5,7 @@ requirejs.config({
         "underscore":["../bower_components/underscore/underscore"],
         "bootstrap":["../bower_components/bootstrap/dist/js/bootstrap.min"],
         "util":["util/util"],
+        "regEx":["regEx/regex"],
         "exception":["exception/exception"],
         "homeModel":["model/home"],
         "boardModel":["model/boardMembers"],

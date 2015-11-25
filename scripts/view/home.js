@@ -1,5 +1,5 @@
-define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel', 'util', 'basePath', 'exception'], 
-  function($, Backbone, homeModel, boardModel, missionStatementModel, util, basePath, exception, undefined){
+define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel', 'util', 'regEx', 'basePath', 'exception'], 
+  function($, Backbone, homeModel, boardModel, missionStatementModel, util, regEx, basePath, exception, undefined){
 
   var w = window, d = document;
   var Collection = Backbone.Collection.extend({});
@@ -12,6 +12,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         data:[],
         tagsXml:[],
         tagsXmlChildsCommon:[],
+        modelCid:[],
         templateId:[]
     },
     newWindow:0,
@@ -30,6 +31,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       for(var name in hash){ // initilize _View mappings
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);     
+        this.nav.modelCid.push(hash[name].modelCid);     
         !!hash[name].tagsXml ? this.nav.tagsXml.push(hash[name].tagsXml) : '';          
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
@@ -41,9 +43,11 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     },
     renderDefault:function(paraBlnRenderDefault){
       var $nodeContainer = $('#boardMembers');
+      var strJsCssClass = 'jsOpacity';
       if(paraBlnRenderDefault === true){  // show book sale image
         $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.addClass(this.cssClassShowBookSale);
+        $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
         $('#boardMembers>*').addClass('hide');
         $('#pageTitle').addClass('hide');
         $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
@@ -52,10 +56,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     },
     render:function(options){
       
-      var hashCssClassToSet = options.hashCssClassToSet || '';
-
-      if(!options.data){
-        this.renderDefault(!options.data);
+      if(!options){ // node clicked that we are not monitoring
+        this.renderDefault(true); // true for render book sale
         return void(0);
       }else{ // TODO: this is hack to fix a bug, this block was causing underscore to throw exceptions
         var $nodeContainer = $(this.selectorViewContainer);
@@ -65,7 +67,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');        
       }
-
+      var hashCssClassToSet = options.hashCssClassToSet || '';
       var json = options.data;
       var strModelId = options.idModel;
       var arryTagsXml = options.tagsXml;
@@ -103,7 +105,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       }
 
       
-      d.getElementById('boardMembers').scrollIntoView();
+      d.getElementById('navBarTop').scrollIntoView();
 
       if(blnSetBackgroundOpacity === true){
         $(this.selectorViewCfuwBackground).addClass(this.cssClassBackgroundOpacity);
@@ -134,8 +136,11 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     },
     listenerNavBar:function(e){
       var nodeTarget = e.target;
+      var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber);
       var strId = nodeTarget.getAttribute('id') || nodeTarget.parentNode.getAttribute('for');
+      strId = regEx.fnc.strRemoveWhiteSpace(strId);
       var thisNav = this.nav; //  view mappings set in this.initialize, configMappings.js controls this data
+
       var model = null;
       var strDataPath = null;
       var arryTagsXml = null;
@@ -148,32 +153,31 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var strJsCssClass = 'jsOpacity';
       var blnSetBackgroundOpacity = false;
       var $nodeExist = $(this.selectorViewContainer);
+      var strSwitchCase = thisNav.id[intDataIndexNumber];
+
+      if(typeof strSwitchCase == 'undefined'){ 
+        this.render(); // can always call render with no args to render default view
+        return void(0);
+      }
       
       $nodeExist.removeClass('jsContainerPageText'); // reset
+      // access our configMapping.js JSON relative to data-index-number html attribute. HTML5 construct
+      strCid = thisNav.modelCid[intDataIndexNumber];
+      strDataPath = thisNav.data[intDataIndexNumber];
+      arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
+      arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber];          
+      arryTemplateId = thisNav.templateId[intDataIndexNumber];          
+
 
       switch(strId){
         case thisNav.id[0]:
-          strCid = 'homeId';
-          strDataPath = thisNav.data[0];
-          arryTagsXml = thisNav.tagsXml[0];
-          arryTagsCommon = thisNav.tagsXmlChildsCommon[0];
-          arryTemplateId = thisNav.templateId[0];
-          model = homeModel.fnc.getInstance({modelCid:strCid});
-          model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
+          model = missionStatementModel.fnc.getInstance({modelCid:strCid});
           this.blnSetBackgroundOpacity = true; 
           this.blnAddPaddingTopSmallest = false;
           this.blnSetBackgroundWhite = false;
           break;
         case thisNav.id[1]:
-          strCid = 'missionStatementId';
-          strDataPath = thisNav.data[1];
-          arryTagsXml = thisNav.tagsXml[1];
-          arryTagsCommon = thisNav.tagsXmlChildsCommon[1];          
-          arryTemplateId = thisNav.templateId[1];          
           model = missionStatementModel.fnc.getInstance({modelCid:strCid});
-          model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
-          model.set('tagsXml', arryTagsXml);
-          model.set('tagsXmlChildsCommon', arryTagsCommon);
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;
           break;
@@ -182,15 +186,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           break;
         case thisNav.id[3]:
-          strCid = 'boardId';
-          strDataPath = thisNav.data[3];  // data from configMapping.js        
-          arryTagsXml = thisNav.tagsXml[3];  // data from configMapping.js
-          arryTagsCommon = thisNav.tagsXmlChildsCommon[3];  // data from configMapping.js
-          arryTemplateId = thisNav.templateId[3];  // data from configMapping.js
-          model = boardModel.fnc.getInstance({modelId:strCid});
-          model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
-          model.set('tagsXml', arryTagsXml);
-          model.set('tagsXmlChildsCommon', arryTagsCommon);
+          model = boardModel.fnc.getInstance({modelId:strCid}); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
@@ -207,7 +203,10 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           blnShowDefault = true;          
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
       } // End switch
-
+      // assigned model in above switch, now set the properties
+      model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
+      model.set('tagsXml', arryTagsXml);
+      model.set('tagsXmlChildsCommon', arryTagsCommon); 
       
       var that = this;
 

@@ -31,7 +31,14 @@ define([''], function(undefined){  // no dependencies
             var arrayReg = reg.exec(paramString);
             var strId = arrayReg[2];
             return strId;
-        }
+        },
+        strRemoveWhiteSpace:function(paramString){
+            var reg = /(\s)/gi; 
+            if(paramString === null){
+                return 'regex util.fnc paramString not received as parameter';
+            }
+            return paramString.replace(reg, '');
+        }        
         
     };
     return{
