@@ -1,5 +1,5 @@
-define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel', 'util', 'regEx', 'basePath', 'exception'], 
-  function($, Backbone, homeModel, boardModel, missionStatementModel, util, regEx, basePath, exception, undefined){
+define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel', 'contactUsModel', 'util', 'regEx', 'basePath', 'exception'], 
+  function($, Backbone, homeModel, boardModel, missionStatementModel, contactUsModel, util, regEx, basePath, exception, undefined){
 
   var w = window, d = document;
   var Collection = Backbone.Collection.extend({});
@@ -68,8 +68,9 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');        
       }
       var hashCssClassToSet = options.hashCssClassToSet || '';
-      var json = options.data;
+      
       var strModelId = options.idModel;
+      var json = this.collection.where({'cid':strModelId})[0].get('arryTemplateData');
       var arryTagsXml = options.tagsXml;
       var blnSetBackgroundOpacity = this.blnSetBackgroundOpacity;
       var blnSetBackgroundWhite = this.blnSetBackgroundWhite;
@@ -171,7 +172,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
 
       switch(strId){
         case thisNav.id[0]:
-          model = missionStatementModel.fnc.getInstance({modelCid:strCid});
+          model = homeModel.fnc.getInstance({modelCid:strCid});
           this.blnSetBackgroundOpacity = true; 
           this.blnAddPaddingTopSmallest = false;
           this.blnSetBackgroundWhite = false;
@@ -182,6 +183,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           this.blnSetBackgroundWhite = true;
           break;
         case thisNav.id[2]:
+         model = contactUsModel.fnc.getInstance({modelCid:strCid});
           blnShowDefault = true;
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           break;
