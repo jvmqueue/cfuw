@@ -9,6 +9,7 @@ requirejs.config({
         "exception":["exception/exception"],
         "homeModel":["model/home"],
         "boardModel":["model/boardMembers"],
+        "contactUsModel":["model/contactUs"],
         "missionStatementModel":["model/missionStatement"],
         "homeView":["view/home"],
         "basePath":["basePath"]
