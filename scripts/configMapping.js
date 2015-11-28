@@ -16,7 +16,7 @@ define([], function(undefined){
             CONTACT_US:{control:'btnContactUs', 
                 data:'contactUs.xml', 
                 tagsXml:['members', 'member'],
-                tagsXmlChildsCommon:['heading', 'text'],
+                tagsXmlChildsCommon:['position', 'name', 'email'],
                 modelCid:'contactUsId',
                 templateId:'templateContactUs'},
             BOARD:{control:'btnBoadMembers', 
