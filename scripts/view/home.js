@@ -70,6 +70,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var hashCssClassToSet = options.hashCssClassToSet || '';
       
       var strModelId = options.idModel;
+      // optimization: get data on the model. This prevents us from waiting for HTTP Response
       var json = this.collection.where({'cid':strModelId})[0].get('arryTemplateData');
       var arryTagsXml = options.tagsXml;
       var blnSetBackgroundOpacity = this.blnSetBackgroundOpacity;
