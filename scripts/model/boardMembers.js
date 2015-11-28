@@ -3,7 +3,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
     var Model = Backbone.Model.extend({ // private
       defaults:{
         idAttribute:'boardId',
-        arryTemplateData:'',
+        arryTemplateData:false,
         blnSetBackgroundOpacity:false,
         blnAddPaddingTopSmallest:false,
         hashCssClassToSet:{},
