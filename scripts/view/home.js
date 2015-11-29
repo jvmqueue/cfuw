@@ -70,9 +70,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var hashCssClassToSet = options.hashCssClassToSet || '';
       
       var strModelId = options.idModel;
-      // optimization: get data on the model. This prevents us from waiting for HTTP Response
       var json = this.collection.where({'cid':strModelId})[0].get('arryTemplateData');
-      var arryTagsXml = options.tagsXml;
+      
       var blnSetBackgroundOpacity = this.blnSetBackgroundOpacity;
       var blnSetBackgroundWhite = this.blnSetBackgroundWhite;
       var blnAddPadding = this.blnAddPaddingTopSmallest;
@@ -136,7 +135,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       if (window.focus) {this.newWindow.focus()}
       return false;
     },
-    listenerNavBar:function(e){
+    listenerNavBar:function(e){ // listening to the nav bar, using event delegation
       var nodeTarget = e.target;
       var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber);
       var strId = nodeTarget.getAttribute('id') || nodeTarget.parentNode.getAttribute('for');
@@ -171,7 +170,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       arryTemplateId = thisNav.templateId[intDataIndexNumber];          
 
 
-      switch(strId){
+      switch(strId){ // discover which node user clicked
         case thisNav.id[0]:
           model = homeModel.fnc.getInstance({modelCid:strCid});
           this.blnSetBackgroundOpacity = true; 
@@ -210,25 +209,28 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
       model.set('tagsXml', arryTagsXml);
       model.set('tagsXmlChildsCommon', arryTagsCommon); 
+      var hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template
+      var strIdTemplate = model.get('templateId');
       
       var that = this;
 
-      if(blnShowDefault === false){
+      if( ( model.get('blnDataHasBeenSet') === true ) ){ // do not perform HTTP Request, data has been set on model
+            that.render({idModel:strCid, 
+              idTemplate:strIdTemplate, 
+              hashCssClassToSet:hashCssClassToSet});
+            return void(0);
+      }
+
+      if(blnShowDefault === false && ( model.get('blnDataHasBeenSet') === false ) ){ // no need to request if data is set on model
         this.collection.add(model);
         model.fetch({
           url:basePath.basePath() + strDataPath,
           dataType:'xml',
-          success:function(){
-            var modelSuccess = that.collection.where({'cid':strCid})[0];
-            var strIdTemplate = modelSuccess.get('templateId');
-            var json = modelSuccess.get('arryTemplateData'); // data to merge with template
-            var hashCssClassToSet = modelSuccess.get('hashCssClassToSet'); // data to merge with template
-            var tagsXml = arryTagsXml;
+          success:function(){            
             that.render({idModel:strCid, 
               idTemplate:strIdTemplate, 
-              data:json, 
-              tagsXml:tagsXml,
               hashCssClassToSet:hashCssClassToSet});
+            model.set('blnDataHasBeenSet', true);  // optimization: flag indicates data set, don't need to perform HTTP Request
           },
           error:function(paramThisView, paramException){
             throw new exception.fnc.http({that:paramThisView, exception:paramException, cfuwException:'Fetch in home View Failed'}); 
