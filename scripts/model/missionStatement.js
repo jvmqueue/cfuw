@@ -6,6 +6,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         cid:'missionStatementId',
         arryTemplateData:null,
         blnSetBackgroundOpacity:false,
+        blnDataHasBeenSet:false,
         pageTitle:{},
         data:null,
         tagsXml:null

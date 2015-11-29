@@ -5,6 +5,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         idAttribute:'homeId',
         arryTemplateData:'',
         blnSetBackgroundOpacity:false,
+        blnDataHasBeenSet:false,
         cid:'homeId',
         data:null,
         tagsXml:null

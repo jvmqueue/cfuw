@@ -5,6 +5,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         idAttribute:'contactUsId',
         arryTemplateData:'',
         blnSetBackgroundOpacity:false,
+        blnDataHasBeenSet:false,
         blnAddPaddingTopSmallest:false,
         hashCssClassToSet:{},
         cid:'contactUsId',
