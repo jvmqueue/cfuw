@@ -67,9 +67,10 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');        
       }
-      var hashCssClassToSet = options.hashCssClassToSet || '';
+      
       
       var strModelId = options.idModel;
+      var hashCssClassToSet = this.collection.where({'cid':strModelId})[0].get('hashCssClassToSet') || '';
       var json = this.collection.where({'cid':strModelId})[0].get('arryTemplateData');
       
       var blnSetBackgroundOpacity = this.blnSetBackgroundOpacity;
@@ -142,7 +143,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       strId = regEx.fnc.strRemoveWhiteSpace(strId);
       var thisNav = this.nav; //  view mappings set in this.initialize, configMappings.js controls this data
 
-      var model = null;
+      var model = this.model;
       var strDataPath = null;
       var arryTagsXml = null;
       var arryTagsCommon = null;
@@ -183,7 +184,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           this.blnSetBackgroundWhite = true;
           break;
         case thisNav.id[2]:
-         model = contactUsModel.fnc.getInstance({modelCid:strCid});
+          model = contactUsModel.fnc.getInstance({modelCid:strCid});
           blnShowDefault = true;
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           break;
@@ -215,9 +216,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var that = this;
 
       if( ( model.get('blnDataHasBeenSet') === true ) ){ // do not perform HTTP Request, data has been set on model
-            that.render({idModel:strCid, 
-              idTemplate:strIdTemplate, 
-              hashCssClassToSet:hashCssClassToSet});
+            that.render({idModel:strCid, idTemplate:strIdTemplate});
             return void(0);
       }
 
@@ -227,9 +226,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           url:basePath.basePath() + strDataPath,
           dataType:'xml',
           success:function(){            
-            that.render({idModel:strCid, 
-              idTemplate:strIdTemplate, 
-              hashCssClassToSet:hashCssClassToSet});
+            that.render({idModel:strCid, idTemplate:strIdTemplate});
+            model.set('hashCssClassToSet', hashCssClassToSet);
             model.set('blnDataHasBeenSet', true);  // optimization: flag indicates data set, don't need to perform HTTP Request
           },
           error:function(paramThisView, paramException){
