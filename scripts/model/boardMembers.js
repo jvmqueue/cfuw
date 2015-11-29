@@ -5,6 +5,7 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         idAttribute:'boardId',
         arryTemplateData:false,
         blnSetBackgroundOpacity:false,
+        blnDataHasBeenSet:false,
         blnAddPaddingTopSmallest:false,
         hashCssClassToSet:{},
         cid:'boardId',
