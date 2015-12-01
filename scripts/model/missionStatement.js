@@ -1,15 +1,9 @@
-define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
+define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbone, commonModelDefaults, util, undefined){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
         idAttribute:'missionStatementId',
-        cid:'missionStatementId',
-        arryTemplateData:null,
-        blnSetBackgroundOpacity:false,
-        blnDataHasBeenSet:false,
-        pageTitle:{},
-        data:null,
-        tagsXml:null
+        cid:'missionStatementId'
       },
       parse:function(paramXmlResponse){ // override parse, because response is XML
         var xmlResponse = paramXmlResponse;
@@ -21,20 +15,20 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(options){
-        this.set('blnSetBackgroundOpacity', false);
-        this.set('cid', options.id); // used by view to access model
+        for(var name in commonModelDefaults.properties){ // composition, common model default values defined in commonModelDefaults.js
+           this.set(name, commonModelDefaults.properties[name]);
+        }       
       }
 
     }); // End Model = Backbone.Model.extend    
 
   var _fnc = {
     instance:null,
-    getInstance:function(options){ // defines Model as a singleton
-      var strModelId = options.modelCid;
+    getInstance:function(){ // defines Model as a singleton
       if(!!_fnc.instance){
         return _fnc.instance;
       }else{
-        _fnc.instance = new Model({id:strModelId});
+        _fnc.instance = new Model();
       }
       return _fnc.instance;
     }

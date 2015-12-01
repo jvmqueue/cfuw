@@ -1,14 +1,9 @@
-define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
+define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbone, commonModelDefaults, util, undefined){
     
     var Model = Backbone.Model.extend({ // private
       defaults:{
         idAttribute:'homeId',
-        arryTemplateData:'',
-        blnSetBackgroundOpacity:false,
-        blnDataHasBeenSet:false,
-        cid:'homeId',
-        data:null,
-        tagsXml:null
+        cid:'homeId'
       },
       parse:function(paramXmlResponse){
         var xmlResponse = paramXmlResponse;   
@@ -18,19 +13,20 @@ define(['jQuery', 'Backbone', 'util'], function($, Backbone, util, undefined){
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(){
-        this.set('blnSetBackgroundOpacity', false);
+        for(var name in commonModelDefaults.properties){ // composition, common model default values defined in commonModelDefaults.js
+           this.set(name, commonModelDefaults.properties[name]);
+        }       
       }
 
     }); // End Model = Backbone.Model.extend    
 
   var _fnc = {
     instance:null,
-    getInstance:function(options){ // defines Model as a singleton
-      var strModelId = options.modelId;
+    getInstance:function(){ // defines Model as a singleton
       if(!!_fnc.instance){
         return _fnc.instance;
       }else{
-        _fnc.instance = new Model({id:strModelId});
+        _fnc.instance = new Model();
       }
       return _fnc.instance;
     }
