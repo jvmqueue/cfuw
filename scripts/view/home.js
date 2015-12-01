@@ -170,7 +170,6 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber];          
       arryTemplateId = thisNav.templateId[intDataIndexNumber];          
 
-
       switch(strId){ // discover which node user clicked
         case thisNav.id[0]:
           model = homeModel.fnc.getInstance();
@@ -185,8 +184,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           break;
         case thisNav.id[2]:
           model = contactUsModel.fnc.getInstance();
-          blnShowDefault = true;
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          this.blnSetBackgroundWhite = true;
           break;
         case thisNav.id[3]:
           model = boardModel.fnc.getInstance(); 
@@ -207,6 +206,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
       } // End switch
       // assigned model in above switch, now set the properties
+
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
       model.set('tagsXml', arryTagsXml);
       model.set('tagsXmlChildsCommon', arryTagsCommon); 
