@@ -138,15 +138,14 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     },
     listenerNavBar:function(e){ // listening to the nav bar, using event delegation
       var nodeTarget = e.target;
+      // HTML5 let HTML element define index for accessing associated data
       var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber);
       var strId = nodeTarget.getAttribute('id') || nodeTarget.parentNode.getAttribute('for');
       strId = regEx.fnc.strRemoveWhiteSpace(strId);
       var thisNav = this.nav; //  view mappings set in this.initialize, configMappings.js controls this data
-
-      var model = this.model;
+      var model = this.model; // reference variable, pointer
       var strDataPath = null;
       var arryTagsXml = null;
-      var arryTagsCommon = null;
       var arryTagsCommon = null;
       var arryTemplateId = null;
       var strCid = null;
@@ -156,6 +155,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var blnSetBackgroundOpacity = false;
       var $nodeExist = $(this.selectorViewContainer);
       var strSwitchCase = thisNav.id[intDataIndexNumber];
+      var hashCssClassToSet = null;
 
       if(typeof strSwitchCase == 'undefined'){ 
         this.render(); // can always call render with no args to render default view
@@ -173,23 +173,23 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
 
       switch(strId){ // discover which node user clicked
         case thisNav.id[0]:
-          model = homeModel.fnc.getInstance({modelCid:strCid});
+          model = homeModel.fnc.getInstance();
           this.blnSetBackgroundOpacity = true; 
           this.blnAddPaddingTopSmallest = false;
           this.blnSetBackgroundWhite = false;
           break;
         case thisNav.id[1]:
-          model = missionStatementModel.fnc.getInstance({modelCid:strCid});
+          model = missionStatementModel.fnc.getInstance();
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;
           break;
         case thisNav.id[2]:
-          model = contactUsModel.fnc.getInstance({modelCid:strCid});
+          model = contactUsModel.fnc.getInstance();
           blnShowDefault = true;
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           break;
         case thisNav.id[3]:
-          model = boardModel.fnc.getInstance({modelId:strCid}); 
+          model = boardModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
@@ -210,8 +210,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
       model.set('tagsXml', arryTagsXml);
       model.set('tagsXmlChildsCommon', arryTagsCommon); 
-      var hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template
-      var strIdTemplate = model.get('templateId');
+      hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template. set in model
+      strIdTemplate = model.get('templateId');
       
       var that = this;
 
