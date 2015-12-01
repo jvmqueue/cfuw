@@ -48,7 +48,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="JavaScript:void(0);">About Us<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a id="btnMissionStatement" data-index-number="1" href="JavaScript:void(0);">Mission Statement</a></li>
-              <li><a  data-index-number="2" href="JavaScript:void(0);">Contact Us</a></li>
+              <li><a  id="btnContactUs" data-index-number="2" href="JavaScript:void(0);">Contact Us</a></li>
               <li><a id="btnBoadMembers" data-index-number="3" href="JavaScript:void(0);">Board</a></li>
               <li><a data-index-number="4" href="JavaScript:void(0);">Affiliations</a></li>
               <li><a data-index-number="5" href="JavaScript:void(0);">Membership Application</a></li>
@@ -99,6 +99,9 @@
 <h3><%= strNameTitle%></h3>
 </script>       
 <script type="text/template" id="templateMissionStatement">    
+<p class="<%= strTagName%>"><%= strName%></p>
+</script>       
+<script type="text/template" id="templateContactUs">    
 <p class="<%= strTagName%>"><%= strName%></p>
 </script>       
   <!-- scripts / config defines script dependencies in a single location -->
