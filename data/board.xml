@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-    <title>BOARD</title>
+    <title>BOARD 2015 - 2016</title>
     <members catagory="board">
         <member>
             <position>President</position>
@@ -26,20 +26,14 @@
             <phone>306.370.7313</phone>
             <email>michelle.rogers015@gmail.com</email>
         </member>                        
-        <member>
-            <position>Secretary (Board Meetings)</position>
+        <member>  
+            <position>Board Secretary</position>
             <name>Angela Schmidt</name>
             <phone>306.242.2319</phone>
             <email>schmidt@sasktel.net</email>
         </member>                        
         <member>
-            <position>(General Meetings)</position>
-            <name>Victoria NeufeldtSecretary</name>
-            <phone>306.955.8910</phone>
-            <email>v.neufeldt@sasktel.net</email>
-        </member>
-        <member>
-            <position>Membership (Chair)</position>
+            <position>Membership</position>
             <name>Marlene Chatterson</name>
             <phone>306.978.9784</phone>
             <email>mchatterson@sasktel.net</email>
@@ -51,22 +45,64 @@
             <email>Rita Priestley</email>
         </member>
         <member>
-            <position>Program (Chair)</position>
+            <position>Program</position>
             <name>Freda Toffolo</name>
             <phone>306.374.6114</phone>
             <email>ftoff@shaw.ca</email>
         </member>
         <member>
-            <position>Program Committee</position>
-            <name>Penny-Lynn, Micklewright</name>
-            <phone>Phyllis Austman</phone>
-            <email>Sherry Smith</email>
-        </member>
-        <member>
-            <position>Publicity (Chair)</position>
-            <name>Malaika Charbonneau, Sherry Smith</name>
+            <position>Publicity</position>
+            <name>Malaika Charbonneau</name>
             <phone>306.262.4393</phone>
             <email>mzc33.3@gmail.com</email>
-        </member>
+        </member>        
+        <member>
+            <position>Social</position>
+            <name>Myrt Ryhorchuk</name>
+            <phone>306.373.1201</phone>
+            <email>mjryh@sasktel.net</email>
+        </member>  
+        <member>
+            <position>Book Sale</position>
+            <name>Alverta Polson</name>
+            <phone>306.652.7708</phone>
+            <email>johnpolson@shaw.ca</email>
+        </member>  
+        <member>
+            <position>Scholarship</position>
+            <name>Mary McKay</name>
+            <phone>306.374.9407</phone>
+            <email>mckaymk@sasktel.net</email>
+        </member>  
+        <member>
+            <position>Finance</position>
+            <name>Michelle Rogers</name>
+            <phone>306.370.7313</phone>
+            <email>michelle.rogers015@gmail.com</email>
+        </member>  
+        <member>
+            <position>Archives</position>
+            <name>Margaret Hendry</name>
+            <phone>306.373.8693</phone>
+            <email>margaret.hendry@shaw.ca</email>
+        </member>  
+        <member>
+            <position>Newsletter</position>
+            <name>Gerlinde Sarkar</name>
+            <phone>306.374.3006</phone>
+            <email>gerlinde.sarkar@gmail.com</email>
+        </member>  
+        <member>
+            <position>Newsletter</position>
+            <name>Tracy Muggli</name>
+            <phone>306.668.1044</phone>
+            <email>tmuggli@shaw.ca</email>
+        </member>          
+        <member>
+            <position>Council of Women</position>
+            <name>Jean Thompson</name>
+            <phone>306.373.2925</phone>
+            <email>jeant@sasktel.net</email>
+        </member>  
     </members>
 </page>
