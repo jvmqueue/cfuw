@@ -28,7 +28,7 @@ define([], function(undefined){
             AFFILIATIONS:{control:'btnAffiliations', 
                 data:'affiliations.xml', 
                 tagsXml:['members', 'member'],
-                tagsXmlChildsCommon:['heading', 'text'],
+                tagsXmlChildsCommon:['position', 'name'],
                 modelCid:'affiliationsId',
                 templateId:'templateAffiliations'},
             MEMBERSHIP_APPLICATION:{control:'btnMembershipApplication', 
