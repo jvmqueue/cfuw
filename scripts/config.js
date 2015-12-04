@@ -14,6 +14,11 @@ requirejs.config({
         "missionStatementModel":["model/missionStatement"],
         "affiliationsModel":["model/affiliations"],
         "membershipApplicationModel":["model/membershipApplication"],
+        "newsModel":["model/news"],
+        "meetingsModel":["model/meetings"],
+        "eventsModel":["model/events"],
+        "interestGroupsModel":["model/interestGroups"],
+        "scholarshipsModel":["model/scholarships"],
         "homeView":["view/home"],
         "basePath":["basePath"]
     },
