@@ -1,5 +1,28 @@
-define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel', 'contactUsModel', 'util', 'regEx', 'basePath', 'exception'], 
-  function($, Backbone, homeModel, boardModel, missionStatementModel, contactUsModel, util, regEx, basePath, exception, undefined){
+define(['jQuery', 
+  'Backbone', 
+  'homeModel', 
+  'boardModel', 
+  'missionStatementModel', 
+  'contactUsModel', 
+  'affiliationsModel', 
+  'membershipApplicationModel', 
+  'util', 
+  'regEx', 
+  'basePath', 
+  'exception'], 
+  function($, 
+    Backbone, 
+    homeModel, 
+    boardModel, 
+    missionStatementModel, 
+    contactUsModel, 
+    affiliationsModel, 
+    membershipApplicationModel,
+    util, 
+    regEx, 
+    basePath, 
+    exception, 
+    undefined){
 
   var w = window, d = document;
   var Collection = Backbone.Collection.extend({});
@@ -68,7 +91,6 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         $('#boardMembers>*').removeClass('hide');
         $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
-        $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade'); // reset
       }
       
       
@@ -159,12 +181,13 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       var strSwitchCase = thisNav.id[intDataIndexNumber];
       var hashCssClassToSet = null;
 
-      if(typeof strSwitchCase == 'undefined'){ 
-        this.render(); // can always call render with no args to render default view
+      if(typeof strSwitchCase == 'undefined'){ // can always call render with no args to render default view
+        this.render();
         return void(0);
       }
       
       $nodeExist.removeClass('jsContainerPageText'); // reset
+      $nodeExist.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade'); // reset
       // access our configMapping.js JSON relative to data-index-number html attribute. HTML5 construct
       strCid = thisNav.modelCid[intDataIndexNumber];
       strDataPath = thisNav.data[intDataIndexNumber];
@@ -196,12 +219,19 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
           this.blnAddPaddingTopSmallest = true;
           break;
         case thisNav.id[4]:
-          blnShowDefault = true;
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          model = affiliationsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
           break;
         case thisNav.id[5]:
-          blnShowDefault = true;
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+        console.group('SWITCH MEMBERSHIP APPLICATION');
+          console.log(':\t', 'Reached');
+         console.groupEnd(); 
+          model = membershipApplicationModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
           break;          
         default:
           blnShowDefault = true;          
@@ -210,8 +240,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       // assigned model in above switch, now set the properties
 
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
-      model.set('tagsXml', arryTagsXml);
-      model.set('tagsXmlChildsCommon', arryTagsCommon); 
+      model.set('tagsXml', arryTagsXml); // allow the associated model to access XML data via the top XML tag names
+      model.set('tagsXmlChildsCommon', arryTagsCommon); // allow the associated model to accesss XML data via child tag names
       hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template. set in model
       strIdTemplate = model.get('templateId');
       
