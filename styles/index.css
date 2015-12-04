@@ -69,8 +69,7 @@ body{
     color:#000000;
 }
 .cfuwLogo{
-    background:url(../images/logoCFUWSmall.png) 1.0em 1.0em no-repeat transparent;
-    background-size:8% auto;
+    background:url(../images/logoCFUW.png) left center no-repeat transparent;
 }
 /* Begin Header Top */
 .cfuwSaskatoon{
@@ -217,7 +216,7 @@ body{
   opacity:0.4;
 }
 .containerPageTitle, .containerPageText{
-  padding:8.0em 10%;
+  padding:2.5em 10%;
 }
 .jsContainerPageText{
   top:-777px;
@@ -330,6 +329,10 @@ body{
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        
+}
+.jsCfuwTopImageFade{
+    background:url(../images/logoCFUW.png) 0.5em 0.5em no-repeat, url(../images/cascadingTopImage.png) 0.5em 0.07em no-repeat;   
+    background-size:30px, 100%;
 }
 .jsCfuwBackgroundColor{
     background-color:#FFFFFF;
