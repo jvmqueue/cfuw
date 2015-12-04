@@ -57,14 +57,14 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="JavaScript:void(0);">Announcements<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a data-index-number="6" href="JavaScript:void(0);">News</a></li>
-              <li><a data-index-number="7" href="JavaScript:void(0);">Meetings</a></li>
-              <li><a data-index-number="8" href="JavaScript:void(0);">Events</a></li>
-              <li><a data-index-number="9" href="JavaScript:void(0);">Interest Groups</a></li>
+              <li><a id="btnNews" data-index-number="6" href="JavaScript:void(0);">News</a></li>
+              <li><a  id="btnMeetings" data-index-number="7" href="JavaScript:void(0);">Meetings</a></li>
+              <li><a  id="btnEvents" data-index-number="8" href="JavaScript:void(0);">Events</a></li>
+              <li><a  id="btnInterestGroups" data-index-number="9" href="JavaScript:void(0);">Interest Groups</a></li>
             </ul>
           </li>
-          <li><a data-index-number="10" href="JavaScript:void(0);">Book Sale</a></li> 
-          <li><a data-index-number="11" href="JavaScript:void(0);">Scholarships</a></li> 
+          <li><a data-index-number="11" href="JavaScript:void(0);">Book Sale</a></li> 
+          <li><a id="btnScholarships" data-index-number="10" href="JavaScript:void(0);">Scholarships</a></li> 
         </ul>
       </div>
     </div>
@@ -99,6 +99,21 @@
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>       
 <script type="text/template" id="templateAffiliations">    
+<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+</script>
+<script type="text/template" id="templateNews">    
+<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+</script>       
+<script type="text/template" id="templateMeetings">    
+<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+</script>       
+<script type="text/template" id="templateEvents">    
+<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+</script>       
+<script type="text/template" id="templateInterestGroups">    
+<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+</script>       
+<script type="text/template" id="templateScholarships">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>       
   <!-- scripts / config defines script dependencies in a single location -->
