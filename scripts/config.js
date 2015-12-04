@@ -12,6 +12,8 @@ requirejs.config({
         "commonModelDefaults":["model/commonModelDefaults"],
         "contactUsModel":["model/contactUs"],
         "missionStatementModel":["model/missionStatement"],
+        "affiliationsModel":["model/affiliations"],
+        "membershipApplicationModel":["model/membershipApplication"],
         "homeView":["view/home"],
         "basePath":["basePath"]
     },
