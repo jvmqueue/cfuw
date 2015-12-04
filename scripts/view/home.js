@@ -26,6 +26,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
     cssClassWhiteBackground:'jsCfuwBackgroundColor',
     blnSetBackgroundOpacity:false,
     blnSetBackgroundWhite:false,
+    blnSetCfuwCascadingTopBackground:false,
     initialize:function(options){
       var hash = options; 
       for(var name in hash){ // initilize _View mappings
@@ -51,10 +52,11 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         $('#boardMembers>*').addClass('hide');
         $('#pageTitle').addClass('hide');
         $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
+        $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade');
       }
 
     },
-    render:function(options){
+    render:function(options){   
       
       if(!options){ // node clicked that we are not monitoring
         this.renderDefault(true); // true for render book sale
@@ -65,7 +67,8 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
         $nodeContainer.removeClass(this.cssClassShowBookSale);
         $('#boardMembers>*').removeClass('hide');
         $('#pageTitle').removeClass('hide');
-        $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');        
+        $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
+        $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade'); // reset
       }
       
       
@@ -116,6 +119,7 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       }
       if(blnSetBackgroundWhite === true){ // assume white background has text
         $nodeExist.addClass('jsCfuwBackgroundColor');
+        $nodeExist.addClass('jsContainerPageText').addClass('jsCfuwTopImageFade');
       }else{
         $nodeExist.removeClass('jsCfuwBackgroundColor');
       }
@@ -124,8 +128,6 @@ define(['jQuery', 'Backbone', 'homeModel', 'boardModel', 'missionStatementModel'
       }else{
         $nodeExist.removeClass('jsPaddingTopSmallest');
       }      
-
-      $nodeExist.addClass('jsContainerPageText');
 
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
     },
