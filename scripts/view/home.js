@@ -6,6 +6,11 @@ define(['jQuery',
   'contactUsModel', 
   'affiliationsModel', 
   'membershipApplicationModel', 
+  'newsModel', 
+  'meetingsModel',
+  'eventsModel',  
+  'interestGroupsModel',  
+  'scholarshipsModel',  
   'util', 
   'regEx', 
   'basePath', 
@@ -18,6 +23,11 @@ define(['jQuery',
     contactUsModel, 
     affiliationsModel, 
     membershipApplicationModel,
+    newsModel,
+    meetingsModel,
+    eventsModel,
+    interestGroupsModel,
+    scholarshipsModel,
     util, 
     regEx, 
     basePath, 
@@ -224,15 +234,42 @@ define(['jQuery',
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;
-        case thisNav.id[5]:
-        console.group('SWITCH MEMBERSHIP APPLICATION');
-          console.log(':\t', 'Reached');
-         console.groupEnd(); 
+        case thisNav.id[5]: 
           model = membershipApplicationModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
-          break;          
+          break;
+        case thisNav.id[6]:
+          model = newsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;           
+        case thisNav.id[7]: 
+          model = meetingsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;               
+        case thisNav.id[8]: 
+          model = eventsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;             
+        case thisNav.id[9]: 
+          model = interestGroupsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;                     
+        case thisNav.id[10]: 
+          model = scholarshipsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;                                                                    
         default:
           blnShowDefault = true;          
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
