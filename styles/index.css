@@ -103,15 +103,13 @@ body{
     position:relative;
     left:-7%;
 }
-.logo.headColRightLogo:hover{
-    
-}
 .logo.headColRightLogo, .logo.headColLeftLogo{
     padding:17.36% 0;
     background-size:50.36% auto;
 }
 .logo.headColRightLogo:hover{
-
+    background-position-y:-264px;
+    cursor:pointer;
 }
 .headColCenter{ 
 
@@ -248,10 +246,6 @@ body{
 .rowMain{
 
 }
-    .colMainLeft{
-        background-color:red;
-        width:22%;
-    }
     .colMainCenter{
         
     }
@@ -424,6 +418,13 @@ ul>li>a:hover{
     }
     .jsBookSale{
         background-size:58% auto;
+    }
+    .logo.headColRightLogo{
+        background-position-y:-5px;
+        padding:2.5% 0;
+    }
+    .logo.headColRightLogo:hover{
+        background-position-y:-87px;
     }    
 }
 @media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
@@ -436,14 +437,8 @@ ul>li>a:hover{
     .col.headColCenter h4{
         font-size:97%;
     }    
-    .textTop{
-        
-    }
-    .textBottom{
-        
-    }
     .logo.headColRightLogo:hover{
-        background-position-y:-50px;
+        background-position-y:-141px;
     }
 }
 @media (max-width:767px) and (orientation:portrait){ /* mobile portrait */
