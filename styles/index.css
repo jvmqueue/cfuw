@@ -1,8 +1,4 @@
 @import url(theme.css);
-body{
-    background-color:#007194;    
-    font-family:Helvetica, sans-serif;
-}
 .positionRelative{
     position:relative;
 }
@@ -402,7 +398,7 @@ ul>li>a:hover{
         background-size:50%;
     }
     .letterSpacing{
-        letter-spacing:0;
+        letter-spacing:1px;
     }
     .textMiddle{
         font-size:100%;
