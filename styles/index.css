@@ -446,7 +446,10 @@ ul>li>a:hover{
     }
     .textBottom{
         font-size:60%;
-    }    
+    }
+    .headColLogos{
+        overflow:visible;
+    }
 
 }
 /* End Media Queries */
