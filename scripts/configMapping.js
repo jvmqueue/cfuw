@@ -63,8 +63,8 @@ define([], function(undefined){
                 templateId:'templateInterestGroups'},
             SCHOLARSHIPS:{control:'btnScholarships', 
                 data:'scholarships.xml', 
-                tagsXml:['members', 'member'],
-                tagsXmlChildsCommon:['heading', 'text'],
+                tagsXml:['sections', 'section'],
+                tagsXmlChildsCommon:['paragraph'],
                 modelCid:'scholarshipsId',
                 templateId:'templateScholarships'}   
         }
