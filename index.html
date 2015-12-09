@@ -113,8 +113,8 @@
 <script type="text/template" id="templateInterestGroups">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>       
-<script type="text/template" id="templateScholarships">    
-<p <%= strAttributeName.length > 1 ? strAttributeName +"="+strAttributeValue : ''%>><%= strName%></p>
+<script type="text/template" id="templateScholarships">
+<p <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></p>
 </script>       
   <!-- scripts / config defines script dependencies in a single location -->
   <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
