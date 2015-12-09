@@ -1,30 +1,90 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
 	<title>SCHOLARSHIPS</title>
-	<members>
-		<member>
-			<position>The Canadian Federation of University Women/Saskatoon Inc. has been offering scholarships to female students at the University of Saskatchewan since 1940.  Over $300,000 has been awarded since the programs' inception.  Funding in support of these scholarships comes from members, families and friends of members, and bequests.  Our largest annual infusion of money comes from our gigantic fall book sale.</position>
-			<name>We offer up to eleven Undergraduate and six Graduate Scholarships.</name>
-		</member>
-        <member>
-            <position>The Undergraduate Scholarships of $1,500 each are offered annually to female students in any field who have maintained an average of 75% or higher. The awards will be made only to full-time students at the University of Saskatchewan. Preference will be given to students working on their first degree. The application deadline for the Undergraduate scholarship is May 31st and applicants will be informed in July or August.  There are additional requirements specific to each of the eleven scholarships, please see the detailed information further down this page.</position>
-            <name>The five $1,750 Graduate Scholarships (Jean Murray Memorial, Dorothea Friebel, Benee, CFUW Saskatoon Inc., and Jacqueline McKenzie Newstead Scholarships) are offered to female students in any field of study who have completed at least one year of course work, have an approved thesis or project proposal, and are not recipients of any substantive scholarships.  The application deadline for the Graduate scholarships is February 2, 2015.</name>
-        </member>
-        <member>
-            <position>The $5,000 Newstead Doctoral Scholarship is offered to a female student who has completed all the course requirements, including comprehensive exams, has the approval of the Ethics Committee, and is well advanced in the writing of her thesis or research project.  The application deadline for the Doctoral Scholarship is February 2, 2015</position>
-            <name>There are additional requirements specific to each of the six graduate scholarships, please see the detailed information further down this page.</name>
-        </member>
-        <member>
-            <position>Detailed Information</position>
-            <name>Undergraduate Scholarships</name>
-        </member>
-        <member>
-            <position>Additional requirements:</position>
-            <name>The Annie B. and Isabel Shaw Scholarship is available to a student entering her second year of university studies.</name>
-        </member>
-        <member>
-            <position>The Marie I. Gillespie Scholarship is awarded to a mature woman who has completed at least one year of university, with preference given to a parent.</position>
-            <name>The Mary Hallett Scholarship is available to a student who has completed at least one year of university studies and needs financial support.</name>
-        </member>
-	</members>
+	<sections>
+		<section>
+			<paragraph class="">The Canadian Federation of University Women/Saskatoon Inc. has been offering scholarships to female students at the University of Saskatchewan since 1940.  Over $300,000 has been awarded since the programs' inception.  Funding in support of these scholarships comes from members, families and friends of members, and bequests.  Our largest annual infusion of money comes from our gigantic fall book sale.</paragraph>
+			<paragraph>We offer up to eleven Undergraduate and six Graduate Scholarships.</paragraph>
+		</section>
+        <section>
+            <paragraph class="inline">The Undergraduate Scholarships of $1,500 each are offered annually to female students in any field who have maintained an average of 75% or higher. The awards will be made only to full-time students at the University of Saskatchewan. Preference will be given to students working on their first degree.</paragraph>
+            <paragraph class="bold inline">The application deadline for the Undergraduate scholarship is May 31st</paragraph>  
+            <paragraph class="inline">and applicants will be informed in July or August.  There are additional requirements specific to each of the eleven scholarships, please see the detailed information further down this page.</paragraph>
+        </section>
+        <section>
+            <paragraph class="">&#160;</paragraph>
+            <paragraph class="inline">The five $1,750 Graduate Scholarships (</paragraph>
+            <paragraph class="inline bold">Jean Murray Memorial, Dorothea Friebel, Benee, CFUW Saskatoon Inc.</paragraph>
+            <paragraph class="inline">, and </paragraph>
+            <paragraph class="inline bold">Jacqueline McKenzie Newstead Scholarships</paragraph>
+            <paragraph class="inline">) are offered to female students in any field of study who have completed at least one year of course work, have an approved thesis or project proposal, and are not recipients of any substantive scholarships.</paragraph>  
+            <paragraph class="inline bold">The application deadline for the Graduate scholarships is February 2, 2015.</paragraph>
+        </section>
+        <section>
+            <paragraph class="">&#160;</paragraph>
+            <paragraph class="inline">The $5,000 </paragraph>
+            <paragraph class="inline bold">Newstead Doctoral Scholarship</paragraph>
+            <paragraph class="inline">is offered to a female student who has completed all the course requirements, including comprehensive exams, has the approval of the Ethics Committee, and is well advanced in the writing of her thesis or research project.  The application deadline for the Doctoral Scholarship is February 2, 2015</paragraph>
+        </section>
+        <section>
+            <paragraph class="">&#160;</paragraph>
+            <paragraph class="inline">There are additional requirements specific to each of the six graduate scholarships, please see the detailed information further down this page.</paragraph>            
+        </section>
+        <section>
+            <paragraph class="h3">Detailed Information</paragraph>
+        </section>
+        <section>
+            <paragraph class="h3">Undergraduate Scholarships</paragraph>
+        </section>
+        <section>
+            <paragraph>Additional requirements:</paragraph>
+            <paragraph class="bullet">The Annie B. and Isabel Shaw Scholarship is available to a student entering her second year of university studies.</paragraph>
+            <paragraph class="bullet">The Marie I. Gillespie Scholarship is awarded to a mature woman who has completed at least one year of university, with preference given to a parent.</paragraph>
+            <paragraph class="bullet">The Mary Hallett Scholarship is available to a student who has completed at least one year of university studies and needs financial support.</paragraph>
+            <paragraph class="bullet">The Carolyn Hartney Scholarship is available to a student who has completed at least one year of university studies, needs financial support, but is not likely to receive numerous or major awards.
+            </paragraph>
+            <paragraph class="bullet">The Jean Bayer Scholarship is available to a student who has completed at least two years of university studies.</paragraph>
+            <paragraph class="bullet">The Harriet Kaplan Scholarship is available to a student who has completed at least two years of university studies.</paragraph>
+            <paragraph class="bullet">The Rowles Scholarship is available to a student who has completed at least two years of university studies and demonstrates financial need.</paragraph>
+            <paragraph class="bullet">The Grace Swanson Scholarship is available to a student who has completed at least two years of university studies and demonstrates financial need.</paragraph>
+            <paragraph class="bullet">The Vivian Morton Scholarship is available to a student who has completed at least two years of university studies and demonstrates financial need. Preference will be given to a mature candidate who is continuing her studies after an interruption (in education) of several years.</paragraph>
+            <paragraph class="bullet">The Jacqueline McKenzie Newstead Scholarship is available to a student who has completed three or more years of university and demonstrates financial need. Given similar qualifications, preference will be given to a single parent.</paragraph>
+            <paragraph class="bullet">The Florence E. Bennee Fine Arts Scholarship is new in 2012.  It is open to a student in Fine Arts studies (Drama, Music or Art &#038; Art History).  It is available to both male and female applicants, at the request of the donor.</paragraph>
+        </section>
+        <section>
+            <paragraph>&#160;</paragraph>
+            <paragraph>Undergraduate Scholarship Application Form (on University of Saskatchewan web site)</paragraph>
+        </section>
+        <section>
+            <paragraph class="h3">Graduate Scholarships</paragraph>
+        </section>
+        <section>
+            <paragraph class="">Additional requirements:</paragraph>
+        </section>
+        <section>
+            <paragraph class="">These awards are directed towards women completing their degrees. They will be awarded to female graduate students based on academic excellence and demonstrated financial need. The students must have completed at least one year of course work and have an approved thesis or project proposal. </paragraph>
+        </section> 
+        <section>
+            <paragraph class="bullet">Dr. Jean Murray Memorial Scholarship; Dorothea Friebel Scholarship; Bennee Scholarship; CFUW Saskatoon Inc. Scholarship - These are intended to be used to cover expenses associated with the thesis completion.</paragraph>
+            <paragraph class="bullet">The Jacqueline McKenzie Newstead Scholarship may be used for any expenses incurred in completing the degree. At the request of the donor, given otherwise similar qualifications, preference may be given to a single mother.</paragraph>
+            <paragraph class="bullet">The Newstead Doctoral Scholarship is awarded to a female Ph.D. student who has completed all the required courses, including the comprehensive exams for the degree, and be well advanced in the writing of the thesis. Given similar qualifications, preference is given to a student who demonstrates financial need, or whose research is of potential benefit to women in society.</paragraph>
+        </section>
+        <section>
+            <paragraph class="h3">Application Procedure:</paragraph>
+            <paragraph>The student applies by sending the application form (use the link below) to the College of Graduate Studies and Research along with:</paragraph>
+        </section>
+        <section>
+            <paragraph class="bulletNumbered">A one-page letter of intent. The letter should include the title of the thesis or project, description of the research (in terms that are easily understood by a non-technical reader), research methodology, objectives, motivation for embarking on research, and professional goals upon completion of the work;</paragraph>
+            <paragraph class="bulletNumbered">A list of current University Scholarships and distinctions won, including amount, tenure, and source;</paragraph>
+            <paragraph class="bulletNumbered">The source and amount of monetary support, including research grants, stipends, teaching assistantships, lab technician wages, and also other sources of income;</paragraph>
+            <paragraph class="bulletNumbered">A list of publications, conferences and poster presentations, and related work and/or volunteer experiences;</paragraph>
+            <paragraph class="bulletNumbered">A letter of recommendation from the research supervisor outlining the student's personal qualities and past achievements and potential. It should state the student's current progress in the program and estimated completion date, and the financial support that is being provided to the student. This letter should be sent directly from the department to the College of Graduate Studies and Research.</paragraph>
+        </section>
+        <section>
+            <paragraph>In accordance with Canada Revenue Agency regulations, Social Insurance Numbers will be required from all scholarship winners and their applications will be retained by CFUW Saskatoon Inc. for six years.</paragraph>
+        </section>     
+        <section>
+            <paragraph id="admissions_how_to_apply">Website:    Graduate Scholarship Application Form (on University of Saskatchewan web site)</paragraph>
+        </section>
+	</sections>
 </page>
