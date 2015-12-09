@@ -37,6 +37,9 @@
 .marginBottomZero{
     margin-bottom:0;
 }
+.marginBottomIncrease, p.marginBottomIncrease{
+    margin-bottom:1.2em;
+}
 .marginBoardMembers{
     margin-bottom:1.2em;
 }
@@ -318,6 +321,10 @@ body{
 .bulletNumbered:before{
     padding-right:0.7em;
     content:counter(cfuw-counter) ".";
+}
+.increaseIndention{
+    text-indent:1.0em;
+    margin:0;
 }
 
 .serif{
