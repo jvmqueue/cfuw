@@ -40,6 +40,9 @@ define(['jQuery'], function($, undefined){
             var strXmlCategory = members[0].parentElement.getAttribute('catagory') || '';
             var hashNodeAttributes = {};
             var nodeTagName = '';
+            var strAttribute = '';
+            var strAttributeName = '';
+            var strAttributeValue = '';
             var nodeValue = '';
             var intXmlCategoryCounter = 0; 
     
@@ -73,7 +76,20 @@ define(['jQuery'], function($, undefined){
                                nodeValue = elm.firstChild.nodeValue; 
                                nodeTagName = elm.nodeName;
 
-                               hashElementNodes = {'strTagName':nodeTagName, 'strName':nodeValue, 'strNameTitle':title};
+                               if(elm.attributes.length > 0){ // allow XML tag to hava a single attribute
+                                strAttributeName = elm.attributes[0].nodeName;
+                                strAttributeValue = elm.attributes[0].nodeValue;
+                               }else{
+                                strAttributeName = '';
+                                strAttributeValue = '';
+                               }
+
+                               hashElementNodes = {'strTagName':nodeTagName, 
+                                strAttributeName:strAttributeName, 
+                                strAttributeValue:strAttributeValue,
+                                'strName':nodeValue, 
+                                'strNameTitle':title};
+
                                arryElementNodes.push(hashElementNodes);                         
                             }
                         }); 
