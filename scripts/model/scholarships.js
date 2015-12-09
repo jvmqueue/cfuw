@@ -15,7 +15,7 @@ define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbo
                 tagsXmlChildsCommon:tagsXmlChildsCommon});          
         this.set('arryTemplateData', hash.pageData);                 
         this.set('pageTitle', hash.pageTitle);
-        this.set('hashCssClassToSet', hash.hashNodeClass);
+        this.set('hashCssClassToSet', hash.hashNodeClass); 
       },
       initialize:function(){
         for(var name in commonModelDefaults.properties){ // composition, common model default values defined in commonModelDefaults.js
