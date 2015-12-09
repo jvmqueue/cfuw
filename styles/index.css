@@ -21,6 +21,13 @@
 .inlineBlock{
     display:inline-block;
 }
+.inline{
+    display:inline;
+}
+.h3{
+    font-size:1.0em;
+    font-weight:bold;
+}
 .jumbotron{
     background-color:transparent;
 }
@@ -296,6 +303,23 @@
 .noBullet{
     list-style:none;
 }
+.bullet{
+    display:list-item;
+    list-style:disc; 
+    margin:0;
+    margin-left:2.5em;
+}
+body{
+  counter-reset:cfuw-counter;
+}
+.bulletNumbered{
+    counter-increment:cfuw-counter;  
+}
+.bulletNumbered:before{
+    padding-right:0.7em;
+    content:counter(cfuw-counter) ".";
+}
+
 .serif{
     font-family:serif;
 }
