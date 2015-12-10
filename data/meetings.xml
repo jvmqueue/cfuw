@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
 	<title>MEETINGS</title>
-	<members>
-		<member>
-			<position>Coming Soon</position>
-			<name>&#160;</name>
-		</member>
-	</members>
+	<meetings>
+		<meeting>
+			<date class="date">Monday, April 6th, 2015 - Program/Business Meeting</date>
+            <time class="bullet">7:30 PM</time>
+            <info class="bullet">Speaker:  Myra Potter on "Saskatoon Housing First"</info>
+			<location class="bullet">Edwards Family Centre</location>
+		</meeting>
+        <meeting>
+            <date class="date">Monday, May 4th, 2015 - Annual Banquet and AGM</date>
+            <time class="displayNone">&#160;</time>
+            <info class="bullet">Guest Speaker: Myrna LaPlante on "Women Walking Together"</info>
+            <location class="bullet">Western Development Museum, 2610 Lorne Ave.</location>
+        </meeting>
+	</meetings>
 </page>
