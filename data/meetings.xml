@@ -2,17 +2,35 @@
 <page>
 	<title>MEETINGS</title>
 	<meetings>
-		<meeting>
-			<date class="date">Monday, April 6th, 2015 - Program/Business Meeting</date>
-            <time class="bullet">7:30 PM</time>
-            <info class="bullet">Speaker:  Myra Potter on "Saskatoon Housing First"</info>
-			<location class="bullet">Edwards Family Centre</location>
-		</meeting>
         <meeting>
-            <date class="date">Monday, May 4th, 2015 - Annual Banquet and AGM</date>
-            <time class="displayNone">&#160;</time>
-            <info class="bullet">Guest Speaker: Myrna LaPlante on "Women Walking Together"</info>
-            <location class="bullet">Western Development Museum, 2610 Lorne Ave.</location>
+            <date class="date">Saturday, January 9, 2016</date>
+            <time class="bullet">11:30 am - 2:00 pm</time>
+            <info class="bullet">SPEAKER: TICKETS REQUIRED, Lori Blondeau: Confronting Conventional Stereotypes of First Nations Women Through Art &#038; Performance</info>
+            <location class="bullet">Parktown Luncheon - Parktown Hotel</location>
+        </meeting>
+        <meeting>
+            <date class="date">Monday, February 1, 2016</date>
+            <time class="bullet">7:30 - 9:30 pm</time>
+            <info class="bullet">Resolutions</info>
+            <location class="bullet">Regular Meeting - Edwards Family Centre</location>
+        </meeting>
+        <meeting>
+            <date class="date">Monday March 7, 2016</date>
+            <time class="bullet">7:30 – 9:30 pm</time>
+            <info class="bullet">FILM: &#034;Between Allah and Me&#034;</info>
+            <location class="bullet">International Women's Day - Frances Morrison Library</location>
+        </meeting>
+        <meeting>
+            <date class="date">Monday, April 4, 2016</date>
+            <time class="bullet">7:30 - 9:30 pm</time>
+            <info class="bullet">A Foundation for Fairness</info>
+            <location class="bullet">Regular Meeting - Edwards Family Centre</location>
+        </meeting>
+        <meeting>
+            <date class="date">Monday, May 2, 2016</date>
+            <time class="bullet">5:00 - 9:00 pm</time>
+            <info class="bullet">SPEAKER: TICKETS REQUIRED, Ernie Louttit - Author Indian Ernie and More Indian Ernie - Insights from the Street</info>
+            <location class="bullet">AGM - Banquet at Western Development Museum</location>
         </meeting>
 	</meetings>
 </page>
