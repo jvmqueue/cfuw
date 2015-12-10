@@ -9,6 +9,9 @@
 .visibilityNone{
     visibility:hidden;
 }
+.displayNone{
+    display:none;
+}
 .letterSpacing{
     letter-spacing:3px;
 }
@@ -170,22 +173,6 @@
 .navbar-inverse .navbar-toggle{
     border-color:transparent;
 }
-
-@media (min-width: 768px){
-    .navbar-nav{
-        float:right;
-        margin:0;
-    }
-    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
-        color:#000000;
-    }        
-}
-@media (max-width: 767px){
-    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
-        color:#FFFFFF;
-    }
-}
-
     .navBarTop{
         text-align:center;
         float:left;
@@ -275,6 +262,26 @@
         padding:0 4%;
     }
 /* End Row Address */
+
+/* Begin Meetings */
+p.date{
+    margin:auto;
+}
+.date{
+    font-weight:bold;
+    color:#333333;
+    direction:ltr;
+}
+.time{
+    
+}
+.info{
+    
+}
+.location{
+    
+}
+/* End Meetings */
 
 /* Begin Generics */
 .hide{
@@ -397,6 +404,20 @@ ul>li>a:hover{
 /* End Generics */
 
 /* Begin Media Queries */
+@media (min-width: 768px){
+    .navbar-nav{
+        float:right;
+        margin:0;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+        color:#000000;
+    }        
+}
+@media (max-width: 767px){
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+        color:#FFFFFF;
+    }
+}
 @media (min-width:1200px){ /* override bootstrap */
     .mainContainer{ /* want page to have less of a margin */
         width:1226px;
