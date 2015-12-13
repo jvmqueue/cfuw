@@ -263,6 +263,31 @@
     }
 /* End Row Address */
 
+/* Begin Newsletters */
+a.pdf, a.word{
+    display:block;
+    padding:0.6em 3em;
+}
+a.pdf{
+    background:url(../images/iconAdobe30Px.png) left 0 no-repeat transparent; 
+}
+a.word{
+    background:url(../images/iconWord30Px.png) left 0 no-repeat transparent; 
+}
+a.pdf[href=displayNone], a.word[href=displayNone]{ /* hide newsletters which are not available */
+    visibility:hidden;
+}
+a.pdf:hover, a.word:hover{
+    font-weight:bold;
+}
+a.word:hover{
+    background-image:url(../images/iconWord30PxHover.png);
+}
+a.pdf:hover{
+    background-image:url(../images/iconPdf30PxHover.png);
+}
+/* End Newsletters */
+
 /* Begin Meetings */
 p.date{
     margin:auto;
