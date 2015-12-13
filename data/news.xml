@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
 	<title>NEWS</title>
-	<members>
-		<member>
-			<position>Coming Soon</position>
-			<name>&#160;</name>
-		</member>
-	</members>
+	<newsletters>
+        <newsletter>
+            <pdf href="newsletters/CFUWnewsletter-fall2015.pdf">Fall 2015 Newsletter</pdf>
+            <word href="newsletters/CFUWnewsletter-fall2015.docx">Fall 2015 Newsletter</word>
+        </newsletter>
+        <newsletter>
+            <pdf href="newsletters/CFUWnewsletterDecember2015-final.pdf">December 2015 Newsletter</pdf>
+            <word href="newsletters/CFUWnewsletterDecember2015-final.docx">December 2015 Newsletter</word>
+        </newsletter>
+        <newsletter>
+            <pdf href="newsletters/CFUWnewsletter-OctNov2015(withcorrection).pdf">Oct/Nov 2015 Newsletter </pdf>
+            <word href="displayNone">&#160;</word>
+        </newsletter>
+	</newsletters>
 </page>
