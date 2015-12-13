@@ -13,7 +13,7 @@
 
   <title>Canadian Federation of University Women Saskatoon - CFUW</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles/index.css?version=1" />
+  <link rel="stylesheet" href="styles/index.css?version=2" />
 
     <!--[if lt IE 9]>
         <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -110,7 +110,7 @@
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>
 <script type="text/template" id="templateNews">    
-<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+<a class="<%= strTagName%>" target="_blank" <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></a>
 </script>       
 <script type="text/template" id="templateMeetings">    
 <p <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></p>
