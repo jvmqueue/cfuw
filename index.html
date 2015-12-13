@@ -110,7 +110,9 @@
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>
 <script type="text/template" id="templateNews">    
-<a class="<%= strTagName%>" target="_blank" <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></a>
+<div class="row">
+  <a class="<%= strTagName%> col-xs-12" target="_blank" <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></a>
+</div>
 </script>       
 <script type="text/template" id="templateMeetings">    
 <p <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></p>
