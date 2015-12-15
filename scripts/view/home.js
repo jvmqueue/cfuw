@@ -190,6 +190,7 @@ define(['jQuery',
       var $nodeExist = $(this.selectorViewContainer);
       var strSwitchCase = thisNav.id[intDataIndexNumber];
       var hashCssClassToSet = null;
+      var dateNoCache = new Date().getMilliseconds();
 
       if(typeof strSwitchCase == 'undefined'){ // can always call render with no args to render default view
         this.render();
@@ -200,7 +201,7 @@ define(['jQuery',
       $nodeExist.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade'); // reset
       // access our configMapping.js JSON relative to data-index-number html attribute. HTML5 construct
       strCid = thisNav.modelCid[intDataIndexNumber];
-      strDataPath = thisNav.data[intDataIndexNumber];
+      strDataPath = thisNav.data[intDataIndexNumber] + '?noCache=' + dateNoCache;
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
       arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber];          
       arryTemplateId = thisNav.templateId[intDataIndexNumber];          
