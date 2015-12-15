@@ -5,11 +5,11 @@ define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbo
         idAttribute:'affiliationsId',
         cid:'affiliationsId'
       },
-      parse:function(paramXmlResponse){
-        var xmlResponse = paramXmlResponse;   
+      parse:function(paramXmlResponse){ // override parse, because response is XML
+        var xmlResponse = paramXmlResponse;
         var tagsXml = this.get('tagsXml');
-        var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:'members', firstChildTag:'member'});
-        this.set('arryTemplateData', hash.pageData);                 
+        var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:tagsXml[0], firstChildTag:tagsXml[1]}); 
+        this.set('arryTemplateData', hash.pageData);
         this.set('pageTitle', hash.pageTitle);
       },
       initialize:function(){
