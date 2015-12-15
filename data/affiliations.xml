@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
 	<title>AFFILIATIONS</title>
-	<members>
-		<member>
-			<position hashName="title">Coming Soon</position>
-			<name hashName="name">&#160;</name>
-		</member>
-	</members>
+	<affiliations>
+        <affiliation>
+            <affiliationName class="readSaskatoon">READ Saskatoon</affiliationName>
+        </affiliation>
+        <affiliation>
+            <affiliationName class="ymca">YWCA</affiliationName>
+        </affiliation>
+        <affiliation>
+            <affiliationName class="bpwBusinessWomen">BPW (Business and Professional Women)</affiliationName>
+        </affiliation>
+        <affiliation>
+            <affiliationName class="scoaCouncilOfAging">SCOA (Saskatoon Council of Aging)</affiliationName>
+        </affiliation>
+        <affiliation>
+            <affiliationName class="councilOfWomen">Council of Women</affiliationName>
+        </affiliation>
+        <affiliation>
+            <affiliationName class="internationalGraduateWomen">International Graduate Women</affiliationName>
+        </affiliation>
+	</affiliations>
 </page>
