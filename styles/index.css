@@ -263,6 +263,35 @@
     }
 /* End Row Address */
 
+/* Begin Affiliations */
+.affiliationName{    
+    padding-top:1.0em;    
+    padding-left:8.0em;
+    height:80px;
+}
+    .readSaskatoon{
+        background:url(../images/iconREAD.png) left 12px no-repeat transparent; 
+    }
+    .ymca{
+        background:url(../images/iconYWCA.png) left 0 no-repeat transparent; 
+    }    
+    .scoaCouncilOfAging{
+        background:url(../images/iconScoaCouncel.png) left -28px no-repeat transparent; 
+        padding-top:2.0em;
+    }
+    .councilOfWomen{
+        background:url(../images/iconCouncilOfWomen.png) left 0px no-repeat transparent; 
+        padding-top:1.6em;
+    }
+    .internationalGraduateWomen{
+        background:url(../images/iconGWI.png) left -5px no-repeat transparent; 
+        padding-top:2.3em;
+    }            
+    .bpwBusinessWomen{
+        background:url(../images/iconBPW.png) left 0 no-repeat transparent; 
+    }    
+/* End Affiliations */
+
 /* Begin Newsletters */
 a.pdf, a.word{
     display:block;
