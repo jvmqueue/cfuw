@@ -46,9 +46,6 @@
 .marginBoardMembers{
     margin-bottom:1.2em;
 }
-.marginContactUs{
-    margin-top:2.5em;
-}
 .paddingRightZero{
     padding-right:0;
 }
@@ -218,7 +215,7 @@
   border-radius:10px;
 }
 .jsPaddingTopSmallest{
-    padding-top:7.0em;
+    padding-top:5.0em;
 }
 .jsIsSubHeading, p.jsIsSubHeading{
     color:#EF4136;
@@ -291,6 +288,18 @@
         background:url(../images/iconBPW.png) left 0 no-repeat transparent; 
     }    
 /* End Affiliations */
+
+/* Begin Interest Groups */
+.interestGroups{
+
+}
+    .interestGroups .name{
+
+    }
+    .interestGroups .dateTime, .interestGroups .contactPerson{
+        margin:0 0 0 1.7em;
+    }
+/* End Interest Groups */
 
 /* Begin Newsletters */
 a.pdf, a.word{
