@@ -52,8 +52,8 @@ define(['jQuery'], function($, undefined){
                 arry.push(members[i]);
             }
 
-
-            if(strXmlCategory === 'board'){ 
+            /* TODO: Remove if else. all XML processing should be the same */
+            if( (strXmlCategory === 'board') || (strXmlCategory === 'interestGroups') ){ 
                 for(var i = 0, len = arry.length; i < len; i++){                   
                    $(arry[i].childNodes).each(function(index, elm){
                         if(elm.nodeType == 1){
@@ -84,9 +84,10 @@ define(['jQuery'], function($, undefined){
                                 strAttributeValue = '';
                                }
 
-                               hashElementNodes = {'strTagName':nodeTagName, 
-                                strAttributeName:strAttributeName, 
-                                strAttributeValue:strAttributeValue,
+                               hashElementNodes = {'strXmlCategory':strXmlCategory,
+                                'strTagName':nodeTagName, 
+                                'strAttributeName':strAttributeName, 
+                                'strAttributeValue':strAttributeValue,
                                 'strName':nodeValue, 
                                 'strNameTitle':title};
 
