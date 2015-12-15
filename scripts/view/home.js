@@ -253,10 +253,7 @@ define(['jQuery',
           this.blnAddPaddingTopSmallest = true;
           break;               
         case thisNav.id[8]: 
-          model = eventsModel.fnc.getInstance(); 
-          this.blnSetBackgroundOpacity = true;
-          this.blnSetBackgroundWhite = true;            
-          this.blnAddPaddingTopSmallest = true;
+          /* Client requested events be merged with meetings 2015 Dec 13 */
           break;             
         case thisNav.id[9]: 
           model = interestGroupsModel.fnc.getInstance(); 
