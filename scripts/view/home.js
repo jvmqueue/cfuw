@@ -78,6 +78,7 @@ define(['jQuery',
     renderDefault:function(paraBlnRenderDefault){
       var $nodeContainer = $('#boardMembers');
       var strJsCssClass = 'jsOpacity';
+      $nodeContainer.html('');
       if(paraBlnRenderDefault === true){  // show book sale image
         $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.addClass(this.cssClassShowBookSale);
@@ -174,6 +175,7 @@ define(['jQuery',
       var nodeTarget = e.target;
       // HTML5 let HTML element define index for accessing associated data
       var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber);
+      var intIndexNumber = null;
       var strId = nodeTarget.getAttribute('id') || nodeTarget.parentNode.getAttribute('for');
       strId = regEx.fnc.strRemoveWhiteSpace(strId);
       var thisNav = this.nav; //  view mappings set in this.initialize, configMappings.js controls this data
@@ -199,8 +201,6 @@ define(['jQuery',
       
       $nodeExist.removeClass('jsContainerPageText'); // reset
       $nodeExist.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade'); // reset
-      // access our configMapping.js JSON relative to data-index-number html attribute. HTML5 construct
-      strCid = thisNav.modelCid[intDataIndexNumber];
       strDataPath = thisNav.data[intDataIndexNumber] + '?noCache=' + dateNoCache;
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
       arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber];          
@@ -209,17 +209,20 @@ define(['jQuery',
       switch(strId){ // discover which node user clicked
         case 'btnAffiliations':
           model = affiliationsModel.fnc.getInstance(); 
+          intIndexNumber = 0;         
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;
         case 'btnBoardMembers':
           model = boardModel.fnc.getInstance(); 
+          intIndexNumber = 1;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;        
         case 'btnContactUs':
+          intIndexNumber = 2;
           model = contactUsModel.fnc.getInstance();
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           this.blnSetBackgroundWhite = true;
@@ -228,6 +231,7 @@ define(['jQuery',
           /* Client requested events be merged with meetings 2015 Dec 13 */
           break;    
         case 'btnHome':
+          intIndexNumber = 4;
           model = homeModel.fnc.getInstance();
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
@@ -235,35 +239,41 @@ define(['jQuery',
           break;   
         case 'btnInterestGroups': 
           model = interestGroupsModel.fnc.getInstance(); 
+          intIndexNumber = 5;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;       
         case 'btnMeetings': 
           model = meetingsModel.fnc.getInstance();            
+          intIndexNumber = 6;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;     
         case 'btnMembershipApplication': 
           model = membershipApplicationModel.fnc.getInstance(); 
+          intIndexNumber = 7;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;                                                                         
         case 'btnMissionStatement':
           model = missionStatementModel.fnc.getInstance();
+          intIndexNumber = 8;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;
           break;
         case 'btnNews':
-          model = newsModel.fnc.getInstance(); 
+          model = newsModel.fnc.getInstance();
+          intIndexNumber = 9; 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;                  
         case 'btnScholarships': 
           model = scholarshipsModel.fnc.getInstance(); 
+          intIndexNumber = 10;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
@@ -274,6 +284,8 @@ define(['jQuery',
       } // End switch
       // assigned model in above switch, now set the properties
 
+      // access our configMapping.js JSON relative to index number.
+      strCid = thisNav.modelCid[intIndexNumber]; 
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
       model.set('tagsXml', arryTagsXml); // allow the associated model to access XML data via the top XML tag names
       model.set('tagsXmlChildsCommon', arryTagsCommon); // allow the associated model to accesss XML data via child tag names
