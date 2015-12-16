@@ -78,7 +78,9 @@ define(['jQuery',
     renderDefault:function(paraBlnRenderDefault){
       var $nodeContainer = $('#boardMembers');
       var strJsCssClass = 'jsOpacity';
-      $nodeContainer.html('');
+      
+      $nodeContainer.html(''); // reset
+
       if(paraBlnRenderDefault === true){  // show book sale image
         $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.addClass(this.cssClassShowBookSale);
