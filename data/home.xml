@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
 	<title>HOME</title>
-	<members>
-		<member>
-			<position hashName="title">&#160;</position>
-			<name hashName="name">&#160;</name>
-		</member>
-	</members>
+	<paragraphs catagory="home">
+		<paragraph>
+            <heading class="show bold">A HISTORY OF CFUW SASKATOON INC.</heading>
+			<content class="bold">1918 - 2014</content>
+		</paragraph>
+	</paragraphs>
 </page>
