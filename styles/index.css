@@ -299,6 +299,9 @@
     .interestGroups .dateTime, .interestGroups .contactPerson{
         margin:0 0 0 1.7em;
     }
+.contactPerson.marginBottomIncrease{
+    margin-bottom:1.4em;
+}    
 /* End Interest Groups */
 
 /* Begin Newsletters */
