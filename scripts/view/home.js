@@ -207,62 +207,62 @@ define(['jQuery',
       arryTemplateId = thisNav.templateId[intDataIndexNumber];          
 
       switch(strId){ // discover which node user clicked
-        case thisNav.id[0]:
-          model = homeModel.fnc.getInstance();
-          this.blnSetBackgroundOpacity = true; 
-          this.blnAddPaddingTopSmallest = false;
-          this.blnSetBackgroundWhite = false;
-          break;
-        case thisNav.id[1]:
-          model = missionStatementModel.fnc.getInstance();
-          this.blnSetBackgroundOpacity = true;
-          this.blnSetBackgroundWhite = true;
-          break;
-        case thisNav.id[2]:
-          model = contactUsModel.fnc.getInstance();
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
-          this.blnSetBackgroundWhite = true;
-          break;
-        case thisNav.id[3]:
-          model = boardModel.fnc.getInstance(); 
-          this.blnSetBackgroundOpacity = true;
-          this.blnSetBackgroundWhite = true;            
-          this.blnAddPaddingTopSmallest = true;
-          break;
-        case thisNav.id[4]:
+        case 'btnAffiliations':
           model = affiliationsModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;
-        case thisNav.id[5]: 
-          model = membershipApplicationModel.fnc.getInstance(); 
+        case 'btnBoardMembers':
+          model = boardModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
+          break;        
+        case 'btnContactUs':
+          model = contactUsModel.fnc.getInstance();
+          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          this.blnSetBackgroundWhite = true;
           break;
-        case thisNav.id[6]:
-          model = newsModel.fnc.getInstance(); 
-          this.blnSetBackgroundOpacity = true;
-          this.blnSetBackgroundWhite = true;            
-          this.blnAddPaddingTopSmallest = true;
-          break;           
-        case thisNav.id[7]: 
-          model = meetingsModel.fnc.getInstance(); 
-          this.blnSetBackgroundOpacity = true;
-          this.blnSetBackgroundWhite = true;            
-          this.blnAddPaddingTopSmallest = true;
-          break;               
-        case thisNav.id[8]: 
+        case 'btnEvents': 
           /* Client requested events be merged with meetings 2015 Dec 13 */
-          break;             
-        case thisNav.id[9]: 
+          break;    
+        case 'btnHome':
+          model = homeModel.fnc.getInstance();
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;   
+        case 'btnInterestGroups': 
           model = interestGroupsModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
-          break;                     
-        case thisNav.id[10]: 
+          break;       
+        case 'btnMeetings': 
+          model = meetingsModel.fnc.getInstance();            
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;     
+        case 'btnMembershipApplication': 
+          model = membershipApplicationModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;                                                                         
+        case 'btnMissionStatement':
+          model = missionStatementModel.fnc.getInstance();
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;
+          break;
+        case 'btnNews':
+          model = newsModel.fnc.getInstance(); 
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;
+          break;                  
+        case 'btnScholarships': 
           model = scholarshipsModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
