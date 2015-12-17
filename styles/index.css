@@ -292,6 +292,17 @@
     }    
 /* End Affiliations */
 
+/* Begin Contact Us */
+.namePresident, .vicePresident{
+    margin-bottom:0;
+    padding-bottom:0;
+}
+.titlePresident, .titleVicePresident{
+    font-weight:bold;
+    margin-top:0;
+    padding-top:0;
+}
+/* End Contact Us */
 /* Begin Interest Groups */
 .interestGroups{
 
