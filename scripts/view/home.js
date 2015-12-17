@@ -196,13 +196,7 @@ define(['jQuery',
       var hashCssClassToSet = null;
       var dateNoCache = new Date().getMilliseconds();
 
-      if(typeof strSwitchCase == 'undefined'){ // can always call render with no args to render default view
-        this.render();
-        return void(0);
-      }
-      
-      $nodeExist.removeClass('jsContainerPageText'); // reset
-      $nodeExist.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade'); // reset
+
       strDataPath = thisNav.data[intDataIndexNumber] + '?noCache=' + dateNoCache;
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
       arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber];          
@@ -279,10 +273,15 @@ define(['jQuery',
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
-          break;                                                                    
-        default:
+          break;             
+        case 'btnBookSale': 
           blnShowDefault = true;          
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          this.render(); // no parameters renders default
+          return void(0);
+          break;                                                                          
+        default:
+          /*do nothing*/
       } // End switch
       // assigned model in above switch, now set the properties
 
