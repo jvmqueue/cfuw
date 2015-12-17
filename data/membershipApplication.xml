@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>MEMBERSHIP APPLICATION</title>
-	<members>
-		<member>
-			<position>Coming Soon</position>
-			<name>&#160;</name>
-		</member>
-	</members>
+    <title>MEMBERSHIP APPLICATION</title>
+    <links>
+        <link>
+            <pdf href="membershipApplications/MembershipAndPolicy2015Dec17.pdf">Membership and Policy</pdf>
+            <word href="membershipApplications/MembershipAndPolicy2015Dec17.docx">Membership and Policy</word>
+        </link>
+    </links>
 </page>
