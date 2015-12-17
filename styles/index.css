@@ -1,4 +1,7 @@
 @import url(theme.css);
+.container.mainContainer{ /* do not allow icons and text to overly collapse */
+    min-width:600px;
+}
 .positionRelative{
     position:relative;
 }
@@ -485,12 +488,15 @@ ul>li>a:hover{
     }
 }
 @media (min-width:1200px){ /* override bootstrap */
-    .mainContainer{ /* want page to have less of a margin */
+    .container.mainContainer{ /* want page to have less of a margin */
         width:1226px;
     }
 }
  @media (min-width:360px) and (max-width:767px){ /* Mobile all */
     body{
+        min-width:100%;
+    }
+    .container.mainContainer{ /* do not allow icons and text to overly collapse */
         min-width:100%;
     }
     .headColCenter{ 
