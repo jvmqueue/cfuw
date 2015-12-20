@@ -5,12 +5,20 @@ define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbo
         idAttribute:'affiliationsId',
         cid:'affiliationsId'
       },
-      parse:function(paramXmlResponse){ // override parse, because response is XML
+      parse:function(paramXmlResponse){
         var xmlResponse = paramXmlResponse;
-        var tagsXml = this.get('tagsXml');
-        var hash = util.fnc.parseXmlToJson(xmlResponse, {childContainerTag:tagsXml[0], firstChildTag:tagsXml[1]}); 
-        this.set('arryTemplateData', hash.pageData);
+        var tagsXml = this.get('tagsXml'); // set in View 
+        var tagsXmlChildsCommon = this.get('tagsXmlChildsCommon');
+        var hash = util.fnc.parseXmlToJson(xmlResponse, 
+              {childContainerTag:tagsXml[0], 
+                firstChildTag:tagsXml[1],
+                tagsXmlChildsCommon:tagsXmlChildsCommon});          
+
+        this.set('arryTemplateData', hash.pageData);                 
         this.set('pageTitle', hash.pageTitle);
+        this.set('hashCssClassToSet', hash.hashNodeClass['class']); 
+        this.set('hashHrefToSet', hash.hashNodeClass['href']);         
+
       },
       initialize:function(){
         for(var name in commonModelDefaults.properties){ // composition, common model default values defined in commonModelDefaults.js
