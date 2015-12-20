@@ -127,14 +127,11 @@ define(['jQuery',
       var _templateTitle = _.template(htmlTitle);
       var strHtml = ''; 
 
- 
-
       if(!!json){ // TODO: this should be a method call, removing if structure block contents
 
-        for(var i = 0, len = json.length; i < len; i++){      
+        for(var i = 0, len = json.length; i < len; i++){    
           strHtml += _template(json[i]);           
         }
-
 
         var $nodeExist = $(this.selectorViewContainer);
         var $nodeExistTitle = $(this.selectorViewTitle);
@@ -194,6 +191,7 @@ define(['jQuery',
       var $nodeExist = $(this.selectorViewContainer);
       var strSwitchCase = thisNav.id[intDataIndexNumber];
       var hashCssClassToSet = null;
+      var hashHrefToSet = null;
       var dateNoCache = new Date().getMilliseconds();
 
 
@@ -281,7 +279,7 @@ define(['jQuery',
           return void(0);
           break;                                                                          
         default:
-          /*do nothing*/
+          return void(0); /* do nothing we are not listening to the node */
       } // End switch
       // assigned model in above switch, now set the properties
 
@@ -291,6 +289,7 @@ define(['jQuery',
       model.set('tagsXml', arryTagsXml); // allow the associated model to access XML data via the top XML tag names
       model.set('tagsXmlChildsCommon', arryTagsCommon); // allow the associated model to accesss XML data via child tag names
       hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template. set in model
+      hashHrefToSet = model.get('hashHrefToSet'); 
       strIdTemplate = model.get('templateId');
       
       var that = this;
