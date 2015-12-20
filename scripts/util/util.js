@@ -53,13 +53,15 @@ define(['jQuery'], function($, undefined){
             }
 
             /* TODO: Remove if else. all XML processing should be the same */
-            if( (strXmlCategory === 'board') || (strXmlCategory === 'interestGroups') ){ 
+            if( (strXmlCategory === 'board') || (strXmlCategory === 'interestGroups') || (strXmlCategory === 'affiliations') ){ 
                 for(var i = 0, len = arry.length; i < len; i++){                   
                    $(arry[i].childNodes).each(function(index, elm){
-                        if(elm.nodeType == 1){
+                        if(elm.nodeType == 1){ 
                           selectorChildsCommon = tagsXmlChildsCommon[intXmlCategoryCounter++];
                           hashElementNodes[selectorChildsCommon] = elm.firstChild.nodeValue;                           
-                          elm.hasAttributes() ? hashNodeAttributes['class'] = elm.getAttribute('class') : '';                          
+                          elm.hasAttributes() ? hashNodeAttributes['class'] = elm.getAttribute('class') : '';                                                 
+                          elm.hasAttributes() ? hashElementNodes['href'] = elm.getAttribute('href') : '';                                                 
+                          elm.hasAttributes() ? hashElementNodes['strClass'] = elm.getAttribute('class') : '';                                                 
                         } 
                    });
                    intXmlCategoryCounter = 0; // reset to beginning of tag array                   
