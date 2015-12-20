@@ -264,6 +264,13 @@
 /* End Row Address */
 
 /* Begin Affiliations */
+.affiliations a{
+    display:block;
+    height:5em;
+    margin-bottom:2.0em;
+    padding-top:1.0em;
+    padding-left:8em;    
+}
 .affiliationName{    
     padding-top:1.0em;    
     padding-left:8.0em;
