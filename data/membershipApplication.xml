@@ -3,12 +3,12 @@
     <title>MEMBERSHIP APPLICATION</title>
     <links>
         <link>
-            <pdf href="membershipApplications/MembershipAndPolicy2015Dec17.pdf">Membership and Policy</pdf>
-            <word href="membershipApplications/MembershipAndPolicy2015Dec17.docx">Membership and Policy</word>
+            <pdf strClassPdf="pdf" hrefPdf="membershipApplications/MembershipAndPolicy2015Dec17.pdf">Membership and Policy</pdf>
+            <word strClassWord="word" hrefWord="membershipApplications/MembershipAndPolicy2015Dec17.docx">Membership and Policy</word>
         </link>
         <link>
-            <pdf href="membershipApplications/MembershipRenewAndPolicy2015Dec19.pdf">Renew Membership</pdf>
-            <word href="membershipApplications/MembershipRenewAndPolicy2015Dec19.docx">Renew Membership</word>
+            <pdf strClassPdf="pdf" hrefPdf="membershipApplications/MembershipRenewAndPolicy2015Dec19.pdf">Renew Membership</pdf>
+            <word strClassWord="word" hrefWord="membershipApplications/MembershipRenewAndPolicy2015Dec19.docx">Renew Membership</word>
         </link>        
     </links>
 </page>

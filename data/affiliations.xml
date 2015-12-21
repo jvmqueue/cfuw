@@ -3,22 +3,22 @@
 	<title>AFFILIATIONS</title>
 	<affiliations catagory="affiliations">
         <affiliation>
-            <affiliationName class="readSaskatoon" href="https://www.readsaskatoon.com">READ Saskatoon</affiliationName>
+            <affiliationName strClass="readSaskatoon" href="https://www.readsaskatoon.com">READ Saskatoon</affiliationName>
         </affiliation>
         <affiliation>
-            <affiliationName class="ymca" href="http://www.ywcasaskatoon.com/">YWCA</affiliationName>
+            <affiliationName strClass="ymca" href="http://www.ywcasaskatoon.com/">YWCA</affiliationName>
         </affiliation>
         <affiliation>
-            <affiliationName class="bpwBusinessWomen" href="http://www.bpwsaskatoon.com">BPW (Business and Professional Women)</affiliationName>
+            <affiliationName strClass="bpwBusinessWomen" href="http://www.bpwsaskatoon.com">BPW (Business and Professional Women)</affiliationName>
         </affiliation>
         <affiliation>
-            <affiliationName class="scoaCouncilOfAging" href="http://www.scoa.ca/">SCOA (Saskatoon Council of Aging)</affiliationName>
+            <affiliationName strClass="scoaCouncilOfAging" href="http://www.scoa.ca/">SCOA (Saskatoon Council of Aging)</affiliationName>
         </affiliation>
         <affiliation>
-            <affiliationName class="councilOfWomen" href="http://www.ncwcanada.com/business-directory/818/saskatoon-council-of-women">Council of Women</affiliationName>
+            <affiliationName strClass="councilOfWomen" href="http://www.ncwcanada.com/business-directory/818/saskatoon-council-of-women">Council of Women</affiliationName>
         </affiliation>
         <affiliation>
-            <affiliationName class="internationalGraduateWomen" href="http://www.graduatewomen.org">International Graduate Women</affiliationName>
+            <affiliationName strClass="internationalGraduateWomen" href="http://www.graduatewomen.org">International Graduate Women</affiliationName>
         </affiliation>
 	</affiliations>
 </page>

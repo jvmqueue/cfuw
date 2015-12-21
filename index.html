@@ -99,13 +99,14 @@
 </section>
 </script> 
 <script type="text/template" id="templateContactUs">    
-<p class="<%= strTagName%> marginContactUs"><%= strName%></p>
+<p class="<%= strClass %> marginContactUs"><%= info%></p>
 </script>       
 <script type="text/template" id="templateEvents">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>       
 <script type="text/template" id="templateHome">    
-<p <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></p>
+<p class="<%= strClassHeading %>"><%= heading %></p>
+<p class="<%= strClassContent %>"><%= content %></p>
 </script> 
 <script type="text/template" id="templateInterestGroups">    
 <section class="interestGroups row">
@@ -116,26 +117,43 @@
 </section>
 </script>     
 <script type="text/template" id="templateMeetings">    
-<p <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></p>
+<p class= <%= '"'+ strClassDate + '"' %> > <%= dateNode%></p>
+<p class= <%= '"'+ strClassTime + '"' %> > <%= timeNode%></p>
+<p class= <%= '"'+ strClassInfo + '"' %> > <%= info%></p>
+<p class= <%= '"'+ strClassLocation + '"' %> > <%= location%></p>
 </script>   
 <script type="text/template" id="templateMembershipApplication">    
 <div class="row">
-  <a class="<%= strTagName%> col-xs-12" target="_blank" <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></a>
+  <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
+  <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
 </div>
 </script>    
 <script type="text/template" id="templateMissionStatement">    
-<p class="<%= strTagName%>"><%= strName%></p>
+<p class="<%= strClassHeading %>"><%= heading%></p>
+<p class="<%= strClassText %> <%= strNodeName %>"><%= text%></p>
 </script>  
 <script type="text/template" id="templateNews">    
 <div class="row">
-  <a class="<%= strTagName%> col-xs-12" target="_blank" <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></a>
+  <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
+  <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
 </div>
 </script>          
 <script type="text/template" id="templatePageTitle">    
 <h3><%= strNameTitle%></h3>
 </script>               
 <script type="text/template" id="templateScholarships">
-<p <%= strAttributeName + '='%> <%= '"'+ strAttributeValue + '"' %> > <%= strName%></p>
+  <p class="<%=strClass0%>"><%= paragraph0%></p>
+  <p class="<%=strClass1%>"><%= paragraph1%></p>
+  <p class="<%=strClass2%>"><%= paragraph2%></p>
+  <p class="<%=strClass3%>"><%= paragraph3%></p>
+  <p class="<%=strClass4%>"><%= paragraph4%></p>
+  <p class="<%= typeof strClass5 != 'undefined' ? strClass5 : '' %>"  ><%= typeof paragraph5 != 'undefined' ? paragraph5 : '' %></p>
+  <p class="<%= typeof strClass6 != 'undefined' ? strClass6 : '' %>"  ><%= typeof paragraph6 != 'undefined' ? paragraph6 : '' %></p>
+  <p class="<%= typeof strClass7 != 'undefined' ? strClass6 : '' %>"  ><%= typeof paragraph7 != 'undefined' ? paragraph7 : '' %></p>
+  <p class="<%= typeof strClass8 != 'undefined' ? strClass8 : '' %>"  ><%= typeof paragraph8 != 'undefined' ? paragraph8 : '' %></p>
+  <p class="<%= typeof strClass9 != 'undefined' ? strClass9 : '' %>"  ><%= typeof paragraph9 != 'undefined' ? paragraph9 : '' %></p>
+  <p class="<%= typeof strClass10 != 'undefined' ? strClass10 : '' %>"  ><%= typeof paragraph10 != 'undefined' ? paragraph10 : '' %></p>
+  <p class="<%= typeof strClass11 != 'undefined' ? strClass11 : '' %>"  ><%= typeof paragraph11 != 'undefined' ? paragraph11 : '' %></p>
 </script>       
   <!-- scripts / config defines script dependencies in a single location -->
   <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>

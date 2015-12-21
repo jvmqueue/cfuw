@@ -3,34 +3,34 @@
 	<title>MEETINGS / EVENTS</title>
 	<meetings>
         <meeting>
-            <date class="date">Saturday, January 9, 2016</date>
-            <time class="bullet">11:30 am - 2:00 pm</time>
-            <info class="bullet">SPEAKER: TICKETS REQUIRED, Lori Blondeau: Confronting Conventional Stereotypes of First Nations Women Through Art &#038; Performance</info>
-            <location class="bullet">Parktown Luncheon - Parktown Hotel</location>
+            <dateNode strClassDate="date">Saturday, January 9, 2016</dateNode>
+            <timeNode strClassTime="bullet">11:30 am - 2:00 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: TICKETS REQUIRED, Lori Blondeau: Confronting Conventional Stereotypes of First Nations Women Through Art &#038; Performance</info>
+            <location strClassLocation="bullet">Parktown Luncheon - Parktown Hotel</location>
         </meeting>
         <meeting>
-            <date class="date">Monday, February 1, 2016</date>
-            <time class="bullet">7:30 - 9:30 pm</time>
-            <info class="bullet">Resolutions</info>
-            <location class="bullet">Regular Meeting - Edwards Family Centre</location>
+            <dateNode strClassDate="date">Monday, February 1, 2016</dateNode>
+            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">Resolutions</info>
+            <location strClassLocation="bullet">Regular Meeting - Edwards Family Centre</location>
         </meeting>
         <meeting>
-            <date class="date">Monday March 7, 2016</date>
-            <time class="bullet">7:30 – 9:30 pm</time>
-            <info class="bullet">FILM: &#034;Between Allah and Me&#034;</info>
-            <location class="bullet">International Women's Day - Frances Morrison Library</location>
+            <dateNode strClassDate="date">Monday March 7, 2016</dateNode>
+            <timeNode strClassTime="bullet">7:30 – 9:30 pm</timeNode>
+            <info strClassInfo="bullet">FILM: &#034;Between Allah and Me&#034;</info>
+            <location strClassLocation="bullet">International Women's Day - Frances Morrison Library</location>
         </meeting>
         <meeting>
-            <date class="date">Monday, April 4, 2016</date>
-            <time class="bullet">7:30 - 9:30 pm</time>
-            <info class="bullet">A Foundation for Fairness</info>
-            <location class="bullet">Regular Meeting - Edwards Family Centre</location>
+            <dateNode strClassDate="date">Monday, April 4, 2016</dateNode>
+            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">A Foundation for Fairness</info>
+            <location strClassLocation="bullet">Regular Meeting - Edwards Family Centre</location>
         </meeting>
         <meeting>
-            <date class="date">Monday, May 2, 2016</date>
-            <time class="bullet">5:00 - 9:00 pm</time>
-            <info class="bullet">SPEAKER: TICKETS REQUIRED, Ernie Louttit - Author Indian Ernie and More Indian Ernie - Insights from the Street</info>
-            <location class="bullet">AGM - Banquet at Western Development Museum</location>
+            <dateNode strClassDate="date">Monday, May 2, 2016</dateNode>
+            <timeNode strClassTime="bullet">5:00 - 9:00 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: TICKETS REQUIRED, Ernie Louttit - Author Indian Ernie and More Indian Ernie - Insights from the Street</info>
+            <location strClassLocation="bullet">AGM - Banquet at Western Development Museum</location>
         </meeting>
 	</meetings>
 </page>

@@ -12,7 +12,7 @@ define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbo
         var hash = util.fnc.parseXmlToJson(xmlResponse, 
               {childContainerTag:tagsXml[0], 
                 firstChildTag:tagsXml[1],
-                tagsXmlChildsCommon:tagsXmlChildsCommon}); 
+                tagsXmlChildsCommon:tagsXmlChildsCommon});  
         this.set('arryTemplateData', hash.pageData);                 
         this.set('pageTitle', hash.pageTitle);
         this.set('hashCssClassToSet', hash.hashNodeClass);

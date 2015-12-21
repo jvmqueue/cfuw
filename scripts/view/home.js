@@ -217,7 +217,7 @@ define(['jQuery',
           break;        
         case 'btnContactUs':
           intIndexNumber = 2;
-          model = contactUsModel.fnc.getInstance();
+          model = contactUsModel.fnc.getInstance();             
           $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
           this.blnSetBackgroundWhite = true;
           break;
@@ -239,7 +239,10 @@ define(['jQuery',
           this.blnAddPaddingTopSmallest = true;
           break;       
         case 'btnMeetings': 
-          model = meetingsModel.fnc.getInstance();            
+          model = meetingsModel.fnc.getInstance();  
+          console.group('VIEW MEETINGS');
+            console.log('model:\t', model);
+           console.groupEnd();                
           intIndexNumber = 6;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
@@ -253,7 +256,7 @@ define(['jQuery',
           this.blnAddPaddingTopSmallest = true;
           break;                                                                         
         case 'btnMissionStatement':
-          model = missionStatementModel.fnc.getInstance();
+          model = missionStatementModel.fnc.getInstance(); 
           intIndexNumber = 8;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;

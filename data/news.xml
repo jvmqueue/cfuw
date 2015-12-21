@@ -3,16 +3,16 @@
 	<title>NEWS</title>
 	<newsletters>
         <newsletter>
-            <pdf href="newsletters/CFUWnewsletter-fall2015.pdf">Fall 2015 Newsletter</pdf>
-            <word href="newsletters/CFUWnewsletter-fall2015.docx">Fall 2015 Newsletter</word>
+            <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletter-fall2015.pdf">Fall 2015 Newsletter</pdf>
+            <word strClassWord="word" hrefWord="newsletters/CFUWnewsletter-fall2015.docx">Fall 2015 Newsletter</word>
         </newsletter>
         <newsletter>
-            <pdf href="newsletters/CFUWnewsletterDecember2015-final.pdf">December 2015 Newsletter</pdf>
-            <word href="newsletters/CFUWnewsletterDecember2015-final.docx">December 2015 Newsletter</word>
+            <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletterDecember2015-final.pdf">December 2015 Newsletter</pdf>
+            <word strClassWord="word" hrefWord="newsletters/CFUWnewsletterDecember2015-final.docx">December 2015 Newsletter</word>
         </newsletter>
         <newsletter>
-            <pdf href="newsletters/CFUWnewsletter-OctNov2015(withcorrection).pdf">Oct/Nov 2015 Newsletter </pdf>
-            <word href="displayNone">&#160;</word>
+            <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletter-OctNov2015(withcorrection).pdf">Oct/Nov 2015 Newsletter </pdf>
+            <word strClassWord="word" hrefWord="displayNone">&#160;</word>
         </newsletter>
 	</newsletters>
 </page>

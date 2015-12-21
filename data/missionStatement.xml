@@ -3,28 +3,32 @@
 	<title>Mission Statement</title>
 	<paragraphs>
 		<paragraph>
-            <heading>&#160;</heading>
-			<text>Our mission, as part of a strong national organization, is working to ensure that all girls and women have equal opportunities and equal access to quality education within a peaceful and secure environment where their human rights are respected.</text>
+            <heading strClassHeading="displayNone">&#160;</heading>
+			<textNode strClassText="">Our mission, as part of a strong national organization, is working to ensure that all girls and women have equal opportunities and equal access to quality education within a peaceful and secure environment where their human rights are respected.</textNode>
 		</paragraph>
         <paragraph>
-            <heading>MANDATE:</heading>
-            <text>CFUW Saskatoon is committed to improving the status of women and girls through education and to advancing human rights, equality and social justice.</text>
+            <heading strClassHeading="bold">MANDATE:</heading>
+            <textNode strClassText="">CFUW Saskatoon is committed to improving the status of women and girls through education and to advancing human rights, equality and social justice.</textNode>
         </paragraph>        
         <paragraph>
-            <heading>VALUES:</heading>
-            <li>Providing a sense of belonging</li>
+            <heading strClassHeading="bold">VALUES:</heading>
+            <textNode strClassText="bullet">Providing a sense of belonging</textNode>
         </paragraph>
         <paragraph>
-            <li>Promoting life-long learning and achievement</li>
+            <heading strClassHeading="displayNone">&#160;</heading>
+            <textNode strClassText="bullet">Promoting life-long learning and achievement</textNode>
         </paragraph>
         <paragraph>
-            <li>Making a difference in the wider community</li>
+            <heading strClassHeading="displayNone">&#160;</heading>
+            <textNode strClassText="bullet">Making a difference in the wider community</textNode>
         </paragraph>     
         <paragraph>
-            <li>Advocating for women's issues</li>
+            <heading strClassHeading="displayNone">&#160;</heading>
+            <textNode strClassText="bullet">Advocating for women's issues</textNode>
         </paragraph>                                                     
         <paragraph>
-            <li>Working together</li>
+            <heading strClassHeading="displayNone">&#160;</heading>
+            <textNode strClassText="bullet">Working together</textNode>
         </paragraph>                                             
 	</paragraphs>
 </page>

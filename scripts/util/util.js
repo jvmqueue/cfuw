@@ -24,6 +24,14 @@ define(['jQuery'], function($, undefined){
                    paramArray.push(node.childNodes);
             }
         },
+        setAttributes:function(paramHashElementNodes, paramElm){
+            var hash = paramHashElementNodes;
+            var elm = paramElm;
+            for(var i = 0, len = elm.attributes.length; i < len; i++){
+                hash[elm.attributes[i].name] = elm.attributes[i].value;
+            }
+            return hash;
+        },
         parseXmlToJson:function(paramXml, paramOptionTags){
             var $xmlDoc = $(paramXml);
             var arry = [];
@@ -43,63 +51,38 @@ define(['jQuery'], function($, undefined){
             var strAttribute = '';
             var strAttributeName = '';
             var strAttributeValue = '';
+            var strNodeName = 'strNodeName';
             var nodeValue = '';
             var intXmlCategoryCounter = 0; 
     
-            hashElementNodes['strNameTitle'] = title; // TODO: needs clean-up Should be the same work-flow as using configMapping.js
+            hashElementNodes['strNameTitle'] = title;
 
-            for(var i = 0, len = members.length; i < len; i++){
+            for(var i = 0, len = members.length; i < len; i++){ // push each XML common parent nodes to arry
                 arry.push(members[i]);
             }
+            
+            for(var i = 0, len = arry.length; i < len; i++){ // access each common parent node and push attributes to hash
+               $(arry[i].childNodes).each(function(index, elm){
+                    if(elm.nodeType == 1){ 
+                      selectorChildsCommon = tagsXmlChildsCommon[intXmlCategoryCounter++]; 
+                      if(elm.hasAttributes()){
+                        hashElementNodes = _fnc.setAttributes(hashElementNodes, elm);
+                      }
+                      hashElementNodes[selectorChildsCommon] = elm.firstChild.nodeValue;                           
+                      hashElementNodes[strNodeName] = elm.nodeName;                           
+                    } 
+               });
+               intXmlCategoryCounter = 0; // reset to beginning of tagsXmlChildsCommon array                   
+               arryElementNodes.push(hashElementNodes); // forming hash for underscore template
+               console.group('UTIL');
+                console.log('hashElementNodes:\t', hashElementNodes);
+               console.groupEnd(); 
+               hashElementNodes = new Object; // hashes are reference vars, so, clear it. We do not overwrite previous values
+            } // End for     
 
-            /* TODO: Remove if else. all XML processing should be the same */
-            if( (strXmlCategory === 'board') || (strXmlCategory === 'interestGroups') || (strXmlCategory === 'affiliations') ){ 
-                for(var i = 0, len = arry.length; i < len; i++){                   
-                   $(arry[i].childNodes).each(function(index, elm){
-                        if(elm.nodeType == 1){ 
-                          selectorChildsCommon = tagsXmlChildsCommon[intXmlCategoryCounter++];
-                          hashElementNodes[selectorChildsCommon] = elm.firstChild.nodeValue;                           
-                          elm.hasAttributes() ? hashNodeAttributes['class'] = elm.getAttribute('class') : '';                                                 
-                          elm.hasAttributes() ? hashElementNodes['href'] = elm.getAttribute('href') : '';                                                 
-                          elm.hasAttributes() ? hashElementNodes['strClass'] = elm.getAttribute('class') : '';                                                 
-                        } 
-                   });
-                   intXmlCategoryCounter = 0; // reset to beginning of tag array                   
-                   arryElementNodes.push(hashElementNodes); // forming hash for underscore template
-                   hashElementNodes = new Object; // hashes are reference vars, so, clear it, so we do not overwrite previous values
-                } // End for     
+            
 
-            }else{
-                for(var i = 0, len = arry.length; i < len; i++){
-                    
-                        $(arry[i].childNodes).each(function(index, elm){
-
-                            if(this.nodeType == 1){
-                               nodeValue = elm.firstChild.nodeValue; 
-                               nodeTagName = elm.nodeName;
-
-                               if(elm.attributes.length > 0){ // allow XML tag to hava a single attribute
-                                strAttributeName = elm.attributes[0].nodeName;
-                                strAttributeValue = elm.attributes[0].nodeValue;
-                               }else{
-                                strAttributeName = '';
-                                strAttributeValue = '';
-                               }
-
-                               hashElementNodes = {'strXmlCategory':strXmlCategory,
-                                'strTagName':nodeTagName, 
-                                'strAttributeName':strAttributeName, 
-                                'strAttributeValue':strAttributeValue,
-                                'strName':nodeValue, 
-                                'strNameTitle':title};
-
-                               arryElementNodes.push(hashElementNodes);                         
-                            }
-                        }); 
-                    
-                } // End for               
-
-            }
+            
 
             return {pageTitle:title, pageData:arryElementNodes, hashNodeClass:hashNodeAttributes};
         } // End parseXmlToJson

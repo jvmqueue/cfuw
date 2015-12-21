@@ -337,7 +337,7 @@ a.word{
     background:url(../images/iconWord30Px.png) left 0 no-repeat transparent; 
 }
 a.pdf[href=displayNone], a.word[href=displayNone]{ /* hide newsletters which are not available */
-    visibility:hidden;
+    display:none;
 }
 a.pdf:hover, a.word:hover{
     font-weight:bold;
