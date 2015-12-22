@@ -240,9 +240,6 @@ define(['jQuery',
           break;       
         case 'btnMeetings': 
           model = meetingsModel.fnc.getInstance();  
-          console.group('VIEW MEETINGS');
-            console.log('model:\t', model);
-           console.groupEnd();                
           intIndexNumber = 6;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
