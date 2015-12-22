@@ -72,6 +72,7 @@ define(['jQuery'], function($, undefined){
                       hashElementNodes[strNodeName] = elm.nodeName;                           
                     } 
                });
+               /*uncessary comment*/
                intXmlCategoryCounter = 0; // reset to beginning of tagsXmlChildsCommon array                   
                arryElementNodes.push(hashElementNodes); // forming hash for underscore template
                console.group('UTIL');
