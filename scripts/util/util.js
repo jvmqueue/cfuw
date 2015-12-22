@@ -43,7 +43,7 @@ define(['jQuery'], function($, undefined){
             var tagNameFirstChild = paramOptionTags.firstChildTag;
             var tagsXmlChildsCommon = paramOptionTags.tagsXmlChildsCommon;
             var selector = tagNameContainer + ' ' + tagNameFirstChild;
-            var selectorChildsCommon = null;
+
             var members = $xmlDoc.find(selector);
             var strXmlCategory = members[0].parentElement.getAttribute('catagory') || '';
             var hashNodeAttributes = {};
@@ -63,27 +63,19 @@ define(['jQuery'], function($, undefined){
             
             for(var i = 0, len = arry.length; i < len; i++){ // access each common parent node and push attributes to hash
                $(arry[i].childNodes).each(function(index, elm){
-                    if(elm.nodeType == 1){ 
-                      selectorChildsCommon = tagsXmlChildsCommon[intXmlCategoryCounter++]; 
+                    if(elm.nodeType == 1){
+                        
                       if(elm.hasAttributes()){
                         hashElementNodes = _fnc.setAttributes(hashElementNodes, elm);
                       }
-                      hashElementNodes[selectorChildsCommon] = elm.firstChild.nodeValue;                           
+                      hashElementNodes[elm.nodeName] = elm.firstChild.nodeValue;                           
                       hashElementNodes[strNodeName] = elm.nodeName;                           
                     } 
                });
-               /*uncessary comment*/
                intXmlCategoryCounter = 0; // reset to beginning of tagsXmlChildsCommon array                   
                arryElementNodes.push(hashElementNodes); // forming hash for underscore template
-               console.group('UTIL');
-                console.log('hashElementNodes:\t', hashElementNodes);
-               console.groupEnd(); 
                hashElementNodes = new Object; // hashes are reference vars, so, clear it. We do not overwrite previous values
             } // End for     
-
-            
-
-            
 
             return {pageTitle:title, pageData:arryElementNodes, hashNodeClass:hashNodeAttributes};
         } // End parseXmlToJson
