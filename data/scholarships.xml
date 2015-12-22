@@ -17,7 +17,6 @@
             <paragraph4 strClass4="">&#160;</paragraph4>
         </section>
         <section>
-<<<<<<< HEAD
             <paragraph0 strClass0="">&#160;</paragraph0>
             <paragraph1 strClass1="inline">The five $1,500 Graduate Scholarships (</paragraph1>
             <paragraph2 strClass2="inline bold">Jean Murray Memorial, Dorothea Friebel, Benee, CFUW Saskatoon Inc.</paragraph2>
@@ -25,15 +24,6 @@
             <paragraph4 strClass4="inline bold">Jacqueline McKenzie Newstead Scholarships</paragraph4>
             <paragraph5 strClass5="inline">) are offered to female students in any field of study who have completed at least one year of course work, have an approved thesis or project proposal, and are not recipients of any substantive scholarships.</paragraph5>  
             <paragraph6 strClass6="inline bold">The application deadline for the Graduate scholarships is February 1, 2016.</paragraph6>
-=======
-            <paragraph class="">&#160;</paragraph>
-            <paragraph class="inline">The five $1,500 Graduate Scholarships (</paragraph>
-            <paragraph class="inline bold">Jean Murray Memorial, Dorothea Friebel, Benee, CFUW Saskatoon Inc.</paragraph>
-            <paragraph class="inline">, and </paragraph>
-            <paragraph class="inline bold">Jacqueline McKenzie Newstead Scholarships</paragraph>
-            <paragraph class="inline">) are offered to female students in any field of study who have completed at least one year of course work, have an approved thesis or project proposal, and are not recipients of any substantive scholarships.</paragraph>  
-            <paragraph class="inline bold">The application deadline for the Graduate scholarships is February 1, 2016.</paragraph>
->>>>>>> origin/processXmlToJson
         </section>
         <section>
             <paragraph0 strClass0="">&#160;</paragraph0>
@@ -136,16 +126,11 @@
             <paragraph4 strClass4="">&#160;</paragraph4>
         </section>     
         <section>
-<<<<<<< HEAD
             <paragraph0 strClass0="" id="admissions_how_to_apply">Website:    Graduate Scholarship Application Form (on University of Saskatchewan web site)</paragraph0>
             <paragraph1 strClass1="">&#160;</paragraph1>
             <paragraph2 strClass2="">&#160;</paragraph2>
             <paragraph3 strClass3="">&#160;</paragraph3>
             <paragraph4 strClass4="">&#160;</paragraph4>
-=======
-            <paragraph id="admissions_how_to_apply">Website:    Graduate Scholarship Application Form (on University of Saskatchewan web site)</paragraph>
-            <paragraph class="bold">http://www.usask.ca/</paragraph>
->>>>>>> origin/processXmlToJson
         </section>
         <section>
             <paragraph0 strClass0="">Mailing Address for Graduate Scholarship applications:</paragraph0>
