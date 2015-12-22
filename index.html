@@ -92,7 +92,7 @@
 </script>
 <script type="text/template" id="templateBoardMembers">    
 <section class="marginBoardMembers">
-        <p class="bold letterSpacing marginBottomZero"><%=positionTitle%></p>
+        <p class="bold letterSpacing marginBottomZero"><%=position%></p>
         <p class="marginBottomZero"><%=name%></p>
         <p class="marginBottomZero"><%=phone%></p>
         <p class="marginBottomZero"><a class="" href="mailto:<%=email%>" target="_top"><%=email%></a></p>
@@ -130,7 +130,7 @@
 </script>    
 <script type="text/template" id="templateMissionStatement">    
 <p class="<%= strClassHeading %>"><%= heading%></p>
-<p class="<%= strClassText %> <%= strNodeName %>"><%= text%></p>
+<p class="<%= strClassText %> <%= strNodeName %>"><%= textNode%></p>
 </script>  
 <script type="text/template" id="templateNews">    
 <div class="row">
@@ -147,13 +147,6 @@
   <p class="<%=strClass2%>"><%= paragraph2%></p>
   <p class="<%=strClass3%>"><%= paragraph3%></p>
   <p class="<%=strClass4%>"><%= paragraph4%></p>
-  <p class="<%= typeof strClass5 != 'undefined' ? strClass5 : '' %>"  ><%= typeof paragraph5 != 'undefined' ? paragraph5 : '' %></p>
-  <p class="<%= typeof strClass6 != 'undefined' ? strClass6 : '' %>"  ><%= typeof paragraph6 != 'undefined' ? paragraph6 : '' %></p>
-  <p class="<%= typeof strClass7 != 'undefined' ? strClass6 : '' %>"  ><%= typeof paragraph7 != 'undefined' ? paragraph7 : '' %></p>
-  <p class="<%= typeof strClass8 != 'undefined' ? strClass8 : '' %>"  ><%= typeof paragraph8 != 'undefined' ? paragraph8 : '' %></p>
-  <p class="<%= typeof strClass9 != 'undefined' ? strClass9 : '' %>"  ><%= typeof paragraph9 != 'undefined' ? paragraph9 : '' %></p>
-  <p class="<%= typeof strClass10 != 'undefined' ? strClass10 : '' %>"  ><%= typeof paragraph10 != 'undefined' ? paragraph10 : '' %></p>
-  <p class="<%= typeof strClass11 != 'undefined' ? strClass11 : '' %>"  ><%= typeof paragraph11 != 'undefined' ? paragraph11 : '' %></p>
 </script>       
   <!-- scripts / config defines script dependencies in a single location -->
   <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
