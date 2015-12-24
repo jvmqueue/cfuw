@@ -69,7 +69,13 @@ define(['jQuery',
         !!hash[name].tagsXml ? this.nav.tagsXml.push(hash[name].tagsXml) : '';          
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
+        this.preLoadResources();
       }     
+    },
+    preLoadResources:function(){
+      var images = [];
+      images[0] = new Image();
+      images[0].src = 'images/BookSaleFor2016_2015Nov04.png';
     },
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
