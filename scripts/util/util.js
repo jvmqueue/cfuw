@@ -18,6 +18,7 @@ define(['jQuery'], function($, undefined){
             var strValueTitle = '';
             var strName = '';
             var strNodeName = '';
+            var strNodeValue = '';
             var strValue = '';       
 
             if(node.childNodes.length > 0){
@@ -45,13 +46,12 @@ define(['jQuery'], function($, undefined){
             var selector = tagNameContainer + ' ' + tagNameFirstChild;
 
             var members = $xmlDoc.find(selector);
-            var strXmlCategory = members[0].parentElement.getAttribute('catagory') || '';
             var hashNodeAttributes = {};
             var nodeTagName = '';
             var strAttribute = '';
             var strAttributeName = '';
             var strAttributeValue = '';
-            var strNodeName = 'strNodeName';
+            var hashNodeName = {};
             var nodeValue = '';
             var intXmlCategoryCounter = 0; 
     
@@ -60,16 +60,20 @@ define(['jQuery'], function($, undefined){
             for(var i = 0, len = members.length; i < len; i++){ // push each XML common parent nodes to arry
                 arry.push(members[i]);
             }
+
+
             
             for(var i = 0, len = arry.length; i < len; i++){ // access each common parent node and push attributes to hash
                $(arry[i].childNodes).each(function(index, elm){
                     if(elm.nodeType == 1){
-                        
+
                       if(elm.hasAttributes()){
                         hashElementNodes = _fnc.setAttributes(hashElementNodes, elm);
                       }
-                      hashElementNodes[elm.nodeName] = elm.firstChild.nodeValue;                           
-                      hashElementNodes[strNodeName] = elm.nodeName;                           
+                      strNodeValue = elm.firstChild.nodeValue;
+                      strNodeName = elm.nodeName;
+                      hashElementNodes[elm.nodeName] = strNodeValue;
+                      hashElementNodes['strNodeName'] = strNodeName;
                     } 
                });
                intXmlCategoryCounter = 0; // reset to beginning of tagsXmlChildsCommon array                   
