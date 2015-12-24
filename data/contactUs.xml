@@ -6,7 +6,7 @@
             <info strClass="">For more information, or to join CFUW/Saskatoon Inc., please contact the following:</info>
         </information>
         <information>
-            <info strClass="">Janie Charbonneau</info>
+            <info strClass="marginBottomZero">Janie Charbonneau</info>
         </information>
         <information>
             <info strClass="bold">President</info>
@@ -15,7 +15,7 @@
             <info strClass="">info@cfuw-saskatoon.org</info>
         </information>
         <information>
-            <info strClass="">Alix Tumback</info>
+            <info strClass="marginBottomZero">Alix Tumback</info>
         </information>
         <information>
             <info strClass="bold">Vice President</info>
