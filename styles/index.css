@@ -297,6 +297,9 @@
     .bpwBusinessWomen{
         background:url(../images/iconBPW.png) left 0 no-repeat transparent; 
     }    
+    .graduateStudentsAssociation{
+        background:url(../images/iconGraduateStudentsAssocia.png) left 13px no-repeat transparent; 
+    }        
 /* End Affiliations */
 
 /* Begin Contact Us */
@@ -563,7 +566,10 @@ ul>li>a:hover{
     }
     .logo.headColRightLogo:hover{
         background-position-y:-87px;
-    }    
+    }
+    .graduateStudentsAssociation{
+        background:url(../images/iconGraduateStudentsAssocia.png) left 1.4em no-repeat transparent; 
+    }                
 }
 @media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
     .powerOfWomen{
