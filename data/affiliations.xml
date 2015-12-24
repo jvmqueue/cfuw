@@ -18,6 +18,9 @@
             <affiliationName strClass="councilOfWomen" href="http://www.ncwcanada.com/business-directory/818/saskatoon-council-of-women">Council of Women</affiliationName>
         </affiliation>
         <affiliation>
+            <affiliationName strClass="graduateStudentsAssociation" href="http://gsa.usask.ca/">Graduate Students' Association - University of Saskatchewan</affiliationName>
+        </affiliation>        
+        <affiliation>
             <affiliationName strClass="internationalGraduateWomen" href="http://www.graduatewomen.org">International Graduate Women</affiliationName>
         </affiliation>
 	</affiliations>
