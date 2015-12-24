@@ -142,11 +142,45 @@
 <h3><%= strNameTitle%></h3>
 </script>               
 <script type="text/template" id="templateScholarships">
-  <p class="<%=strClass0%>"><%= paragraph0%></p>
-  <p class="<%=strClass1%>"><%= paragraph1%></p>
-  <p class="<%=strClass2%>"><%= paragraph2%></p>
-  <p class="<%=strClass3%>"><%= paragraph3%></p>
-  <p class="<%=strClass4%>"><%= paragraph4%></p>
+  <% if (typeof(paragraph0) !== 'undefined') { %>
+    <p class="<%=strClass0%>"><%= paragraph0%></p>
+  <% } %>
+  <% if (typeof(paragraph1) !== 'undefined') { %>
+    <p class="<%=strClass1%>"><%= paragraph1%></p>
+  <% } %>
+  <% if (typeof(paragraph2) !== 'undefined') { %>
+    <p class="<%=strClass2%>"><%= paragraph2%></p>
+  <% } %>
+  <% if (typeof(paragraph3) !== 'undefined') { %>
+    <p class="<%=strClass3%>"><%= paragraph3%></p>
+  <% } %>
+  <% if (typeof(paragraph4) !== 'undefined') { %>
+    <p class="<%=strClass4%>"><%= paragraph4%></p>
+  <% } %>
+  <% if (typeof(paragraph5) !== 'undefined') { %>
+    <p class="<%=strClass5%>"><%= paragraph5%></p>
+  <% } %>
+  <% if (typeof(paragraph6) !== 'undefined') { %>
+    <p class="<%=strClass6%>"><%= paragraph6%></p>
+  <% } %>
+  <% if (typeof(paragraph7) !== 'undefined') { %>
+    <p class="<%=strClass7%>"><%= paragraph7%></p>
+  <% } %>
+  <% if (typeof(paragraph8) !== 'undefined') { %>
+    <p class="<%=strClass8%>"><%= paragraph8%></p>
+  <% } %>
+  <% if (typeof(paragraph9) !== 'undefined') { %>
+    <p class="<%=strClass9%>"><%= paragraph9%></p>
+  <% } %>
+  <% if (typeof(paragraph10) !== 'undefined') { %>
+    <p class="<%=strClass10%>"><%= paragraph10%></p>
+  <% } %>
+  <% if (typeof(paragraph11) !== 'undefined') { %>
+    <p class="<%=strClass11%>"><%= paragraph11%></p>
+  <% } %>
+  <% if (typeof(link) !== 'undefined') { %>
+    <a class="<%=strClassAnchor%>" href="<%=href%>" target="_blank"><%= link %></a>
+  <% } %>
 </script>       
   <!-- scripts / config defines script dependencies in a single location -->
   <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js"></script>
