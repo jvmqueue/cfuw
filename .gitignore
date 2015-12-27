@@ -2,6 +2,7 @@ archives
 *archive*
 *delete*
 resources
+minified
 diagrams
 bower_components
 node_modules
