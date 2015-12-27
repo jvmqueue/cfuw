@@ -31,7 +31,7 @@ module.exports = function(grunt){
 			  expand: true,
 			  cwd: 'styles', /* working direetory */
 			  src: ['*.css', '!*.min.css'],
-			  dest: 'styles/minified', /* write individual min files here */
+			  dest: 'minified', /* write individual min files here */
 			  ext: '.css'
 			}]
 		  }
@@ -47,8 +47,8 @@ module.exports = function(grunt){
 			}
 		},
 		clean:{
-			css:['styles/minified'],
-			js:['scripts/minified']
+			css:['minified'],
+			js:['minified']
 		}		
 	})
 };
