@@ -200,7 +200,7 @@ define(['jQuery',
        console.groupEnd(); 
 
     },
-    listenerNavBarHeader:function(e){
+    listenerNavBarHeader:function(e){ // TODO: if nav bar is expanded, reposition title node
       var $nodeNavBarTop = $('#navBarTop');
       var intNavBarEssentiallyHeight = $nodeNavBarTop.position().top;
       w.setTimeout(function(){
