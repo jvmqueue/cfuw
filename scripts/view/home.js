@@ -51,9 +51,12 @@ define(['jQuery',
     newWindow:0,
     selectorViewContainer:'#boardMembers',
     idViewContainer:'boardMembers',
+    $nodeViewContainer:null, // assigned during render
     selectorViewTitle:'#pageTitle',
+    $nodeViewTitle:null,
     idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
+    $nodeViewCfuwBackground:null,
     cssClassBackgroundOpacity:'jsOpacity',
     cssClassShowBookSale:'jsBookSale',
     cssClassWhiteBackground:'jsCfuwBackgroundColor',
@@ -79,7 +82,8 @@ define(['jQuery',
     },
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
-      'click #headColRightLogo':'listenerCfuwLogo'
+      'click #headColRightLogo':'listenerCfuwLogo',
+      'click .navbar-header':'listenerNavBarHeader'
     },
     renderDefault:function(paraBlnRenderDefault){
       var $nodeContainer = $('#boardMembers');
@@ -105,11 +109,19 @@ define(['jQuery',
         return void(0);
       }else{ // TODO: this is hack to fix a bug, this block was causing underscore to throw exceptions
         var $nodeContainer = $(this.selectorViewContainer);
+
+        if(this.$nodeViewContainer === null){ // assume if $nodeViewContainer not set, then other nodes have not been
+          this.$nodeViewContainer = $nodeContainer;
+          this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
+          this.$nodeViewTitle = $(this.selectorViewTitle);
+        }
+        
         $nodeContainer.addClass(this.cssClassWhiteBackground);
         $nodeContainer.removeClass(this.cssClassShowBookSale);
         $('#boardMembers>*').removeClass('hide');
         $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
+        this.optimizePageHeight();
       }
       
       
@@ -169,6 +181,35 @@ define(['jQuery',
 
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
     },
+    optimizePageHeight:function(){
+      var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
+      var intContainerTop = this.$nodeViewContainer.position().top;
+      var intContainerLeft = this.$nodeViewContainer.position().left;
+      var $nodeNavBar = $('#navBarTop');
+      var intNavBarBottom = $nodeNavBar.position().bottom;
+
+
+      this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
+      var intViewCfuwBackgroundHeight = this.$nodeViewCfuwBackground.prop('offsetHeight');
+      this.$nodeViewContainer.css('top', -intContainerHeight + 'px');
+      //this.$nodeViewTitle.css({top:(-intNavBarBottom)+'px', position:'relative'});
+
+      console.group('OPTIMIZE');
+        console.log('intContainerTop:\t', intContainerTop);
+        console.log('intContainerLeft:\t', intContainerLeft);
+       console.groupEnd(); 
+
+    },
+    listenerNavBarHeader:function(e){
+      var $nodeNavBarTop = $('#navBarTop');
+      var intNavBarEssentiallyHeight = $nodeNavBarTop.position().top;
+      w.setTimeout(function(){
+        console.group('LISTENER NAV BAR');
+        console.log('intNavBarEssentiallyHeight:\t',  intNavBarEssentiallyHeight);
+       console.groupEnd(); 
+     }, 333);
+       
+    },
     listenerCfuwLogo:function(e){
       var strUrl = 'http://www.cfuw.org/';
       var windows = {width:827, height:363};
@@ -199,7 +240,6 @@ define(['jQuery',
       var hashCssClassToSet = null;
       var hashHrefToSet = null;
       var dateNoCache = new Date().getMilliseconds();
-
 
       strDataPath = thisNav.data[intDataIndexNumber] + '?noCache=' + dateNoCache;
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];

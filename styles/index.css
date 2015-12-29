@@ -229,9 +229,11 @@
     top:25px;
 }
 .containerPageTitle{
-    top:-42em;
-    padding:0 2%;
-    width:52em;
+    top: 1170px;
+    padding: 0 32px;
+    width: 52em;
+    position: absolute;
+    z-index: 1111;
 }
 /* End Bridge image opacity */
 
