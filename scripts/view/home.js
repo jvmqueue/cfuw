@@ -54,6 +54,8 @@ define(['jQuery',
     $nodeViewContainer:null, // assigned during render
     selectorViewTitle:'#pageTitle',
     $nodeViewTitle:null,
+    intViewTitlePosition:null,
+    intTitleInitPosition:null,
     idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
     $nodeViewCfuwBackground:null,
@@ -180,6 +182,8 @@ define(['jQuery',
       }      
 
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
+
+      this.listenerNavBarHeader(); // adjust left side title relative to nav bar expanded or collapsed
     },
     optimizePageHeight:function(){
       var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
@@ -191,23 +195,40 @@ define(['jQuery',
 
       this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
       var intViewCfuwBackgroundHeight = this.$nodeViewCfuwBackground.prop('offsetHeight');
-      this.$nodeViewContainer.css('top', -intContainerHeight + 'px');
+      this.$nodeViewContainer.css('top', -intContainerHeight + 10 + 'px');
       //this.$nodeViewTitle.css({top:(-intNavBarBottom)+'px', position:'relative'});
 
-      console.group('OPTIMIZE');
-        console.log('intContainerTop:\t', intContainerTop);
-        console.log('intContainerLeft:\t', intContainerLeft);
-       console.groupEnd(); 
 
     },
     listenerNavBarHeader:function(e){ // TODO: if nav bar is expanded, reposition title node
-      var $nodeNavBarTop = $('#navBarTop');
-      var intNavBarEssentiallyHeight = $nodeNavBarTop.position().top;
-      w.setTimeout(function(){
-        console.group('LISTENER NAV BAR');
-        console.log('intNavBarEssentiallyHeight:\t',  intNavBarEssentiallyHeight);
+      var nodeNavBarTop = d.getElementById('navBarTop');
+      var $nodeTitle = $(this.selectorViewTitle);
+      var nodeBoardContainer = $('#boardMembers');
+      var intBoardContainerTop = nodeBoardContainer.position().top;
+      $nodeTitle.removeClass('transitionIn').addClass('transitionOut');
+      this.intViewTitlePosition === null ? this.intViewTitlePosition = $nodeTitle.css('top') : '';
+
+      console.group('LISTENER NAV BAR HEADER');
+        console.log('$nodeTitle.css(top):\t', $nodeTitle.css('top') );
+        console.log('this.intViewTitlePosition:\t', this.intViewTitlePosition );
        console.groupEnd(); 
-     }, 333);
+
+      w.setTimeout(function(){
+        var intNavBarHeight = nodeNavBarTop.offsetHeight;
+
+        if(intNavBarHeight > 200){ // nav bar expanded state
+          $nodeTitle.css({'top':'1046px'});
+        }else{
+          $nodeTitle.css({'top':'829px'}); // reset to initial CSS property in index.css
+        }
+
+         $nodeTitle.removeClass('transitionOut').addClass('transitionIn');
+       }, 333);
+
+       
+
+      
+     
        
     },
     listenerCfuwLogo:function(e){
