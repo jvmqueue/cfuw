@@ -55,7 +55,6 @@ define(['jQuery',
     selectorViewTitle:'#pageTitle',
     $nodeViewTitle:null,
     intViewTitlePosition:null,
-    intTitleInitPosition:null,
     idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
     $nodeViewCfuwBackground:null,
@@ -67,10 +66,11 @@ define(['jQuery',
     blnSetCfuwCascadingTopBackground:false,
     initialize:function(options){
       var hash = options; 
+      this.intViewTitlePosition =  $(this.selectorViewTitle).css('top'); 
       for(var name in hash){ // initilize _View mappings
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);     
-        this.nav.modelCid.push(hash[name].modelCid);     
+        this.nav.modelCid.push(hash[name].modelCid);
         !!hash[name].tagsXml ? this.nav.tagsXml.push(hash[name].tagsXml) : '';          
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
@@ -104,8 +104,7 @@ define(['jQuery',
       }
 
     },
-    render:function(options){   
-      
+    render:function(options){      
       if(!options){ // node clicked that we are not monitoring
         this.renderDefault(true); // true for render book sale
         return void(0);
@@ -182,8 +181,7 @@ define(['jQuery',
       }      
 
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
-
-      this.listenerNavBarHeader(); // adjust left side title relative to nav bar expanded or collapsed
+      this.listenerNavBarHeader();
     },
     optimizePageHeight:function(){
       var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
@@ -201,35 +199,28 @@ define(['jQuery',
 
     },
     listenerNavBarHeader:function(e){ // TODO: if nav bar is expanded, reposition title node
+      var that = this; // scoping
       var nodeNavBarTop = d.getElementById('navBarTop');
-      var $nodeTitle = $(this.selectorViewTitle);
       var nodeBoardContainer = $('#boardMembers');
       var intBoardContainerTop = nodeBoardContainer.position().top;
-      $nodeTitle.removeClass('transitionIn').addClass('transitionOut');
-      this.intViewTitlePosition === null ? this.intViewTitlePosition = $nodeTitle.css('top') : '';
+      
 
-      console.group('LISTENER NAV BAR HEADER');
-        console.log('$nodeTitle.css(top):\t', $nodeTitle.css('top') );
-        console.log('this.intViewTitlePosition:\t', this.intViewTitlePosition );
-       console.groupEnd(); 
-
+      that.$nodeViewTitle === null ? that.$nodeViewTitle = $(this.selectorViewTitle) : '';
+      that.$nodeViewTitle.removeClass('transitionIn').addClass('transitionOut');
+      that.$nodeViewTitle.removeClass('jsContainerPageTitleNavIsExpanded jsContainerPageTitleNavIsBigExpanded'); // reset
+      
       w.setTimeout(function(){
         var intNavBarHeight = nodeNavBarTop.offsetHeight;
 
-        if(intNavBarHeight > 200){ // nav bar expanded state
-          $nodeTitle.css({'top':'1046px'});
+        if(intNavBarHeight > 300){ // nav bar expanded state 
+          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsBigExpanded');
+        }else if(intNavBarHeight > 200){
+          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsExpanded');
         }else{
-          $nodeTitle.css({'top':'829px'}); // reset to initial CSS property in index.css
+          that.$nodeViewTitle.removeClass('jsContainerPageTitleNavIsExpanded');
         }
-
-         $nodeTitle.removeClass('transitionOut').addClass('transitionIn');
-       }, 333);
-
-       
-
-      
-     
-       
+         that.$nodeViewTitle.removeClass('transitionOut').addClass('transitionIn');
+       }, 333); // End w.setTimeout       
     },
     listenerCfuwLogo:function(e){
       var strUrl = 'http://www.cfuw.org/';
@@ -346,6 +337,7 @@ define(['jQuery',
           return void(0);
           break;                                                                          
         default:
+          this.listenerNavBarHeader();
           return void(0); /* do nothing we are not listening to the node */
       } // End switch
       // assigned model in above switch, now set the properties
