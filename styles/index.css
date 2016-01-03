@@ -229,11 +229,20 @@
     top:25px;
 }
 .containerPageTitle{
-    top: 1170px;
-    padding: 0 32px;
-    width: 52em;
-    position: absolute;
-    z-index: 1111;
+    top:934px;
+    padding:1% 32px;
+    width:31em;
+    position:absolute;
+    z-index:1111;
+    color:#FFFFFF;
+}
+.containerPageTitle.transitionOut{
+    color:#007194;
+}
+.containerPageTitle.transitionIn{ /* only delay the white coming in */
+    color:#FFFFFF;
+    -webkit-transition: color 3s; /* Safari */
+    transition: color 3s,;        
 }
 /* End Bridge image opacity */
 
@@ -380,7 +389,7 @@ p.date{
     display:none;
 }
 .opaque{
-    opacity:1.0;
+    background-color:rgba(0,0,255,0.5);
 }
 .btnOrange{
     color:#FFFFFF;
@@ -524,6 +533,10 @@ ul>li>a:hover{
     }
     .headColCenter{ 
         margin-top:6px;
+    }
+    .containerPageTitle{
+        left:-1.0em;
+        padding:0 32px;
     }
     .jumbotronHeaderImage .canadianFederationOfUniversity, .powerOfWomen h2{
         font-size:15px;
