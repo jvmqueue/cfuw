@@ -228,8 +228,14 @@
     position:relative;
     top:25px;
 }
+.containerPageTitle.jsContainerPageTitleNavIsExpanded{
+    top:1046px;
+}
+.containerPageTitle.jsContainerPageTitleNavIsBigExpanded{
+    top:1142px;
+}
 .containerPageTitle{
-    top:934px;
+    top:829px;
     padding:1% 32px;
     width:31em;
     position:absolute;
@@ -239,10 +245,12 @@
 .containerPageTitle.transitionOut{
     color:#007194;
 }
-.containerPageTitle.transitionIn{ /* only delay the white coming in */
+.containerPageTitle.transitionIn{ /* delay for title changes. Happens when user clicks on nav bar */
     color:#FFFFFF;
-    -webkit-transition: color 3s; /* Safari */
-    transition: color 3s,;        
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
 }
 /* End Bridge image opacity */
 
