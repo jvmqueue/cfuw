@@ -206,8 +206,8 @@ define(['jQuery',
       
 
       that.$nodeViewTitle === null ? that.$nodeViewTitle = $(this.selectorViewTitle) : '';
-      that.$nodeViewTitle.removeClass('transitionIn').addClass('transitionOut');
-      that.$nodeViewTitle.removeClass('jsContainerPageTitleNavIsExpanded jsContainerPageTitleNavIsBigExpanded'); // reset
+      that.$nodeViewTitle.addClass('transitionOut');
+      that.$nodeViewTitle.removeClass('transitionIn jsContainerPageTitleNavIsExpanded jsContainerPageTitleNavIsBigExpanded'); // reset
       
       w.setTimeout(function(){
         var intNavBarHeight = nodeNavBarTop.offsetHeight;
