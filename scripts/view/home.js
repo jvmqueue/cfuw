@@ -75,12 +75,23 @@ define(['jQuery',
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
         this.preLoadResources();
-      }     
+      }
+      this.setRelativeToDomain();     
     },
     preLoadResources:function(){
       var images = [];
       images[0] = new Image();
       images[0].src = 'images/BookSaleFor2016_2015Nov04.png';
+    },
+    setRelativeToDomain:function(){
+      var strDomain = w.location.toString();
+      var blnIsLocal = regEx.fnc.blnIsInString(strDomain, '127.0.0.1');
+      var blnIsDev = regEx.fnc.blnIsInString(strDomain, 'CFUW_Dev');
+      
+      if( (blnIsLocal === true) || (blnIsDev === true)  ){
+        var nodeLinkCss = d.getElementById('linkStylesheet');
+        nodeLinkCss.setAttribute('href', 'styles/index.css');
+      }
     },
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
