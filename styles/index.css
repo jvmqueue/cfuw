@@ -239,8 +239,11 @@
 .containerPageTitle.jsContainerPageTitleNavIsExpanded{
     top:1046px;
 }
-.containerPageTitle.jsContainerPageTitleNavIsBigExpanded{
+.containerPageTitle.jsContainerPageTitleNavIsByThreeItems{
     top:1142px;
+}
+.containerPageTitle.jsContainerPageTitleNavIsExpandedByFiveItems{
+    top:1205px;
 }
 .containerPageTitle.transitionOut{
     color:transparent;
