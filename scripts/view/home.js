@@ -71,7 +71,10 @@ define(['jQuery',
     blnSetCfuwCascadingTopBackground:false,
     initialize:function(options){
       var hash = options; 
-      this.intViewTitlePosition =  $(this.selectorViewTitle).css('top'); 
+      // TODO: define a method initializeVariables
+      this.intViewTitlePosition =  $(this.selectorViewTitle).css('top');
+      this.$nodeViewContainer = $(this.selectorViewContainer);
+      this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
       for(var name in hash){ // initilize _View mappings
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);     
@@ -108,11 +111,15 @@ define(['jQuery',
         $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.addClass(this.cssClassShowBookSale);
         $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
-        $('#boardMembers>*').addClass('hide');
+        $('#pageBackgroundImage').css({'height':'987px'});
+        $('#boardMembers>*').html('');
+        $('#boardMembers').css({'top':'-977px'}); // set inline style because boardMembers top is set dynamically in View code
         $('#pageTitle').addClass('hide');
         $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
         $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade');
       }
+
+      this.setFooterPosition();
 
     },
     render:function(options){      
@@ -134,9 +141,9 @@ define(['jQuery',
         $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
         this.optimizePageHeight();
-        this.setFooterPosition();
-      }
-      
+      } // End oughter else
+
+      this.setFooterPosition();
       
       var strModelId = options.idModel;
       var hashCssClassToSet = this.collection.where({'cid':strModelId})[0].get('hashCssClassToSet') || '';
@@ -196,15 +203,18 @@ define(['jQuery',
       this.listenerNavBarHeader();
     },
     setFooterPosition:function(){
+      var strClassViewContainer = this.$nodeViewContainer.attr('class');
+      var blnBookSaleInView = regEx.fnc.blnIsInString(strClassViewContainer, 'jsBookSale');
+
+      if(blnBookSaleInView){
+        $('#footerMain').css('top', -(756) + 'px');
+        return void(0);
+      }
+
       var hashContainerOffset = $(this.selectorViewCfuwBackground).offset();
       // TODO: set footer to bottom of nodeViewContainer
       var intTop = hashContainerOffset.top;
       var intHeight = this.$nodeViewContainer.outerHeight();
-      console.group('SET FOOTER POSITION');
-        console.log('intTop:\t', intTop);
-        console.log('intHeight:\t', intHeight);
-        console.log('intTop + intHeight:\t', intTop + intHeight);
-       console.groupEnd(); 
       $('#footerMain').css('top', -(intTop + intHeight - 407) + 'px');
     },
     optimizePageHeight:function(){

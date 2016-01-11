@@ -46,6 +46,9 @@
 .marginBottomIncrease, p.marginBottomIncrease{
     margin-bottom:1.2em;
 }
+.boardMembers.containerPageText{
+    padding-bottom:1.5em;
+}
 .marginBoardMembers{
     margin-bottom:1.2em;
 }
@@ -217,7 +220,7 @@
   border-radius:10px;
 }
 .jsPaddingTopSmallest{
-    padding-top:5.0em;
+    padding-top:4.0em;
 }
 .jsIsSubHeading, p.jsIsSubHeading{
     color:#EF4136;

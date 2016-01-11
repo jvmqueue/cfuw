@@ -38,8 +38,11 @@ define([''], function(undefined){  // no dependencies
                 return 'regex util.fnc paramString not received as parameter';
             }
             return paramString.replace(reg, '');
+        },
+        strReplace:function(paramString, paramStringToReplace, paramReplacement){
+            var reg = new RegExp(paramString); 
+            return paramString.replace(paramStringToReplace, paramReplacement);
         }        
-        
     };
     return{
         fnc:_fnc
