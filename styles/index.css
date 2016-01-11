@@ -239,8 +239,11 @@
 .containerPageTitle.jsContainerPageTitleNavIsExpanded{
     top:1046px;
 }
-.containerPageTitle.jsContainerPageTitleNavIsBigExpanded{
+.containerPageTitle.jsContainerPageTitleNavIsByThreeItems{
     top:1142px;
+}
+.containerPageTitle.jsContainerPageTitleNavIsExpandedByFiveItems{
+    top:1205px;
 }
 .containerPageTitle.transitionOut{
     color:transparent;
@@ -260,6 +263,17 @@
     -ms-transition:top 0;    
 }
 /* End Bridge image opacity */
+
+
+/* Begin Footer */ 
+.footerMain{
+    top:-340px;
+    height:300px;
+}
+.cfuwDarkBlueBackground{
+    background-color:#041D7B;
+}
+/* End Footer */ 
 
 /* Begin Row Main */
 .rowMain{
