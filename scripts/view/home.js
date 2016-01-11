@@ -134,6 +134,7 @@ define(['jQuery',
         $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
         this.optimizePageHeight();
+        this.setFooterPosition();
       }
       
       
@@ -194,20 +195,35 @@ define(['jQuery',
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
       this.listenerNavBarHeader();
     },
+    setFooterPosition:function(){
+      var hashContainerOffset = $(this.selectorViewCfuwBackground).offset();
+      // TODO: set footer to bottom of nodeViewContainer
+      var intTop = hashContainerOffset.top;
+      var intHeight = this.$nodeViewContainer.outerHeight();
+      console.group('SET FOOTER POSITION');
+        console.log('intTop:\t', intTop);
+        console.log('intHeight:\t', intHeight);
+        console.log('intTop + intHeight:\t', intTop + intHeight);
+       console.groupEnd(); 
+      $('#footerMain').css('top', -(intTop + intHeight - 407) + 'px');
+    },
     optimizePageHeight:function(){
       var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
       var intContainerTop = this.$nodeViewContainer.position().top;
       var intContainerLeft = this.$nodeViewContainer.position().left;
       var $nodeNavBar = $('#navBarTop');
       var intNavBarBottom = $nodeNavBar.position().bottom;
+      var $nodePageTitle = $('#pageTitle');
 
-
-      this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
-      var intViewCfuwBackgroundHeight = this.$nodeViewCfuwBackground.prop('offsetHeight');
-      this.$nodeViewContainer.css('top', -intContainerHeight + 10 + 'px');
-      $('#footerMain').css('top', -intContainerHeight + 10 + 'px');
-
-
+      var intPageTitleBottom = $nodePageTitle.position().bottom;
+      if(intContainerHeight < 330){
+        var minViewCfuwBackgroundHeight = 360;
+        this.$nodeViewCfuwBackground.css('height', minViewCfuwBackgroundHeight + 'px');
+        this.$nodeViewContainer.css('top', -minViewCfuwBackgroundHeight + 10 + 'px');
+      }else{
+        this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
+        this.$nodeViewContainer.css('top', -intContainerHeight + 10 + 'px');
+      }
     },
     listenerNavBarHeader:function(e){ // TODO: if nav bar is expanded, reposition title node
       var that = this; // scoping
@@ -288,8 +304,7 @@ define(['jQuery',
           break;        
         case 'btnContactUs':
           intIndexNumber = 2;
-          model = contactUsModel.fnc.getInstance();             
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          model = contactUsModel.fnc.getInstance();
           this.blnSetBackgroundWhite = true;
           break;
         case 'btnEvents': 

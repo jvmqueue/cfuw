@@ -209,7 +209,7 @@
   opacity:0.4;
 }
 .containerPageTitle, .containerPageText{
-  padding:2.5em 10%;
+  padding:2.5em 10% 0 10%;
 }
 .jsContainerPageText{
   top:-777px;
