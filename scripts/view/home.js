@@ -48,6 +48,11 @@ define(['jQuery',
         modelCid:[],
         templateId:[]
     },
+    events:{ // events depends on defining _View.el 
+      'click #navBarTop':'listenerNavBar',
+      'click #headColRightLogo':'listenerCfuwLogo',
+      'click .navbar-header':'listenerNavBarHeader'
+    },    
     newWindow:0,
     selectorViewContainer:'#boardMembers',
     idViewContainer:'boardMembers',
@@ -92,11 +97,6 @@ define(['jQuery',
         var nodeLinkCss = d.getElementById('linkStylesheet');
         nodeLinkCss.setAttribute('href', 'styles/index.css');
       }
-    },
-    events:{ // events depends on defining _View.el 
-      'click #navBarTop':'listenerNavBar',
-      'click #headColRightLogo':'listenerCfuwLogo',
-      'click .navbar-header':'listenerNavBarHeader'
     },
     renderDefault:function(paraBlnRenderDefault){
       var $nodeContainer = $('#boardMembers');
@@ -205,7 +205,7 @@ define(['jQuery',
       this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
       var intViewCfuwBackgroundHeight = this.$nodeViewCfuwBackground.prop('offsetHeight');
       this.$nodeViewContainer.css('top', -intContainerHeight + 10 + 'px');
-      //this.$nodeViewTitle.css({top:(-intNavBarBottom)+'px', position:'relative'});
+      $('#footerMain').css('top', -intContainerHeight + 10 + 'px');
 
 
     },
@@ -218,13 +218,15 @@ define(['jQuery',
 
       that.$nodeViewTitle === null ? that.$nodeViewTitle = $(this.selectorViewTitle) : '';
       that.$nodeViewTitle.addClass('transitionOut');
-      that.$nodeViewTitle.removeClass('transitionIn jsContainerPageTitleNavIsExpanded jsContainerPageTitleNavIsBigExpanded'); // reset
+      that.$nodeViewTitle.removeClass('transitionIn jsContainerPageTitleNavIsExpanded jsContainerPageTitleNavIsByThreeItems jsContainerPageTitleNavIsExpandedByFiveItems'); // reset
       
       w.setTimeout(function(){
         var intNavBarHeight = nodeNavBarTop.offsetHeight;
 
-        if(intNavBarHeight > 300){ // nav bar expanded state 
-          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsBigExpanded');
+        if(intNavBarHeight > 370){ // nav bar expanded state     
+          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsExpandedByFiveItems');
+        }else if(intNavBarHeight > 300){
+          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsByThreeItems');
         }else if(intNavBarHeight > 200){
           that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsExpanded');
         }else{
