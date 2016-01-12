@@ -25,11 +25,6 @@
 
 <body id="index">
 <!-- http://www.cheatography.com/masonjo/cheat-sheets/bootstrap/ -->
-  <div class="container">
-    <div class="row">
-      <div id="pageTitle"class="span2 cfuwWhite text-right containerPageTitle rotateGoLeft"></div>
-    </div>
-  </div>
   <div id="mainContainer" class="container mainContainer">
     <section id="jumbotron" class="jumbotron jumbotronHeaderImage marginTopZero marginBottomZero">
       <div class="row headColLogos">
@@ -83,20 +78,34 @@
   </nav>
   <!-- End Nav -->
   <div class="container-fluid containerPageLowerBody">
-    <div id="pageBackgroundImage"class="pageBackgroundImage"></div>    
-    <div class="row containerPageMiddleBody positionRelative cfuwWhite">
+    <div id="pageBackgroundImage"class="pageBackgroundImage"></div>
+    <div class="row containerPageMiddleBody positionRelative cfuwWhite">    
       <div id="boardMembers" class="col-xs-10 col-xs-offset-1 boardMembers containerPageText cfuwTextColor">&#160;</div>
       <footer id="footerMain" class="footerMain cfuwDarkBlueBackground col-xs-12"></footer>
     </div>
   </div> <!-- End .container.containerPageLowerBody -->  
 </div> <!-- .container.mainContainer -->
 <div id="templatesOnly" class="templatesOnly displayNone">
-<script type="text/template" id="templateAffiliations">    
-<div class="affiliations row">
-  <a class="col-xs-12 <%=strClass%>"  href=<%=href%> target="_blank"><%=affiliationName%></a>
-</div>
+<script type="text/template" id="templatePageTitle">    
+<h3><%= typeof strNameTitle != 'undefined' ? strNameTitle: ''%></h3>
+</script>               
+<script type="text/template" id="templateViewLeftTitle">    
+    <div id="pageTitleRow" class="row">
+      <div id="pageTitle"class="col-xs-12 cfuwWhite text-right containerPageTitle rotateGoLeft"></div>
+    </div>          
 </script>
-<script type="text/template" id="templateBoardMembers">    
+<script type="text/template" id="templateAffiliations">    
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>    
+  <div class="affiliations row">
+    <a class="col-xs-12 <%=strClass%>"  href=<%=href%> target="_blank"><%=affiliationName%></a>
+  </div>
+</script>
+<script type="text/template" id="templateBoardMembers">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>        
 <section class="marginBoardMembers">
         <p class="bold letterSpacing marginBottomZero"><%=position%></p>
         <p class="marginBottomZero"><%=name%></p>
@@ -104,50 +113,71 @@
         <p class="marginBottomZero"><a class="" href="mailto:<%=email%>" target="_top"><%=email%></a></p>
 </section>
 </script> 
-<script type="text/template" id="templateContactUs">    
-<p class="<%= strClass %> marginContactUs"><%= info%></p>
+<script type="text/template" id="templateContactUs">  
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>      
+  <p class="<%= strClass %> marginContactUs"><%= info%></p>
 </script>       
 <script type="text/template" id="templateEvents">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
 </script>       
-<script type="text/template" id="templateHome">    
+<script type="text/template" id="templateHome">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>       
 <p class="<%= strClassHeading %>"><%= heading %></p>
 <p class="<%= strClassContent %>"><%= content %></p>
 </script> 
-<script type="text/template" id="templateInterestGroups">    
-<section class="interestGroups row">
-        <p class="marginBottomZero bold name col-xs-12"><%=name%></p>
-        <p class="marginBottomZero dateTime col-xs-12"><%=dateTime%></p>
-        <p class="marginBottomZero contactPerson col-xs-12"><%=contactPerson%></p>
-        <p class="marginBottomZero contactPerson col-xs-12 <%=contactPersonSecond.length > 1? 'marginBottomIncrease': ''%>"><%=contactPersonSecond%></p>
-</section>
+<script type="text/template" id="templateInterestGroups">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>           
+  <section class="interestGroups row">
+    <p class="marginBottomZero bold name col-xs-12"><%=name%></p>
+    <p class="marginBottomZero dateTime col-xs-12"><%=dateTime%></p>
+    <p class="marginBottomZero contactPerson col-xs-12"><%=contactPerson%></p>
+    <p class="marginBottomZero contactPerson col-xs-12 <%=contactPersonSecond.length > 1? 'marginBottomIncrease': ''%>"><%=contactPersonSecond%></p>
+  </section>
 </script>     
-<script type="text/template" id="templateMeetings">    
-<p class= <%= '"'+ strClassDate + '"' %> > <%= dateNode%></p>
-<p class= <%= '"'+ strClassTime + '"' %> > <%= timeNode%></p>
-<p class= <%= '"'+ strClassInfo + '"' %> > <%= info%></p>
-<p class= <%= '"'+ strClassLocation + '"' %> > <%= location%></p>
+<script type="text/template" id="templateMeetings">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>       
+  <p class= <%= '"'+ strClassDate + '"' %> > <%= dateNode%></p>
+  <p class= <%= '"'+ strClassTime + '"' %> > <%= timeNode%></p>
+  <p class= <%= '"'+ strClassInfo + '"' %> > <%= info%></p>
+  <p class= <%= '"'+ strClassLocation + '"' %> > <%= location%></p>
 </script>   
-<script type="text/template" id="templateMembershipApplication">    
-<div class="row">
-  <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
-  <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
-</div>
+<script type="text/template" id="templateMembershipApplication">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>    
+  <div class="row">
+    <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
+    <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
+  </div>
 </script>    
-<script type="text/template" id="templateMissionStatement">    
-<p class="<%= strClassHeading %>"><%= heading%></p>
-<p class="<%= strClassText %> <%= strNodeName %>"><%= textNode%></p>
-</script>  
-<script type="text/template" id="templateNews">    
-<div class="row">
-  <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
-  <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
-</div>
+<script type="text/template" id="templateMissionStatement">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>    
+  <p class="<%= strClassHeading %>"><%= heading%></p>
+  <p class="<%= strClassText %> <%= strNodeName %>"><%= textNode%></p>
+  </script>  
+  <script type="text/template" id="templateNews"> 
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>        
+  <div class="row">
+    <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
+    <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
+  </div>
 </script>          
-<script type="text/template" id="templatePageTitle">    
-<h3><%= strNameTitle%></h3>
-</script>               
 <script type="text/template" id="templateScholarships">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>          
   <% if (typeof(paragraph0) !== 'undefined') { %>
     <p class="<%=strClass0%>"><%= paragraph0%></p>
   <% } %>

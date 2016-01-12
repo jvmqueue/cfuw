@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>NEWS</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">NEWS</title>    
 	<newsletters>
         <newsletter>
             <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletter-fall2015.pdf">Fall 2015 Newsletter</pdf>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>MEETINGS / EVENTS</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEETINGS / EVENTS</title> 
 	<meetings>
         <meeting>
             <dateNode strClassDate="date">Saturday, January 9, 2016</dateNode>

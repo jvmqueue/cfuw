@@ -220,7 +220,7 @@
   border-radius:10px;
 }
 .jsPaddingTopSmallest{
-    padding-top:4.0em;
+    padding-top:0;
 }
 .jsIsSubHeading, p.jsIsSubHeading{
     color:#EF4136;
@@ -231,13 +231,12 @@
     top:25px;
 }
 .containerPageTitle{
-    top:827px;
-    left:12%;
+    position:relative;
+    top:700px;
+    left:-24%;
     padding:1% 32px;
     width:31em;
     color:#FFFFFF;
-    position:absolute;
-    z-index:1111;
 }
 .containerPageTitle.jsContainerPageTitleNavIsExpanded{
     top:1046px;
@@ -253,8 +252,7 @@
     left:22%;
 }
 .containerPageTitle.transitionIn{ /* delay for title changes. Happens when user clicks on nav bar */
-    color:#FFFFFF;
-    left:12%;
+
     -webkit-transition: left 0.3s ease;
     -moz-transition: left 0.3s ease;
     -o-transition: left 0.3s ease;
@@ -574,7 +572,7 @@ ul>li>a:hover{
         font-size:15px;
     }
     .containerPageTitle.transitionIn{
-        left:-4%;
+        left:-27%;
     }            
     .jumbotronHeaderImage{
         min-width:auto;
@@ -616,14 +614,17 @@ ul>li>a:hover{
     }
     .graduateStudentsAssociation{
         background:url(../images/iconGraduateStudentsAssocia.png) left 1.4em no-repeat transparent; 
-    }                
+    }
+    .footerMain{
+        display:none;
+    }                    
 }
 @media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
     .powerOfWomen{
         font-size:24px;
     }
     .containerPageTitle.transitionIn{
-        left:0;
+
     }                
     .col.headColCenter h1{
         font-size:220%;

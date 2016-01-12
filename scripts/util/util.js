@@ -39,6 +39,7 @@ define(['jQuery'], function($, undefined){
             var arryElementNodes = [];
             var hashElementNodes = {};
             var selectorPageTitle = TAG_NAME_DOC_FIRST_CHILD + ' ' + TAG_NAME_DOC_TITLE;
+            var nodeTitle = $xmlDoc.find(selectorPageTitle)[0];
             var title = $xmlDoc.find(selectorPageTitle)[0].innerHTML;
             var tagNameContainer = paramOptionTags.childContainerTag;
             var tagNameFirstChild = paramOptionTags.firstChildTag;
@@ -56,6 +57,7 @@ define(['jQuery'], function($, undefined){
             var intXmlCategoryCounter = 0; 
     
             hashElementNodes['strNameTitle'] = title;
+            hashElementNodes = _fnc.setAttributes(hashElementNodes, nodeTitle);
 
             for(var i = 0, len = members.length; i < len; i++){ // push each XML common parent nodes to arry
                 arry.push(members[i]);

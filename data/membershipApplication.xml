@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-    <title>MEMBERSHIP APPLICATION</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEMBERSHIP APPLICATION</title>
     <links>
         <link>
             <pdf strClassPdf="pdf" hrefPdf="membershipApplications/MembershipAndPolicy2015Dec17.pdf">Membership and Policy</pdf>

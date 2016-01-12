@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>AFFILIATIONS</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">AFFILIATIONS</title>
 	<affiliations catagory="affiliations">
         <affiliation>
             <affiliationName strClass="readSaskatoon" href="https://www.readsaskatoon.com">READ Saskatoon</affiliationName>
