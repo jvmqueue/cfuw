@@ -84,7 +84,7 @@ define(['jQuery',
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
       }
       this.preLoadResources();
-      this.setRelativeToDomain();     
+      this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['127.0.0.1', 'CFUW_Dev']});     
     },
     preLoadResources:function(){
       var imagePaths = this.imagesToPreload;           
@@ -94,14 +94,26 @@ define(['jQuery',
         images[i].src = imagePaths[i];
       }
     },
-    setRelativeToDomain:function(){
+    setRelativeToDomain:function(options){
+      var strNodeId = options.id;
+      var arrayDomains= options.domains;
+      var strAttribute= options.attribute;
       var strDomain = w.location.toString();
-      var blnIsLocal = regEx.fnc.blnIsInString(strDomain, '127.0.0.1');
-      var blnIsDev = regEx.fnc.blnIsInString(strDomain, 'CFUW_Dev');
+      var strAttributeHref = null;
+      var nodeLinkStylesheet = null;
+      var blnInDomainList = null;
+
+      for(var i = 0, len = arrayDomains.length; i < len; i++){
+        blnInDomainList = regEx.fnc.blnIsInString(strDomain, arrayDomains[i]);
+        if(blnInDomainList === true){
+          break; // optimization: found match exit for
+        }
+      }
       
-      if( (blnIsLocal === true) || (blnIsDev === true)  ){ // default in index.html is minified.css
-        var nodeLinkCss = d.getElementById('linkStylesheet');
-        nodeLinkCss.setAttribute('href', 'styles/index.css');
+      if(blnInDomainList){ // default in index.html is minified.css
+        nodeLinkStylesheet = d.getElementById(strNodeId);
+        strAttributeHref = nodeLinkStylesheet.getAttribute(strAttribute);
+        nodeLinkStylesheet.setAttribute(strAttribute, strAttributeHref); // append version in query string
       }
     },
     renderDefault:function(paramBlnRenderDefault){
@@ -114,7 +126,7 @@ define(['jQuery',
         $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.addClass(this.cssClassShowBookSale);
         $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
-        $(this.selectorViewCfuwBackground).css({'height':'987px'});
+        $(this.selectorViewCfuwBackground).css({'height':'793px'});
         $('#boardMembers>*').html('');
         $('#boardMembers').css({'top':'-977px'}); // set inline style because boardMembers top is set dynamically in View code
         $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
@@ -208,7 +220,7 @@ define(['jQuery',
       var blnBookSaleInView = regEx.fnc.blnIsInString(strClassViewContainer, 'jsBookSale');
 
       if(blnBookSaleInView){
-        $('#footerMain').css('top', -(756) + 'px');
+        $('#footerMain').css('top', -(1012) + 'px');
         return void(0);
       }
 
