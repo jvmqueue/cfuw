@@ -219,16 +219,18 @@ define(['jQuery',
     setFooterPosition:function(){
       var strClassViewContainer = this.$nodeViewContainer.attr('class');
       var blnBookSaleInView = regEx.fnc.blnIsInString(strClassViewContainer, 'jsBookSale');
+      var hashContainerOffset = $(this.selectorViewCfuwBackground).offset();
+      var intTop = hashContainerOffset.top;
+      var intHeight = this.$nodeViewContainer.outerHeight();
 
       if(blnBookSaleInView){
         $('#footerMain').css('top', -(1012) + 'px');
+        $('#footerMain').css('margin-top', -(50) + 'px');
         return void(0);
       }
 
-      var hashContainerOffset = $(this.selectorViewCfuwBackground).offset();
-      // TODO: set footer to bottom of nodeViewContainer
-      var intTop = hashContainerOffset.top;
-      var intHeight = this.$nodeViewContainer.outerHeight();
+      
+      // set footer to bottom of nodeViewContainer
       $('#footerMain').css('top', -(intTop + intHeight - 407) + 'px');
     },
     optimizePageHeight:function(){
@@ -241,10 +243,10 @@ define(['jQuery',
       if(intContainerHeight < 330){
         var minViewCfuwBackgroundHeight = 360;
         this.$nodeViewCfuwBackground.css('height', minViewCfuwBackgroundHeight + 'px');
-        this.$nodeViewContainer.css('top', -minViewCfuwBackgroundHeight + 10 + 'px');
+        this.$nodeViewContainer.css('top', -minViewCfuwBackgroundHeight + 15 + 'px');
       }else{
-        this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
-        this.$nodeViewContainer.css('top', -intContainerHeight + 10 + 'px');
+        this.$nodeViewCfuwBackground.css('height', intContainerHeight + 30 + 'px');
+        this.$nodeViewContainer.css('top', -intContainerHeight + -7 + 'px');
       }
 
     },
