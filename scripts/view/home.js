@@ -84,7 +84,7 @@ define(['jQuery',
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
       }
       this.preLoadResources();
-      this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['127.0.0.1', 'CFUW_Dev']});     
+      this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['CFUW_Dev', '127.0.0.1']});     
     },
     preLoadResources:function(){
       var imagePaths = this.imagesToPreload;           
@@ -101,7 +101,7 @@ define(['jQuery',
       var strDomain = w.location.toString();
       var strAttributeHref = null;
       var nodeLinkStylesheet = null;
-      var blnInDomainList = null;
+      var blnInDomainList = false;
 
       for(var i = 0, len = arrayDomains.length; i < len; i++){
         blnInDomainList = regEx.fnc.blnIsInString(strDomain, arrayDomains[i]);
@@ -113,6 +113,7 @@ define(['jQuery',
       if(blnInDomainList){ // default in index.html is minified.css
         nodeLinkStylesheet = d.getElementById(strNodeId);
         strAttributeHref = nodeLinkStylesheet.getAttribute(strAttribute);
+        strAttributeHref = regEx.fnc.strReplace(strAttributeHref, 'minified', 'styles'); 
         nodeLinkStylesheet.setAttribute(strAttribute, strAttributeHref); // append version in query string
       }
     },
@@ -128,7 +129,7 @@ define(['jQuery',
         $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
         $(this.selectorViewCfuwBackground).css({'height':'793px'});
         $('#boardMembers>*').html('');
-        $('#boardMembers').css({'top':'-977px'}); // set inline style because boardMembers top is set dynamically in View code
+        $('#boardMembers').css({'top':'-778px'}); // set inline style because boardMembers top is set dynamically in View code
         $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
         $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade');
       }
