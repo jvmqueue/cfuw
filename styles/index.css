@@ -481,10 +481,10 @@ body{
 }
 .jsBookSale{
     top:-777px;
-    background:url(../images/BookSaleFor2016_2015Nov04.png) center 181px no-repeat transparent;    
+    background:url(../images/BookSaleFor2016_2015Nov04.png) center 0 no-repeat transparent;    
     background-blend-mode:color;
     background-size:32% auto;
-    margin:2em 0;
+    margin:0;
     padding:0 0 72% 0;
     border-radius:10px;
     height:955px;
