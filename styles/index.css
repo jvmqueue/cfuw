@@ -480,14 +480,14 @@ body{
     height:777px;
 }
 .jsBookSale{
-  top:-777px;
-    background:url(../images/BookSaleFor2016_2015Nov04.png) center 0 no-repeat transparent;    
+    top:-777px;
+    background:url(../images/BookSaleFor2016_2015Nov04.png) center 181px no-repeat transparent;    
     background-blend-mode:color;
     background-size:32% auto;
     margin:2em 0;
     padding:0 0 72% 0;
     border-radius:10px;
-    height:700px;
+    height:955px;
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        
