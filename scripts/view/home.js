@@ -225,7 +225,7 @@ define(['jQuery',
 
       if(blnBookSaleInView){
         $('#footerMain').css('top', -(1012) + 'px');
-        $('#footerMain').css('margin-top', -(50) + 'px');
+        $('#footerMain').css('margin-top', 0 + 'px');
         return void(0);
       }
 
