@@ -26,6 +26,20 @@
     <li>Bower Grunt plug-in for quick resource download during app development</li>
     <li>Erwin Sublime plug-in for quick HTML editing</li>
 </ul>
+<h3>Development Work-flow</h3>
+<ul>
+    <li>Create branch from master</li>
+    <li>Do Work</li>
+    <li>Test locally</li>
+    <li>Test on Dev</li>
+    <li>Push to your branch</li>
+    <li>Merge with Master</li>
+    <li>Resolve conflicts</li>
+    <li>Push to Master</li>
+    <li>Test on Dev</li>
+    <li>git status ensure all is well</li>
+    <li>Push to Prod</li>
+</ul>
 </ul>
 <h4>Fundemental Architecture</h4>
 <div>
