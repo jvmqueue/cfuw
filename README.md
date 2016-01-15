@@ -11,6 +11,7 @@
     <li>Require JS</li>
     <li>Backbone JS</li>    
     <li>Underscore JS</li>    
+    <li>Regular Expressions</li>    
     <li>CSS3</li>   
     <li>Grunt</li>
 </ul>
