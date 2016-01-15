@@ -18,6 +18,7 @@
 <ul>
     <li>XML for page content via Backbone fetch</li>
     <li>Custom Utility for converting readable XML to JSON</li>
+    <li>Custom Utility for Regular Expressions</li>
     <li>Backbone.js for employing Model View workflow</li>
     <li>underscore.js for HTML templates</li>
     <li>jQuery for DOM access</li>
