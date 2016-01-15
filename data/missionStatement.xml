@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>Mission Statement</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">Mission Statement</title>
 	<paragraphs>
 		<paragraph>
             <heading strClassHeading="displayNone">&#160;</heading>

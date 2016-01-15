@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>CONTACT US</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">CONTACT US</title>    
 	<informations>
         <information>
             <info strClass="">For more information, or to join CFUW/Saskatoon Inc., please contact the following:</info>

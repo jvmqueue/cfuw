@@ -48,18 +48,21 @@ define(['jQuery',
         modelCid:[],
         templateId:[]
     },
+    imagesToPreload:[
+      'images/BookSaleFor2016_2015Nov04.png',
+      'images/bridgeBigCenter.png'
+    ],
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo':'listenerCfuwLogo',
       'click .navbar-header':'listenerNavBarHeader'
-    },    
+    },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
     idViewContainer:'boardMembers',
     $nodeViewContainer:null, // assigned during render
     selectorViewTitle:'#pageTitle',
     $nodeViewTitle:null,
-    intViewTitlePosition:null,
     idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
     $nodeViewCfuwBackground:null,
@@ -69,50 +72,70 @@ define(['jQuery',
     blnSetBackgroundOpacity:false,
     blnSetBackgroundWhite:false,
     blnSetCfuwCascadingTopBackground:false,
-    initialize:function(options){
+    initialize:function(options){ // initialize application's instance vars
       var hash = options; 
-      this.intViewTitlePosition =  $(this.selectorViewTitle).css('top'); 
-      for(var name in hash){ // initilize _View mappings
+      this.$nodeViewContainer = $(this.selectorViewContainer);
+      this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
+      for(var name in hash){ // initilize _View mappings. Format JSON from XML
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);     
         this.nav.modelCid.push(hash[name].modelCid);
         !!hash[name].tagsXml ? this.nav.tagsXml.push(hash[name].tagsXml) : '';          
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
-        this.preLoadResources();
       }
-      this.setRelativeToDomain();     
+      this.preLoadResources();
+      this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['CFUW_Dev', '127.0.0.1']});     
     },
     preLoadResources:function(){
-      var images = [];
-      images[0] = new Image();
-      images[0].src = 'images/BookSaleFor2016_2015Nov04.png';
-    },
-    setRelativeToDomain:function(){
-      var strDomain = w.location.toString();
-      var blnIsLocal = regEx.fnc.blnIsInString(strDomain, '127.0.0.1');
-      var blnIsDev = regEx.fnc.blnIsInString(strDomain, 'CFUW_Dev');
-      
-      if( (blnIsLocal === true) || (blnIsDev === true)  ){
-        var nodeLinkCss = d.getElementById('linkStylesheet');
-        nodeLinkCss.setAttribute('href', 'styles/index.css');
+      var imagePaths = this.imagesToPreload;           
+      var images = [];      
+      for(var i = 0, len = imagePaths.length; i < len; i++){
+        images[i] = new Image();
+        images[i].src = imagePaths[i];
       }
     },
-    renderDefault:function(paraBlnRenderDefault){
-      var $nodeContainer = $('#boardMembers');
-      var strJsCssClass = 'jsOpacity';
-      
-      $nodeContainer.html(''); // reset
+    setRelativeToDomain:function(options){
+      var strNodeId = options.id;
+      var arrayDomains= options.domains;
+      var strAttribute= options.attribute;
+      var strDomain = w.location.toString();
+      var strAttributeHref = null;
+      var nodeLinkStylesheet = null;
+      var blnInDomainList = false;
 
-      if(paraBlnRenderDefault === true){  // show book sale image
+      for(var i = 0, len = arrayDomains.length; i < len; i++){
+        blnInDomainList = regEx.fnc.blnIsInString(strDomain, arrayDomains[i]);
+        if(blnInDomainList === true){
+          break; // optimization: found match exit for
+        }
+      }
+      
+      if(blnInDomainList){ // default in index.html is minified.css
+        nodeLinkStylesheet = d.getElementById(strNodeId);
+        strAttributeHref = nodeLinkStylesheet.getAttribute(strAttribute);
+        strAttributeHref = regEx.fnc.strReplace(strAttributeHref, 'minified', 'styles'); 
+        nodeLinkStylesheet.setAttribute(strAttribute, strAttributeHref); // append version in query string
+      }
+    },
+    renderDefault:function(paramBlnRenderDefault){
+      var $nodeContainer = this.$nodeViewContainer;
+      var strJsCssClass = this.cssClassBackgroundOpacity;
+      
+      $nodeContainer.html(''); // reset... empty HTML so that container has no height
+
+      if(paramBlnRenderDefault === true){  // show book sale image
         $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.addClass(this.cssClassShowBookSale);
         $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
-        $('#boardMembers>*').addClass('hide');
-        $('#pageTitle').addClass('hide');
+        $(this.selectorViewCfuwBackground).css({'height':'793px'});
+        $('#boardMembers>*').html('');
+        $('#boardMembers').css({'top':'-778px'}); // set inline style because boardMembers top is set dynamically in View code
         $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
         $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade');
       }
+
+      this.setFooterPosition();
 
     },
     render:function(options){      
@@ -125,22 +148,21 @@ define(['jQuery',
         if(this.$nodeViewContainer === null){ // assume if $nodeViewContainer not set, then other nodes have not been
           this.$nodeViewContainer = $nodeContainer;
           this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
-          this.$nodeViewTitle = $(this.selectorViewTitle);
         }
         
         $nodeContainer.addClass(this.cssClassWhiteBackground);
         $nodeContainer.removeClass(this.cssClassShowBookSale);
         $('#boardMembers>*').removeClass('hide');
-        $('#pageTitle').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
         this.optimizePageHeight();
-      }
-      
+      } // End oughter else
+
+      this.setFooterPosition();
       
       var strModelId = options.idModel;
       var hashCssClassToSet = this.collection.where({'cid':strModelId})[0].get('hashCssClassToSet') || '';
       var json = this.collection.where({'cid':strModelId})[0].get('arryTemplateData');
-      
+      var jsonPageViewTitle = this.collection.where({'cid':strModelId})[0].get('pageTitle');      
       var blnSetBackgroundOpacity = this.blnSetBackgroundOpacity;
       var blnSetBackgroundWhite = this.blnSetBackgroundWhite;
       var blnAddPadding = this.blnAddPaddingTopSmallest;
@@ -157,6 +179,8 @@ define(['jQuery',
       var _templateTitle = _.template(htmlTitle);
       var strHtml = ''; 
 
+      json['strNameTitle'] = jsonPageViewTitle;
+
       if(!!json){ // TODO: this should be a method call, removing if structure block contents
 
         for(var i = 0, len = json.length; i < len; i++){    
@@ -164,10 +188,9 @@ define(['jQuery',
         }
 
         var $nodeExist = $(this.selectorViewContainer);
-        var $nodeExistTitle = $(this.selectorViewTitle);
         $nodeExist.html(strHtml);
         strHtml = _templateTitle(json[0]);
-        $nodeExistTitle.html(strHtml);
+
         $('#colMainCenter').removeClass(this.cssClassShowBookSale);        
       }
 
@@ -194,46 +217,46 @@ define(['jQuery',
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
       this.listenerNavBarHeader();
     },
+    setFooterPosition:function(){
+      var strClassViewContainer = this.$nodeViewContainer.attr('class');
+      var strCssClassShowBookSale = this.cssClassShowBookSale;
+      var INT_TOP = -978;
+      var INT_MARGIN_TOP = 0;      
+      var blnBookSaleInView = regEx.fnc.blnIsInString(strClassViewContainer, strCssClassShowBookSale);
+      var hashContainerOffset = $(this.selectorViewCfuwBackground).offset();
+      var intTop = hashContainerOffset.top;
+      var intHeight = this.$nodeViewContainer.outerHeight();
+      var $nodeFooter = $('#footerMain');
+
+      if(blnBookSaleInView){
+        $nodeFooter.css({
+            'top':INT_TOP + 'px', 
+            'margin-top':INT_MARGIN_TOP
+          });
+        return void(0);
+      }      
+      // set footer to bottom of nodeViewContainer
+      $nodeFooter.css('top', -(intTop + intHeight - 407) + 'px');
+    },
     optimizePageHeight:function(){
       var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
       var intContainerTop = this.$nodeViewContainer.position().top;
       var intContainerLeft = this.$nodeViewContainer.position().left;
       var $nodeNavBar = $('#navBarTop');
       var intNavBarBottom = $nodeNavBar.position().bottom;
-
-
-      this.$nodeViewCfuwBackground.css('height', intContainerHeight + 'px');
-      var intViewCfuwBackgroundHeight = this.$nodeViewCfuwBackground.prop('offsetHeight');
-      this.$nodeViewContainer.css('top', -intContainerHeight + 10 + 'px');
-      //this.$nodeViewTitle.css({top:(-intNavBarBottom)+'px', position:'relative'});
-
+      
+      if(intContainerHeight < 330){
+        var minViewCfuwBackgroundHeight = 360;
+        this.$nodeViewCfuwBackground.css('height', minViewCfuwBackgroundHeight + 'px');
+        this.$nodeViewContainer.css('top', -minViewCfuwBackgroundHeight + 15 + 'px');
+      }else{
+        this.$nodeViewCfuwBackground.css('height', intContainerHeight + 30 + 'px');
+        this.$nodeViewContainer.css('top', -intContainerHeight + -7 + 'px');
+      }
 
     },
     listenerNavBarHeader:function(e){ // TODO: if nav bar is expanded, reposition title node
-      var that = this; // scoping
-      var nodeNavBarTop = d.getElementById('navBarTop');
-      var nodeBoardContainer = $('#boardMembers');
-      var intBoardContainerTop = nodeBoardContainer.position().top;
-      
 
-      that.$nodeViewTitle === null ? that.$nodeViewTitle = $(this.selectorViewTitle) : '';
-      that.$nodeViewTitle.addClass('transitionOut');
-      that.$nodeViewTitle.removeClass('transitionIn jsContainerPageTitleNavIsExpanded jsContainerPageTitleNavIsByThreeItems jsContainerPageTitleNavIsExpandedByFiveItems'); // reset
-      
-      w.setTimeout(function(){
-        var intNavBarHeight = nodeNavBarTop.offsetHeight;
-
-        if(intNavBarHeight > 370){ // nav bar expanded state     
-          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsExpandedByFiveItems');
-        }else if(intNavBarHeight > 300){
-          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsByThreeItems');
-        }else if(intNavBarHeight > 200){
-          that.$nodeViewTitle.addClass('jsContainerPageTitleNavIsExpanded');
-        }else{
-          that.$nodeViewTitle.removeClass('jsContainerPageTitleNavIsExpanded');
-        }
-         that.$nodeViewTitle.removeClass('transitionOut').addClass('transitionIn');
-       }, 333); // End w.setTimeout       
     },
     listenerCfuwLogo:function(e){
       var strUrl = 'http://www.cfuw.org/';
@@ -288,8 +311,7 @@ define(['jQuery',
           break;        
         case 'btnContactUs':
           intIndexNumber = 2;
-          model = contactUsModel.fnc.getInstance();             
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          model = contactUsModel.fnc.getInstance();
           this.blnSetBackgroundWhite = true;
           break;
         case 'btnEvents': 

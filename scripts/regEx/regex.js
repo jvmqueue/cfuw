@@ -32,14 +32,22 @@ define([''], function(undefined){  // no dependencies
             var strId = arrayReg[2];
             return strId;
         },
+        getAfterSubString:function(paramString, paramSubString){
+            var strMatch = paramString.match(paramSubString);
+            var strSplit = paramString.split(strMatch[0]);
+            return strSplit[1];            
+        },        
         strRemoveWhiteSpace:function(paramString){
             var reg = /(\s)/gi; 
             if(paramString === null){
                 return 'regex util.fnc paramString not received as parameter';
             }
             return paramString.replace(reg, '');
+        },
+        strReplace:function(paramString, paramStringToReplace, paramReplacement){
+            var reg = new RegExp(paramString); 
+            return paramString.replace(paramStringToReplace, paramReplacement);
         }        
-        
     };
     return{
         fnc:_fnc

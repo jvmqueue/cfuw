@@ -46,6 +46,9 @@
 .marginBottomIncrease, p.marginBottomIncrease{
     margin-bottom:1.2em;
 }
+.boardMembers.containerPageText{
+    padding-bottom:1.0em;
+}
 .marginBoardMembers{
     margin-bottom:1.2em;
 }
@@ -209,7 +212,7 @@
   opacity:0.4;
 }
 .containerPageTitle, .containerPageText{
-  padding:2.5em 10%;
+  padding:2.5em 10% 0 10%;
 }
 .jsContainerPageText{
   top:-777px;
@@ -217,7 +220,7 @@
   border-radius:10px;
 }
 .jsPaddingTopSmallest{
-    padding-top:5.0em;
+    padding-top:0;
 }
 .jsIsSubHeading, p.jsIsSubHeading{
     color:#EF4136;
@@ -228,13 +231,12 @@
     top:25px;
 }
 .containerPageTitle{
-    top:827px;
-    left:12%;
+    position:relative;
+    top:700px;
+    left:-24%;
     padding:1% 32px;
     width:31em;
     color:#FFFFFF;
-    position:absolute;
-    z-index:1111;
 }
 .containerPageTitle.jsContainerPageTitleNavIsExpanded{
     top:1046px;
@@ -250,8 +252,7 @@
     left:22%;
 }
 .containerPageTitle.transitionIn{ /* delay for title changes. Happens when user clicks on nav bar */
-    color:#FFFFFF;
-    left:12%;
+
     -webkit-transition: left 0.3s ease;
     -moz-transition: left 0.3s ease;
     -o-transition: left 0.3s ease;
@@ -263,6 +264,20 @@
     -ms-transition:top 0;    
 }
 /* End Bridge image opacity */
+
+
+/* Begin Footer */ 
+.footerMain{
+    top:-70px;
+    height:300px;
+}
+    .footerMain .panel-footer{
+        border:0;
+    }
+.cfuwDarkBlueBackground{
+    background-color:#041D7B;
+}
+/* End Footer */ 
 
 /* Begin Row Main */
 .rowMain{
@@ -468,14 +483,14 @@ body{
     height:777px;
 }
 .jsBookSale{
-  top:-777px;
+    top:-777px;
     background:url(../images/BookSaleFor2016_2015Nov04.png) center 0 no-repeat transparent;    
     background-blend-mode:color;
     background-size:32% auto;
-    margin:2em 0;
+    margin:0;
     padding:0 0 72% 0;
     border-radius:10px;
-    height:700px;
+    height:955px;
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        
@@ -560,7 +575,7 @@ ul>li>a:hover{
         font-size:15px;
     }
     .containerPageTitle.transitionIn{
-        left:-4%;
+        left:-27%;
     }            
     .jumbotronHeaderImage{
         min-width:auto;
@@ -602,14 +617,17 @@ ul>li>a:hover{
     }
     .graduateStudentsAssociation{
         background:url(../images/iconGraduateStudentsAssocia.png) left 1.4em no-repeat transparent; 
-    }                
+    }
+    .footerMain{
+        display:none;
+    }                    
 }
 @media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
     .powerOfWomen{
         font-size:24px;
     }
     .containerPageTitle.transitionIn{
-        left:0;
+
     }                
     .col.headColCenter h1{
         font-size:220%;
