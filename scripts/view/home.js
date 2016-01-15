@@ -218,20 +218,24 @@ define(['jQuery',
     },
     setFooterPosition:function(){
       var strClassViewContainer = this.$nodeViewContainer.attr('class');
-      var blnBookSaleInView = regEx.fnc.blnIsInString(strClassViewContainer, 'jsBookSale');
+      var strCssClassShowBookSale = this.cssClassShowBookSale;
+      var INT_TOP = -978;
+      var INT_MARGIN_TOP = 0;      
+      var blnBookSaleInView = regEx.fnc.blnIsInString(strClassViewContainer, strCssClassShowBookSale);
       var hashContainerOffset = $(this.selectorViewCfuwBackground).offset();
       var intTop = hashContainerOffset.top;
       var intHeight = this.$nodeViewContainer.outerHeight();
+      var $nodeFooter = $('#footerMain');
 
       if(blnBookSaleInView){
-        $('#footerMain').css('top', -(1012) + 'px');
-        $('#footerMain').css('margin-top', 0 + 'px');
+        $nodeFooter.css({
+            'top':INT_TOP + 'px', 
+            'margin-top':INT_MARGIN_TOP
+          });
         return void(0);
-      }
-
-      
+      }      
       // set footer to bottom of nodeViewContainer
-      $('#footerMain').css('top', -(intTop + intHeight - 407) + 'px');
+      $nodeFooter.css('top', -(intTop + intHeight - 407) + 'px');
     },
     optimizePageHeight:function(){
       var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
