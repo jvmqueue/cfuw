@@ -268,9 +268,12 @@
 
 /* Begin Footer */ 
 .footerMain{
-    top:-340px;
+    top:-70px;
     height:300px;
 }
+    .footerMain .panel-footer{
+        border:0;
+    }
 .cfuwDarkBlueBackground{
     background-color:#041D7B;
 }
