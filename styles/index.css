@@ -274,10 +274,21 @@
     top:-70px;
     height:300px;
 }
+    .footerColumn ul{
+
+    }
+        .footerColumn li{
+            position:relative;
+            left:81px;
+            text-align:left;
+        }    
     .footerMain .panel-footer{
         border:0;
         height:60%;
     }
+        .footerMain .panel-footer .footerColumn{
+            width:20%;
+        }    
 .cfuwDarkBlueBackground{
     background-color:#041D7B;
 }
@@ -451,6 +462,9 @@ p.date{
 .noBullet{
     list-style:none;
 }
+    .noBullet li{
+        list-style:none;
+    }
 .bullet{
     display:list-item;
     list-style:disc; 
