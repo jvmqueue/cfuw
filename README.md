@@ -37,6 +37,7 @@
     <li>Push to your branch</li>
     <li>Merge with Master</li>
     <li>Resolve conflicts</li>
+    <li>Run Grunt task: lintcssmin... Prod requests minified CSS</li>
     <li>Push to Master</li>
     <li>Test on Dev</li>
     <li>git status ensure all is well</li>
