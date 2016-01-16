@@ -18,6 +18,9 @@
 .letterSpacing{
     letter-spacing:3px;
 }
+.bold{
+    font-weight:bold;
+}
 .boldest{
     font-weight:900;
 }
