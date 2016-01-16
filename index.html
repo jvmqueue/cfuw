@@ -54,7 +54,7 @@
           <li><a id="btnHome" data-index-number="4" href="JavaScript:void(0);">Home</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="JavaScript:void(0);">About Us<span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu cfuwDropDownThemeOrange">
               <li><a id="btnMissionStatement" data-index-number="8" href="JavaScript:void(0);">Mission Statement</a></li>
               <li><a id="btnBoardMembers" data-index-number="1" href="JavaScript:void(0);">Board</a></li>
               <li><a id="btnAffiliations" data-index-number="0" href="JavaScript:void(0);">Affiliations</a></li>
@@ -64,7 +64,7 @@
           </li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="JavaScript:void(0);">Announcements<span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu cfuwDropDownThemeOrange">
               <li><a id="btnNews" data-index-number="9" href="JavaScript:void(0);">News</a></li>
               <li><a  id="btnMeetings" data-index-number="6" href="JavaScript:void(0);">Meetings/Events</a></li>
               <li><a  id="btnInterestGroups" data-index-number="5" href="JavaScript:void(0);">Interest Groups</a></li>
@@ -83,30 +83,44 @@
       <div id="boardMembers" class="col-xs-10 col-xs-offset-1 boardMembers containerPageText cfuwTextColor">&#160;</div>
       <footer id="footerMain" class="footerMain col-xs-12">
          <div class="panel-footer text-center cfuwDarkBlueBackground">
-           <ul class="floatLeft noBullet footerColumn">
-             <span class="bold">Home</span>
-           </ul>
-           <ul class="floatLeft noBullet footerColumn">
-              <apan class="bold">About Us</apan>
-                <li>Mission Statement</li>
-                <li>Board</li>
-                <li>Affiliations</li>
-                <li>Membership Application</li>
-                <li>Contact Us</li>
-           </ul>
-           <ul class="floatLeft noBullet footerColumn">
-              <apan class="bold">Annoucements</apan>
-                <li>News</li>
-                <li>Meetings/Events</li>
-                <li>Interest Groups</li>
-           </ul>
-           <ul class="floatLeft noBullet footerColumn">
-              <span class="bold">Booksale</span>
-           </ul>
-           <ul class="floatLeft noBullet footerColumn">
-              <span class="bold">Scholarships</span>
-           </ul>
-         </div>
+          <div id="footerTopRow" class="footerTop row">            
+             <ul class="textAlignLeft noBullet col-xs-2">
+               <li id="btnFooterHome" class="bold">Home</li>
+             </ul>
+             <ul class="textAlignLeft noBullet col-xs-2">
+                <span class="bold">About Us</span>
+                  <li id="btnFooterMissionStatement" >Mission Statement</li>
+                  <li id="btnFooterBoardMembers">Board</li>
+                  <li id="btnFooterAffiliations">Affiliations</li>
+                  <li id="btnFooterMembershipApplication">Membership Application</li>
+                  <li id="btnFooterContactUs">Contact Us</li>
+             </ul>
+             <ul class="textAlignLeft noBullet col-xs-2">
+                <span class="bold">Annoucements</span>
+                  <li id="btnFooterNews">News</li>
+                  <li id="btnFooterMeetings">Meetings/Events</li>
+                  <li id="btnFooterInterestGroups">Interest Groups</li>
+             </ul>
+             <ul class="textAlignLeft noBullet col-xs-2">
+                <li id="btnFooterBookSale" class="bold">Booksale</li>
+             </ul>
+             <ul class="textAlignLeft noBullet col-xs-2">
+                <li id="btnFooterScholarships" class="bold">Scholarships</li>
+             </ul>
+             <ul class="textAlignLeft noBullet col-xs-2">
+               <span class="bold">
+               <span class="block">CFUW Saskatoon Inc.</span>
+                <span class="block">P.O. Box 7405</span>
+                <span class="block">Saskatoon, SK S7K 4J3</span>
+              </span>              
+             </ul>   
+          </div> <!-- End .footerTop -->
+          <div class="footerBottom cfuwAddressURL col-xs-12">
+               <span class="textAlignLeft bold block textAlignRight">
+                www.fcfdu.org
+              </span>              
+          </div>                   
+         </div> <!-- End .panel-footer --> 
       </footer>
     </div>
   </div> <!-- End .container.containerPageLowerBody -->  
