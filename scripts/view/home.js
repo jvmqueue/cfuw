@@ -55,7 +55,7 @@ define(['jQuery',
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo':'listenerCfuwLogo',
-      'click .navbar-header':'listenerNavBarHeader'
+      'click #footerTopRow ul li':'listenerNavFooter'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
@@ -63,6 +63,8 @@ define(['jQuery',
     $nodeViewContainer:null, // assigned during render
     selectorViewTitle:'#pageTitle',
     $nodeViewTitle:null,
+    selectorViewNavBar:'#navBarTop',
+    $nodeViewNavBar:null,
     idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
     $nodeViewCfuwBackground:null,
@@ -138,7 +140,8 @@ define(['jQuery',
       this.setFooterPosition();
 
     },
-    render:function(options){      
+    render:function(options){  
+      d.getElementById('navBarTop').scrollIntoView();    
       if(!options){ // node clicked that we are not monitoring
         this.renderDefault(true); // true for render book sale
         return void(0);
@@ -194,9 +197,6 @@ define(['jQuery',
         $('#colMainCenter').removeClass(this.cssClassShowBookSale);        
       }
 
-      
-      d.getElementById('navBarTop').scrollIntoView();
-
       if(blnSetBackgroundOpacity === true){
         $(this.selectorViewCfuwBackground).addClass(this.cssClassBackgroundOpacity);
       }else{
@@ -215,7 +215,6 @@ define(['jQuery',
       }      
 
       $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
-      this.listenerNavBarHeader();
     },
     setFooterPosition:function(){
       var strClassViewContainer = this.$nodeViewContainer.attr('class');
@@ -242,7 +241,7 @@ define(['jQuery',
       var intContainerHeight = this.$nodeViewContainer.prop('offsetHeight');
       var intContainerTop = this.$nodeViewContainer.position().top;
       var intContainerLeft = this.$nodeViewContainer.position().left;
-      var $nodeNavBar = $('#navBarTop');
+      var $nodeNavBar = $(this.selectorViewNavBar);
       var intNavBarBottom = $nodeNavBar.position().bottom;
       
       if(intContainerHeight < 330){
@@ -255,8 +254,21 @@ define(['jQuery',
       }
 
     },
-    listenerNavBarHeader:function(e){ // TODO: if nav bar is expanded, reposition title node
+    listenerNavFooter:function(e){
+      e.stopPropagation();
+      var nodeTarget = e.target;
+      var strId = '';
+      var strNavBarNodeIdToTrigger = null;   
+      var nodeNavBarNodeToTrigger = null;   
 
+      !!nodeTarget.getAttribute('id') ? strId = nodeTarget.getAttribute('id') : '';
+
+      if(strId.length > 1){
+        strNavBarNodeIdToTrigger = regEx.fnc.strReplace(strId, 'Footer', ''); // replace Footer with nothing
+        nodeNavBarNodeToTrigger = d.getElementById(strNavBarNodeIdToTrigger); // strNavBarNodeIdToTrigger is nav bar link id
+        var $nodeNavBar = $(this.selectorViewNavBar); 
+         $nodeNavBar.trigger('click', nodeNavBarNodeToTrigger);        
+      }
     },
     listenerCfuwLogo:function(e){
       var strUrl = 'http://www.cfuw.org/';
@@ -265,8 +277,12 @@ define(['jQuery',
       if (window.focus) {this.newWindow.focus()}
       return false;
     },
-    listenerNavBar:function(e){ // listening to the nav bar, using event delegation
+    listenerNavBar:function(e, paramNodeFromTrigger){ // listening to the nav bar, using event delegation
       var nodeTarget = e.target;
+      if(typeof paramNodeFromTrigger != 'undefined'){  // footer link send message
+         nodeTarget = paramNodeFromTrigger;
+      } 
+      
       // HTML5 let HTML element define index for accessing associated data
       var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber);
       var intIndexNumber = null;
@@ -372,7 +388,6 @@ define(['jQuery',
           return void(0);
           break;                                                                          
         default:
-          this.listenerNavBarHeader();
           return void(0); /* do nothing we are not listening to the node */
       } // End switch
       // assigned model in above switch, now set the properties
