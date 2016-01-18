@@ -282,12 +282,12 @@
 }
     .footerTop ul li{
         padding:0 0 0 1.0em;
-        cursor:pointer;
     }
-    .footerTop ul li:hover{
+    .footerTop ul li:hover, .cfuwAddressLink:hover{
         color:#FEFD54;
-        background-color:#42569D;
+        background-color:#007194;
         border-radius:5px;
+        cursor:pointer;
     }    
     .footerBottom{
         margin:3% 0 0 0;
