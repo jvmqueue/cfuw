@@ -299,7 +299,6 @@ define(['jQuery',
       var blnShowDefault = false;
       var strJsCssClassOpacity = 'jsOpacity';
       var blnSetBackgroundOpacity = false;
-      var strSwitchCase = thisNav.id[intDataIndexNumber];
       var hashCssClassToSet = null;
       var hashHrefToSet = null;
       var dateNoCache = new Date().getMilliseconds();
