@@ -60,7 +60,7 @@ define(['jQuery',
     newWindow:0,
     selectorViewContainer:'#boardMembers',
     idViewContainer:'boardMembers',
-    $nodeViewContainer:null, // assigned during render
+    $nodeViewContainer:null, // assigned during initialize
     selectorViewTitle:'#pageTitle',
     $nodeViewTitle:null,
     selectorViewNavBar:'#navBarTop',
@@ -146,16 +146,10 @@ define(['jQuery',
         this.renderDefault(true); // true for render book sale
         return void(0);
       }else{ // TODO: this is hack to fix a bug, this block was causing underscore to throw exceptions
-        var $nodeContainer = $(this.selectorViewContainer);
-
-        if(this.$nodeViewContainer === null){ // assume if $nodeViewContainer not set, then other nodes have not been
-          this.$nodeViewContainer = $nodeContainer;
-          this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
-        }
+        var $nodeContainer = this.$nodeViewContainer;
         
         $nodeContainer.addClass(this.cssClassWhiteBackground);
         $nodeContainer.removeClass(this.cssClassShowBookSale);
-        $('#boardMembers>*').removeClass('hide');
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
         this.optimizePageHeight();
       } // End oughter else
