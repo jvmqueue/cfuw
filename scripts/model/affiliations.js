@@ -5,9 +5,9 @@ define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbo
         idAttribute:'affiliationsId',
         cid:'affiliationsId'
       },
-      parse:function(paramXmlResponse){
-        var xmlResponse = paramXmlResponse;
-        var tagsXml = this.get('tagsXml'); // set in View 
+      parse:function(paramXmlResponse){ // overriding Backbone parse method, fetch invokes parse
+        var xmlResponse = paramXmlResponse; // parameter sent from Backbone fetch
+        var tagsXml = this.get('tagsXml'); // set in View listenerNavBar
         var tagsXmlChildsCommon = this.get('tagsXmlChildsCommon');
         var hash = util.fnc.parseXmlToJson(xmlResponse, 
               {childContainerTag:tagsXml[0], 
