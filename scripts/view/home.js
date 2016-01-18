@@ -67,6 +67,8 @@ define(['jQuery',
     $nodeViewNavBar:null,
     idViewTitle:'pageTitle',
     selectorViewCfuwBackground:'#pageBackgroundImage',
+    selectorViewPageTitle:'#templatePageTitle',
+    $nodeViewPageTitle:null,
     $nodeViewCfuwBackground:null,
     cssClassBackgroundOpacity:'jsOpacity',
     cssClassShowBookSale:'jsBookSale',
@@ -78,6 +80,8 @@ define(['jQuery',
       var hash = options; 
       this.$nodeViewContainer = $(this.selectorViewContainer);
       this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
+      this.$nodeViewPageTitle = $(this.selectorViewPageTitle);
+
       for(var name in hash){ // initilize _View mappings. Format JSON from XML
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);     
@@ -164,12 +168,11 @@ define(['jQuery',
       var blnSetBackgroundWhite = this.blnSetBackgroundWhite;
       var blnAddPadding = this.blnAddPaddingTopSmallest;
 
-      var strSelectorTemplateTitle = '#templatePageTitle';
       var strSelectorTemplate = '#'+ options.idTemplate;
       var $nodeTemplate = $(strSelectorTemplate);
      
       var html = $nodeTemplate.html();
-      var $nodeTemplateTitle = $(strSelectorTemplateTitle);
+      var $nodeTemplateTitle = this.$nodeViewPageTitle;
       
       var htmlTitle = $nodeTemplateTitle.html();
       var _template = _.template(html);
@@ -184,7 +187,7 @@ define(['jQuery',
           strHtml += _template(json[i]);           
         }
 
-        var $nodeExist = $(this.selectorViewContainer);
+        var $nodeExist = this.$nodeViewContainer;
         $nodeExist.html(strHtml);
         strHtml = _templateTitle(json[0]);
 
