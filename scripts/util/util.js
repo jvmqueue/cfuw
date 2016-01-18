@@ -1,5 +1,5 @@
 define(['jQuery'], function($, undefined){
-
+    'use strict';
     var w = window, d = document;    
     var TAG_NAME_DOC_FIRST_CHILD = 'page'; // private member
     var TAG_NAME_DOC_TITLE = 'title'; // private member
@@ -52,6 +52,8 @@ define(['jQuery'], function($, undefined){
             var strAttribute = '';
             var strAttributeName = '';
             var strAttributeValue = '';
+            var strNodeValue = null;
+            var strNodeName = null;
             var hashNodeName = {};
             var nodeValue = '';
             var intXmlCategoryCounter = 0; 

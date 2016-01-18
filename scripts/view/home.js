@@ -34,6 +34,7 @@ define(['jQuery',
     exception, 
     undefined){
 
+  'use strict';
   var w = window, d = document;
   var Collection = Backbone.Collection.extend({});
   var _View = Backbone.View.extend({

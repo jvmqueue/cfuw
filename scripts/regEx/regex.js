@@ -1,4 +1,5 @@
 define([''], function(undefined){  // no dependencies
+    'use strict';
 
     var _fnc = {
         blnNotPrintable:function(paramString){

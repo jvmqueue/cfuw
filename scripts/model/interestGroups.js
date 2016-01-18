@@ -1,5 +1,5 @@
 define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbone, commonModelDefaults, util, undefined){
-    
+    'use strict';
     var Model = Backbone.Model.extend({ // private
       defaults:{
         idAttribute:'interestGroupsId',
