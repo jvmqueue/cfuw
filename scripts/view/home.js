@@ -54,7 +54,7 @@ define(['jQuery',
     ],
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
-      'click #headColRightLogo':'listenerCfuwLogo',
+      'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
       'click #footerTopRow ul li':'listenerNavFooter'
     },       
     newWindow:0,
@@ -267,9 +267,13 @@ define(['jQuery',
          $nodeNavBar.trigger('click', nodeNavBarNodeToTrigger);        
       }
     },
-    listenerCfuwLogo:function(e){
-      var strUrl = 'http://www.cfuw.org/';
-      var windows = {width:827, height:363};
+    listenerOpenSmallWindow:function(e){ // if small window open, clicking on link replaces small window URL
+      var node = e.target;
+      var strId = node.getAttribute('id');
+      var strUrl = null;
+      var windows = {width:827, height:363};      
+
+      strId === 'headColRightLogo' ? strUrl = 'http://www.cfuw.org/' : strUrl = 'http://www.fcfdu.org/';
       this.newWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
       if (window.focus) {this.newWindow.focus()}
       return false;
