@@ -297,7 +297,7 @@ define(['jQuery',
       var strCid = null;
       var strIdTemplate = null;
       var blnShowDefault = false;
-      var strJsCssClass = 'jsOpacity';
+      var strJsCssClassOpacity = 'jsOpacity';
       var blnSetBackgroundOpacity = false;
       var $nodeExist = $(this.selectorViewContainer);
       var strSwitchCase = thisNav.id[intDataIndexNumber];
@@ -383,7 +383,7 @@ define(['jQuery',
           break;             
         case 'btnBookSale': 
           blnShowDefault = true;          
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
+          $(this.selectorViewCfuwBackground).removeClass(strJsCssClassOpacity);
           this.render(); // no parameters renders default
           return void(0);
           break;                                                                          
@@ -410,7 +410,7 @@ define(['jQuery',
 
       if(blnShowDefault === false && ( model.get('blnDataHasBeenSet') === false ) ){ // no need to request if data is set on model
         this.collection.add(model);
-        model.fetch({
+        model.fetch({ // triggers model.parse
           url:basePath.basePath() + strDataPath,
           dataType:'xml',
           success:function(){            
