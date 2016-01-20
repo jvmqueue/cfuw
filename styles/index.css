@@ -381,6 +381,12 @@
 /* End Affiliations */
 
 /* Begin Contact Us */
+.frmLegend{
+    width:68%;
+}
+    .frmContactUs input, textarea{
+        border-radius:5px;
+    }
 .namePresident, .vicePresident{
     margin-bottom:0;
     padding-bottom:0;

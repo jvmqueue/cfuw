@@ -154,10 +154,23 @@
 </section>
 </script> 
 <script type="text/template" id="templateContactUs">  
-  <% if (typeof(strNameTitle) !== 'undefined') { %>
-    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>      
-  <p class="<%= strClass %> marginContactUs"><%= info%></p>
+  <section class="container">
+    <form id="frmContactUs" class="frmContactUs" action="php/contact.php" method="get" enctype="text/plain">
+      <fieldset class="block">
+        <legend name="subject" class="frmLegend">Contact Us: Canadian Federation University of Women</legend>
+        <div class="row"><label class="col-xs-3" htmlFor="frmContactUsFirstName">First Name: </label> <input id="frmContactUsFirstName" name="from" tabIndex="1" class="col-xs-3" type="text" /></div>
+        <div class="row"><label class="col-xs-3" htmlFor="frmContactUsLastName">Last Name: </label> <input id="frmContactUsLastName" class="col-xs-3" tabIndex="2" type="text" /></div>
+        <div class="row"><label class="col-xs-3" htmlFor="frmContactUsEmail">E-mail: </label> <input id="frmContactUsEmail" name="email" class="col-xs-3" tabIndex="3" type="text" /></div>
+      </fieldset>
+      <fieldset class="block">
+        <div className="row">
+          <label class="block" htmlFor="frmContactUsText">Message:</label>
+          <textarea id="frmContactUsText" name="message" class="col-xs-6" tabIndex="4" name="frmContactUsText" cols="30" rows="10"></textarea>
+        </div>
+      </fieldset>
+      <input type="submit" value="Send" />
+    </form>
+  </section>
 </script>       
 <script type="text/template" id="templateEvents">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
