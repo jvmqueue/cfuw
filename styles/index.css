@@ -384,6 +384,15 @@
 .frmLegend{
     width:68%;
 }
+.frmContactUs{
+
+}
+    .containerLabel{
+        padding-left:0;
+    }
+    div.containerContactUsText{
+        padding-left:1.0em;
+    }
     .frmContactUs input, textarea{
         border-radius:5px;
     }
@@ -666,7 +675,29 @@ ul>li>a:hover{
     }
     .footerMain{
         display:none;
-    }                    
+    }
+    /* Begin Contact Us  */
+    .frmLegend{
+        font-size:1.4em;
+        width:100%;
+    }
+    .containerLabel>label{
+        padding:0;
+        width:100%;
+    }
+    .containerLabel input{
+        width:100%;
+    }
+    div.containerContactUsText{
+        padding:0;
+        width:100%;
+    }    
+    .containerContactUsText textarea{
+        padding:0;
+        width:100%;
+    }
+    /* End Contact Us  */
+
 }
 @media (max-width:767px) and (orientation:landscape){ /* mobile landscape */
     .powerOfWomen{
