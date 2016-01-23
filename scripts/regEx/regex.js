@@ -48,7 +48,10 @@ define([''], function(undefined){  // no dependencies
         strReplace:function(paramString, paramStringToReplace, paramReplacement){
             var reg = new RegExp(paramString); 
             return paramString.replace(paramStringToReplace, paramReplacement);
-        }        
+        },
+        strReplaceAllSpecialChars:function(paramString){
+            return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\n\/]/gi, ' ');
+        }                
     };
     return{
         fnc:_fnc
