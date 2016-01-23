@@ -56,7 +56,8 @@ define(['jQuery',
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
-      'click #footerTopRow ul li':'listenerNavFooter'
+      'click #footerTopRow ul li':'listenerNavFooter',
+      'click #btnFormContactUsSend':'listenerFormSubmit'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
@@ -212,7 +213,7 @@ define(['jQuery',
         $nodeExist.removeClass('jsPaddingTopSmallest');
       }      
 
-      $( "p:contains('CONVENORS')" ).addClass('jsIsSubHeading row').removeClass('col-xs-5'); // TODO: this is a hack, fix it properly
+      !!$('#frmContactUsFirstName') ? $('#frmContactUsFirstName').focus() : ''; // Contact Form in View
     },
     setFooterPosition:function(){
       var strClassViewContainer = this.$nodeViewContainer.attr('class');
@@ -250,6 +251,34 @@ define(['jQuery',
         this.$nodeViewCfuwBackground.css('height', intContainerHeight + 30 + 'px');
         this.$nodeViewContainer.css('top', -intContainerHeight + -7 + 'px');
       }
+
+    },
+    listenerFormSubmit:function(e){
+      e.stopPropagation();
+      // get form values
+      var nodeTextArea = d.getElementById('frmContactUsText');
+      var text = nodeTextArea.value;
+      var textRemoveChars = regEx.fnc.strReplaceAllSpecialChars(text);
+      var $nodeTarget = $(e.target);
+      var $nodeParent = $nodeTarget.parents('form');
+      var $nodeInputs = $nodeParent.find('input[type=text], textarea');
+      var hashValues = {};
+
+      $nodeInputs.each(function(index, elm){
+        var strInput = elm.value;
+        var strRemoveChars = '';
+        var strId = elm.getAttribute('id');
+        
+        if(strId !== 'frmContactUsEmail'){
+          strRemoveChars = regEx.fnc.strReplaceAllSpecialChars(strInput);
+        }else{
+          strRemoveChars = strInput;
+        }        
+        
+        hashValues[elm.getAttribute('name')] = strRemoveChars;
+      });
+      // make AJAX Request, set header values
+      util.fnc.httpSend({hashHeaders:hashValues, url:'php/contact.php'});
 
     },
     listenerNavFooter:function(e){
