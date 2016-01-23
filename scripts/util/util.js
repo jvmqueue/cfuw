@@ -9,6 +9,20 @@ define(['jQuery'], function($, undefined){
         noCache:function(){
             return new Date().getMilliseconds();
         },
+        httpSend:function(options){
+            var headers = options.hashHeaders;
+            var url = options.url;
+            $.ajax({
+                url:url,
+                method:'POST',
+                headers:headers,
+                dataType:'text',
+                data:{},
+                success:function(data){
+                    // do nothing. AJAX complete at this stage
+                }                
+            });
+        },
         getElementNode:function(paramNode, paramArray, paramIndex){
             var node = paramNode;
             
