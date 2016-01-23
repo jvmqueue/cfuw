@@ -158,24 +158,24 @@
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %> 
   <section class="sectionContactUs container">
-    <form id="frmContactUs" class="frmContactUs" action="php/contact.php" method="get" enctype="text/plain">
+    <form id="frmContactUs" class="frmContactUs" action="" method="POST" enctype="text/plain">
       <fieldset class="block">
         <legend name="subject" class="frmLegend">Contact Us: Canadian Federation University of Women</legend>
         <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsFirstName">First Name: </label> 
-          <input id="frmContactUsFirstName" class="col-xs-4" name="from" tabIndex="1" type="text" />
+          <input id="frmContactUsFirstName" class="col-xs-4" name="contact-first" tabIndex="1" type="text" />
         </div>
         <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsLastName">Last Name: </label>
-          <input id="frmContactUsLastName" class="col-xs-4" name="fromLastName" tabIndex="1" type="text" />
+          <input id="frmContactUsLastName" class="col-xs-4" name="contact-last" tabIndex="1" type="text" />
         </div>
-        <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsEmail">E-mail: </label> <input id="frmContactUsEmail" name="email" class="col-xs-4" tabIndex="3" type="text" /></div>
+        <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsEmail">E-mail: </label> <input id="frmContactUsEmail" name="contact-email" class="col-xs-4" tabIndex="3" type="text" /></div>
       </fieldset>
       <fieldset class="block">
         <div class="containerLabel col-xs-10"><label class="col-xs-3" htmlFor="frmContactUsText">Message:</label></div>      
         <div class="containerContactUsText col-xs-9">
-          <textarea id="frmContactUsText" class="col-xs-7" name="message" tabIndex="4" name="frmContactUsText" cols="30" rows="10"></textarea>
+          <textarea id="frmContactUsText" class="col-xs-7" name="contact-message" tabIndex="4" name="frmContactUsText" cols="30" rows="10"></textarea>
         </div>
       </fieldset>
-      <input type="submit" value="Send" />
+      <input id="btnFormContactUsSend" type="button" value="Send" />
     </form>
   </section>
 </script>       
