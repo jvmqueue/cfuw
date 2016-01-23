@@ -1,43 +1,62 @@
 <?php 
 
-// THE BELOW LINE STATES THAT IF THE SUBMIT BUTTON
-// WAS PUSHED, EXECUTE THE PHP CODE BELOW TO SEND THE 
-// MAIL. IF THE BUTTON WAS NOT PRESSED, SKIP TO THE CODE
-// BELOW THE "else" STATEMENT (WHICH SHOWS THE FORM INSTEAD).
-
-
 // REPLACE THE LINE BELOW WITH YOUR E-MAIL ADDRESS.
-$to = 'glenn.blankenship@gmail.com';
+$to = 'developer@cfuw-saskatoon.org';
 $subject = 'Contact Us: Canadian Federation University of Women';
 
-// NOT SUGGESTED TO CHANGE THESE VALUES
-$message = $_GET ['message'];
-$from = $_GET['from'];
-$fromGet = $_GET['message'];
-$fromGetEmail = $_GET['email'];
+function get_header(){
+    
+    $arrayCompleteMessage = array();
+    $strName = '';
+    global $subject; // access global
+    $arrayCompleteMessage['subject'] = $subject;
 
+    foreach (getallheaders() as $name => $value){
+        
+        $strName = strtolower($name);
 
+        switch($strName){
+            case 'contact-first':   
+                $arrayCompleteMessage['first'] = "First:\t" . $value;
+                break;            
+            case 'contact-last': 
+                $arrayCompleteMessage['last'] = "Last:\t" . $value;
+                break;
+            case 'contact-email': 
+                $arrayCompleteMessage['email'] = "Email:\t" . $value;
+                break;
+            case 'contact-message': 
+                $arrayCompleteMessage['message'] = "Message:\t" . $value;
+                break;                
+            default:
+                // do nothing discovered header name we are not tracking                
+        } // End switch
+     
+    }
 
-// $headers = 'From: ' . $_POST[ "from" ] . PHP_EOL ;
+    return $arrayCompleteMessage;
+}
+$newLine = "\r\n";
+$arrayMessage = get_header();
 
-// Always set content-type when sending HTML email
-$headers = "MIME-Version: 1.0" . "\r\n";
+$headerFrom = "From: <" . $arrayMessage['email'] . ">"; // not using this, because email goes to spam
+$emailSubject = $arrayMessage['subject'];
 
-// More headers
-$headers .= 'From: <info@cfuw-saskatoon.org>' . "\r\n";
-$headers .= 'Cc: glenn.blankenship@gmail.com' . "\r\n";
+/*Perform concatenation manually, because order is important*/
+// TODO: replace first space in email with @. And second space with .
+$strMessage = $arrayMessage['subject'] . $newLine;
+$strMessage .= $arrayMessage['first'] . $newLine;
+$strMessage .= $arrayMessage['last'] . $newLine;
+$strMessage .= $arrayMessage['email'] . $newLine;
+$strMessage .= $arrayMessage['message'];
 
-$headers .= "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" . "\r\n";
+$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $strMessage);
+fwrite($myfile, "\r\nstrMessageStripped:");
+fwrite($myfile, $strMessageStripped);
+fclose($myfile);                 
 
-
-$sendFinalMessage = 'From: ' . $from . "\r\n email: " . $fromGetEmail . '  Message:  ' . $message;
-// mail ( $to, $subject, $message, $headers ) ;
-mail($to, 'CFUW Contact Us: '. $subject, $sendFinalMessage); 
-
-// THE TEXT IN QUOTES BELOW IS WHAT WILL BE 
-// DISPLAYED TO USERS AFTER SUBMITTING THE FORM.
-echo "Your e-mail has been sent! You should receive a reply within 24 hours!" ;
-
+mail($to, $emailSubject, $strMessage);
 
 
 ?>
