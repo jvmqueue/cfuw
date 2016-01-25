@@ -92,7 +92,12 @@ define(['jQuery',
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
       }
-      this.setCustomListeners();
+
+      this.setCustomListeners({
+        id:'btnFormContactUsSend',
+        nameEvent:'http:response',
+        fncListener:this.listenerEmailSuccess
+      });
       this.preLoadResources();
       this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['CFUW_Dev', '127.0.0.1']});     
     },
@@ -216,14 +221,15 @@ define(['jQuery',
 
       !!$('#frmContactUsSubject') ? $('#frmContactUsSubject').focus() : ''; // Contact Form in View
     },
-    setCustomListeners:function(){
+    setCustomListeners:function(options){
       var that = this;
-       var $nodeFormContactUsSend = null;
-       var interval = w.setInterval(function(){
-        if( !!d.getElementById('btnFormContactUsSend') ){
+      var $nodeFormContactUsSend = null;
+      var strSelector = '#' + options.id;
+      var interval = w.setInterval(function(){
+        if( !!d.getElementById(options.id) ){
           w.clearInterval(interval);
-          $nodeFormContactUsSend = $('#btnFormContactUsSend');
-          $('#btnFormContactUsSend').on('http:response', that.listenerEmailSuccess);          
+          $nodeFormContactUsSend = $(strSelector);
+          $(strSelector).on(options.nameEvent, options.fncListener);          
         }
        }, 333);
     },
