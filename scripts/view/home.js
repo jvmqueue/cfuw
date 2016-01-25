@@ -255,16 +255,12 @@ define(['jQuery',
     },
     listenerFormSubmit:function(e){
       e.stopPropagation();
-      // get form values
-      var nodeTextArea = d.getElementById('frmContactUsText');
-      var text = nodeTextArea.value;
-      var textRemoveChars = regEx.fnc.strReplaceAllSpecialChars(text);
       var $nodeTarget = $(e.target);
       var $nodeParent = $nodeTarget.parents('form');
       var $nodeInputs = $nodeParent.find('input[type=text], textarea');
       var hashValues = {};
 
-      $nodeInputs.each(function(index, elm){
+      $nodeInputs.each(function(index, elm){ // get form values
         var strInput = elm.value;
         var strRemoveChars = '';
         var strId = elm.getAttribute('id');
