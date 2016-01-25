@@ -390,6 +390,17 @@
     .containerLabel{
         padding-left:0;
     }
+    .btnFormContactUsSend{
+        margin:1.0em 0;
+        border-color:#E28D14;
+        padding:0.2em;
+        color:#FFFFFF;
+        background-color:#E28D14;
+    }
+    .btnFormContactUsSend:hover{
+        border-color:#041D7B;
+        background-color:#1A70A6;
+    }        
     div.containerContactUsText{
         padding-left:1.0em;
     }
