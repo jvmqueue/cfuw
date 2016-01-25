@@ -534,6 +534,9 @@ body{
     background-blend-mode:color;
     height:777px;
 }
+.jsNotVisible{
+    visibility:hidden;
+}
 .jsBookSale{
     top:-777px;
     background:url(../images/BookSaleFor2016_2015Nov04.png) center 0 no-repeat transparent;    
