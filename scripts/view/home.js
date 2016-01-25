@@ -92,6 +92,7 @@ define(['jQuery',
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
       }
+      this.setCustomListeners();
       this.preLoadResources();
       this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['CFUW_Dev', '127.0.0.1']});     
     },
@@ -215,6 +216,17 @@ define(['jQuery',
 
       !!$('#frmContactUsSubject') ? $('#frmContactUsSubject').focus() : ''; // Contact Form in View
     },
+    setCustomListeners:function(){
+      var that = this;
+       var $nodeFormContactUsSend = null;
+       var interval = w.setInterval(function(){
+        if( !!d.getElementById('btnFormContactUsSend') ){
+          w.clearInterval(interval);
+          $nodeFormContactUsSend = $('#btnFormContactUsSend');
+          $('#btnFormContactUsSend').on('http:response', that.listenerEmailSuccess);          
+        }
+       }, 333);
+    },
     setFooterPosition:function(){
       var strClassViewContainer = this.$nodeViewContainer.attr('class');
       var strCssClassShowBookSale = this.cssClassShowBookSale;
@@ -275,7 +287,11 @@ define(['jQuery',
       });
       // make AJAX Request, set header values
       util.fnc.httpSend({hashHeaders:hashValues, url:'php/contact.php'});
-
+    },
+    listenerEmailSuccess:function(e, paramHttpResponse){
+      var strHTML = '<h3>' + paramHttpResponse + '</h3>';
+      $('#frmMessageContactUsSucccess').html(strHTML);
+      $('#frmContactUs fieldset').addClass('jsNotVisible');
     },
     listenerNavFooter:function(e){
       e.stopPropagation();
