@@ -12,14 +12,13 @@ define(['jQuery'], function($, undefined){
         httpSend:function(options){
             var headers = options.hashHeaders;
             var url = options.url;
-            $.ajax({
+            var req = $.ajax({
                 url:url,
                 method:'POST',
                 headers:headers,
                 dataType:'text',
-                data:{},
                 success:function(data){
-                    // do nothing. AJAX complete at this stage
+                     $('#btnFormContactUsSend').triggerHandler('http:response', [data]); // data is the HTTP Response
                 }                
             });
         },
