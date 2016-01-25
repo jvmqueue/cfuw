@@ -213,7 +213,7 @@ define(['jQuery',
         $nodeExist.removeClass('jsPaddingTopSmallest');
       }      
 
-      !!$('#frmContactUsFirstName') ? $('#frmContactUsFirstName').focus() : ''; // Contact Form in View
+      !!$('#frmContactUsSubject') ? $('#frmContactUsSubject').focus() : ''; // Contact Form in View
     },
     setFooterPosition:function(){
       var strClassViewContainer = this.$nodeViewContainer.attr('class');
