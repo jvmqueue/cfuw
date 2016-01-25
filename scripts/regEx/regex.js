@@ -52,8 +52,8 @@ define([''], function(undefined){  // no dependencies
         strReplaceAllSpecialChars:function(paramString){
             /*Remove all Characters*/
             // return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\n\/]/gi, ' ');
-            /*Remove all Characters, NOT periods or commas*/
-            return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'"<>\{\}\[\]\\\n\/]/gi, ' ');
+            /*Remove all Characters, NOT periods or commas or apostrophes*/
+            return paramString.replace(/[~!@#$%^&*()_|+\-=÷¿?;:"<>\{\}\[\]\\\n\/]/gi, ' ');
         }                
     };
     return{
