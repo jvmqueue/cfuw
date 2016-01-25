@@ -64,6 +64,11 @@ fwrite($myfile, $newLine. 'headerSender::::'. $headerSender);
 fwrite($myfile, "\r\nstrEmail trimmed::::" . $strEmail);
 fclose($myfile);                 
 
-mail($to, $emailSubject, $strMessage);
+$objMail = mail($to, $emailSubject, $strMessage);
+if(!$objMail){
+    echo('Error: email failed');
+}else{
+    echo('Thank you for your e-mail. We will reply within 24 hours.');
+}
 
 ?>
