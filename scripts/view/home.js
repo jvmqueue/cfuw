@@ -57,7 +57,9 @@ define(['jQuery',
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
       'click #footerTopRow ul li':'listenerNavFooter',
-      'click #btnFormContactUsSend':'listenerFormSubmit'
+      'click #btnFormContactUsSend':'listenerFormSubmit',
+      'mouseover #frmContactUs':'listenerCheckFormFields',
+      'blur #frmContactUs input, #frmContactUs textarea':'listenerFormValidate'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
@@ -94,7 +96,7 @@ define(['jQuery',
       }
 
       this.setCustomListeners({
-        id:'btnFormContactUsSend',
+        id:'boardMembers',
         nameEvent:'http:response',
         fncListener:this.listenerEmailSuccess
       });
@@ -271,6 +273,58 @@ define(['jQuery',
       }
 
     },
+    listenerCheckFormFields:function(e){
+      var STR_CSS_IS_EMPTY = 'jsValidationErrorCannotBeEmpty';
+      var STR_CSS_BTN_DISABLED = 'jsValidationErrorBtn';
+      var $btnFormSend = $('#btnFormContactUsSend');
+      var blnFormFieldsValid = true;      
+
+      if( !!$('.' + STR_CSS_IS_EMPTY) && ( $('.' + STR_CSS_IS_EMPTY).length ) ){
+        blnFormFieldsValid = false;
+      }else{
+        $('input', '#frmContactUs').each(function(index, elm){
+          if(elm.value.length === 0){
+            blnFormFieldsValid = false;
+          }
+        });
+      }  
+
+      if(blnFormFieldsValid === true){
+        $btnFormSend.removeAttr('disabled');
+        $btnFormSend.removeClass(STR_CSS_BTN_DISABLED);
+      }else{
+        $btnFormSend.attr('disabled', 'disabled');
+        $btnFormSend.addClass(STR_CSS_BTN_DISABLED);        
+      }
+
+    },
+    listenerFormValidate:function(e){
+      e.stopPropagation();
+      var $target = $(e.target);
+      var $btnFormSend = $('#btnFormContactUsSend');
+      var strValue = $target.val();
+      var STR_CSS_IS_EMPTY = 'jsValidationErrorCannotBeEmpty';
+      var STR_CSS_BTN_DISABLED = 'jsValidationErrorBtn';
+      var blnFormFieldsValid = true;
+
+      if(strValue.length === 0){
+        $target.parent().addClass(STR_CSS_IS_EMPTY);
+      }else{
+        $target.parent().removeClass(STR_CSS_IS_EMPTY);
+      }
+
+      if( !!$('.' + STR_CSS_IS_EMPTY) && ( $('.' + STR_CSS_IS_EMPTY).length ) ){
+        blnFormFieldsValid = false;
+      }
+
+      if(blnFormFieldsValid === false){
+        $btnFormSend.attr('disabled', 'disabled');
+        $btnFormSend.addClass(STR_CSS_BTN_DISABLED);
+      }else{
+        $btnFormSend.removeAttr('disabled');
+        $btnFormSend.removeClass(STR_CSS_BTN_DISABLED);
+      }
+    },
     listenerFormSubmit:function(e){
       e.stopPropagation();
       var $nodeTarget = $(e.target);
@@ -292,12 +346,19 @@ define(['jQuery',
         hashValues[elm.getAttribute('name')] = strRemoveChars;
       });
       // make AJAX Request, set header values
-      util.fnc.httpSend({hashHeaders:hashValues, url:'php/contact.php'});
+      $('#processingIcon').addClass('jsProcessingIcon');
+      $('#frmContactUs fieldset').addClass('jsHidden');
+      util.fnc.httpSend({selector:'#boardMembers', hashHeaders:hashValues, url:'php/contact.php'});
     },
     listenerEmailSuccess:function(e, paramHttpResponse){
-      var strHTML = '<h3>' + paramHttpResponse + '</h3>';
-      $('#frmMessageContactUsSucccess').html(strHTML);
-      $('#frmContactUs fieldset').addClass('jsNotVisible');
+      w.setTimeout(function(){
+        console.group('LISTENER EMAIL SUCCESS');
+          console.log('paramHttpResponse:\t', paramHttpResponse);
+         console.groupEnd(); 
+        var strHTML = '<h3>' + paramHttpResponse + '</h3>';
+        $('#processingIcon').removeClass('jsProcessingIcon');
+        $('#frmMessageContactUsSucccess').html(strHTML).addClass('jsTextOpacity');
+      }, 555);
     },
     listenerNavFooter:function(e){
       e.stopPropagation();
