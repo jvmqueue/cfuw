@@ -57,7 +57,7 @@ define(['jQuery',
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
       'click #footerTopRow ul li':'listenerNavFooter',
-      'click #frmContactUs':'listenerFormSubmit'
+      'click #btnFormContactUsSend':'listenerFormSubmit'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
