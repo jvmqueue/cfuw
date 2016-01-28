@@ -18,7 +18,7 @@ define(['jQuery'], function($, undefined){
                 headers:headers,
                 dataType:'text',
                 success:function(data){
-                     $('#btnFormContactUsSend').triggerHandler('http:response', [data]); // data is the HTTP Response
+                     $(options.selector).triggerHandler('http:response', [data]); // data is the HTTP Response
                 }                
             });
         },
