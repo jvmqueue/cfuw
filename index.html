@@ -13,7 +13,7 @@
 
   <title>Canadian Federation of University Women Saskatoon - CFUW</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link id="linkStylesheet" rel="stylesheet" href="minified/index.css?version=9.333" />
+  <link id="linkStylesheet" rel="stylesheet" href="minified/index.css?version=3.333" />
 
     <!--[if lt IE 9]>
         <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -150,40 +150,55 @@
         <p class="bold letterSpacing marginBottomZero"><%=position%></p>
         <p class="marginBottomZero"><%=name%></p>
         <p class="marginBottomZero"><%=phone%></p>
-        <p class="marginBottomZero"><a class="" href="mailto:<%=email%>" target="_top"><%=email%></a></p>
+        <p class="marginBottomZero"><a class="cfuwAnchorTag" href="mailto:<%=email%>" target="_top"><%=email%></a></p>
 </section>
 </script> 
 <script type="text/template" id="templateContactUs">  
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %> 
-  <section class="sectionContactUs container">
-    <form id="frmContactUs" class="frmContactUs" action="" method="POST" enctype="text/plain">
-      <section id="frmMessageContactUsSucccess"></section>
+  <section class="sectionContactUs row">
+    <h4 class="headerContactUs col-xs-9">Contact Us: Canadian Federation University of Women</h4>
+    <form id="frmContactUs" class="frmContactUs col-md-9 col-xs-7" action="" method="POST" enctype="text/plain">
+      <section id="frmMessageContactUsSucccess" class="frmMessageContactUsSucccess"></section>
       <fieldset class="block">
-        <legend name="subject" class="frmLegend">Contact Us: Canadian Federation University of Women</legend>
-        <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsFirstName">Subject: </label> 
-          <input id="frmContactUsSubject" class="col-xs-4" name="contact-subject" tabIndex="1" type="text" />
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsFirstName">Subject: </label> 
+          <input id="frmContactUsSubject" class="col-xs-12" placeholder="Subject" name="contact-subject" tabIndex="1" type="text" />
         </div>
-        <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsFirstName">First Name: </label> 
-          <input id="frmContactUsFirstName" class="col-xs-4" name="contact-first" tabIndex="2" type="text" />
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsFirstName">First Name: </label> 
+          <input id="frmContactUsFirstName" class="col-xs-12" placeholder="First Name" name="contact-first" tabIndex="2" type="text" />
         </div>
-        <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsLastName">Last Name: </label>
-          <input id="frmContactUsLastName" class="col-xs-4" name="contact-last" tabIndex="3" type="text" />
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsLastName">Last Name: </label>
+          <input id="frmContactUsLastName" class="col-xs-12" placeholder="Last Name" name="contact-last" tabIndex="3" type="text" />
         </div>
-        <div class="containerLabel col-xs-10"><label class="col-xs-2" htmlFor="frmContactUsEmail">E-mail: </label> <input id="frmContactUsEmail" name="contact-email" class="col-xs-4" tabIndex="4" type="text" /></div>
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsEmail">E-mail: </label> <input id="frmContactUsEmail" name="contact-email" class="col-xs-12" placeholder="Email" tabIndex="4" type="text" /></div>
       </fieldset>
       <fieldset class="block">
-        <div class="containerLabel col-xs-10"><label class="col-xs-3" htmlFor="frmContactUsText">Message:</label></div>      
-        <div class="containerContactUsText col-xs-9">
-          <textarea id="frmContactUsText" class="col-xs-7" name="contact-message" tabIndex="4" name="frmContactUsText" cols="30" rows="10"></textarea>
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-3" htmlFor="frmContactUsText">Message:</label></div>      
+        <div class="paddingZero containerContactUsText col-xs-12">
+          <textarea id="frmContactUsText" class="paddingZero col-xs-12" name="contact-message" tabIndex="4" name="frmContactUsText" cols="30" rows="10"></textarea>
         </div>
       </fieldset>
-      <fieldset class="col-xs-9">
-        <input id="btnFormContactUsSend" class="col-xs-7 btnFormContactUsSend" type="button" value="Send" />
+      <fieldset class="col-xs-12">
+        <input id="btnFormContactUsSend" disabled="disabled" class="jsValidationErrorBtn col-xs-12 btnFormContactUsSend" type="button" value="Send" />
       </fieldset>
+      <div id="processingIcon" class="processingIcon">&#160;</div>
     </form>
-  </section>
+    <div class="forMoreInformation col-md-3 col-xs-12">
+      <hr class="horizontalRule" />
+      <p>For more information, or to join CFUW/Saskatoon Inc., please contact the following:</p>
+      <p class="namePresident">Janie Charbonneau</p>
+      <p class="bold titlePresident">President</p>
+      <p class="vicePresident">Alix Tumback</p>
+      <p class="bold titleVicePresident">Vice President</p>   
+      <p class="marginBottomZero">Email:</p>   
+      <p class="cfuwAnchorTagContainer">
+        <a class="cfuwAnchorTag" href="mailto:info@cfuw-saskatoon.org?subject=CFUW Contact Us:">info@cfuw-saskatoon.org</a>
+      </p>
+      <p>CFUW Saskatoon Inc., P.O. Box 7405, Saskatoon, SK. S7K 4J3</p>
+      <p>General Meetings are held the first Monday of the Month at 7:30 p.m. at the W.A. Edwards Family Centre, 333 Fourth Avenue North, Saskatoon. Visitors are welcome. Annual membership fees are $80.00</p>
+    </div>
+  </section> <!-- .sectionContactUs.row -->
 </script>       
 <script type="text/template" id="templateEvents">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
