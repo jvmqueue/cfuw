@@ -57,9 +57,7 @@ define(['jQuery',
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
       'click #footerTopRow ul li':'listenerNavFooter',
-      'click #btnFormContactUsSend':'listenerFormSubmit',
-      'mouseover #frmContactUs':'listenerCheckFormFields',
-      'blur #frmContactUs input, #frmContactUs textarea':'listenerFormValidate'
+      'click #frmContactUs':'listenerFormSubmit'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
@@ -298,39 +296,35 @@ define(['jQuery',
       }
 
     },
-    listenerFormValidate:function(e){
-      e.stopPropagation();
-      var $target = $(e.target);
+    validateForm:function(options){
+      var $nodeForm = options.$nodeForm;
       var $btnFormSend = $('#btnFormContactUsSend');
-      var strValue = $target.val();
-      var STR_CSS_IS_EMPTY = 'jsValidationErrorCannotBeEmpty';
-      var STR_CSS_BTN_DISABLED = 'jsValidationErrorBtn';
-      var blnFormFieldsValid = true;
+      var $nodeInputs = $nodeForm.find('input, textarea');
+      var blnIsValid = true;
 
-      if(strValue.length === 0){
-        $target.parent().addClass(STR_CSS_IS_EMPTY);
-      }else{
-        $target.parent().removeClass(STR_CSS_IS_EMPTY);
-      }
+      $nodeInputs.each(function(index, elm){
+        if(elm.value.length === 0){
+          $(elm).parent().addClass('jsValidationErrorCannotBeEmpty');
+          blnIsValid = false;
+        }else{
+          $(elm).parent().removeClass('jsValidationErrorCannotBeEmpty');
+        }
+      });
 
-      if( !!$('.' + STR_CSS_IS_EMPTY) && ( $('.' + STR_CSS_IS_EMPTY).length ) ){
-        blnFormFieldsValid = false;
-      }
-
-      if(blnFormFieldsValid === false){
-        $btnFormSend.attr('disabled', 'disabled');
-        $btnFormSend.addClass(STR_CSS_BTN_DISABLED);
-      }else{
-        $btnFormSend.removeAttr('disabled');
-        $btnFormSend.removeClass(STR_CSS_BTN_DISABLED);
-      }
+      return blnIsValid;
     },
     listenerFormSubmit:function(e){
       e.stopPropagation();
+      e.preventDefault();
       var $nodeTarget = $(e.target);
       var $nodeParent = $nodeTarget.parents('form');
       var $nodeInputs = $nodeParent.find('input[type=text], textarea');
       var hashValues = {};
+      var blnFormIsValid = this.validateForm({$nodeForm:$nodeParent});
+      
+      if(blnFormIsValid === false){ // do not submit if fields are not valid
+        return void(0);
+      }
 
       $nodeInputs.each(function(index, elm){ // get form values
         var strInput = elm.value;
@@ -352,9 +346,6 @@ define(['jQuery',
     },
     listenerEmailSuccess:function(e, paramHttpResponse){
       w.setTimeout(function(){
-        console.group('LISTENER EMAIL SUCCESS');
-          console.log('paramHttpResponse:\t', paramHttpResponse);
-         console.groupEnd(); 
         var strHTML = '<h3>' + paramHttpResponse + '</h3>';
         $('#processingIcon').removeClass('jsProcessingIcon');
         $('#frmMessageContactUsSucccess').html(strHTML).addClass('jsTextOpacity');
