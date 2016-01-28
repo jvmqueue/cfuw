@@ -17,6 +17,10 @@ body{
 .cfuwSaskatoonFontHeading{
     font-family:'EB Garamond';
 }
+.cfuwAnchorTag{
+    color:#041D7B;
+    font-weight:bold;
+}
 .letterSpacing{
     letter-spacing:1px;
 }
