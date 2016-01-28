@@ -1,10 +1,8 @@
 <?php 
-
-// REPLACE THE LINE BELOW WITH YOUR E-MAIL ADDRESS.
 $to = 'developer@cfuw-saskatoon.org';
 $mSubject = 'CFUW Contact Us:' . "\t";
 
-function get_header(){
+function get_request_headers(){
     
     $arrayCompleteMessage = array();
     $strName = '';
@@ -37,38 +35,44 @@ function get_header(){
 
     return $arrayCompleteMessage;
 }
-$newLine = "\r\n";
-$arrayMessage = get_header();
-// not using this, because email goes to spam
-// $headerFrom = "From: <" . $arrayMessage['email'] . ">";
 
-// Bug: Gmail does not accept emails having special characters
-// $headerSender = "Reply-To: <" . $strEmail . ">" . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+function main(){
 
-/*Works providing no decimal in name*/
-// $headerSender = "Reply-To: $strEmail" . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+    global $to, $emailSubject;
+    $newLine = "\r\n";
 
-$strEmail = trim($arrayMessage['email']);
-$emailSubject = $mSubject . $arrayMessage['subject'];
+    $arrayMessage = get_request_headers();
 
-/*Perform concatenation manually, because order is important*/
-$strMessage = $mSubject . $arrayMessage['subject'] . $newLine;
-$strMessage .= "First:\t" . $arrayMessage['first'] . $newLine;
-$strMessage .= "Last:\t" . $arrayMessage['last'] . $newLine;
-$strMessage .= "Email:\t" . $arrayMessage['email'] . $newLine;
-$strMessage .= "Message:\r\n" . $arrayMessage['message'];
+    $headerSender  = 'MIME-Version: 1.0' . $newLine;
+    $headerSender .= 'Content-type: text/plain; charset=UTF-8' . $newLine;
+    $headerSender .= 'Return-Path: malaikazcharbonneau.com' . $newLine;
 
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $strMessage);
-fwrite($myfile, $newLine. 'headerSender::::'. $headerSender);
-fwrite($myfile, "\r\nstrEmail trimmed::::" . $strEmail);
-fclose($myfile);                 
 
-$objMail = mail($to, $emailSubject, $strMessage);
-if(!$objMail){
-    echo('Error: email failed');
-}else{
-    echo('Thank you for your e-mail. We will reply within 24 hours.');
-}
+
+    $strEmail = trim($arrayMessage['email']);
+    $emailSubject = $mSubject . $arrayMessage['subject'];
+
+    /*Perform concatenation manually, because order is important*/
+    $strMessage  = "First:\t" . $arrayMessage['first'] . $newLine;
+    $strMessage .= "Last:\t" . $arrayMessage['last'] . $newLine;
+    $strMessage .= "Email:\t" . $arrayMessage['email'] . $newLine;
+    $strMessage .= "Message:\t" . $arrayMessage['message'];
+
+    $strHtmlMessage;
+
+    $objMail = mail($to, $emailSubject, $strMessage, $headerSender);
+    if(!$objMail){
+        $strHtmlMessage = 'Error: email failed';
+    }else{
+        $strHtmlMessage = 'Thank you for your e-mail. We will reply within 24 hours.';
+    }
+
+    return $strHtmlMessage;
+
+
+} // End main
+
+$strHTML_Message = main();
+echo($strHTML_Message);
 
 ?>
