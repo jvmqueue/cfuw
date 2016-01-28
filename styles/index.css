@@ -220,8 +220,34 @@
 .jsOpacity.pageBackgroundImage{
   opacity:0.4;
 }
+.frmMessageContactUsSucccess{
+    opacity:0;
+    -webkit-transition:opacity 7s;
+    -moz-transition:opacity 7s;
+    -o-transition:opacity 7s;
+    -ms-transition:opacity 7s;   
+}
+.jsTextOpacity{
+    opacity:1.0;
+}
 .containerPageTitle, .containerPageText{
   padding:2.5em 10% 0 10%;
+}
+.jsValidationErrorCannotBeEmpty:after{
+    content:"* Required";
+    color:red;
+}
+.jsValidationErrorBtn{
+    background-color:#CCCCCC;
+}
+.jsValidationErrorBtn:hover{
+    background-color:#CCCCCC;
+}
+.btnFormContactUsSend.jsValidationErrorBtn{
+    background-color:#CCCCCC;
+}
+.btnFormContactUsSend.jsValidationErrorBtn:hover{
+    background-color:#CCCCCC;
 }
 .jsContainerPageText{
   top:-777px;
@@ -384,9 +410,20 @@
 .frmLegend{
     width:68%;
 }
+.horizontalRule{
+    display:block;
+    margin-right:auto;
+    margin-left:auto;    
+    border-style:outset;
+    border-width:1px;
+    border-color:#76C0F1;
+}
 .frmContactUs{
 
 }
+    .cfuwAnchorTagContainer{
+        width:104%;
+    }
     .containerLabel{
         padding-left:0;
     }
@@ -402,7 +439,7 @@
         background-color:#1A70A6;
     }        
     div.containerContactUsText{
-        padding-left:1.0em;
+        
     }
     .frmContactUs input, textarea{
         border-radius:5px;
@@ -412,7 +449,6 @@
     padding-bottom:0;
 }
 .titlePresident, .titleVicePresident{
-    font-weight:bold;
     margin-top:0;
     padding-top:0;
 }
@@ -547,6 +583,28 @@ body{
 }
 .jsNotVisible{
     visibility:hidden;
+}
+.processingIcon{
+    position:static;
+    opacity:0;
+    width:0;
+    height:0;
+    -webkit-transition:opacity 5s;
+    -moz-transition:opacity 5s;
+    -o-transition:opacity 5s;
+    -ms-transition:opacity 5s;    
+}
+.jsProcessingIcon{
+    background:url(../images/processingletterBlueCircle.jpg) center center no-repeat transparent; 
+    position:absolute;
+    z-index:333;
+    width:224px;
+    height:224px;
+    top:0;
+    opacity:1.0;    
+}
+.jsHidden{
+    display:none;
 }
 .jsBookSale{
     top:-777px;
@@ -703,8 +761,7 @@ ul>li>a:hover{
         width:100%;
     }
     div.containerContactUsText{
-        padding:0;
-        width:100%;
+
     }    
     .containerContactUsText textarea{
         padding:0;
@@ -729,6 +786,12 @@ ul>li>a:hover{
     .logo.headColRightLogo:hover{
         background-position-y:-141px;
     }
+    .forMoreInformation{
+        width:40%;
+    }
+    .cfuwAnchorTagContainer{
+        width:124%;
+    }
 }
 @media (max-width:767px) and (orientation:portrait){ /* mobile portrait */
     .textTop{
@@ -742,6 +805,12 @@ ul>li>a:hover{
     }
     .headColLogos{
         overflow:visible;
+    }
+    .headerContactUs{
+        width:100%;
+    }
+    .frmContactUs{
+        width:100%;
     }
 
 }
