@@ -300,16 +300,35 @@ define(['jQuery',
       var $nodeForm = options.$nodeForm;
       var $btnFormSend = $('#btnFormContactUsSend');
       var $nodeInputs = $nodeForm.find('input, textarea');
+      var $nodeEmail = null;
+      var $nodeEmailParent = null;
       var blnIsValid = true;
+      var blnEmailIsValid = false;
+      var strEmail = '';
+      var strCssError = 'jsValidationErrorCannotBeEmpty';
+      var strCssInvalidFormat = 'jsValidationErrorInvalidFormat';
 
       $nodeInputs.each(function(index, elm){
         if(elm.value.length === 0){
-          $(elm).parent().addClass('jsValidationErrorCannotBeEmpty');
+          $(elm).parent().addClass(strCssError);
           blnIsValid = false;
         }else{
-          $(elm).parent().removeClass('jsValidationErrorCannotBeEmpty');
+          elm.getAttribute('id') === 'frmContactUsEmail' ? $nodeEmail = $(elm) : '';
+          $(elm).parent().removeClass(strCssError);
         }
       });
+
+      if($nodeEmail !== null){ // optimization: only test email if it has been set
+        console.group('$ NODE EMAIL');
+          console.log(':\t', 'Reached');
+         console.groupEnd(); 
+        strEmail = $nodeEmail.val();
+        $nodeEmailParent = $nodeEmail.parent();
+        blnEmailIsValid = regEx.fnc.blnEmailIsValidFormat(strEmail);
+        blnEmailIsValid === true ? $nodeEmailParent.removeClass(strCssInvalidFormat) : $nodeEmailParent.addClass(strCssInvalidFormat);
+      }
+      
+      blnIsValid = blnIsValid && blnEmailIsValid; // form fields passs and email is valid
 
       return blnIsValid;
     },
@@ -327,18 +346,12 @@ define(['jQuery',
       }
 
       $nodeInputs.each(function(index, elm){ // get form values
-        var strInput = elm.value;
-        var strRemoveChars = '';
-        var strId = elm.getAttribute('id');
-        
-        if(strId !== 'frmContactUsEmail'){
-          strRemoveChars = regEx.fnc.strReplaceAllSpecialChars(strInput);
-        }else{
-          strRemoveChars = strInput;
-        }        
-        
+        var strInput = elm.value; // TODO: strInput should be declared in function body not in loop
+        var strRemoveChars = ''; // TODO: strRemoveChars should be declared in function body not in loop
+        strRemoveChars = regEx.fnc.strReplaceAllSpecialChars(strInput);         
         hashValues[elm.getAttribute('name')] = strRemoveChars;
       });
+
       // make AJAX Request, set header values
       $('#processingIcon').addClass('jsProcessingIcon');
       $('#frmContactUs fieldset').addClass('jsHidden');
