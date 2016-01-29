@@ -237,6 +237,10 @@
     content:"* Required";
     color:red;
 }
+.jsValidationErrorInvalidFormat:after{
+    content:"* Invalid";
+    color:red;
+}
 .jsValidationErrorBtn{
     background-color:#CCCCCC;
 }
