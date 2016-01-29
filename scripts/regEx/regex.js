@@ -49,6 +49,10 @@ define([''], function(undefined){  // no dependencies
             var reg = new RegExp(paramString); 
             return paramString.replace(paramStringToReplace, paramReplacement);
         },
+        blnEmailIsValidFormat:function(paramString){            
+            var regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regEx.test(paramString);
+        },
         strReplaceAllSpecialChars:function(paramString){
             /*Remove all Characters*/
             // return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\n\/]/gi, ' ');
