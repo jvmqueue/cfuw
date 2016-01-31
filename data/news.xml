@@ -11,8 +11,12 @@
             <word strClassWord="word" hrefWord="newsletters/CFUWnewsletterDecember2015-final.docx">December 2015 Newsletter</word>
         </newsletter>
         <newsletter>
-            <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletter-OctNov2015(withcorrection).pdf">Oct/Nov 2015 Newsletter </pdf>
+            <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletter-OctNov2015(withcorrection).pdf">Oct/Nov 2015 Newsletter</pdf>
             <word strClassWord="word" hrefWord="displayNone">&#160;</word>
         </newsletter>
+        <newsletter>
+            <pdf strClassPdf="pdf" hrefPdf="newsletters/CFUWnewsletterFebruary-March 2016-Final.pdf">Feb/Mar 2016 Newsletter</pdf>
+            <word strClassWord="word" hrefWord="newsletters/CFUWnewsletterFebruary-March 2016-Final.docx">Feb/Mar 2016 Newsletter</word>
+        </newsletter>        
 	</newsletters>
 </page>
