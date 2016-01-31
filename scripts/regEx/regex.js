@@ -50,14 +50,13 @@ define([''], function(undefined){  // no dependencies
             return paramString.replace(paramStringToReplace, paramReplacement);
         },
         blnEmailIsValidFormat:function(paramString){            
-            var regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return regEx.test(paramString);
+            return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(paramString);
         },
         strReplaceAllSpecialChars:function(paramString){
             /*Remove all Characters*/
             // return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\n\/]/gi, ' ');
-            /*Remove all Characters, NOT periods or commas or apostrophes*/
-            return paramString.replace(/[~!@#$%^&*()_|+\-=÷¿?;:"<>\{\}\[\]\\\n\/]/gi, ' ');
+            /*Remove all Characters, NOT periods or commas or apostrophes or @*/
+            return paramString.replace(/[~!#$%^&*()_|+\-=÷¿?;:"<>\{\}\[\]\\\n\/]/gi, ' ');
         }                
     };
     return{
