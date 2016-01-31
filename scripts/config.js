@@ -4,6 +4,7 @@ requirejs.config({
         "Backbone":["../bower_components/backbone/backbone"],
         "underscore":["../bower_components/underscore/underscore"],
         "bootstrap":["../bower_components/bootstrap/dist/js/bootstrap.min"],
+        "jQueryValidation":["../bower_components/jquery-validation/dist/jquery.validate"],
         "util":["util/util"],
         "regEx":["regEx/regex"],
         "exception":["exception/exception"],
@@ -36,7 +37,7 @@ requirejs.config({
             exports:'_'
         },
         'util':{
-            deps:['jQuery']
+            deps:['jQuery', 'jQueryValidation']
         },
         'template':{ // loading template will load dependencies, even if template.js does not call bootstrap explicitly
             deps:['underscore', 'regex', 'bootstrap']
