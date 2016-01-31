@@ -56,8 +56,7 @@ define(['jQuery',
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
-      'click #footerTopRow ul li':'listenerNavFooter',
-      'click #btnFormContactUsSend':'listenerFormSubmit'
+      'click #footerTopRow ul li':'listenerNavFooter'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
@@ -94,10 +93,11 @@ define(['jQuery',
       }
 
       this.setCustomListeners({
-        id:'boardMembers',
+        selector:'#boardMembers',
         nameEvent:'http:response',
         fncListener:this.listenerEmailSuccess
       });
+
       this.preLoadResources();
       this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['CFUW_Dev', '127.0.0.1']});     
     },
@@ -164,7 +164,7 @@ define(['jQuery',
         $nodeContainer.removeClass(this.cssClassShowBookSale);
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
         this.optimizePageHeight();
-      } // End oughter else
+      } // End else
 
       this.setFooterPosition();
       
@@ -188,6 +188,11 @@ define(['jQuery',
       var strHtml = ''; 
 
       json['strNameTitle'] = jsonPageViewTitle;
+
+
+      if(strSelectorTemplate === '#templateContactUs'){
+        this.bindFormToValidate({idForm:'frmContactUs'});
+      }
 
       if(!!json){ // TODO: this should be a method call, removing if structure block contents
 
@@ -223,12 +228,12 @@ define(['jQuery',
     },
     setCustomListeners:function(options){
       var that = this;
-      var $nodeFormContactUsSend = null;
-      var strSelector = '#' + options.id;
+      var $node = null;
+      var strSelector = options.selector;
       var interval = w.setInterval(function(){
-        if( !!d.getElementById(options.id) ){
+        if( !!$(strSelector) ){
           w.clearInterval(interval);
-          $nodeFormContactUsSend = $(strSelector);
+          $node = $(strSelector);
           $(strSelector).on(options.nameEvent, options.fncListener);          
         }
        }, 333);
@@ -331,6 +336,41 @@ define(['jQuery',
       blnIsValid = blnIsValid && blnEmailIsValid; // form fields passs and email is valid
 
       return blnIsValid;
+    },
+    bindFormToValidate:function(options){
+        var interval = w.setInterval(function(){
+          if( !!d.getElementById(options.idForm) ){ // template rendered
+            w.clearInterval(interval);
+            var strSelectorForm = '#'.concat(options.idForm);
+            
+            /* Override jQuery validator's email regEx */
+            jQuery.validator.addMethod('email', function(){ // in template, so, we must bind here
+              var element = d.getElementById('frmContactUsEmail');
+              var value = element.value;
+              return this.optional( element ) || /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test( value );
+            });
+
+            $(strSelectorForm).validate({
+              debug:true,
+              rules:{
+                'contact-subject':{
+                  required:true
+                },
+                'contact-first':{
+                  required:true
+                },
+                'contact-last':{
+                  required:true
+                },
+                'contact-email':{
+                  required:true,
+                  email:true
+                }
+              }
+            });
+
+          } // End if
+        }, 33);
     },
     listenerFormSubmit:function(e){
       e.stopPropagation();
