@@ -237,6 +237,12 @@
     content:"* Required";
     color:red;
 }
+.error{
+    color:red;
+}
+.error:before{
+    content:"* ";
+}
 .jsValidationErrorInvalidFormat:after{
     content:"* Invalid";
     color:red;
