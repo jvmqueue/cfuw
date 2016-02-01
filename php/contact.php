@@ -1,5 +1,5 @@
 <?php 
-$to = 'developer@cfuw-saskatoon.org';
+$to = 'info@cfuw-saskatoon.org';
 $mSubject = 'CFUW Contact Us:' . "\t";
 
 function get_request_headers(){
@@ -45,7 +45,7 @@ function main(){
 
     $headerSender  = 'MIME-Version: 1.0' . $newLine;
     $headerSender .= 'Content-type: text/plain; charset=UTF-8' . $newLine;
-    $headerSender .= 'Return-Path: malaikazcharbonneau.com' . $newLine;
+    $headerSender .= 'Return-Path: cfuw-saskatoon.org' . $newLine;
 
 
 
