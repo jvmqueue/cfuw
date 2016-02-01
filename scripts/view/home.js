@@ -338,39 +338,43 @@ define(['jQuery',
       return blnIsValid;
     },
     bindFormToValidate:function(options){
-        var interval = w.setInterval(function(){
-          if( !!d.getElementById(options.idForm) ){ // template rendered
-            w.clearInterval(interval);
-            var strSelectorForm = '#'.concat(options.idForm);
-            
-            /* Override jQuery validator's email regEx */
-            jQuery.validator.addMethod('email', function(){ // in template, not always in the DOM, so, must bind here
-              var element = d.getElementById('frmContactUsEmail');
-              var value = element.value;
-              return this.optional( element ) || /^[a-zA-Z]([a-zA-Z0-9_\-])+([\.][a-zA-Z0-9_]+)*\@((([a-zA-Z0-9\-])+\.){1,2})([a-zA-Z0-9]{2,40})$/.test( value );
-            });            
+      
+      var strIdForm = options.idForm;
+      var strSelectorForm = '#'.concat(options.idForm);
+      var strIdInputEmail = 'frmContactUsEmail';
+      
 
-            $(strSelectorForm).validate({
-              debug:true,
-              rules:{
-                'contact-subject':{
-                  required:true
-                },
-                'contact-first':{
-                  required:true
-                },
-                'contact-last':{
-                  required:true
-                },
-                'contact-email':{
-                  required:true,
-                  email:true
-                }
-              }
-            });
+      var interval = w.setInterval(function(){
+        if( !!d.getElementById(options.idForm) ){ // template rendered
+          w.clearInterval(interval);
 
-          } // End if
-        }, 33);
+          util.fnc.overridejQueryValidatorRules({strIdInput:'frmContactUsEmail', type:'email'});
+          util.fnc.overridejQueryValidatorRules({strIdInput:'frmContactUsText', type:'minlength'});
+
+          $(strSelectorForm).validate({
+            debug:true,
+            rules:{
+              'contact-subject':{
+                required:true
+              },
+              'contact-first':{
+                required:true
+              },
+              'contact-last':{
+                required:true
+              },
+              'contact-email':{
+                required:true,
+                email:true
+              },
+              'contact-message':{
+                required:true
+              }              
+            }
+          });
+
+        } // End if
+      }, 33); // End set Interval
     },
     listenerFormSubmit:function(e){
       e.stopPropagation();
