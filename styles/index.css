@@ -596,13 +596,13 @@ body{
 }
 .processingIcon{
     position:static;
-    opacity:0;
+    opacity:1.0;
     width:0;
     height:0;
-    -webkit-transition:opacity 5s;
-    -moz-transition:opacity 5s;
-    -o-transition:opacity 5s;
-    -ms-transition:opacity 5s;    
+    -webkit-transition:opacity 6s;
+    -moz-transition:opacity 6s;
+    -o-transition:opacity 6s;
+    -ms-transition:opacity 6s;    
 }
 .jsProcessingIcon{
     background:url(../images/processingletterBlueCircle.jpg) center center no-repeat transparent; 
@@ -611,7 +611,7 @@ body{
     width:224px;
     height:224px;
     top:0;
-    opacity:1.0;    
+    opacity:0;    
 }
 .jsHidden{
     display:none;
