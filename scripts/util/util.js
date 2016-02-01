@@ -99,7 +99,36 @@ define(['jQuery'], function($, undefined){
             } // End for     
 
             return {pageTitle:title, pageData:arryElementNodes, hashNodeClass:hashNodeAttributes};
-        } // End parseXmlToJson
+        }, // End parseXmlToJson
+        overridejQueryValidatorRules:function(options){
+            var strCase = options.type;
+            var strIdInput = options.strIdInput;
+
+            switch(strCase){
+                case 'email':
+                    /* Override jQuery validator's email regEx */
+                    jQuery.validator.addMethod(strCase, function(){ // in template, not always in the DOM, so, must bind here
+                        var element = d.getElementById(strIdInput);
+                        var value = element.value;
+                        return this.optional( element ) || /^[a-zA-Z]([a-zA-Z0-9_\-])+([\.][a-zA-Z0-9_]+)*\@((([a-zA-Z0-9\-])+\.){1,2})([a-zA-Z0-9]{2,40})$/.test( value );
+                    });
+                  break;
+                case 'minlength':
+                    /* Override jQuery validator's minlength regEx */
+                    jQuery.validator.addMethod(strCase, function(){ // in template, not always in the DOM, so, must bind here
+                        var element = d.getElementById(strIdInput);
+                        var value = element.value;
+                        var blnIsValid = false;
+                        var intWordCount = value.match(/\w+/g).length; // return number of words
+
+                        intWordCount > 2 ? blnIsValid = true :  blnIsValid = false;     
+
+                        return this.optional( element ) || blnIsValid;
+                    });     
+
+
+            } // End switch
+        } // End overridejQueryValidatorRules()
     };
     return{
         fnc:_fnc
