@@ -50,7 +50,7 @@ define([''], function(undefined){  // no dependencies
             return paramString.replace(paramStringToReplace, paramReplacement);
         },
         blnEmailIsValidFormat:function(paramString){            
-            return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(paramString);
+            return /^[a-zA-Z]([a-zA-Z0-9_\-])+([\.][a-zA-Z0-9_]+)*\@((([a-zA-Z0-9\-])+\.){1,2})([a-zA-Z0-9]{2,40})$/.test(paramString);
         },
         strReplaceAllSpecialChars:function(paramString){
             /*Remove all Characters*/
