@@ -56,7 +56,8 @@ define(['jQuery',
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
       'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
-      'click #footerTopRow ul li':'listenerNavFooter'
+      'click #footerTopRow ul li':'listenerNavFooter',
+      'submit #frmContactUs':'listenerFormSubmit'
     },       
     newWindow:0,
     selectorViewContainer:'#boardMembers',
@@ -324,9 +325,6 @@ define(['jQuery',
       });
 
       if($nodeEmail !== null){ // optimization: only test email if it has been set
-        console.group('$ NODE EMAIL');
-          console.log(':\t', 'Reached');
-         console.groupEnd(); 
         strEmail = $nodeEmail.val();
         $nodeEmailParent = $nodeEmail.parent();
         blnEmailIsValid = regEx.fnc.blnEmailIsValidFormat(strEmail);
@@ -342,14 +340,15 @@ define(['jQuery',
       var strIdForm = options.idForm;
       var strSelectorForm = '#'.concat(options.idForm);
       var strIdInputEmail = 'frmContactUsEmail';
+      var strIdInputTextArea = 'frmContactUsText';
       
 
       var interval = w.setInterval(function(){
         if( !!d.getElementById(options.idForm) ){ // template rendered
           w.clearInterval(interval);
 
-          util.fnc.overridejQueryValidatorRules({strIdInput:'frmContactUsEmail', type:'email'});
-          util.fnc.overridejQueryValidatorRules({strIdInput:'frmContactUsText', type:'minlength'});
+          util.fnc.overridejQueryValidatorRules({strIdInput:strIdInputEmail, type:'email'});
+          util.fnc.overridejQueryValidatorRules({strIdInput:strIdInputTextArea, type:'minlength'});
 
           $(strSelectorForm).validate({
             debug:true,
@@ -379,15 +378,9 @@ define(['jQuery',
     listenerFormSubmit:function(e){
       e.stopPropagation();
       e.preventDefault();
-      var $nodeTarget = $(e.target);
-      var $nodeParent = $nodeTarget.parents('form');
-      var $nodeInputs = $nodeParent.find('input[type=text], textarea');
+      var $nodeParent = $(e.target);
+      var $nodeInputs = $nodeParent.find('input[type=text], input[type=email], textarea');
       var hashValues = {};
-      var blnFormIsValid = this.validateForm({$nodeForm:$nodeParent});
-      
-      if(blnFormIsValid === false){ // do not submit if fields are not valid
-        return void(0);
-      }
 
       $nodeInputs.each(function(index, elm){ // get form values
         var strInput = elm.value; // TODO: strInput should be declared in function body not in loop
