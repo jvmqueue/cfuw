@@ -190,7 +190,7 @@ define(['jQuery',
       json['strNameTitle'] = jsonPageViewTitle;
 
 
-      if(strSelectorTemplate === '#templateContactUs'){
+      if(strSelectorTemplate === '#templateContactUs'){ // bind manually because node only exists for contact us view
         this.bindFormToValidate({idForm:'frmContactUs'});
       }
 
@@ -344,11 +344,11 @@ define(['jQuery',
             var strSelectorForm = '#'.concat(options.idForm);
             
             /* Override jQuery validator's email regEx */
-            jQuery.validator.addMethod('email', function(){ // in template, so, we must bind here
+            jQuery.validator.addMethod('email', function(){ // in template, not always in the DOM, so, must bind here
               var element = d.getElementById('frmContactUsEmail');
               var value = element.value;
-              return this.optional( element ) || /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test( value );
-            });
+              return this.optional( element ) || /^[a-zA-Z]([a-zA-Z0-9_\-])+([\.][a-zA-Z0-9_]+)*\@((([a-zA-Z0-9\-])+\.){1,2})([a-zA-Z0-9]{2,40})$/.test( value );
+            });            
 
             $(strSelectorForm).validate({
               debug:true,
