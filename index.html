@@ -186,17 +186,17 @@
     </form>
     <div class="forMoreInformation col-md-3 col-xs-12">
       <hr class="horizontalRule" />
-      <p>For more information, or to join CFUW/Saskatoon Inc., please contact the following:</p>
-      <p class="namePresident">Janie Charbonneau</p>
-      <p class="bold titlePresident">President</p>
-      <p class="vicePresident">Alix Tumback</p>
-      <p class="bold titleVicePresident">Vice President</p>   
-      <p class="marginBottomZero">Email:</p>   
+      <p><%=headerTextRightSide%></p>
+      <p class="namePresident"><%=namePresident%></p>
+      <p class="bold titlePresident"><%=positionPresident%></p>
+      <p class="vicePresident"><%=nameVicePresident%></p>
+      <p class="bold titleVicePresident"><%=positionVicePresident%></p>   
+      <p class="marginBottomZero"><%=headerEmail%></p>   
       <p class="cfuwAnchorTagContainer">
-        <a class="cfuwAnchorTag" href="mailto:info@cfuw-saskatoon.org?subject=CFUW Contact Us:">info@cfuw-saskatoon.org</a>
+        <a class="cfuwAnchorTag" href="mailto:<%=email%>?subject=CFUW Contact Us:"><%=email%></a>
       </p>
-      <p>CFUW Saskatoon Inc., P.O. Box 7405, Saskatoon, SK. S7K 4J3</p>
-      <p>General Meetings are held the first Monday of the Month at 7:30 p.m. at the W.A. Edwards Family Centre, 333 Fourth Avenue North, Saskatoon. Visitors are welcome. Annual membership fees are $80.00</p>
+      <p><%=address%></p>
+      <p><%=moreInfo%></p>
     </div>
   </section> <!-- .sectionContactUs.row -->
 </script>       
