@@ -1,13 +1,17 @@
 <?php 
 $to = 'info@cfuw-saskatoon.org';
+    /* info@cfuw-saskatoon.org */
+    /* developer@cfuw-saskatoon.org */
+
 $mSubject = 'CFUW Contact Us:' . "\t";
 
 function get_request_headers(){
     
     $arrayCompleteMessage = array();
     $strName = '';
+    $hashHeaders = getallheaders();
 
-    foreach (getallheaders() as $name => $value){
+    foreach ($hashHeaders as $name => $value){
         
         $strName = strtolower($name);
 
@@ -38,36 +42,34 @@ function get_request_headers(){
 
 function main(){
 
-    global $to, $emailSubject;
+    global $to, $mSubject;
     $newLine = "\r\n";
 
     $arrayMessage = get_request_headers();
 
     $headerSender  = 'MIME-Version: 1.0' . $newLine;
     $headerSender .= 'Content-type: text/plain; charset=UTF-8' . $newLine;
-    $headerSender .= 'Return-Path: cfuw-saskatoon.org' . $newLine;
-
-
+    $headerSender .= 'Return-Path: '. $to . $newLine;
 
     $strEmail = trim($arrayMessage['email']);
     $emailSubject = $mSubject . $arrayMessage['subject'];
 
-    /*Perform concatenation manually, because order is important*/
+    /* Perform concatenation manually, because order is important */
     $strMessage  = "First:\t" . $arrayMessage['first'] . $newLine;
     $strMessage .= "Last:\t" . $arrayMessage['last'] . $newLine;
     $strMessage .= "Email:\t" . $arrayMessage['email'] . $newLine;
     $strMessage .= "Message:\t" . $arrayMessage['message'];
 
-    $strHtmlMessage;
+    $strResponseMessage;
 
     $objMail = mail($to, $emailSubject, $strMessage, $headerSender);
     if(!$objMail){
-        $strHtmlMessage = 'Error: email failed';
+        $strResponseMessage = 'Error: email failed';
     }else{
-        $strHtmlMessage = 'Thank you for your e-mail. We will reply within 24 hours.';
+        $strResponseMessage = 'Thank you for your e-mail. We will reply within 24 hours.';
     }
 
-    return $strHtmlMessage;
+    return $strResponseMessage;
 
 
 } // End main
