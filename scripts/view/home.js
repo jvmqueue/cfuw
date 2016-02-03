@@ -172,6 +172,7 @@ define(['jQuery',
       var strModelId = options.idModel;
       var hashCssClassToSet = this.collection.where({'cid':strModelId})[0].get('hashCssClassToSet') || '';
       var json = this.collection.where({'cid':strModelId})[0].get('arryTemplateData');
+
       var jsonPageViewTitle = this.collection.where({'cid':strModelId})[0].get('pageTitle');      
       var blnSetBackgroundOpacity = this.blnSetBackgroundOpacity;
       var blnSetBackgroundWhite = this.blnSetBackgroundWhite;
@@ -456,7 +457,7 @@ define(['jQuery',
 
       strDataPath = thisNav.data[intDataIndexNumber] + '?noCache=' + dateNoCache;
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
-      arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber];          
+      arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber]; 
       arryTemplateId = thisNav.templateId[intDataIndexNumber];          
 
       switch(strId){ // discover which node user clicked
@@ -545,6 +546,7 @@ define(['jQuery',
       strCid = thisNav.modelCid[intIndexNumber]; 
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
       model.set('tagsXml', arryTagsXml); // allow the associated model to access XML data via the top XML tag names
+
       model.set('tagsXmlChildsCommon', arryTagsCommon); // allow the associated model to accesss XML data via child tag names
       hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template. set in model
       hashHrefToSet = model.get('hashHrefToSet'); 
