@@ -1,7 +1,7 @@
 <?php 
-$to = 'info@cfuw-saskatoon.org';
-    /* info@cfuw-saskatoon.org */
-    /* developer@cfuw-saskatoon.org */
+$toProd = 'info@cfuw-saskatoon.org'; /* Production only */
+$toDev = 'developer@cfuw-saskatoon.org'; /* In Development */
+$to = $toDev; /* Switch relative to environment */
 
 $mSubject = 'CFUW Contact Us:' . "\t";
 
