@@ -139,7 +139,7 @@
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %>    
   <div class="affiliations row">
-    <a class="col-xs-12 <%=strClass%>"  href=<%=href%> target="_blank"><%=affiliationName%></a>
+    <a class="col-xs-12 cfuwAnchorTag <%=strClass%>"  href=<%=href%> target="_blank"><%=affiliationName%></a>
   </div>
 </script>
 <script type="text/template" id="templateBoardMembers">
@@ -235,8 +235,8 @@
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %>    
   <div class="row">
-    <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
-    <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
+    <a class="cfuwAnchorTag <%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
+    <a class="cfuwAnchorTag <%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
   </div>
 </script>    
 <script type="text/template" id="templateMissionStatement">
@@ -251,8 +251,8 @@
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %>        
   <div class="row">
-    <a class="<%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
-    <a class="<%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
+    <a class="cfuwAnchorTag <%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
+    <a class="cfuwAnchorTag <%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
   </div>
 </script>          
 <script type="text/template" id="templateScholarships">
@@ -296,7 +296,7 @@
     <p class="<%=strClass11%>"><%= paragraph11%></p>
   <% } %>
   <% if (typeof(link) !== 'undefined') { %>
-    <a class="<%=strClassAnchor%>" href="<%=href%>" target="_blank"><%= link %></a>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" href="<%=href%>" target="_blank"><%= link %></a>
   <% } %>
 </script>         
 </div> <!-- End #templatesOnly -->
