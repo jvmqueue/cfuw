@@ -559,10 +559,11 @@ define(['jQuery',
             return void(0);
       }
 
+      model.urlRoot = basePath.basePath() + strDataPath;
+      
       if(blnShowDefault === false && ( model.get('blnDataHasBeenSet') === false ) ){ // no need to request if data is set on model
         this.collection.add(model);
         model.fetch({ // triggers model.parse
-          url:basePath.basePath() + strDataPath,
           dataType:'xml',
           success:function(){            
             that.render({idModel:strCid, idTemplate:strIdTemplate});
