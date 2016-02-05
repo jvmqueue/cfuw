@@ -5,6 +5,7 @@ define(['jQuery', 'Backbone', 'commonModelDefaults', 'util'], function($, Backbo
         idAttribute:'homeId',
         cid:'homeId'
       },
+      urlRoot:'',
       parse:function(paramXmlResponse){
         var xmlResponse = paramXmlResponse;
         var tagsXml = this.get('tagsXml'); // set in View 
