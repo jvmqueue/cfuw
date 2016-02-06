@@ -22,6 +22,18 @@ define(['jQuery'], function($, undefined){
                 }                
             });
         },
+        appendFragment:function(options){
+            var strText = options.strText;
+            var strIdNodeExists = options.strIdNodeExists;
+            var nodeExist = d.getElementById(strIdNodeExists);
+            var nodeNew = d.createElement('div');
+            var nodeText = d.createTextNode(strText);
+            var strAttribute = nodeExist.getAttribute('class');
+            strAttribute= strAttribute.replace('hide', '');
+            nodeNew.appendChild(nodeText);
+            nodeExist.appendChild(nodeNew);
+            nodeExist.setAttribute('class', strAttribute);    
+        },
         getElementNode:function(paramNode, paramArray, paramIndex){
             var node = paramNode;
             
