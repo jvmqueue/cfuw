@@ -243,6 +243,12 @@
 .error:before{
     content:"* ";
 }
+.fetchErrors, .httpErrors{
+    color:#007194;
+}
+.fetchErrors hr, .httpErrors hr{
+    border:0;
+}
 .jsValidationErrorInvalidFormat:after{
     content:"* Invalid";
     color:red;
