@@ -1,4 +1,4 @@
-define(['jQuery'], function($, undefined){ //
+define(['jQuery'], function($, undefined){
     'use strict';
     var w = window, d = document;    
     var TAG_NAME_DOC_FIRST_CHILD = 'page'; // private member
