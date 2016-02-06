@@ -429,6 +429,39 @@ define(['jQuery',
       if (window.focus) {this.newWindow.focus()}
       return false;
     },
+    fetch:function(options){
+
+      var blnShowDefault = options.blnShowDefault;
+      var model = options.model;
+      var view = options.view;
+      var strCid = options.strCid;
+      var strIdTemplate = options.strIdTemplate;
+      var strDataPath = options.strDataPath;
+      var hashCssClassToSet = options.hashCssClassToSet;
+
+      if(blnShowDefault === false && ( model.get('blnDataHasBeenSet') === false ) ){ // no need to request if data is set on model
+        this.collection.add(model);
+        model.fetch({ // triggers model.parse
+          dataType:'xml',
+          success:function(){            
+            view.render({idModel:strCid, idTemplate:strIdTemplate});
+            model.set('hashCssClassToSet', hashCssClassToSet);
+            model.set('blnDataHasBeenSet', true);  // optimization: flag indicates data set, don't need to perform HTTP Request
+          },
+          error:function(paramThisView, paramException){
+            model.urlRoot = 'data/' + strDataPath; // fail gracefully: error set url to developer path
+            view.fetch(options); // recursion, call fetch with url set to developer path
+            var strStatus =  '';
+            paramException.status == '200' ? strStatus = 'XML Parse Error' : strStatus = paramException.status;
+            var strException = strDataPath + '\t' + strStatus + '\t' + paramException.statusText;
+            util.fnc.appendFragment( {strText:strException, strIdNodeExists:'fetchErrors'} );
+          }        
+        });        
+      }else{
+        this.render({blnShowDefault:blnShowDefault});
+      } // End if
+
+    }, // End fetch    
     listenerNavBar:function(e, paramNodeFromTrigger){ // listening to the nav bar, using event delegation
       var nodeTarget = e.target;
       if(typeof paramNodeFromTrigger != 'undefined'){  // footer link send message
@@ -551,32 +584,24 @@ define(['jQuery',
       hashCssClassToSet = model.get('hashCssClassToSet'); // data to merge with template. set in model
       hashHrefToSet = model.get('hashHrefToSet'); 
       strIdTemplate = model.get('templateId');
-      
-      var that = this;
 
       if( ( model.get('blnDataHasBeenSet') === true ) ){ // do not perform HTTP Request, data has been set on model
-            that.render({idModel:strCid, idTemplate:strIdTemplate});
+            this.render({idModel:strCid, idTemplate:strIdTemplate});
             return void(0);
       }
 
       model.urlRoot = basePath.basePath() + strDataPath;
-      
-      if(blnShowDefault === false && ( model.get('blnDataHasBeenSet') === false ) ){ // no need to request if data is set on model
-        this.collection.add(model);
-        model.fetch({ // triggers model.parse
-          dataType:'xml',
-          success:function(){            
-            that.render({idModel:strCid, idTemplate:strIdTemplate});
-            model.set('hashCssClassToSet', hashCssClassToSet);
-            model.set('blnDataHasBeenSet', true);  // optimization: flag indicates data set, don't need to perform HTTP Request
-          },
-          error:function(paramThisView, paramException){
-            throw new exception.fnc.http({that:paramThisView, exception:paramException, cfuwException:'Fetch in home View Failed'}); 
-          }        
-        });        
-      }else{
-        that.render({blnShowDefault:blnShowDefault});
-      }
+
+      this.fetch({
+        blnShowDefault:blnShowDefault,
+        model:model,        
+        view:this,
+        strCid:strCid,
+        strIdTemplate:strIdTemplate,
+        strDataPath:strDataPath,
+        hashCssClassToSet:hashCssClassToSet
+      });      
+
     } // End listenerNavBar 
   });
 
