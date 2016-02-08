@@ -624,13 +624,15 @@ body{
 }
 .jsBookSale{
     top:-777px;
-    background:url(../images/BookSaleNoSocialLink2016Feb08.png) center 0 no-repeat transparent;    
+    background-position:center 0;
+    background-repeat:no-repeat;
+    background-color:transparent;
     background-blend-mode:color;
-    background-size:32% auto;
+    background-size:85% auto;
     margin:0;
-    padding:0 0 72% 0;
     border-radius:10px;
-    height:955px;
+    padding:0 0 72% 0;
+    height:1009px;
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        
