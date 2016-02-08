@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title>Book Sale</title>
+	<title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">Book Sale</title>
 	<members>
 		<member>
-			<position hashName="title">&#160;</position>
+			<backgroundImage href="images/BookSaleNoSocialLink2016Feb08.png">Background Image</backgroundImage>
 			<name hashName="name">&#160;</name>
 		</member>
 	</members>
