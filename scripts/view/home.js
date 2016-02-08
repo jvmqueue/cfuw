@@ -516,7 +516,8 @@ define(['jQuery',
           break;     
         case 'btnBookSale':
           model = booksaleModel.fnc.getInstance(); 
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClassOpacity);
+          this.blnSetBackgroundOpacity = false;
+          this.blnSetBackgroundWhite = true;
           break;                
         case 'btnContactUs':
           model = contactUsModel.fnc.getInstance();
@@ -562,7 +563,6 @@ define(['jQuery',
           break;                  
         case 'btnScholarships': 
           model = scholarshipsModel.fnc.getInstance(); 
-          intIndexNumber = 10;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
