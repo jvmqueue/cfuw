@@ -1,7 +1,7 @@
 define([], function(){
     var strBasePath = {
-        local:'data/',
-        dev:'data/'
+        local:'../CFUW_Publisher/data/',
+        dev:'../CFUW_Publisher/data/'
     };
 
     var _basePath = function(){
