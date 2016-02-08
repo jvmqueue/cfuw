@@ -11,6 +11,7 @@ define(['jQuery',
   'eventsModel',  
   'interestGroupsModel',  
   'scholarshipsModel',  
+  'booksaleModel',  
   'util', 
   'regEx', 
   'basePath', 
@@ -28,6 +29,7 @@ define(['jQuery',
     eventsModel,
     interestGroupsModel,
     scholarshipsModel,
+    booksaleModel,
     util, 
     regEx, 
     basePath, 
@@ -43,6 +45,7 @@ define(['jQuery',
     model:null,
     nav:{
         id:[],
+        intDataIndex:[],
         data:[],
         tagsXml:[],
         tagsXmlChildsCommon:[],
@@ -50,7 +53,7 @@ define(['jQuery',
         templateId:[]
     },
     imagesToPreload:[
-      'images/BookSaleFor2016_2015Nov04.png',
+      'images/BookSaleNoSocialLink2016Feb08.png',
       'images/bridgeBigCenter.png'
     ],
     events:{ // events depends on defining _View.el 
@@ -78,8 +81,9 @@ define(['jQuery',
     blnSetBackgroundOpacity:false,
     blnSetBackgroundWhite:false,
     blnSetCfuwCascadingTopBackground:false,
+    intNumberOfFetches:0,
     initialize:function(options){ // initialize application's instance vars
-      var hash = options; 
+      var hash = options;  
       this.$nodeViewContainer = $(this.selectorViewContainer);
       this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
       this.$nodeViewPageTitle = $(this.selectorViewPageTitle);
@@ -88,10 +92,11 @@ define(['jQuery',
         this.nav.id.push(hash[name].control);
         this.nav.data.push(hash[name].data);     
         this.nav.modelCid.push(hash[name].modelCid);
-        !!hash[name].tagsXml ? this.nav.tagsXml.push(hash[name].tagsXml) : '';          
+        !!hash[name].intDataIndex ? this.nav.intDataIndex.push(hash[name].intDataIndex) : '';
+        !!hash[name].tagsXml ? this.nav.tagsXml.push(hash[name].tagsXml) : '';
         !!hash[name].tagsXmlChildsCommon ? this.nav.tagsXmlChildsCommon.push(hash[name].tagsXmlChildsCommon) : '';
         !!hash[name].templateId ? this.nav.templateId.push(hash[name].templateId) : '';
-      }
+      } 
 
       this.setCustomListeners({
         selector:'#boardMembers',
@@ -449,12 +454,14 @@ define(['jQuery',
             model.set('blnDataHasBeenSet', true);  // optimization: flag indicates data set, don't need to perform HTTP Request
           },
           error:function(paramThisView, paramException){
+            if(view.intNumberOfFetches > 3){ return void(0); }
             model.urlRoot = 'data/' + strDataPath; // fail gracefully: error set url to developer path
             view.fetch(options); // recursion, call fetch with url set to developer path
             var strStatus =  '';
             paramException.status == '200' ? strStatus = 'XML Parse Error' : strStatus = paramException.status;
             var strException = strDataPath + '\t' + strStatus + '\t' + paramException.statusText;
             util.fnc.appendFragment( {strText:strException, strIdNodeExists:'fetchErrors'} );
+            view.intNumberOfFetches++;
           }        
         });        
       }else{
@@ -492,24 +499,26 @@ define(['jQuery',
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
       arryTagsCommon = thisNav.tagsXmlChildsCommon[intDataIndexNumber]; 
       arryTemplateId = thisNav.templateId[intDataIndexNumber];          
+      intIndexNumber = thisNav.intDataIndex[intDataIndexNumber]; // set during intitilize  
 
       switch(strId){ // discover which node user clicked
         case 'btnAffiliations':
-          model = affiliationsModel.fnc.getInstance(); 
-          intIndexNumber = 0;         
+          model = affiliationsModel.fnc.getInstance();          
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;
         case 'btnBoardMembers':
           model = boardModel.fnc.getInstance(); 
-          intIndexNumber = 1;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
-          break;        
+          break;     
+        case 'btnBookSale':
+          model = booksaleModel.fnc.getInstance(); 
+          $(this.selectorViewCfuwBackground).removeClass(strJsCssClassOpacity);
+          break;                
         case 'btnContactUs':
-          intIndexNumber = 2;
           model = contactUsModel.fnc.getInstance();
           this.blnSetBackgroundWhite = true;
           break;
@@ -517,7 +526,6 @@ define(['jQuery',
           /* Client requested events be merged with meetings 2015 Dec 13 */
           break;    
         case 'btnHome':
-          intIndexNumber = 4;
           model = homeModel.fnc.getInstance();
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
@@ -525,34 +533,29 @@ define(['jQuery',
           break;   
         case 'btnInterestGroups': 
           model = interestGroupsModel.fnc.getInstance(); 
-          intIndexNumber = 5;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;       
         case 'btnMeetings': 
           model = meetingsModel.fnc.getInstance();  
-          intIndexNumber = 6;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;     
         case 'btnMembershipApplication': 
           model = membershipApplicationModel.fnc.getInstance(); 
-          intIndexNumber = 7;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
           break;                                                                         
         case 'btnMissionStatement':
           model = missionStatementModel.fnc.getInstance(); 
-          intIndexNumber = 8;
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;
           break;
         case 'btnNews':
           model = newsModel.fnc.getInstance();
-          intIndexNumber = 9; 
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
@@ -563,20 +566,14 @@ define(['jQuery',
           this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;            
           this.blnAddPaddingTopSmallest = true;
-          break;             
-        case 'btnBookSale': 
-          blnShowDefault = true;          
-          $(this.selectorViewCfuwBackground).removeClass(strJsCssClassOpacity);
-          this.render(); // no parameters renders default
-          return void(0);
-          break;                                                                          
+          break;                                                                                    
         default:
           return void(0); /* do nothing we are not listening to the node */
       } // End switch
       // assigned model in above switch, now set the properties
 
       // access our configMapping.js JSON relative to index number.
-      strCid = thisNav.modelCid[intIndexNumber]; 
+      strCid = thisNav.modelCid[intIndexNumber];
       model.set('templateId', arryTemplateId); // templateId is defined in configMapping.js
       model.set('tagsXml', arryTagsXml); // allow the associated model to access XML data via the top XML tag names
 
