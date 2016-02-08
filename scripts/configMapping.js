@@ -79,7 +79,7 @@ define([], function(undefined){
                 modelCid:'newsId',
                 templateId:'templateNews'},
             SCHOLARSHIPS:{control:'btnScholarships', 
-                intDataIndex:'5',
+                intDataIndex:'11',
                 data:'scholarships.xml', 
                 tagsXml:['sections', 'section'],
                 tagsXmlChildsCommon:['paragraph0', 'paragraph1', 'paragraph2', 'paragraph3', 'paragraph4', 'paragraph5', 'paragraph6', 
