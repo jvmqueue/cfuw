@@ -20,6 +20,7 @@ requirejs.config({
         "eventsModel":["model/events"],
         "interestGroupsModel":["model/interestGroups"],
         "scholarshipsModel":["model/scholarships"],
+        "booksaleModel":["model/bookSale"],
         "homeView":["view/home"],
         "basePath":["basePath"]
     },
