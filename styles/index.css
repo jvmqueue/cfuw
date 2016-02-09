@@ -582,7 +582,6 @@ body{
     text-indent:1.0em;
     margin:0;
 }
-
 .serif{
     font-family:serif;
 }
@@ -628,7 +627,7 @@ body{
     background-repeat:no-repeat;
     background-color:transparent;
     background-blend-mode:color;
-    background-size:85% auto;
+    background-size:73% auto;
     margin:0;
     border-radius:10px;
     padding:0 0 72% 0;
@@ -681,6 +680,31 @@ ul>li>a:hover{
 }
 
 /* End Generics */
+
+/* Begin Social Links */
+.socialMargin{
+    margin:3.0em 1.0em 1.0em 1.0em;
+}
+.socialBlock{
+    height:100px;
+    background-position:center 0;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    background-blend-mode:color;
+    background-size:20% auto;    
+}
+.socialFacebook{
+    background-image:url(../images/iconFaceBookLarge.png);
+}
+.socialInstagram{
+    background-image:url(../images/iconInstaGramLarge.png);
+}
+.socialTwitter{
+    background-image:url(../images/iconTwitterLarge.png);
+}
+/* End Social Links */
+
+
 
 /* Begin Media Queries */
 @media (min-width: 768px){
@@ -751,7 +775,8 @@ ul>li>a:hover{
         height:32px; 
     }
     .jsBookSale{
-        background-size:58% auto;
+        background-size:88% auto;
+        height:40em;
     }
     .logo.headColRightLogo{
         background-position-y:-5px;
@@ -830,6 +855,9 @@ ul>li>a:hover{
     .frmContactUs{
         width:100%;
     }
+    .jsBookSale{
+        height:23em;
+    }    
 
 }
 /* End Media Queries */
