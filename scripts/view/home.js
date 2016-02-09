@@ -518,6 +518,7 @@ define(['jQuery',
           model = booksaleModel.fnc.getInstance(); 
           this.blnSetBackgroundOpacity = false;
           this.blnSetBackgroundWhite = true;
+          this.blnAddPaddingTopSmallest = true;
           break;                
         case 'btnContactUs':
           model = contactUsModel.fnc.getInstance();
