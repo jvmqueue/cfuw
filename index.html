@@ -157,8 +157,16 @@
 <script type="text/template" id="templateBooksale">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-    <div class="jsBookSale" style="background-image:url(<%= href %>);">&#160;</div>
-  <% } %>        
+  <% } %>
+  <div class="jsBookSale" style="background-image:url(<%= src %>);">&#160;</div>
+  <div class="row">
+    <div class="centered-text socialMargin">
+      <a class="<%= strClass0 %> col-xs-4" href="<%= href0 %>" target="_blank"><%= link0 %></a>
+      <a class="<%= strClass1 %> col-xs-4" href="<%= href1 %>" target="_blank"><%= link1 %></a>
+      <a class="<%= strClass2 %> col-xs-4" href="<%= href2 %>" target="_blank"><%= link2 %></a>    
+    </div>
+  </div>
+
 </script> 
 <script type="text/template" id="templateContactUs">  
   <% if (typeof(strNameTitle) !== 'undefined') { %>
