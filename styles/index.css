@@ -692,15 +692,31 @@ ul>li>a:hover{
     background-color:transparent;
     background-blend-mode:color;
     background-size:20% auto;    
+    -webkit-transition:transform 3s;
+    -moz-transition:transform 3s;
+    -o-transition:transform 3s;
+    -ms-transition:transform 3s;       
+}
+.socialBlock:hover{
+    opacity:0.4;    
 }
 .socialFacebook{
     background-image:url(../images/iconFaceBookLarge.png);
 }
+.socialFacebook:hover{
+    transform:rotate(-15deg);
+}
 .socialInstagram{
     background-image:url(../images/iconInstaGramLarge.png);
 }
+.socialInstagram:hover{
+    transform:rotate(25deg);
+}
 .socialTwitter{
     background-image:url(../images/iconTwitterLarge.png);
+}
+.socialTwitter:hover{
+    transform:rotate(-15deg);
 }
 /* End Social Links */
 
