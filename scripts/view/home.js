@@ -455,7 +455,7 @@ define(['jQuery',
           },
           error:function(paramThisView, paramException){
             if(view.intNumberOfFetches > 3){ return void(0); }
-            model.urlRoot = 'data/' + strDataPath; // fail gracefully: error set url to developer path
+            model.urlRoot = basePath.dir.fallback + strDataPath; // fail gracefully: error set url to developer path
             view.fetch(options); // recursion, call fetch with url set to developer path
             var strStatus =  '';
             paramException.status == '200' ? strStatus = 'XML Parse Error' : strStatus = paramException.status;
@@ -587,7 +587,7 @@ define(['jQuery',
             return void(0);
       }
 
-      model.urlRoot = basePath.basePath() + strDataPath;
+      model.urlRoot = basePath.dir.working + strDataPath;
 
       this.fetch({
         blnShowDefault:blnShowDefault,
