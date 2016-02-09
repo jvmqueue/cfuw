@@ -19,7 +19,7 @@ define([], function(undefined){
                 intDataIndex:'2',
                 data:'bookSale.xml', 
                 tagsXml:['page', 'member'], 
-                tagsXmlChildsCommon:['positionTitle', 'name', 'phone', 'email'],
+                tagsXmlChildsCommon:['backgroundImage', 'link'],
                 modelCid:'bookSaleId',
                 templateId:'templateBooksale'},                                         
             CONTACT_US:{control:'btnContactUs', 
