@@ -3,8 +3,10 @@
 	<title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">Book Sale</title>
 	<members>
 		<member>
-			<backgroundImage href="images/BookSaleNoSocialLink2016Feb08.png">Background Image</backgroundImage>
-			<name hashName="name">&#160;</name>
+			<backgroundImage src="images/BookSaleNoSocialLink2016Feb08.png">&#160;</backgroundImage>
+            <link0 strClass0="socialFacebook socialBlock inlineBlock" href0="http://www.facebook.com" strClassSocialLink="facebook">&#160;</link0>         
+            <link1 strClass1="socialInstagram socialBlock inlineBlock" href1="http://www.instagram.com" strClassSocialLink="instagram">&#160;</link1>         
+            <link2 strClass2="socialTwitter socialBlock inlineBlock" href2="http://www.twitter.com" strClassSocialLink="twitter">&#160;</link2>         
 		</member>
 	</members>
 </page>
