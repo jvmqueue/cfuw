@@ -88,9 +88,7 @@ define(['jQuery'], function($, undefined){
 
             for(var i = 0, len = members.length; i < len; i++){ // push each XML common parent nodes to arry
                 arry.push(members[i]);
-            }
-
-
+            } 
             
             for(var i = 0, len = arry.length; i < len; i++){ // access each common parent node and push attributes to hash
                $(arry[i].childNodes).each(function(index, elm){
@@ -108,7 +106,7 @@ define(['jQuery'], function($, undefined){
                intXmlCategoryCounter = 0; // reset to beginning of tagsXmlChildsCommon array                   
                arryElementNodes.push(hashElementNodes); // forming hash for underscore template
                hashElementNodes = new Object; // hashes are reference vars, so, clear it. We do not overwrite previous values
-            } // End for     
+            } // End for  
 
             return {pageTitle:title, pageData:arryElementNodes, hashNodeClass:hashNodeAttributes};
         }, // End parseXmlToJson
