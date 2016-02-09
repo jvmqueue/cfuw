@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-	<title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">Book Sale</title>
-	<members>
-		<member>
-			<backgroundImage src="images/BookSaleNoSocialLink2016Feb08.png">&#160;</backgroundImage>
-            <link0 strClass0="socialFacebook socialBlock inlineBlock" href0="http://www.facebook.com" strClassSocialLink="facebook">&#160;</link0>         
-            <link1 strClass1="socialInstagram socialBlock inlineBlock" href1="http://www.instagram.com" strClassSocialLink="instagram">&#160;</link1>         
-            <link2 strClass2="socialTwitter socialBlock inlineBlock" href2="http://www.twitter.com" strClassSocialLink="twitter">&#160;</link2>         
-		</member>
-	</members>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">Book Sale</title>
+    <members>
+        <member>
+            <backgroundImage src="images/BookSaleNoSocialLink2016Feb08.png">&#160;</backgroundImage>
+            <link0 strClass0="socialFacebook socialBlock inlineBlock" href0="https://www.facebook.com/cfuwsaskatoon" strClassSocialLink="facebook">&#160;</link0>         
+            <link1 strClass1="socialInstagram socialBlock inlineBlock" href1="https://www.instagram.com/p/7JHu1DTSEk/" strClassSocialLink="instagram">&#160;</link1>         
+            <link2 strClass2="socialTwitter socialBlock inlineBlock" href2="https://twitter.com/cfuwsaskatoon" strClassSocialLink="twitter">&#160;</link2>         
+        </member>
+    </members>
 </page>
