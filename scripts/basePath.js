@@ -16,4 +16,8 @@ define([], function(){
     _basePath = {working:strWorking, fallback:strFallBack};
 
     return {dir:_basePath}
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 72e52e10ac806c7679e0af7643a7fe919e5a7d47
