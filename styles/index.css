@@ -631,7 +631,7 @@ body{
     margin:0;
     border-radius:10px;
     padding:0 0 72% 0;
-    height:1009px;
+    height:902px;
 }
 .jsBookSale h3, .jsBookSale table{
     display:none;        
@@ -683,7 +683,7 @@ ul>li>a:hover{
 
 /* Begin Social Links */
 .socialMargin{
-    margin:3.0em 1.0em 1.0em 1.0em;
+    margin:0 1.0em 1.0em 1.0em;
 }
 .socialBlock{
     height:100px;
@@ -691,7 +691,7 @@ ul>li>a:hover{
     background-repeat:no-repeat;
     background-color:transparent;
     background-blend-mode:color;
-    background-size:20% auto;    
+    background-size:28% auto;    
     -webkit-transition:transform 3s;
     -moz-transition:transform 3s;
     -o-transition:transform 3s;
@@ -826,6 +826,9 @@ ul>li>a:hover{
         padding:0;
         width:100%;
     }
+    .socialBlock{
+        background-size:36% auto;    
+    }    
     /** End Contact Us  */
 
 }
