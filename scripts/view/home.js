@@ -193,6 +193,7 @@ define(['jQuery',
       var _template = _.template(html);
       var _templateTitle = _.template(htmlTitle);
       var strHtml = ''; 
+      var $nodeExist = null;
 
       json['strNameTitle'] = jsonPageViewTitle;
 
@@ -207,7 +208,7 @@ define(['jQuery',
           strHtml += _template(json[i]);           
         }
 
-        var $nodeExist = this.$nodeViewContainer;
+        $nodeExist = this.$nodeViewContainer;
         $nodeExist.html(strHtml);
         strHtml = _templateTitle(json[0]);
 
@@ -431,7 +432,7 @@ define(['jQuery',
 
       strId === 'headColRightLogo' ? strUrl = 'http://www.cfuw.org/' : strUrl = 'http://www.fcfdu.org/';
       this.newWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
-      if (window.focus) {this.newWindow.focus()}
+      if(window.focus){ this.newWindow.focus(); }
       return false;
     },
     fetch:function(options){
@@ -476,7 +477,7 @@ define(['jQuery',
       } 
       
       // HTML5 let HTML element define index for accessing associated data
-      var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber);
+      var intDataIndexNumber = parseInt(nodeTarget.dataset.indexNumber, 10);
       var intIndexNumber = null;
       var strId = nodeTarget.getAttribute('id') || nodeTarget.parentNode.getAttribute('for');
       strId = regEx.fnc.strRemoveWhiteSpace(strId);
@@ -603,7 +604,7 @@ define(['jQuery',
     } // End listenerNavBar 
   });
 
-  return{View:_View}
+  return{View:_View};
 
   
 
