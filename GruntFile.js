@@ -41,7 +41,8 @@ module.exports = function(grunt){
 			compress: {
 				files: {
 				  'scripts/minified/main.js': [
-				  'scripts/view/home.js'
+				  'scripts/view/home.js',
+				  'scripts/model/*'
 				  ]
 				}
 			}
