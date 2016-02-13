@@ -25,24 +25,24 @@ requirejs.config({
         "util":["util/util"]        
     },
     shim:{
-        'jQuery':{
-            exports:'$'
-        },
-        'bootstrap':{
-            deps:['jQuery']
-        },
         'Backbone':{ // loading Backbone will load dependencies
             deps:['jQuery', 'underscore', 'bootstrap']
         },        
+        'bootstrap':{
+            deps:['jQuery']
+        },
+        'jQuery':{
+            exports:'$'
+        },        
+        'template':{ // loading template will load dependencies, even if template.js does not call bootstrap explicitly
+            deps:['underscore', 'regex', 'bootstrap']
+        },                
         'underscore':{
             exports:'_'
         },
         'util':{
             deps:['jQuery', 'jQueryValidation']
-        },
-        'template':{ // loading template will load dependencies, even if template.js does not call bootstrap explicitly
-            deps:['underscore', 'regex', 'bootstrap']
-        } 
+        }
     },
     deps:['main', 'bootstrap'] // where our program begins execution
 });
