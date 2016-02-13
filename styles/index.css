@@ -428,10 +428,11 @@
 }
 .horizontalRule{
     display:block;
-    margin:19px auto auto auto;
+    margin:0 auto;
     border-style:outset;
     border-width:1px;
     border-color:#76C0F1;
+    padding:0;
 }
 .frmContactUs{
 
@@ -684,6 +685,10 @@ ul>li>a:hover{
 .socialMargin{
     margin:0 1.0em 1.0em 1.0em;
 }
+.forMoreInformation .socialMargin{
+    margin:0;
+    height:24px;
+}
 .socialBlock{
     height:100px;
     background-position:center 0;
@@ -696,18 +701,10 @@ ul>li>a:hover{
     -o-transition:transform 3s;
     -ms-transition:transform 3s;       
 }
-.sectionContactUs .socialMargin{
-    margin:0;
-}
-.sectionContactUs .socialBlock{
-    width:66px;
-    height:30px;
-    background-size:52% auto;    
-}
-.socialBlock.socialBlockContactUs{
-    width:57px;
-    height:31px;
-    background-size:73% auto;    
+.forMoreInformation .socialBlock{
+    width:32%;
+    height:77%;
+    background-size:37% auto;    
 }
 .socialBlock:hover{
     opacity:0.4;    
@@ -735,14 +732,17 @@ ul>li>a:hover{
 
 
 /* Begin Media Queries */
+@media screen and (max-width: 988px) {  /* if the view port is less than 988px wide */
+    .forMoreInformation .socialMargin{
+        height:71px;
+    }
+}
+   
 @media (min-width: 768px){
     .navbar-nav{
         float:right;
         margin:0;
-    }
-    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
-        
-    }        
+    }     
 }
 @media (max-width: 767px){
     .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
@@ -754,7 +754,7 @@ ul>li>a:hover{
         width:1226px;
     }
 }
- @media (min-width:360px) and (max-width:767px){ /* Mobile all */
+ @media (min-width:360px) and (max-width:767px){ /* Mobile all */    
     body{
         min-width:100%;
     }
@@ -863,19 +863,11 @@ ul>li>a:hover{
     .forMoreInformation{
         width:40%;
     }
+    .forMoreInformation .socialMargin{
+        height:1.6em;
+    }    
     .cfuwAnchorTagContainer{
         width:124%;
-    }
-    .socialBlock.socialBlockContactUs{
-        width:48px;
-        height:31px;
-        background-size:62% auto;    
-    } 
-    .sectionContactUs .headerContactUs{
-        width:50%    
-    }  
-    .sectionContactUs .socialBlock{
-        width:60px;
     }
 }
 @media (max-width:767px) and (orientation:portrait){ /* mobile portrait */
@@ -899,19 +891,36 @@ ul>li>a:hover{
     }
     .jsBookSale{
         height:23em;
-    }
+    }    
 
 }
-@media screen and (max-aspect-ratio: 13/9){ /* forms when keyboard can be visible */
-    .sectionContactUs{
-        width:100%;
+
+@media screen and (max-aspect-ratio: 13/9){ /* Android soft keyboard in view */
+    .textTop{
+        font-size:100%;
+    }             
+    .textMiddle{
+        font-size:80%;
+    }
+    .textBottom{
+        font-size:60%;
+    }
+    .headColLogos{
+        overflow:visible;
     }
     .headerContactUs{
         width:100%;
-        background-color:red;
     }
-    .sectionContactUs .socialMargin, .socialBlockContactUs{        
-        display:none;
+    .frmContactUs{
+        width:100%;
     }
+    .forMoreInformation .socialMargin{
+        height:2.3em;
+    }
+    .forMoreInformation.col-md-3.col-xs-12{          
+        margin:0;
+        padding:0;
+        width:90%;
+    }    
 }
 /* End Media Queries */
