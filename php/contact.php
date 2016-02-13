@@ -2,7 +2,6 @@
 $toProd = 'info@cfuw-saskatoon.org'; /* Production only */
 $toDev = 'developer@cfuw-saskatoon.org'; /* In Development */
 $to = $toDev; /* Switch relative to environment */
-
 $mSubject = 'CFUW Contact Us:' . "\t";
 
 function get_request_headers(){
@@ -44,9 +43,9 @@ function main(){
 
     global $to, $mSubject;
     $newLine = "\r\n";
-
+    
     $arrayMessage = get_request_headers();
-
+    
     $headerSender  = 'MIME-Version: 1.0' . $newLine;
     $headerSender .= 'Content-type: text/plain; charset=UTF-8' . $newLine;
     $headerSender .= 'Return-Path: '. $to . $newLine;
