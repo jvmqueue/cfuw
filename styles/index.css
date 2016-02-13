@@ -428,8 +428,7 @@
 }
 .horizontalRule{
     display:block;
-    margin-right:auto;
-    margin-left:auto;    
+    margin:19px auto auto auto;
     border-style:outset;
     border-width:1px;
     border-color:#76C0F1;
@@ -697,6 +696,19 @@ ul>li>a:hover{
     -o-transition:transform 3s;
     -ms-transition:transform 3s;       
 }
+.sectionContactUs .socialMargin{
+    margin:0;
+}
+.sectionContactUs .socialBlock{
+    width:66px;
+    height:30px;
+    background-size:52% auto;    
+}
+.socialBlock.socialBlockContactUs{
+    width:57px;
+    height:31px;
+    background-size:73% auto;    
+}
 .socialBlock:hover{
     opacity:0.4;    
 }
@@ -854,6 +866,17 @@ ul>li>a:hover{
     .cfuwAnchorTagContainer{
         width:124%;
     }
+    .socialBlock.socialBlockContactUs{
+        width:48px;
+        height:31px;
+        background-size:62% auto;    
+    } 
+    .sectionContactUs .headerContactUs{
+        width:50%    
+    }  
+    .sectionContactUs .socialBlock{
+        width:60px;
+    }
 }
 @media (max-width:767px) and (orientation:portrait){ /* mobile portrait */
     .textTop{
@@ -876,7 +899,19 @@ ul>li>a:hover{
     }
     .jsBookSale{
         height:23em;
-    }    
+    }
 
+}
+@media screen and (max-aspect-ratio: 13/9){ /* forms when keyboard can be visible */
+    .sectionContactUs{
+        width:100%;
+    }
+    .headerContactUs{
+        width:100%;
+        background-color:red;
+    }
+    .sectionContactUs .socialMargin, .socialBlockContactUs{        
+        display:none;
+    }
 }
 /* End Media Queries */
