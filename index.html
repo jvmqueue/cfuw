@@ -174,13 +174,6 @@
   <% } %> 
   <section class="sectionContactUs row">
     <h4 class="headerContactUs col-xs-9">Contact Us: Canadian Federation University of Women</h4>
-    <div class="centered-text socialMargin floatRight">
-        <div class="centered-text socialMargin">
-          <a class="<%= strClass0 %> col-xs-4" href="<%= href0 %>" target="_blank"><%= link0 %></a>
-          <a class="<%= strClass1 %> col-xs-4" href="<%= href1 %>" target="_blank"><%= link1 %></a>
-          <a class="<%= strClass2 %> col-xs-4" href="<%= href2 %>" target="_blank"><%= link2 %></a>    
-        </div>
-    </div>
     <form id="frmContactUs" class="frmContactUs col-md-9 col-xs-7" action="" method="POST" enctype="text/plain">
       <section id="frmMessageContactUsSucccess" class="frmMessageContactUsSucccess"></section>
       <fieldset class="block">
@@ -208,21 +201,34 @@
     </form>
     <div class="forMoreInformation col-md-3 col-xs-12">
 
-
-
-
-      <hr class="horizontalRule" />
-      <p><%=headerTextRightSide%></p>
-      <p class="namePresident"><%=namePresident%></p>
-      <p class="bold titlePresident"><%=positionPresident%></p>
-      <p class="vicePresident"><%=nameVicePresident%></p>
-      <p class="bold titleVicePresident"><%=positionVicePresident%></p>   
-      <p class="marginBottomZero"><%=headerEmail%></p>   
-      <p class="cfuwAnchorTagContainer">
-        <a class="cfuwAnchorTag" href="mailto:<%=email%>?subject=CFUW Contact Us:"><%=email%></a>
-      </p>
-      <p><%=address%></p>
-      <p><%=moreInfo%></p>
+      <div class="row">
+          <div class="text-center socialMargin col-xs-12">
+            <a class="<%= strClass0 %> col-xs-4" href="<%= href0 %>" target="_blank"><%= link0 %></a>
+            <a class="<%= strClass1 %> col-xs-4" href="<%= href1 %>" target="_blank"><%= link1 %></a>
+            <a class="<%= strClass2 %> col-xs-4" href="<%= href2 %>" target="_blank"><%= link2 %></a>    
+          </div>      
+        <hr class="horizontalRule col-xs-12" />
+        <p class="col-xs-12"><%=headerTextRightSide%></p>      
+      </div>
+      <div class="row">
+        <p class="namePresident col-xs-12"><%=namePresident%></p>
+        <p class="bold titlePresident col-xs-12"><%=positionPresident%></p>
+        <p class="vicePresident col-xs-12"><%=nameVicePresident%></p>
+        <p class="bold titleVicePresident col-xs-12"><%=positionVicePresident%></p>   
+      </div>      
+      <div class="row">
+        <p class="marginBottomZero col-xs-12"><%=headerEmail%></p>   
+        <p class="cfuwAnchorTagContainer col-xs-12">
+          <a class="cfuwAnchorTag" href="mailto:<%=email%>?subject=CFUW Contact Us:"><%=email%></a>        
+        </p>
+      </div>
+      <div class="row">
+        <p class="col-xs-12"><%=address%></p>
+      </div>
+      <div class="row">
+        <p class="col-xs-12"><%=moreInfo%></p>
+      </div>
+      
     </div>
   </section> <!-- .sectionContactUs.row -->
 </script>       
