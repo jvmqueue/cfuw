@@ -3,12 +3,12 @@
     <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEMBERSHIP APPLICATION</title>
     <links>
         <link>
-            <pdf strClassPdf="pdf" hrefPdf="membershipApplications/MembershipAndPolicy2015Dec17.pdf">Membership and Policy</pdf>
-            <word strClassWord="word" hrefWord="membershipApplications/MembershipAndPolicy2015Dec17.docx">Membership and Policy</word>
+            <pdf strClassPdf="pdf" hrefPdf="../cfuwPublisher/membershipApplications/MembershipAndPolicy2015Dec17.pdf">Membership and Policy</pdf>
+            <word strClassWord="word" hrefWord="../cfuwPublisher/membershipApplications/MembershipAndPolicy2015Dec17.docx">Membership and Policy</word>
         </link>
         <link>
-            <pdf strClassPdf="pdf" hrefPdf="membershipApplications/MembershipRenewAndPolicy2015Dec19.pdf">Renew Membership</pdf>
-            <word strClassWord="word" hrefWord="membershipApplications/MembershipRenewAndPolicy2015Dec19.docx">Renew Membership</word>
+            <pdf strClassPdf="pdf" hrefPdf="../cfuwPublisher/membershipApplications/MembershipRenewAndPolicy2015Dec19.pdf">Renew Membership</pdf>
+            <word strClassWord="word" hrefWord="../cfuwPublisher/membershipApplications/MembershipRenewAndPolicy2015Dec19.docx">Renew Membership</word>
         </link>        
     </links>
 </page>
