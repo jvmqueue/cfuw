@@ -702,9 +702,9 @@ ul>li>a:hover{
     -ms-transition:transform 3s;       
 }
 .forMoreInformation .socialBlock{
-    width:32%;
-    height:77%;
-    background-size:37% auto;    
+    width:33%;
+    height:84%;
+    background-size:47% auto;
 }
 .socialBlock:hover{
     opacity:0.4;    
@@ -736,6 +736,16 @@ ul>li>a:hover{
     .forMoreInformation .socialMargin{
         height:71px;
     }
+    .frmContactUs{
+        width:100%;
+    }    
+    .forMoreInformation .socialBlock{
+        width:33%;
+        background-size:23% auto;
+    }
+    .horizontalRule{
+        margin-top:5.5em;
+    }
 }
    
 @media (min-width: 768px){
@@ -755,9 +765,6 @@ ul>li>a:hover{
     }
 }
  @media (min-width:360px) and (max-width:767px){ /* Mobile all */    
-    body{
-        min-width:100%;
-    }
     .container.mainContainer{ /* do not allow icons and text to overly collapse */
         min-width:100%;
     }
@@ -831,9 +838,6 @@ ul>li>a:hover{
     .containerLabel input{
         width:100%;
     }
-    div.containerContactUsText{
-
-    }    
     .containerContactUsText textarea{
         padding:0;
         width:100%;
@@ -868,6 +872,23 @@ ul>li>a:hover{
     }    
     .cfuwAnchorTagContainer{
         width:124%;
+    }
+    .forMoreInformation .socialMargin{
+        height:2.3em;
+    }
+    .forMoreInformation.col-md-3.col-xs-12{          
+        margin:0;
+        padding:0;
+        width:90%;
+    }
+    .forMoreInformation .socialBlock{
+        background-size:25% auto;
+    }    
+    .horizontalRule{
+        margin-top:1.0em;
+    }  
+    .forMoreInformation .socialMargin{
+        height:2.7em;
     }
 }
 @media (max-width:767px) and (orientation:portrait){ /* mobile portrait */
@@ -921,6 +942,9 @@ ul>li>a:hover{
         margin:0;
         padding:0;
         width:90%;
-    }    
+    }
+    .horizontalRule{
+        margin-top:0;
+    }        
 }
 /* End Media Queries */
