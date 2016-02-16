@@ -29,7 +29,7 @@
     <section id="jumbotron" class="jumbotron jumbotronHeaderImage marginTopZero marginBottomZero">
       <div class="row headColLogos">
         <div class="col-xs-2 center-block logo headColLeftLogo">&#160;</div>
-        <div id="headColRightLogo" class="col-xs-2 logo headColRightLogo">&#160;</div>      
+        <div id="headColRightLogo" data-href="http://www.cfuw.org/" class="col-xs-2 logo headColRightLogo">&#160;</div>      
         <div id="" class="col-xs-8 cfuwWhite">        
           <h2 class="marginTopZero cfuwSaskatoon cfuwSaskatoonFontHeading boldest">CFUW Saskatoon</h2>
           <p class="marginTopZero canadianFederationOfUniversity letterSpacing">CANADIAN FEDERATION OF UNIVERSITY WOMEN</p>
@@ -116,7 +116,7 @@
              </ul>   
           </div> <!-- End .footerTop -->
           <div class="footerBottom cfuwAddressURL col-xs-12">
-               <span id="cfuwAddressURL" class="cfuwAddressLink bold block textAlignRight floatRight clear col-xs-2">
+               <span id="cfuwAddressURL" class="cfuwAddressLink cfuwOpenInSmallWindow bold block textAlignRight floatRight clear col-xs-2" data-href="http://www.fcfdu.org">
                 www.fcfdu.org
               </span>              
           </div>                   
@@ -140,7 +140,7 @@
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %>    
   <div class="affiliations row">
-    <a class="col-xs-12 cfuwAnchorTag <%=strClass%>"  href=<%=href%> target="_blank"><%=affiliationName%></a>
+    <a class="col-xs-12 cfuwOpenInSmallWindow cfuwAnchorTag <%=strClass%>" data-href="<%= href %>" href="javaScript:void(0);" target="_blank"><%=affiliationName%></a>
   </div>
 </script>
 <script type="text/template" id="templateBoardMembers">
@@ -161,9 +161,9 @@
   <div class="jsBookSale" style="background-image:url(<%= src %>);">&#160;</div>
   <div class="row">
     <div class="centered-text socialMargin">
-      <a class="<%= strClass0 %> col-xs-4" href="<%= href0 %>" target="_blank"><%= link0 %></a>
-      <a class="<%= strClass1 %> col-xs-4" href="<%= href1 %>" target="_blank"><%= link1 %></a>
-      <a class="<%= strClass2 %> col-xs-4" href="<%= href2 %>" target="_blank"><%= link2 %></a>    
+      <a class="<%= strClass0 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href0 %>" target="_blank"><%= link0 %></a>
+      <a class="<%= strClass1 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href1 %>" target="_blank"><%= link1 %></a>
+      <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>    
     </div>
   </div>
 
@@ -203,9 +203,9 @@
 
       <div class="row">
           <div class="text-center socialMargin col-xs-12">
-            <a class="<%= strClass0 %> col-xs-4" href="<%= href0 %>" target="_blank"><%= link0 %></a>
-            <a class="<%= strClass1 %> col-xs-4" href="<%= href1 %>" target="_blank"><%= link1 %></a>
-            <a class="<%= strClass2 %> col-xs-4" href="<%= href2 %>" target="_blank"><%= link2 %></a>    
+            <a class="<%= strClass0 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href0 %>" target="_blank"><%= link0 %></a>
+            <a class="<%= strClass1 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href1 %>" target="_blank"><%= link1 %></a>
+            <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>    
           </div>      
         <hr class="horizontalRule col-xs-12" />
         <p class="col-xs-12"><%=headerTextRightSide%></p>      
