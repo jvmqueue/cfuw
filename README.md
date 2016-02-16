@@ -58,7 +58,7 @@
             │   │     └── home.xml   
             │   │     └── scholarships.xml        
             │   ├── styles
-            │   │   └── CSS resources
+            │   │     └── CSS resources
             │   ├── scripts
             │   │     └── main.js
             │   │     └── config.js
@@ -70,7 +70,8 @@
             │   │     └── backbone
             │   │     └── bootstrap
             │   │     └── jquery
-            │   │     └── underscore
+            │   │     └── jquery-validation            
+            │   │     └── underscore            
             
         </code>
     </pre>
