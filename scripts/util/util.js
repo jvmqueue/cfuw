@@ -3,6 +3,7 @@ define(['jQuery'], function($, undefined){
     var w = window, d = document;    
     var TAG_NAME_DOC_FIRST_CHILD = 'page'; // private member
     var TAG_NAME_DOC_TITLE = 'title'; // private member
+    var mNewWindow = null;
     
 
     var _fnc = {
@@ -138,7 +139,16 @@ define(['jQuery'], function($, undefined){
 
 
             } // End switch
-        } // End overridejQueryValidatorRules()
+        }, // End overridejQueryValidatorRules()
+        listenerOpenSmallWindow:function(e){ // if small window open, clicking on link replaces small window URL
+          var node = e.target;
+          var strId = node.getAttribute('id');
+          var strUrl = node.dataset.href; // data-href attribute
+          var windows = {width:827, height:363};
+          mNewWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
+          if(window.focus){ mNewWindow.focus(); }
+          return false;
+        } // End listenerOpenSmallWindow
     };
     return{
         fnc:_fnc
