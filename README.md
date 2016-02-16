@@ -50,6 +50,13 @@
         <code>
             ├── site
             │   ├── html resources
+            │   ├── data
+            │   │     └── affiliations.xml
+            │   │     └── board.xml
+            │   │     └── bookSale.xml            
+            │   │     └── contactUs.xml     
+            │   │     └── home.xml   
+            │   │     └── scholarships.xml        
             │   ├── styles
             │   │   └── CSS resources
             │   ├── scripts
