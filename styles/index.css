@@ -386,6 +386,7 @@
 /* Begin Affiliations */
 .affiliations a{
     display:block;
+    width:69%;
     height:5em;
     margin-bottom:2.0em;
     padding-top:1.0em;
@@ -809,6 +810,9 @@ ul>li>a:hover{
         line-height:17px;
         height:32px; 
     }
+    .affiliations a{
+        width:100%;
+    }    
     .jsBookSale{
         background-size:88% auto;
         height:40em;
