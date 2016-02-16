@@ -58,11 +58,11 @@ define(['jQuery',
     ],
     events:{ // events depends on defining _View.el 
       'click #navBarTop':'listenerNavBar',
-      'click #headColRightLogo, #cfuwAddressURL':'listenerOpenSmallWindow',
+      'click #headColRightLogo, #cfuwAddressURL, .cfuwOpenInSmallWindow':'listenerOpenSmallWindow',
       'click #footerTopRow ul li':'listenerNavFooter',
       'submit #frmContactUs':'listenerFormSubmit'
     },       
-    newWindow:0,
+    newWindow:null,
     selectorViewContainer:'#boardMembers',
     idViewContainer:'boardMembers',
     $nodeViewContainer:null, // assigned during initialize
@@ -427,10 +427,11 @@ define(['jQuery',
     listenerOpenSmallWindow:function(e){ // if small window open, clicking on link replaces small window URL
       var node = e.target;
       var strId = node.getAttribute('id');
-      var strUrl = null;
-      var windows = {width:827, height:363};      
-
-      strId === 'headColRightLogo' ? strUrl = 'http://www.cfuw.org/' : strUrl = 'http://www.fcfdu.org/';
+      var strUrl = node.dataset.href; // data-href attribute
+      var windows = {width:827, height:363};
+      if(this.newWindow){
+        this.newWindow.close();
+      }
       this.newWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
       if(window.focus){ this.newWindow.focus(); }
       return false;
