@@ -425,13 +425,7 @@ define(['jQuery',
       }
     },
     listenerOpenSmallWindow:function(e){ // if small window open, clicking on link replaces small window URL
-      var node = e.target;
-      var strId = node.getAttribute('id');
-      var strUrl = node.dataset.href; // data-href attribute
-      var windows = {width:827, height:363};
-      this.newWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
-      if(window.focus){ this.newWindow.focus(); }
-      return false;
+      util.fnc.listenerOpenSmallWindow(e);
     },
     fetch:function(options){
 
