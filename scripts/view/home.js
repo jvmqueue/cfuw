@@ -429,9 +429,6 @@ define(['jQuery',
       var strId = node.getAttribute('id');
       var strUrl = node.dataset.href; // data-href attribute
       var windows = {width:827, height:363};
-      if(this.newWindow){
-        this.newWindow.close();
-      }
       this.newWindow = window.open(strUrl,'name','height='+windows.height+',width='+windows.width);
       if(window.focus){ this.newWindow.focus(); }
       return false;
