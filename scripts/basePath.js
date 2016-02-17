@@ -1,7 +1,7 @@
 define([], function(){
     var strBasePath = {
-        local:{working:'../CFUW_Publisher/data/', fallback:'data/'},
-        dev:{working:'../CFUW_Publisher/data/', fallback:'data/'}
+        local:{working:'../cfuwPublisher/data/', fallback:'data/'},
+        dev:{working:'../cfuwPublisher/data/', fallback:'data/'}
     };
     var strHostName = window.location.hostname;
     var strWorking = strBasePath.dev.working;
