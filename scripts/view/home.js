@@ -53,7 +53,7 @@ define(['jQuery',
         templateId:[]
     },
     imagesToPreload:[
-      'images/BookSaleNoSocialLink2016Feb08.png',
+      '../cfuwPublisher/images/BookSaleNoSocialLink2016Feb08.png',
       'images/bridgeBigCenter.png'
     ],
     events:{ // events depends on defining _View.el 
