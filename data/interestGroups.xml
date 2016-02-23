@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
     <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">INTEREST GROUPS</title>
-	<groups  catagory="interestGroups">
+	<groups catagory="interestGroups">
 		<group>
             <name>Adventures In Dining</name>
             <dateTime>2nd Tuesday at 6:00 pm</dateTime>
