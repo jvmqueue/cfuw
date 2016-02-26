@@ -1,4 +1,5 @@
 @import url(theme.css);
+@import url(animations.css);
 .container.mainContainer{ /* do not allow icons and text to overly collapse */
     min-width:600px;
 }
