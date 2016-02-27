@@ -210,13 +210,14 @@
     padding:0;
     width:100%;
 }
-.containerPageMiddleBody{
-
-}
 .pageBackgroundImage{
-  background-image:url('../images/bridgeBigCenter.png');
-  background-size:cover;
-  height:777px;
+    background-image:url('../images/bridgeBigCenter.png');
+    background-size:cover;
+    height:777px;
+    -webkit-transition:all 0.8s;
+    -moz-transition:all 0.8s;
+    -o-transition:all 0.8s;
+    -ms-transition:all 0.8s;     
 }
 .jsOpacity.pageBackgroundImage{
   opacity:0.4;
