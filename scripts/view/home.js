@@ -115,6 +115,12 @@ define(['jQuery',
         images[i].src = imagePaths[i];
       }
     },
+    animate:function(){
+      var that = this;
+      w.setTimeout(function(){
+          $(that.selectorViewCfuwBackground).addClass(that.cssClassBackgroundOpacity);
+        }, 1111);      
+    },
     setRelativeToDomain:function(options){
       var strNodeId = options.id;
       var arrayDomains= options.domains;
@@ -216,7 +222,7 @@ define(['jQuery',
       }
 
       if(blnSetBackgroundOpacity === true){
-        $(this.selectorViewCfuwBackground).addClass(this.cssClassBackgroundOpacity);
+        this.animate();
       }else{
         $(this.selectorViewCfuwBackground).removeClass(this.cssClassBackgroundOpacity);
       }
@@ -487,6 +493,8 @@ define(['jQuery',
       var hashCssClassToSet = null;
       var hashHrefToSet = null;
       var dateNoCache = new Date().getMilliseconds();
+
+      $(this.selectorViewCfuwBackground).removeClass(strJsCssClassOpacity);
 
       strDataPath = thisNav.data[intDataIndexNumber] + '?noCache=' + dateNoCache;
       arryTagsXml = thisNav.tagsXml[intDataIndexNumber];
