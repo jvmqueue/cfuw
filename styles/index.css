@@ -339,7 +339,11 @@
         text-align:left;
     }    
     .footerMain .panel-footer{
+        box-shadow:-1px 8px 32px #094E77;
         border:0;
+        border-radius:10px;
+        border-top-left-radius:0;
+        border-top-right-radius:0;
         height:75%;
     }
         .footerMain .panel-footer .footerAddress{
