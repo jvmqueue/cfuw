@@ -42,7 +42,8 @@
     <li>Test on Dev Box</li>
     <li>Run Grunt task: lintcssmin... Prod requests minified CSS</li>
     <li>Test in Production</li>    
-    <li>Merge with Master</li>    
+    <li>If you discover issues, push master branch to production.</li>    
+    <li>If all is well, merge with Master</li>    
 </ul>
 </ul>
 <h4>Fundemental Architecture</h4>
