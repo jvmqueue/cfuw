@@ -103,6 +103,11 @@ define(['jQuery',
         nameEvent:'http:response',
         fncListener:this.listenerEmailSuccess
       });
+      this.setCustomListeners({
+        selector:window,
+        nameEvent:'scroll',
+        fncListener:this.listenerScroll
+      });      
 
       this.preLoadResources();
       this.setRelativeToDomain({id:'linkStylesheet', attribute:'href', domains:['CFUW_Dev', '127.0.0.1']});     
@@ -248,7 +253,7 @@ define(['jQuery',
         if( !!$(strSelector) ){
           w.clearInterval(interval);
           $node = $(strSelector);
-          $(strSelector).on(options.nameEvent, options.fncListener);          
+          $(strSelector).on(options.nameEvent, options.fncListener);  
         }
        }, 333);
     },
@@ -289,6 +294,15 @@ define(['jQuery',
         this.$nodeViewContainer.css('top', -intContainerHeight + -7 + 'px');
       }
 
+    },
+    listenerScroll:function(e){
+      var intViewFromTop = $(this).scrollTop();
+      var intWindowHeight = $(window).height();
+      if(intViewFromTop >= intWindowHeight*2){
+        $('#navScrollToTop').fadeIn(1111, 'swing');
+      }else{
+        $('#navScrollToTop').fadeOut(1111, 'swing');
+      }
     },
     listenerCheckFormFields:function(e){
       var STR_CSS_IS_EMPTY = 'jsValidationErrorCannotBeEmpty';
