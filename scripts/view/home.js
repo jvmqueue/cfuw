@@ -298,6 +298,11 @@ define(['jQuery',
     listenerScroll:function(e){
       var intViewFromTop = $(this).scrollTop();
       var intWindowHeight = $(window).height();
+      var blnIsContactUsForm = !!( d.getElementById('frmContactUs') );
+      if(blnIsContactUsForm === true){ // do not show scroll to top icon
+        $('#navScrollToTop').fadeOut(1111, 'swing');
+        return void(0); 
+      }
       if(intViewFromTop >= intWindowHeight*2){
         $('#navScrollToTop').fadeIn(1111, 'swing');
       }else{
