@@ -83,6 +83,7 @@ define(['jQuery',
     blnSetCfuwCascadingTopBackground:false,
     intNumberOfFetches:0,
     initialize:function(options){ // initialize application's instance vars
+      /*test for rebase only*/
       var hash = options;  
       this.$nodeViewContainer = $(this.selectorViewContainer);
       this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
