@@ -53,6 +53,15 @@
 .marginBottomIncrease, p.marginBottomIncrease{
     margin-bottom:1.2em;
 }
+.boardMembers{
+    opacity:0;
+    -webkit-transition-property:opacity;
+    transition-property:opacity;
+    -webkit-transition-duration:0.9s;
+    transition-duration:0.9s;
+    -webkit-transition-timing-function:ease-out;
+    transition-timing-function:ease-out;    
+}
 .boardMembers.containerPageText{
     padding-bottom:1.0em;
 }
@@ -644,6 +653,7 @@ body{
 .jsCfuwTopImageFade{
     background:url(../images/logoCFUW.png) 0.5em 0.5em no-repeat, url(../images/cascadingTopImage.png) 0.5em 0.07em no-repeat;   
     background-size:30px, 100%;
+    opacity:1.0;
 }
 .jsCfuwBackgroundColor{
     background-color:#FFFFFF;
