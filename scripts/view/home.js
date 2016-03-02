@@ -122,8 +122,13 @@ define(['jQuery',
     },
     animate:function(){
       var that = this;
+      that.$nodeViewContainer.removeClass('jsCfuwTopImageFade');
+      
       w.setTimeout(function(){
           $(that.selectorViewCfuwBackground).addClass(that.cssClassBackgroundOpacity);
+          that.$nodeViewContainer.addClass(that.cssClassWhiteBackground);
+          that.$nodeViewContainer.addClass('jsContainerPageText jsCfuwTopImageFade');
+          that.$nodeViewContainer.removeClass('jsNotVisible'); // hide new rendering immediately. othewise new render shows just before fading in
         }, 1111);      
     },
     setRelativeToDomain:function(options){
@@ -150,34 +155,20 @@ define(['jQuery',
       }
     },
     renderDefault:function(paramBlnRenderDefault){
-      var $nodeContainer = this.$nodeViewContainer;
-      var strJsCssClass = this.cssClassBackgroundOpacity;
-      
-      $nodeContainer.html(''); // reset... empty HTML so that container has no height
-
-      if(paramBlnRenderDefault === true){  // show book sale image
-        $nodeContainer.removeClass(this.cssClassWhiteBackground);
-        $nodeContainer.addClass(this.cssClassShowBookSale);
-        $(this.selectorViewCfuwBackground).removeClass(strJsCssClass);
-        $(this.selectorViewCfuwBackground).css({'height':'793px'});
-        $('#boardMembers>*').html('');
-        $('#boardMembers').css({'top':'-778px'}); // set inline style because boardMembers top is set dynamically in View code
-        $nodeContainer.removeClass('col-xs-10').addClass('col-xs-12');
-        $nodeContainer.removeClass('jsContainerPageText').removeClass('jsCfuwTopImageFade');
-      }
-
-      this.setFooterPosition();
+      /*bookSale now has data, a model and XML data. We no longer need this method*/
 
     },
     render:function(options){  
-      d.getElementById('navBarTop').scrollIntoView();    
+      d.getElementById('navBarTop').scrollIntoView(); 
+      var that = this;
+
       if(!options){ // node clicked that we are not monitoring
         this.renderDefault(true); // true for render book sale
         return void(0);
       }else{ // TODO: this is hack to fix a bug, this block was causing underscore to throw exceptions
         var $nodeContainer = this.$nodeViewContainer;
         
-        $nodeContainer.addClass(this.cssClassWhiteBackground);
+        $nodeContainer.removeClass(this.cssClassWhiteBackground);
         $nodeContainer.removeClass(this.cssClassShowBookSale);
         $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
         this.optimizePageHeight();
@@ -232,8 +223,8 @@ define(['jQuery',
         $(this.selectorViewCfuwBackground).removeClass(this.cssClassBackgroundOpacity);
       }
       if(blnSetBackgroundWhite === true){ // assume white background has text
-        $nodeExist.addClass('jsCfuwBackgroundColor');
-        $nodeExist.addClass('jsContainerPageText').addClass('jsCfuwTopImageFade');
+        $nodeExist.removeClass('jsCfuwBackgroundColor');
+        /*$nodeExist.addClass('jsContainerPageText').addClass('jsCfuwTopImageFade');*/
       }else{
         $nodeExist.removeClass('jsCfuwBackgroundColor');
       }
@@ -493,6 +484,8 @@ define(['jQuery',
     }, // End fetch    
     listenerNavBar:function(e, paramNodeFromTrigger){ // listening to the nav bar, using event delegation
       var nodeTarget = e.target;
+      this.$nodeViewContainer.addClass('jsNotVisible'); // hide immediately, otherwise new render shows before fade in
+
       if(typeof paramNodeFromTrigger != 'undefined'){  // footer link send message
          nodeTarget = paramNodeFromTrigger;
       } 
@@ -540,7 +533,7 @@ define(['jQuery',
           break;     
         case 'btnBookSale':
           model = booksaleModel.fnc.getInstance(); 
-          this.blnSetBackgroundOpacity = false;
+          this.blnSetBackgroundOpacity = true;
           this.blnSetBackgroundWhite = true;
           this.blnAddPaddingTopSmallest = true;
           break;                
