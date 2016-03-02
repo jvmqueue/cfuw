@@ -34,12 +34,13 @@
     <li>Do Work</li>
     <li>Test locally</li>
     <li>Test on Dev</li>
-    <li>Push to your branch</li>    
+    <li>Commit to your branch</li>    
     <li>Rebase with Master</li>
     <li>Resolve conflicts</li>
     <li>git status ensure all is well</li>
     <li>Test locally</li>
     <li>Test on Dev Box</li>
+    <li>Push to your branch</li>
     <li>Run Grunt task: lintcssmin... Prod requests minified CSS</li>
     <li>Test in Production</li>    
     <li>If you discover issues, push master branch to production.</li>    
