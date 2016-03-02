@@ -83,7 +83,6 @@ define(['jQuery',
     blnSetCfuwCascadingTopBackground:false,
     intNumberOfFetches:0,
     initialize:function(options){ // initialize application's instance vars
-      /*test for rebase only*/
       var hash = options;  
       this.$nodeViewContainer = $(this.selectorViewContainer);
       this.$nodeViewCfuwBackground = $(this.selectorViewCfuwBackground);
@@ -155,25 +154,15 @@ define(['jQuery',
         nodeLinkStylesheet.setAttribute(strAttribute, strAttributeHref); // append version in query string
       }
     },
-    renderDefault:function(paramBlnRenderDefault){
-      /*bookSale now has data, a model and XML data. We no longer need this method*/
-
-    },
     render:function(options){  
       d.getElementById('navBarTop').scrollIntoView(); 
       var that = this;
-
-      if(!options){ // node clicked that we are not monitoring
-        this.renderDefault(true); // true for render book sale
-        return void(0);
-      }else{ // TODO: this is hack to fix a bug, this block was causing underscore to throw exceptions
-        var $nodeContainer = this.$nodeViewContainer;
+      var $nodeContainer = this.$nodeViewContainer;
         
-        $nodeContainer.removeClass(this.cssClassWhiteBackground);
-        $nodeContainer.removeClass(this.cssClassShowBookSale);
-        $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
-        this.optimizePageHeight();
-      } // End else
+      $nodeContainer.removeClass(this.cssClassWhiteBackground);
+      $nodeContainer.removeClass(this.cssClassShowBookSale);
+      $nodeContainer.removeClass('col-xs-12').addClass('col-xs-10');
+      this.optimizePageHeight();
 
       this.setFooterPosition();
       
