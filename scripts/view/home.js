@@ -279,19 +279,31 @@ define(['jQuery',
     listenerScroll:function(e){
       var blnIsContactUsForm = !!( d.getElementById('frmContactUs') );
       
-      if(blnIsContactUsForm === true){ // do not show scroll to top icon
-        $('#navScrollToTop').fadeOut(1111, 'swing');
+      if(blnIsContactUsForm === true){ // do not show arrow icon
+        $('#navScrollToTop a').removeClass('jsUpNavArrowFadeIn');
         return void(0); 
       }
       
       /* optimization: do not access if contact us is in view */
       var intViewFromTop = $(this).scrollTop();
       var intWindowHeight = $(window).height(); 
+      var $nodeArrowIcon = $('#navScrollToTop a');
+      var blnAddJsClass = false;
 
-      if(intViewFromTop >= intWindowHeight*2){
-        $('#navScrollToTop').fadeIn(1111, 'swing');
+      if( window.matchMedia('(orientation:portrait)').matches ){
+        if(intViewFromTop >= intWindowHeight){
+          blnAddJsClass = true;
+        }        
+      }else if(window.matchMedia('(orientation:landscape)').matches){
+        if(intViewFromTop >= intWindowHeight*2.5){
+          blnAddJsClass = true;
+        }
+      }
+
+      if(blnAddJsClass === true){
+        $nodeArrowIcon.addClass('jsUpNavArrowFadeIn');
       }else{
-        $('#navScrollToTop').fadeOut(1111, 'swing');
+        $nodeArrowIcon.removeClass('jsUpNavArrowFadeIn');
       }
     },
     listenerCheckFormFields:function(e){
