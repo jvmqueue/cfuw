@@ -155,7 +155,7 @@ define(['jQuery',
       }
     },
     render:function(options){  
-
+      d.getElementById('navBarTop').scrollIntoView(); 
       var that = this;
       var $nodeContainer = this.$nodeViewContainer;
         
