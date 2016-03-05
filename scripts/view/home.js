@@ -155,7 +155,7 @@ define(['jQuery',
       }
     },
     render:function(options){  
-      d.getElementById('navBarTop').scrollIntoView(); 
+
       var that = this;
       var $nodeContainer = this.$nodeViewContainer;
         
@@ -277,31 +277,16 @@ define(['jQuery',
 
     },
     listenerScroll:function(e){
-      var blnIsContactUsForm = !!( d.getElementById('frmContactUs') );
-      var STR_CSS_ARROW_FADE_IN = 'jsUpNavArrowFadeIn';
-      
-      if(blnIsContactUsForm === true){ // do not show arrow icon
-        $('#navScrollToTop a').removeClass(STR_CSS_ARROW_FADE_IN);
-        return void(0); 
-      }
-      
-      /* optimization: do not access if contact us is in view */
-      var intViewFromTop = $(this).scrollTop();
-      var intWindowWidth = $(window).width(); 
-      var intViewFromTopRatio = intViewFromTop/intWindowWidth;
-      var $nodeArrowIcon = $('#navScrollToTop a');
-      var blnAddJsClass = false;
+      var nodeInViewDoNotShow = d.getElementById('frmContactUs');
+      var jsCssClassToAdd = 'jsUpNavArrowFadeIn';
+      var $nodeToAddJsCssClass = $('#navScrollToTop a');
 
-      if( intViewFromTopRatio >= 1.5 ){ // relative (scroll depth) to (window width) ratio
-          blnAddJsClass = true;
-      }
-
-      if(blnAddJsClass === true){
-        $nodeArrowIcon.addClass(STR_CSS_ARROW_FADE_IN);
-      }else{
-        $nodeArrowIcon.removeClass(STR_CSS_ARROW_FADE_IN);
-      }
-    },
+      util.fnc.showIconRelativeToScroll({
+        nodeInViewDoNotShow:nodeInViewDoNotShow,
+        jsCssClassToAdd:jsCssClassToAdd,
+        $nodeToAddJsCssClass:$nodeToAddJsCssClass
+      });
+    },      
     listenerCheckFormFields:function(e){
       var STR_CSS_IS_EMPTY = 'jsValidationErrorCannotBeEmpty';
       var STR_CSS_BTN_DISABLED = 'jsValidationErrorBtn';
