@@ -278,9 +278,10 @@ define(['jQuery',
     },
     listenerScroll:function(e){
       var blnIsContactUsForm = !!( d.getElementById('frmContactUs') );
+      var STR_CSS_ARROW_FADE_IN = 'jsUpNavArrowFadeIn';
       
       if(blnIsContactUsForm === true){ // do not show arrow icon
-        $('#navScrollToTop a').removeClass('jsUpNavArrowFadeIn');
+        $('#navScrollToTop a').removeClass(STR_CSS_ARROW_FADE_IN);
         return void(0); 
       }
       
@@ -296,9 +297,9 @@ define(['jQuery',
       }
 
       if(blnAddJsClass === true){
-        $nodeArrowIcon.addClass('jsUpNavArrowFadeIn');
+        $nodeArrowIcon.addClass(STR_CSS_ARROW_FADE_IN);
       }else{
-        $nodeArrowIcon.removeClass('jsUpNavArrowFadeIn');
+        $nodeArrowIcon.removeClass(STR_CSS_ARROW_FADE_IN);
       }
     },
     listenerCheckFormFields:function(e){
