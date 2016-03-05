@@ -59,6 +59,33 @@ define(['jQuery'], function($, undefined){
             }
             return hash;
         },
+        showIconRelativeToScroll:function(options){
+          var blnNodeInViewDoNotShow = !!( options.nodeInViewDoNotShow );
+          var STR_CSS_ARROW_FADE_IN = options.jsCssClassToAdd;
+          var $nodeToAddJsCssClass = options.$nodeToAddJsCssClass;
+          
+          if(blnNodeInViewDoNotShow === true){ // do not show arrow icon
+            $nodeToAddJsCssClass.removeClass(STR_CSS_ARROW_FADE_IN);
+            return void(0); 
+          }
+          
+          /* optimization: do not access if contact us is in view */
+          var intViewFromTop = $(window).scrollTop();
+          var intWindowWidth = $(window).width(); 
+          var intViewFromTopRatio = intViewFromTop/intWindowWidth;
+          var $nodeArrowIcon = $nodeToAddJsCssClass;
+          var blnAddJsClass = false;
+
+          if( intViewFromTopRatio >= 1.5 ){ // the wider the screen, the longer we wait for icon to show
+              blnAddJsClass = true;
+          }
+
+          if(blnAddJsClass === true){
+            $nodeArrowIcon.addClass(STR_CSS_ARROW_FADE_IN);
+          }else{
+            $nodeArrowIcon.removeClass(STR_CSS_ARROW_FADE_IN);
+          }
+        },        
         parseXmlToJson:function(paramXml, paramOptionTags){
             var $xmlDoc = $(paramXml);
             var arry = [];
