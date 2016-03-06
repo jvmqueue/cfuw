@@ -761,6 +761,9 @@ ul>li>a:hover{
     .horizontalRule{
         margin-top:5.5em;
     }
+    .navArrowUp:hover{
+        background-color:#E28D14;
+    }        
 }
    
 @media (min-width: 768px){
@@ -869,9 +872,7 @@ ul>li>a:hover{
         -webkit-transition-timing-function:ease-in;
         transition-timing-function:ease-in;
     }    
-    .navArrowUp:hover{
-        background-color:#E28D14;
-    }            
+       
     .navArrowUp.jsUpNavArrowFadeIn{
         opacity:1;
     }        
