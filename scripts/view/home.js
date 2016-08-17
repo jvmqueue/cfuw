@@ -522,7 +522,9 @@ define(['jQuery',
           break;                
         case 'btnContactUs':
           model = contactUsModel.fnc.getInstance();
-          this.blnSetBackgroundWhite = true;
+          this.blnSetBackgroundOpacity = true;
+          this.blnSetBackgroundWhite = true;            
+          this.blnAddPaddingTopSmallest = true;    
           break;
         case 'btnEvents': 
           /* Client requested events be merged with meetings 2015 Dec 13 */
