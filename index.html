@@ -13,7 +13,9 @@
 
   <title>Canadian Federation of University Women Saskatoon - CFUW</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link id="linkStylesheet" rel="stylesheet" href="minified/index.css?version=3.7" />
+  <link id="linkStylesheet" rel="stylesheet" href="minified/indexMinified.css?version=1.0" />
+
+  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet" />
 
     <!--[if lt IE 9]>
         <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -161,12 +163,40 @@
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %>
-  <div class="jsBookSale" style="background-image:url(<%= src %>);">&#160;</div>
-  <div class="row">
-    <div class="centered-text socialMargin">
-      <a class="<%= strClass0 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href0 %>" target="_blank"><%= link0 %></a>
-      <a class="<%= strClass1 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href1 %>" target="_blank"><%= link1 %></a>
-      <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>    
+  
+  <div class="container-fluid">
+    <div class="row text-center bigBoldText fontFrancoisOne">
+      <h1 id="centerJustifyText0" class="col-xs-12 letters red  fontDesignRow0 line0"><%= h10%></h1>
+      <h1 id="centerJustifyText1" class="col-xs-12 letters red fontDesignRowBefore fontDesignRow1 line1"><%= h11%></h1>
+      <h1 id="centerJustifyText2" class="col-xs-12 letters red fontDesignRowBefore fontDesignRow2 stretch line2"><%= h12%></h1>
+      <h1 id="centerJustifyText3" class="col-xs-12 letters fontDesignRowBefore fontDesignRow3 stretch line3"><%= h13%></h1>
+      <div class="row">
+      <h1 id="centerJustifyText4" class="col-xs-12 letters fontDesignRowBefore fontDesignRow4 stretch line4"><%= h14%></h1>
+      <h1 id="centerJustifyText5" class="col-xs-12 letters fontDesignRowBefore fontDesignRow5 stretch line5"><%= h2%></h1>
+      <div class="row">
+        <h1 id="" class="col-xs-3 letters fontDesignRow fontDesignRow6  line6">&#160;</h1>
+        <h1 id="centerJustifyText6" class="col-xs-6 letters blue fontDesignRow fontDesignRow6  line6"><%= p%></h1>
+        <h1 id="" class="col-xs-3 letters fontDesignRow fontDesignRow6  line6">&#160;</h1>
+      </div>
+      <div class="row">
+        <h1 id="" class="col-xs-3 letters fontDesignRow">&#160;</h1>
+        <address id="centerJustifyText7" class="col-xs-4 letters blue fontDesignRow fontDesignRow7  line7"><%= address%></address>
+        <h1 id="" class="col-xs-3 letters fontDesignRow">&#160;</h1>
+      </div>
+      <div class="row contactUs marginZeroOnChilds yellowFontSize">
+        <div class="centerContents yellowBackground">
+          <h2 class="col-xs-12 marginZero visibleHidden">&#60;</h2>
+          <h2 class="col-xs-12 marginZero"><%= yellowBlock0%></h2>
+          <h2 class="col-xs-12 marginZero"><%= yellowBlock1%></h2>
+          <h2 class="col-xs-12 marginZero"><%= yellowBlock2%></h2>
+        </div>
+
+      </div>            
+      <div class="row socialIconContainer">
+        <a class="<%= strClass0 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href0 %>" target="_blank"><%= link0 %></a>
+        <a class="<%= strClass1 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href1 %>" target="_blank"><%= link1 %></a>
+        <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>            
+      </div>
     </div>
   </div>
 
@@ -262,8 +292,13 @@
   <% } %>       
   <p class= <%= '"'+ strClassDate + '"' %> > <%= dateNode%></p>
   <p class= <%= '"'+ strClassTime + '"' %> > <%= timeNode%></p>
-  <p class= <%= '"'+ strClassInfo + '"' %> > <%= info%></p>
+  <a 
+    class= <%= '"'+ strClassInfo + '"' %> 
+    target="_blank" 
+    href= <%= typeof strHref != 'undefined' ? strHref: ''%> > <%= info%>
+  </a>
   <p class= <%= '"'+ strClassLocation + '"' %> > <%= location%></p>
+  <p class="<%= typeof strClassOtherInfo != 'undefined' ? strClassOtherInfo: ''%>"><%= otherInfo%></p>
 </script>   
 <script type="text/template" id="templateMembershipApplication">
   <% if (typeof(strNameTitle) !== 'undefined') { %>

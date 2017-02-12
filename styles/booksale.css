@@ -1,0 +1,190 @@
+.wrapper {
+    width: 300px; /*for example*/
+    border: 1px solid gray; /*only for demonstrative purposes*/
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    color:red;
+}
+.visibleHidden{
+    visibility:hidden;
+}
+.overflowHidden{
+    overflow:hidden;
+}
+.marginZero, .marginZeroOnChilds h2{
+    margin:0;
+}
+.kerning{
+    letter-spacing:-9px;
+}
+.letters{
+    vertical-align:top;
+    display:block;
+    *display:inline;
+    zoom:1;
+}
+.letters.red{
+    color:red;
+}
+.letters.blue{
+    color:#1A75BC;
+}
+
+.wrapper .letters{
+    margin:0;
+    height:48px;
+    text-align:center;
+}
+.letters.fontDesignRow0{
+    font-size:64px;
+    letter-spacing:-2px;    
+}
+.letters.fontDesignRow1{
+    letter-spacing:0;
+    text-indent:0em;
+    font-size:1.4em;
+}
+.letters.fontDesignRow3{
+    letter-spacing:0;
+    text-indent:0;
+    font-size:1.5em;
+    margin-top:0.3em;
+}
+.letters.fontDesignRow4{
+    letter-spacing:-1px;
+    text-indent:-0.1em;
+    font-size:69px; 
+}
+.letters.fontDesignRow5{
+    font-size:30px; 
+}
+.bigBoldText .letters.fontDesignRow6{
+    font-size:33px;
+    line-height:1;
+    text-align:justify;
+}
+.bigBoldText .letters.fontDesignRow7{
+    font-size:36px;
+    font-weight:normal;
+    line-height:1;
+    text-align:justify;
+}
+.socialIconContainer{
+    margin:52px 0;
+}
+.contactUs{
+    line-height:0.7;
+}
+.yellow{
+    color:#FFDD18;
+}
+.yellowBackground{
+    background-color:#FFDD18;
+}
+.yellowFontSize, div.yellowFontSize, div.yellowFontSize h2{
+    font-size:32px;
+}
+.centerContents{
+    width:63%;
+    height:192px;
+    padding:17px 0;
+    margin:auto;
+}
+div.fontFrancoisOne{
+    font-family:'Francois One', sans-serif;    
+}
+.letters.fontDesignRowBefore:before{ /*hack, word favors the left, this is a weird fix*/
+    
+}
+.letters.fontDesignRow2{
+    font-size:1.5em;
+    letter-spacing:0;    
+    text-indent:0;    
+}
+.letters.fontDesignRow2:before{ /*hack, word favors the left, this is a weird fix*/
+
+}
+.bigBoldText .letters{
+    line-height:0.6;
+    text-align:center;
+}
+.bigBoldText h1 , .bigBoldText{
+    font-size:94px;
+    font-weight:bolder;
+    text-transform:uppercase;    
+}
+
+.stretch {
+    width: 100%;
+    display: block;
+    
+}
+.wrapper .line0{
+    font-weight:bold;
+    height:20px;
+}
+.line1{
+    font-size:5.0em;
+}
+.line2{
+    font-size:6.0em;
+}
+@media (max-width:767px) and (orientation:landscape), (max-width:767px) and (orientation:portrait){
+    .letters.fontDesignRow0{
+        font-size:228%;
+    }    
+    .letters.fontDesignRow1{
+        letter-spacing:0;
+        text-indent:0em;
+        font-size:4.3em;
+    }    
+    .letters.fontDesignRow2{
+        font-size:4.7em;
+        letter-spacing:0;
+        text-indent:0;        
+    }
+    .letters.fontDesignRow3{
+        font-size:4.5em;
+        letter-spacing:0;
+        text-indent:0;
+    }    
+    .letters.fontDesignRow4{
+        font-size:1.5em; 
+        letter-spacing:0.2em;
+        text-indent:0.2em;
+    }
+    .letters.fontDesignRow5{
+        font-size:100%; 
+    }
+    .bigBoldText .letters.fontDesignRow6{
+        font-size:90%;
+    }
+    .bigBoldText .letters.fontDesignRow7{
+        font-size:50%;
+    }
+    .yellowFontSize, div.yellowFontSize, div.yellowFontSize h2{
+        font-size:90%;
+    }
+    .yellowBackground{
+        height:150%;
+    }
+    .centerContents{
+        height:7.0em;
+    }
+    .bigBoldText h1 , .bigBoldText{
+        font-size:1.5em;
+    }
+    .line1{
+        font-size:150%;
+    }
+    .line2{
+        font-size:75%;
+    }
+}
+@media(max-width:767px) and (orientation:portrait){
+    .letters.fontDesignRow5{
+        font-size:1.0em;
+        line-height:1.2em; 
+    }
+}

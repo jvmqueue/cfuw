@@ -4,6 +4,7 @@ define(['jQuery'], function($, undefined){
     var TAG_NAME_DOC_FIRST_CHILD = 'page'; // private member
     var TAG_NAME_DOC_TITLE = 'title'; // private member
     var mNewWindow = null;
+    var ELEMENT = 1;
     
 
     var _fnc = {
@@ -37,8 +38,6 @@ define(['jQuery'], function($, undefined){
         },
         getElementNode:function(paramNode, paramArray, paramIndex){
             var node = paramNode;
-            
-            var ELEMENT = 1;
             var arry = paramArray;
             var strNameTitle = '';
             var strValueTitle = '';
@@ -58,6 +57,10 @@ define(['jQuery'], function($, undefined){
                 hash[elm.attributes[i].name] = elm.attributes[i].value;
             }
             return hash;
+        },
+        getChildNodes:function(paramParentNode, paramHashElementNodes){
+          var nodeXMLFragment = paramParentNode;
+
         },
         showIconRelativeToScroll:function(options){
           var blnNodeInViewDoNotShow = !!( options.nodeInViewDoNotShow );
@@ -127,11 +130,20 @@ define(['jQuery'], function($, undefined){
                       }
                       strNodeValue = elm.firstChild.nodeValue;
                       strNodeName = elm.nodeName;
+                      var nodeNameChilds = elm.nodeName;
+                      if( elm.hasChildNodes() ){ // testing for generic child nodes. Most all XML nodes have children
+                        _fnc.getChildNodes(elm, hashElementNodes);
+                        console.group('GET CHILD NODES');
+                          console.log('elm.nodeName:\t', elm.nodeName);
+                         console.groupEnd(); 
+
+                      }
                       hashElementNodes[elm.nodeName] = strNodeValue;
                       hashElementNodes['strNodeName'] = strNodeName;
                     } 
                });
                intXmlCategoryCounter = 0; // reset to beginning of tagsXmlChildsCommon array                   
+
                arryElementNodes.push(hashElementNodes); // forming hash for underscore template
                hashElementNodes = new Object; // hashes are reference vars, so, clear it. We do not overwrite previous values
             } // End for  

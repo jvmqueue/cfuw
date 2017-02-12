@@ -1,5 +1,3 @@
-@import url(theme.css);
-@import url(animations.css);
 .container.mainContainer{ /* do not allow icons and text to overly collapse */
     min-width:600px;
 }
@@ -396,6 +394,24 @@
     }
 /* End Row Address */
 
+/* Begin Booksale */
+    
+    
+.centerJustifyText{
+ 
+    height:auto;
+    overflow:hidden;
+    margin:auto;
+    padding:0;
+    width:100%;
+
+    
+    box-sizing: border-box;
+}
+
+
+/* End Booksale */
+
 /* Begin Affiliations */
 .affiliations a{
     display:block;
@@ -573,6 +589,15 @@ p.date{
 .noBullet{
     list-style:none;
 }
+.bullet.hover{
+    text-decoration: underline;
+    color:#074A60;
+    cursor:pointer;
+}
+.bullet.hover:hover{
+    text-decoration: underline;
+    color:#399ABB;
+}
     .noBullet li{
         list-style:none;
     }
@@ -581,6 +606,15 @@ p.date{
     list-style:disc; 
     margin:0;
     margin-left:2.5em;
+    text-decoration:none;
+    color:#000000;
+}
+.bullet:hover{
+    text-decoration:none;
+    color:#000000;
+}
+.bullet.red{
+    color:red;
 }
 body{
   counter-reset:cfuw-counter;
@@ -966,7 +1000,6 @@ ul>li>a:hover{
     }    
 
 }
-
 @media screen and (max-aspect-ratio: 13/9){ /* Android soft keyboard in view */
     .textTop{
         font-size:100%;
