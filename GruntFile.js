@@ -25,18 +25,17 @@ module.exports = function(grunt){
 				'styles/*.css'
 			  ]
 		},
-		cssmin:{
-		  target: {
-			files: [{
-			  expand: true,
-			  cwd: 'styles', /* working direetory */
-			  src: ['*.css', '!*.min.css'],
-			  dest: 'minified', /* write individual min files here */
-			  ext: '.css'
-			}]
+		cssmin: {
+		  combine: {
+		    files: {
+		      'minified/indexMinified.css': ['styles/index.css', 
+		      'styles/theme.css',
+		      'styles/booksale.css',
+		      'styles/animations.css'
+		      ]
+		    }
 		  }
-		},
-		
+		},		
 	   uglify:{
 			compress: {
 				files: {
