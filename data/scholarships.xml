@@ -3,22 +3,22 @@
     <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">SCHOLARSHIPS</title>
 	<sections>
 		<section>
-			<paragraph0 strClass0="">The Canadian Federation of University Women/Saskatoon Inc. has been offering scholarships to female students at the University of Saskatchewan since 1940.  Over $300,000 has been awarded since the programs' inception.  Funding in support of these scholarships comes from members, families and friends of members, and bequests.  Our largest annual infusion of money comes from our gigantic fall book sale.</paragraph0>
+			<paragraph0 strClass0="">The Canadian Federation of University Women/Saskatoon Inc. has been offering scholarships to female students at the University of Saskatchewan since 1940. Over $300,000 has been awarded since the programs' inception. Funding in support of these scholarships comes from members, families and friends of members, and bequests. Our largest annual infusion of money comes from our gigantic fall book sale.</paragraph0>
 			<paragraph1 strClass1="">We offer up to eleven Undergraduate and six Graduate Scholarships.</paragraph1>
 		</section>
         <section>
             <paragraph0 strClass0="" class="inline">The Undergraduate Scholarships of $1,500 each are offered annually to female students in any field who have maintained an average of 75% or higher. The awards will be made only to full-time students at the University of Saskatchewan. Preference will be given to students working on their first degree.</paragraph0>
             <paragraph1  strClass1="bold inline">The application deadline for the Undergraduate scholarship is May 31st</paragraph1>  
-            <paragraph2  strClass2="inline">and applicants will be informed in July or August.  There are additional requirements specific to each of the eleven scholarships, please see the detailed information further down this page.</paragraph2>
+            <paragraph2  strClass2="inline">and applicants will be informed in July or August. There are additional requirements specific to each of the eleven scholarships, please see the detailed information further down this page.</paragraph2>
         </section>
         <section>
             <paragraph0 strClass0="">&#160;</paragraph0>
-            <paragraph1 strClass1="inline">The five $1,500 Graduate Scholarships (</paragraph1>
-            <paragraph2 strClass2="inline bold">Jean Murray Memorial, Dorothea Friebel, Benee, CFUW Saskatoon Inc.</paragraph2>
-            <paragraph3 strClass3="inline">, and </paragraph3>
-            <paragraph4 strClass4="inline bold">Jacqueline McKenzie Newstead Scholarships</paragraph4>
-            <paragraph5 strClass5="inline">) are offered to female students in any field of study who have completed at least one year of course work, have an approved thesis or project proposal, and are not recipients of any substantive scholarships.</paragraph5>  
-            <paragraph6 strClass6="inline bold">The application deadline for the Graduate scholarships is February 1, 2016.</paragraph6>
+            <paragraph1 strClass1="inline">The $5,000 Newstead Doctoral Scholarship is offered to a female student who has completed all the course requirements, including comprehensive exams, has the approval of the Ethics Committee, and is well advanced in the writing of her thesis or research project.</paragraph1>
+            <paragraph2 strClass2="inline bold">The application deadline for the Doctoral Scholarship is January 31st.</paragraph2>
+            <paragraph3 strClass3="inline">&#160;</paragraph3>
+            <paragraph4 strClass4="inline bold">&#160;</paragraph4>
+            <paragraph5 strClass5="inline">&#160;</paragraph5>  
+            <paragraph6 strClass6="inline bold">&#160;</paragraph6>
             <paragraph7 strClass7="">&#160;</paragraph7>
             <link strClassAnchor="block bold pdf" href="http://students.usask.ca/documents/awards/grad/cfuw.pdf">Graduate Scholarship Application Form</link>
         </section>
@@ -26,7 +26,7 @@
             <paragraph0 strClass0="">&#160;</paragraph0>
             <paragraph1 strClass1="inline">The $5,000 </paragraph1>
             <paragraph2 strClass2="inline bold">Newstead Doctoral Scholarship</paragraph2>
-            <paragraph3 strClass3="inline">is offered to a female student who has completed all the course requirements, including comprehensive exams, has the approval of the Ethics Committee, and is well advanced in the writing of her thesis or research project.  The application deadline for the Doctoral Scholarship is February 1, 2016</paragraph3>
+            <paragraph3 strClass3="inline">is offered to a female student who has completed all the course requirements, including comprehensive exams, has the approval of the Ethics Committee, and is well advanced in the writing of her thesis or research project.  The application deadline for the Doctoral Scholarship is January 31st.</paragraph3>
         </section>
         <section>
             <paragraph0 strClass0="">&#160;</paragraph0>
@@ -55,7 +55,7 @@
         </section>
         <section>
             <paragraph0 strClass0="">&#160;</paragraph0>
-            <link strClassAnchor="pdf bold block" href="http://students.usask.ca/pdf/awards/CFUW_App%20and_Release_2014.pdf">Undergraduate Scholarship Application Form (on University of Saskatchewan web site)</link>
+            <link strClassAnchor="bold block" href="http://explore.usask.ca/moneymatters/awards/">Undergraduate Scholarship Application (on University of Saskatchewan web site)</link>
         </section>
         <section>
             <paragraph0 strClass0="h3">Graduate Scholarships</paragraph0>
@@ -105,7 +105,7 @@
         </section>
         <section>
             <paragraph0 strClass0="bold inline">Deadline: </paragraph0>
-            <paragraph1 strClass1="inline">February 01, 2016</paragraph1>
+            <paragraph1 strClass1="inline">February 01, 2017</paragraph1>
         </section>
 	</sections>
 </page>

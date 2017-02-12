@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<page>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEETINGS / EVENTS</title> 
+	<meetings>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">2nd Tuesday at 6:00 pm</timeNode>
+            <info strClassInfo="bullet">Adventures In Dining</info>
+            <location strClassLocation="bullet">Angela Schmidt 306.242.2319</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">4th Friday at 2:00 pm</timeNode>
+            <info strClassInfo="bullet">Art Appreciation</info>
+            <location strClassLocation="bullet">Dorma Guedo 306.374.4887</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">Last Monday at 7:30 pm</timeNode>
+            <info strClassInfo="bullet">Biography Book Club</info>
+            <location strClassLocation="bullet">Ann van der Wal 306.270.0814</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">4th Wednesday at 7:30 pm</timeNode>
+            <info strClassInfo="bullet">Canadian Literature Book Club</info>
+            <location strClassLocation="bullet">Barb Heise 306.955.7308</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">2nd Friday Lunch Hour (Varies)</timeNode>
+            <info strClassInfo="bullet">Friendly Visits</info>
+            <location strClassLocation="bullet">Alverta Polson 306.652.7708</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">4th Tuesday (Nov. Mar. May) 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm</timeNode>
+            <info strClassInfo="bullet">International Relations</info>
+            <location strClassLocation="bullet">Gerlinde Sarkar 306.374.3006</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">1st Thursday (Oct. Nov. Feb. Apr.) 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm</timeNode>
+            <info strClassInfo="bullet">Issues and Actions</info>
+            <location strClassLocation="bullet">Gerlinde Sarkar 306.374.3006</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">3rd Tuesday 2017</dateNode>
+            <timeNode strClassTime="bullet">2:30pm </timeNode>
+            <info strClassInfo="bullet">Mystery Book Club</info>
+            <location strClassLocation="bullet">Margaret Hendry 306.373.8673</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">Convenor will send out information</timeNode>
+            <info strClassInfo="bullet">Opera Divas</info>
+            <location strClassLocation="bullet">Gerlinde Sarkar 306.374.3006</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">3rd Friday 2017</dateNode>
+            <timeNode strClassTime="bullet">4:30 pm</timeNode>
+            <info strClassInfo="bullet">Piano Fridays at the Basement</info>
+            <location strClassLocation="bullet">Margaret Hendry 306.373.8693</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">1st Thursday (Oct. Dec. Feb. Apr.) 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm</timeNode>
+            <info strClassInfo="bullet">Travel Club</info>
+            <location strClassLocation="bullet">Angela Schmidt 306.242.2319</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">January 7, 2017</dateNode>
+            <timeNode strClassTime="bullet">Saturday</timeNode>
+            <info strClassInfo="bullet">Kept Christmas</info>
+            <location strClassLocation="bullet">AGM</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">Saturday, January 7, 2017</dateNode>
+            <timeNode strClassTime="bullet">11:30 am - 2:00 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: Lee Generux</info>
+            <location strClassLocation="bullet">TICKETS REQUIRED Parktown Hotel</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">February 6, 2017</dateNode>
+            <timeNode strClassTime="bullet">Monday</timeNode>
+            <info strClassInfo="bullet">Will There Be Life Without Bees?</info>
+            <location strClassLocation="bullet">AGM</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">Regular Meeting</info>
+            <location strClassLocation="bullet">Edwards Family Centre</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">March 6, 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">International Women's Day</info>
+            <location strClassLocation="bullet">TBD</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">April 3, 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">Regular Meeting SPEAKER: Kathryn Ford, Q.C. Prairie Hospice Society</info>
+            <location strClassLocation="bullet">Edwards Family Centre</location>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">May 1, 2017</dateNode>
+            <timeNode strClassTime="bullet">5:00 - 9:00 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: Tiffany Paulsen, Q.C. The Experience of Being a Woman on City Council</info>
+            <location strClassLocation="bullet">TICKETS REQUIRED AGM - Banquet at Western Development Museum</location>
+        </meeting>
+	</meetings>
+</page>

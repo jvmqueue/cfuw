@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
     <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEETINGS / EVENTS</title> 
-	<meetings>
+    <meetings>
         <meeting>
-            <dateNode strClassDate="date">Saturday, January 9, 2016</dateNode>
+            <dateNode strClassDate="date">Saturday, January 7, 2017</dateNode>
             <timeNode strClassTime="bullet">11:30 am - 2:00 pm</timeNode>
-            <info strClassInfo="bullet">SPEAKER: TICKETS REQUIRED, Lori Blondeau: Confronting Conventional Stereotypes of First Nations Women Through Art &#038; Performance</info>
-            <location strClassLocation="bullet">Parktown Luncheon - Parktown Hotel</location>
+            <info strClassInfo="bullet">SPEAKER: Lee Generux &#8212; Will There Be Life Without Bees?</info>
+            <location strClassLocation="bullet">Parktown Luncheon &#8212; Parktown Hotel</location>
+            <otherInfo strClassOtherInfo="bullet bold red">TICKETS REQUIRED</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday, February 1, 2016</dateNode>
-            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
-            <info strClassInfo="bullet">Resolutions</info>
-            <location strClassLocation="bullet">Regular Meeting - Edwards Family Centre</location>
+            <dateNode strClassDate="date">Monday, February 6, 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">Regular Meeting</info>
+            <location strClassLocation="bullet">Edwards Family Centre</location>
+            <otherInfo strClassOtherInfo="bullet">Resolutions</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday March 7, 2016</dateNode>
-            <timeNode strClassTime="bullet">7:30 – 9:30 pm</timeNode>
-            <info strClassInfo="bullet">FILM: &#034;Between Allah and Me&#034;</info>
-            <location strClassLocation="bullet">International Women's Day - Frances Morrison Library</location>
+            <dateNode strClassDate="date">Monday, March 6, 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
+            <info strHref="images/internationalWomensDay2017Jan22.jpg" strClassInfo="bullet hover">"Indigenous Women: Strength, Resilience, Success"</info>
+            <location strClassLocation="bullet">Station 20 West 1120 20th St. West</location>
+            <otherInfo strClassOtherInfo="bullet">Moderated Discussion Panel</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday, April 4, 2016</dateNode>
-            <timeNode strClassTime="bullet">7:30 - 9:30 pm</timeNode>
-            <info strClassInfo="bullet">A Foundation for Fairness</info>
-            <location strClassLocation="bullet">Regular Meeting - Edwards Family Centre</location>
+            <dateNode strClassDate="date">Monday, April 3, 2017</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: Kathryn Ford, Q.C.</info>
+            <location strClassLocation="bullet">Prairie Hospice Society</location>
+            <otherInfo strClassOtherInfo="bullet">Regular Meeting</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday, May 2, 2016</dateNode>
-            <timeNode strClassTime="bullet">5:00 - 9:00 pm</timeNode>
-            <info strClassInfo="bullet">SPEAKER: TICKETS REQUIRED, Ernie Louttit - Author Indian Ernie and More Indian Ernie - Insights from the Street</info>
-            <location strClassLocation="bullet">AGM - Banquet at Western Development Museum</location>
+            <dateNode strClassDate="date">Monday, May 1, 2017</dateNode>
+            <timeNode strClassTime="bullet">5:00 pm - 9:00 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: Tiffany Paulsen, Q.C. - The Experience of Being a Woman on City Council</info>
+            <location strClassLocation="bullet">AGM &#8212; Banquet at Western Development Museum</location>
+            <otherInfo strClassOtherInfo="bullet bold red">TICKETS REQUIRED</otherInfo>
         </meeting>
-	</meetings>
+    </meetings>
 </page>

@@ -3,6 +3,14 @@
     <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">NEWS</title>    
 	<newsletters>
         <newsletter>
+            <pdf strClassPdf="pdf" hrefPdf="../cfuwPublisher/newsletters/CFUWnewsletterDecember16-January2017Final_2016Dec07.pdf">December16/January2017 Newsletter</pdf>
+            <word strClassWord="word" hrefWord="../cfuwPublisher/newsletters/CFUWnewsletterDecember16-January2017Final_2016Dec07.docx">December16/January2017 Newsletter</word>
+        </newsletter>              
+        <newsletter>
+            <pdf strClassPdf="pdf" hrefPdf="../cfuwPublisher/newsletters/CFUWnewsletterFall_2016_2016Dec07.pdf">Fall 2016 Newsletter</pdf>
+            <word strClassWord="word" hrefWord="../cfuwPublisher/newsletters/CFUWnewsletterFall_2016_2016Dec07.docx">Fall 2016 Newsletter</word>
+        </newsletter>                
+        <newsletter>
             <pdf strClassPdf="pdf" hrefPdf="../cfuwPublisher/newsletters/CFUWnewsletterFebruary-March 2016-Final.pdf">Feb/Mar 2016 Newsletter</pdf>
             <word strClassWord="word" hrefWord="../cfuwPublisher/newsletters/CFUWnewsletterFebruary-March 2016-Final.docx">Feb/Mar 2016 Newsletter</word>
         </newsletter>                
