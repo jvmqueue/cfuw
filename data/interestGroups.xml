@@ -11,8 +11,8 @@
         <group>
             <name>Art Appreciation</name>
             <dateTime>4th Friday at 2:00 pm</dateTime>
-            <contactPerson>Dorma Guedo 306.374.4887</contactPerson>
-            <contactPersonSecond>Janie Charbonneau 306.242.5912</contactPersonSecond>
+            <contactPerson>Janie Charbonneau 306.242.5912</contactPerson>
+            <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
             <name>Biography Book Club</name>
@@ -23,62 +23,62 @@
         <group>
             <name>Canadian Literature Book Club</name>
             <dateTime>4th Wednesday at 7:30 pm</dateTime>
-            <contactPerson>Barb Heise 306.955.7308</contactPerson>
+            <contactPerson>Gladys Somerville 306.242.6668</contactPerson>
+            <contactPersonSecond>&#160;</contactPersonSecond>
+        </group>
+        <group>
+            <name>Mystery Book Club</name>
+            <dateTime>3rd Tuesday at 2:00 pm</dateTime>
+            <contactPerson>Margaret Hendry 306.373.8693</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
             <name>Financial Literacy</name>
-            <dateTime>4th Thursday (Oct. Jan. Mar. May) at 7:30</dateTime>
+            <dateTime>4th Thursday at 7:30</dateTime>
             <contactPerson>Gerlinde Sarkar 306.374.3006</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
             <name>Friendly Visits</name>
-            <dateTime>2nd Friday Lunch Hour (Varies)</dateTime>
+            <dateTime>2nd Friday at 1 pm</dateTime>
             <contactPerson>Alverta Polson 306.652.7708</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
-            <name>International Relations</name>
-            <dateTime>4th Tuesday (Nov. Jan. Mar. May) at 7:30</dateTime>
-            <contactPerson>Gerlinde Sarkar 306.374.3006</contactPerson>
-            <contactPersonSecond>&#160;</contactPersonSecond>
-        </group>
-        <group>
             <name>Issues &#038; Actions</name>
-            <dateTime>1st Thursday (Sep. Nov. Feb. Apr.) at 7:30</dateTime>
-            <contactPerson>Gerlinde Sarkar 306.374.3006</contactPerson>
+            <dateTime>TBA</dateTime>
+            <contactPerson>Vacant</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
-            <name>Mystery Book Club</name>
-            <dateTime>3rd Tuesday</dateTime>
-            <contactPerson>Janie Charbonneau 306.242.5912</contactPerson>
+            <name>International Relations</name>
+            <dateTime>TBA</dateTime>
+            <contactPerson>Gerlinde Sarkar 306.374.3006</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
             <name>Opera Divas / Theatre</name>
-            <dateTime>Convenor will send out information</dateTime>
+            <dateTime>Saturday noon (varies)</dateTime>
             <contactPerson>Gerlinde Sarkar 306.374.3006</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
             <name>Piano Fridays at the Bassment</name>
-            <dateTime>3rd Friday at 4:30</dateTime>
+            <dateTime>3rd Friday at 5:00</dateTime>
             <contactPerson>Margaret Hendry 306.373.8693</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
             <name>Travel Club</name>
-            <dateTime>1st Thursday (Oct. Dec. Feb. Apr.) at 7:30</dateTime>
+            <dateTime>1st Thursday at 7:30</dateTime>
             <contactPerson>Angela Schmidt 306.242.2319</contactPerson>
             <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
         <group>
-            <name>Wine Tasting Club</name>
+            <name>Theatre Visits</name>
             <dateTime>TBA</dateTime>
-            <contactPerson>Alix Tumback 306.612.1150</contactPerson>
-            <contactPersonSecond>Malaika Charbonneau 306.262.4393</contactPersonSecond>
+            <contactPerson>Angela Schmidt 306.242.2319</contactPerson>
+            <contactPersonSecond>&#160;</contactPersonSecond>
         </group>
 	</groups>
 </page>

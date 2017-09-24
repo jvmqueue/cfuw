@@ -3,21 +3,23 @@
 	<title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">Book Sale</title>
 	<members>
 		<member>
-		<backgroundImage src="">&#160;</backgroundImage>
+		<backgroundImage src="images/bookStackBackground.png">&#160;</backgroundImage>
             <h10 class="big red">mammoth</h10>
             <h11 class="big red">book</h11>
             <h12 class="big red">sale</h12>
             <h13 class="big black">2017</h13>
-            <h14 class="big black">Oct 18-20</h14>
+            <h14 class="big black">Oct 17-19</h14>
+			<h14 class="big black">9 AM - 8 PM</h14>
             <h2 class="mediam black">German Cultural Centre</h2>
             <p>There are worse crimes than burning books. One of them is not reading them.</p>
-            <address rel="author">- Ray Bradbury</address>             
-            <yellowBlock0>Collecting Books</yellowBlock0>    
-            <yellowBlock1>Mid November</yellowBlock1>    
-            <yellowBlock2>Contact: Alverta 306.652.7708</yellowBlock2>    
-            <link0 strClass0="socialFacebook socialBlock inlineBlock" href0="https://www.facebook.com/cfuwsaskatoon" strClassSocialLink="facebook">&#160;</link0>         
-            <link1 strClass1="socialInstagram socialBlock inlineBlock" href1="https://www.instagram.com/p/7JHu1DTSEk/" strClassSocialLink="instagram">&#160;</link1>         
-            <link2 strClass2="socialTwitter socialBlock inlineBlock" href2="https://twitter.com/cfuwsaskatoon" strClassSocialLink="twitter">&#160;</link2>         
+            <address rel="author">&#8212;&#160;Ray Bradbury</address>
+            <yellowBlock0>Collecting Books</yellowBlock0>
+            <yellowBlock1>Mid November</yellowBlock1>
+            <yellowBlock2>Contact: Alverta 306.652.7708</yellowBlock2>
+            <yellowBlock3>Or: Mary at 306.249.4142</yellowBlock3>
+            <link0 strClass0="socialFacebook socialBlock inlineBlock" href0="https://www.facebook.com/cfuwsaskatoon" strClassSocialLink="facebook">&#160;</link0>
+            <link1 strClass1="socialInstagram socialBlock inlineBlock" href1="https://www.instagram.com/p/7JHu1DTSEk/" strClassSocialLink="instagram">&#160;</link1>
+            <link2 strClass2="socialTwitter socialBlock inlineBlock" href2="https://twitter.com/cfuwsaskatoon" strClassSocialLink="twitter">&#160;</link2>
 		</member>
 	</members>
 </page>

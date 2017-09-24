@@ -1,41 +1,62 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEETINGS / EVENTS</title> 
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">MEETINGS / EVENTS</title>
     <meetings>
         <meeting>
-            <dateNode strClassDate="date">Saturday, January 7, 2017</dateNode>
-            <timeNode strClassTime="bullet">11:30 am - 2:00 pm</timeNode>
-            <info strClassInfo="bullet">SPEAKER: Lee Generux &#8212; Will There Be Life Without Bees?</info>
-            <location strClassLocation="bullet">Parktown Luncheon &#8212; Parktown Hotel</location>
-            <otherInfo strClassOtherInfo="bullet bold red">TICKETS REQUIRED</otherInfo>
-        </meeting>
-        <meeting>
-            <dateNode strClassDate="date">Monday, February 6, 2017</dateNode>
+            <dateNode strClassDate="date">Monday, October 2nd, 2017 </dateNode>
             <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
-            <info strClassInfo="bullet">Regular Meeting</info>
+            <info strClassInfo="bullet">Scholarship Reception Night</info>
             <location strClassLocation="bullet">Edwards Family Centre</location>
-            <otherInfo strClassOtherInfo="bullet">Resolutions</otherInfo>
+            <otherInfo strClassOtherInfo="">&#160;</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday, March 6, 2017</dateNode>
+            <dateNode strClassDate="date">Monday, November 6th, 2017</dateNode>
             <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
-            <info strHref="images/internationalWomensDay2017Jan22.jpg" strClassInfo="bullet hover">"Indigenous Women: Strength, Resilience, Success"</info>
-            <location strClassLocation="bullet">Station 20 West 1120 20th St. West</location>
-            <otherInfo strClassOtherInfo="bullet">Moderated Discussion Panel</otherInfo>
+            <info strClassInfo="bullet">SPEAKER: Cecile Smith, Teacher. Challenges faced living and teaching in the inner city</info>
+            <location strClassLocation="bullet">Edwards Family Centre</location>
+            <otherInfo strClassOtherInfo="">&#160;</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday, April 3, 2017</dateNode>
+            <dateNode strClassDate="date">Monday, December 4th, 2017</dateNode>
             <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
-            <info strClassInfo="bullet">SPEAKER: Kathryn Ford, Q.C.</info>
-            <location strClassLocation="bullet">Prairie Hospice Society</location>
-            <otherInfo strClassOtherInfo="bullet">Regular Meeting</otherInfo>
+            <info strClassInfo="bullet">Christmas Social</info>
+            <location strClassLocation="bullet">Edwards Family Centre</location>
+            <otherInfo strClassOtherInfo="bullet">Choral Master Mary McKay- Seasonal  Sing - a - longs</otherInfo>
         </meeting>
         <meeting>
-            <dateNode strClassDate="date">Monday, May 1, 2017</dateNode>
-            <timeNode strClassTime="bullet">5:00 pm - 9:00 pm</timeNode>
-            <info strClassInfo="bullet">SPEAKER: Tiffany Paulsen, Q.C. - The Experience of Being a Woman on City Council</info>
-            <location strClassLocation="bullet">AGM &#8212; Banquet at Western Development Museum</location>
+            <dateNode strClassDate="date">Saturday, January 6th, 2018</dateNode>
+            <timeNode strClassTime="bullet">11:30 am - 2:00 pm</timeNode>
+            <info strClassInfo="bullet">Luncheon - SPEAKER: Peggy Sarjeant - War Brides</info>
+            <location strClassLocation="bullet">Parktown Hotel</location>
             <otherInfo strClassOtherInfo="bullet bold red">TICKETS REQUIRED</otherInfo>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">Monday, February 5th, 2018</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">SPEAKER: Dr. John Pomeroy, Saskatchewan's Water Futures</info>
+            <location strClassLocation="bullet">Edwards Family Centre</location>
+            <otherInfo strClassOtherInfo="">&#160;</otherInfo>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">Monday, March 5th, 2018</dateNode>
+            <timeNode strClassTime="bullet">TBD</timeNode>
+            <info strClassInfo="bullet">International Women's Day </info>
+            <location strClassLocation="bullet">TBA</location>
+            <otherInfo strClassOtherInfo="">&#160;</otherInfo>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">Monday, April 2nd, 2018</dateNode>
+            <timeNode strClassTime="bullet">7:30 pm - 9:30 pm</timeNode>
+            <info strClassInfo="bullet">Resolutions</info>
+            <location strClassLocation="bullet">Edwards Family Centre </location>
+            <otherInfo strClassOtherInfo="">&#160;</otherInfo>
+        </meeting>
+        <meeting>
+            <dateNode strClassDate="date">Monday, May 7th, 2018</dateNode>
+            <timeNode strClassTime="bullet">TBD</timeNode>
+            <info strClassInfo="bullet">AGM &#38; Banquet </info>
+            <location strClassLocation="bullet">Saskatoon Inn</location>
+            <otherInfo strClassOtherInfo="">&#160;</otherInfo>
         </meeting>
     </meetings>
 </page>

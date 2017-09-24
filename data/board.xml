@@ -4,33 +4,33 @@
     <members catagory="board">
         <member>
             <position>President</position>
-            <name>Janie Charbonneau</name>
-            <phone>306.242.5912</phone>
-            <email>ajzedc@gmail.com</email>
+            <name>Mary Rowan</name>
+            <phone class="hide">&#160;</phone>
+            <email>mary.m.rowan@gmail.com</email>
         </member>
         <member>
             <position>Past President</position>
-            <name>Gerlinde Sarkar</name>
-            <phone>306.374.3006</phone>
-            <email>gerlinde.sarkar@gmail.com</email>
+            <name>Janie Charbonneau</name>
+            <phone>306.242.5912</phone>
+            <email>ajzedc@gmail.com</email>
         </member>        
         <member>
             <position>Vice President</position>
-            <name>Rita Priestly</name>
-            <phone>306.931.7302</phone>
-            <email>priestley@sasktel.net</email>
+            <name>Kathie Cram</name>
+            <phone>306.371.0854</phone>
+            <email>kcram53@hotmail.com</email>
         </member>                
         <member>
             <position>Treasurer</position>
-            <name>Gerlinde Sarkar</name>
-            <phone>306.374.3006</phone>
-            <email>gerlinde.sarkar@gmail.com</email>
-        </member>                        
-        <member>  
-            <position>Board Secretary</position>
             <name>Angela Schmidt</name>
             <phone>306.242.2319</phone>
             <email>schmidt@sasktel.net</email>
+        </member>                        
+        <member>  
+            <position>Board Secretary</position>
+            <name>Gerlinde Sarkar</name>
+            <phone>306.374.3006</phone>
+            <email>gerlinde.sarkar@gmail.com</email>
         </member>                        
         <member>  
             <position>General Secretary</position>
@@ -40,9 +40,9 @@
         </member>                                
         <member>
             <position>Membership</position>
-            <name>Dorma Guedo</name>
-            <phone>306.374.4887</phone>
-            <email>&#160;</email>
+            <name>Gerlinde Sarkar</name>
+            <phone>306.374.3006</phone>
+            <email>gerlinde.sarkar@gmail.com</email>
         </member>
         <member>
             <position>Membership Committee</position>
@@ -64,9 +64,9 @@
         </member>        
         <member>
             <position>Publicity</position>
-            <name>Malaika Charbonneau</name>
-            <phone>306.262.4393</phone>
-            <email>mzc33.3@gmail.com</email>
+            <name>Janie Charbonneau</name>
+            <phone>306.242.5912</phone>
+            <email>ajzedc@gmail.com</email>
         </member>        
         <member>
             <position>Archives</position>
@@ -82,9 +82,9 @@
         </member>  
         <member>
             <position>Scholarship</position>
-            <name>Mary McKay</name>
-            <phone>306.374.9407</phone>
-            <email>mckaymk@sasktel.net</email>
+            <name>Ferne Wagner</name>
+            <phone>306.665.6290</phone>
+            <email>fernewagner@hotmail.com</email>
         </member>  
         <member>
             <position>Council of Women</position>
@@ -106,8 +106,8 @@
         </member>                        
         <member>
             <position>Finance Committee</position>
-            <name>Gerlinde Sarkar</name>
-            <phone>Janie Charbonneau, Alverta Polson, Mary McKay, Clair Bullaro (member at large)</phone>
+            <name>Mary Rowan</name>
+            <phone>Kathie Cram, Angela Schmidt,Ferne Wagner, Alverta Polson, Marilyn Loken (member at large)</phone>
             <email>&#160;</email>
         </member>
     </members>
