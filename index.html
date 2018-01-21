@@ -11,10 +11,16 @@
   <meta id="meta-tag-description" property="og:description" content="The Canadian Federation of University Women/Saskatoon Inc. is a non-profit, non-partisan, charitable organization with currently about seventy members. Membership is also open to women who are non-graduates but who support the goals and aspirations of CFUW." />
 
 
+<META http-equiv="X-UA-Compatible" content="IE=9" />
+
   <title>Canadian Federation of University Women Saskatoon - CFUW</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link id="linkStylesheet" rel="stylesheet" href="minified/indexMinified.css?version=1.0" />
-
+<!--   <link id="linkStylesheet" rel="stylesheet" href="styles/animations.css" />
+  
+  <link id="linkStylesheet" rel="stylesheet" href="styles/index.css" />
+  <link id="linkStylesheet" rel="stylesheet" href="styles/theme.css" /> -->
+  <link id="linkStylesheet" rel="stylesheet" href="styles/indexMinified.css?version=1.2" />
+  <!-- <link id="linkStylesheet" rel="stylesheet" href="styles/booksale.css" /> -->
   <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet" />
 
     <!--[if lt IE 9]>
@@ -31,11 +37,11 @@
     <section id="jumbotron" class="jumbotron jumbotronHeaderImage marginTopZero marginBottomZero">
       <div class="row headColLogos">
         <div class="col-xs-2 center-block logo headColLeftLogo">&#160;</div>
-        <div id="headColRightLogo" data-href="http://www.cfuw.org/" class="col-xs-2 logo headColRightLogo">&#160;</div>
-        <div id="" class="col-xs-8 cfuwWhite">
+        <div id="headColRightLogo" data-href="http://www.cfuw.org/" class="col-xs-2 logo headColRightLogo">&#160;</div>      
+        <div id="" class="col-xs-8 cfuwWhite">        
           <h2 class="marginTopZero cfuwSaskatoon cfuwSaskatoonFontHeading boldest">CFUW Saskatoon</h2>
           <p class="marginTopZero canadianFederationOfUniversity letterSpacing">CANADIAN FEDERATION OF UNIVERSITY WOMEN</p>
-        </div>
+        </div>                    
       </div>
       <div id="rowPowerOfWomen" class="row powerOfWomen cfuwWhite">
         <h2 class="col-xs-12">The Power Of Women Working Together</h2>
@@ -48,7 +54,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBarTop">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
         </button>
       </div>
       <div id="navBarTop" class="collapse navbar-collapse">
@@ -72,8 +78,8 @@
               <li><a  id="btnInterestGroups" data-index-number="6" href="JavaScript:void(0);">Interest Groups</a></li>
             </ul>
           </li>
-          <li><a id="btnBookSale" data-index-number="2" href="JavaScript:void(0);">Book Sale</a></li>
-          <li><a id="btnScholarships" data-index-number="11" href="JavaScript:void(0);">Scholarships</a></li>
+          <li><a id="btnBookSale" data-index-number="2" href="JavaScript:void(0);">Book Sale</a></li> 
+          <li><a id="btnScholarships" data-index-number="11" href="JavaScript:void(0);">Scholarships</a></li> 
         </ul>
       </div>
     </div>
@@ -81,14 +87,14 @@
   <!-- End Nav -->
   <div class="container-fluid containerPageLowerBody">
     <div id="pageBackgroundImage"class="pageBackgroundImage"></div>
-    <div class="row containerPageMiddleBody positionRelative cfuwWhite">
+    <div class="row containerPageMiddleBody positionRelative cfuwWhite">    
       <div id="boardMembers" class="col-xs-10 col-xs-offset-1 boardMembers containerPageText cfuwTextColor">&#160;</div>
       <nav id="navScrollToTop" class="inlineBlock navScrollToTop">
         <a class="navArrowUp inlineBlock" href="#navBarTop">&#160;</a>
       </nav>
       <footer id="footerMain" class="footerMain col-xs-12">
          <div class="panel-footer text-center cfuwDarkBlueBackground">
-          <div id="footerTopRow" class="footerTop row">
+          <div id="footerTopRow" class="footerTop row">            
              <ul class="textAlignLeft noBullet col-xs-2">
                <li id="btnFooterHome" class="bold">Home</li>
              </ul>
@@ -101,7 +107,7 @@
                   <li id="btnFooterContactUs">Contact Us</li>
              </ul>
              <ul class="textAlignLeft noBullet col-xs-2">
-                <span class="bold">Announcements</span>
+                <span class="bold">Annoucements</span>
                   <li id="btnFooterNews">News</li>
                   <li id="btnFooterMeetings">Meetings/Events</li>
                   <li id="btnFooterInterestGroups">Interest Groups</li>
@@ -117,33 +123,33 @@
                <span class="block">CFUW Saskatoon Inc.</span>
                 <span class="block">P.O. Box 7405</span>
                 <span class="block">Saskatoon, SK S7K 4J3</span>
-              </span>
-             </ul>
+              </span>              
+             </ul>   
           </div> <!-- End .footerTop -->
           <div class="footerBottom cfuwAddressURL col-xs-12">
                <span id="cfuwAddressURL" class="cfuwAddressLink cfuwOpenInSmallWindow bold block textAlignRight floatRight clear col-xs-2" data-href="http://www.fcfdu.org">
                 www.fcfdu.org
-              </span>
-          </div>
-         </div> <!-- End .panel-footer -->
+              </span>              
+          </div>                   
+         </div> <!-- End .panel-footer --> 
       </footer>
     </div>
-  </div> <!-- End .container.containerPageLowerBody -->
-  <section id="fetchErrors" class="fetchErrors hide">&#160;</section>
+  </div> <!-- End .container.containerPageLowerBody --> 
+  <section id="fetchErrors" class="fetchErrors hide">&#160;</section> 
 </div> <!-- .container.mainContainer -->
 <div id="templatesOnly" class="templatesOnly displayNone">
-<script type="text/template" id="templatePageTitle">
+<script type="text/template" id="templatePageTitle">    
 <h3><%= typeof strNameTitle != 'undefined' ? strNameTitle: ''%></h3>
-</script>
-<script type="text/template" id="templateViewLeftTitle">
+</script>               
+<script type="text/template" id="templateViewLeftTitle">    
     <div id="pageTitleRow" class="row">
       <div id="pageTitle"class="col-xs-12 cfuwWhite text-right containerPageTitle rotateGoLeft"></div>
-    </div>
+    </div>          
 </script>
-<script type="text/template" id="templateAffiliations">
+<script type="text/template" id="templateAffiliations">    
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %>"><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>    
   <div class="affiliations row hvr-curl-top-left">
     <a class="col-xs-12 cfuwOpenInSmallWindow cfuwAnchorTag <%=strClass%>" data-href="<%= href %>" href="javaScript:void(0);" target="_blank"><%=affiliationName%></a>
   </div>
@@ -151,69 +157,76 @@
 <script type="text/template" id="templateBoardMembers">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>        
 <section class="marginBoardMembers">
         <p class="bold letterSpacing marginBottomZero"><%=position%></p>
         <p class="marginBottomZero"><%=name%></p>
         <p class="marginBottomZero"><%=phone%></p>
         <p class="marginBottomZero"><a class="cfuwAnchorTag" href="mailto:<%=email%>" target="_top"><%=email%></a></p>
 </section>
-</script>
+</script> 
 <script type="text/template" id="templateBooksale">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
   <% } %>
-
+  
   <div class="container-fluid">
     <div class="row text-center bigBoldText fontFrancoisOne">
-      <h1 id="centerJustifyText0" class="col-xs-12 letters red  fontDesignRow0 line0"><%= h10%></h1>
-      <h1 id="centerJustifyText1" class="col-xs-12 letters red fontDesignRowBefore fontDesignRow1 line1"><%= h11%></h1>
-      <h1 id="centerJustifyText2" class="col-xs-12 letters red fontDesignRowBefore fontDesignRow2 stretch line2"><%= h12%></h1>
-      <h1 id="centerJustifyText3" class="col-xs-12 letters fontDesignRowBefore fontDesignRow3 stretch line3"><%= h13%></h1>
+      <h1 id="centerJustifyText0" class="col-xs-12 uppercase letters fontDesignRow0 line0"><%= h10%></h1>
+      <h1 id="centerJustifyText1" class="col-xs-12 uppercase letters fontDesignRowBefore fontDesignRow1 line1"><%= h11%></h1>
+      <% if (typeof(h12) !== 'undefined' && h12.length > 1) { %>
+        <h1 id="centerJustifyText2" class="col-xs-12 uppercase letters fontDesignRowBefore fontDesignRow2 stretch line2"><%= h12%>Hello World</h1>
+      <% } %>
+      <% if (typeof(h13) !== 'undefined' && h13.length > 1) { %>
+        <h1 id="centerJustifyText3" class="col-xs-12 uppercase letters fontDesignRowBefore fontDesignRow3 stretch line3"><%= h13%></h1>
+      <% } %>
       <div class="row">
-      <h1 id="centerJustifyText4" class="col-xs-12 letters fontDesignRowBefore fontDesignRow4 stretch line4"><%= h14%></h1>
-      <h1 id="centerJustifyText5" class="col-xs-12 letters fontDesignRowBefore fontDesignRow5 stretch line5"><%= h2%></h1>
-      <div class="row">
-        <h1 id="" class="col-xs-3 letters fontDesignRow fontDesignRow6  line6">&#160;</h1>
-        <h1 id="centerJustifyText6" class="col-xs-6 letters blue fontDesignRow fontDesignRow6  line6"><%= p%></h1>
-        <h1 id="" class="col-xs-3 letters fontDesignRow fontDesignRow6  line6">&#160;</h1>
+        <h1 id="" class="col-xs-3 displayNone letters fontDesignRow fontDesignRow6 line6">&#160;</h1>
+        <h1 id="centerJustifyText4" class="col-xs-12 marginZero override notBold letters fontDesignRowBefore fontDesignRow4 stretch line4"><%= h14%></h1>
+        <h1 id="centerJustifyText5" class="col-xs-12 marginZero letters fontDesignRowBefore fontDesignRow5 stretch line5"><%= h2%></h1>
+        <h1 id="centerJustifyText6" class="col-xs-6 marginZero fontDesignRow fontDesignRow6 bookSaleDate  line6"><%= p%></h1>
+        <h1 id="" class="col-xs-3 marginZero letters fontDesignRow fontDesignRow6  line6">&#160;</h1>
       </div>
-      <div class="row">
-        <h1 id="" class="col-xs-3 letters fontDesignRow">&#160;</h1>
-        <address id="centerJustifyText7" class="col-xs-4 letters blue fontDesignRow fontDesignRow7  line7"><%= address%></address>
+      <div class="row hide">
+        <h1 id="" class="col-xs-3 letters text-center fontDesignRow">&#160;</h1>
+        <address id="centerJustifyText7" class="col-xs-9 letters fontDesignRow fontDesignRow7  line7"><%= address%></address>
         <h1 id="" class="col-xs-3 letters fontDesignRow">&#160;</h1>
       </div>
-      <div class="row contactUs marginZeroOnChilds yellowFontSize">
-        <div class="centerContents yellowBackground">
-          <h2 class="col-xs-12 marginZero visibleHidden">&#60;</h2>
+      <div class="contactUs marginZeroOnChilds yellowFontSize">
+        <div class="row centerContents booksaleTextDonateBlock yellowBackground">
+          <h2 class="col-xs-12 marginZero displayNone">&#160;</h2>
           <h2 class="col-xs-12 marginZero"><%= yellowBlock0%></h2>
           <h2 class="col-xs-12 marginZero"><%= yellowBlock1%></h2>
           <h2 class="col-xs-12 marginZero"><%= yellowBlock2%></h2>
+          <h2 class="col-xs-12 marginZero"><%= typeof yellowBlock3 != 'undefined' ? yellowBlock3: ''%></h2>
         </div>
 
+      </div>                  
+      <div class="row">
+        <div class="col-xs-12 marginZero <%= strClass3%>"></div>
       </div>
       <div class="row socialIconContainer">
         <a class="<%= strClass0 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href0 %>" target="_blank"><%= link0 %></a>
         <a class="<%= strClass1 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href1 %>" target="_blank"><%= link1 %></a>
-        <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>
+        <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>            
       </div>
     </div>
   </div>
 
-</script>
-<script type="text/template" id="templateContactUs">
+</script> 
+<script type="text/template" id="templateContactUs">  
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %> 
   <section class="sectionContactUs row">
     <h4 class="headerContactUs col-xs-9">Contact Us: Canadian Federation University of Women</h4>
     <form id="frmContactUs" class="frmContactUs col-md-9 col-xs-7" action="" method="POST" enctype="text/plain">
       <section id="frmMessageContactUsSucccess" class="frmMessageContactUsSucccess"></section>
       <fieldset class="block">
-        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsFirstName">Subject: </label>
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsFirstName">Subject: </label> 
           <input id="frmContactUsSubject" class="col-xs-12" placeholder="Subject" name="contact-subject" tabIndex="1" type="text" />
         </div>
-        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsFirstName">First Name: </label>
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsFirstName">First Name: </label> 
           <input id="frmContactUsFirstName" class="col-xs-12" placeholder="First Name" name="contact-first" tabIndex="2" type="text" />
         </div>
         <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsLastName">Last Name: </label>
@@ -222,7 +235,7 @@
         <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-4" htmlFor="frmContactUsEmail">E-mail: </label> <input id="frmContactUsEmail" name="contact-email" class="col-xs-12" placeholder="Email" tabIndex="4" type="email" /></div>
       </fieldset>
       <fieldset class="block">
-        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-3" htmlFor="frmContactUsText">Message:</label></div>
+        <div class="containerLabel col-xs-12"><label class="paddingZero col-xs-3" htmlFor="frmContactUsText">Message:</label></div>      
         <div class="paddingZero containerContactUsText col-xs-12">
           <textarea id="frmContactUsText" class="paddingZero col-xs-12" type="minlength" name="contact-message" tabIndex="4" name="frmContactUsText" cols="30" rows="10"></textarea>
         </div>
@@ -238,21 +251,21 @@
           <div class="text-center socialMargin col-xs-12">
             <a class="<%= strClass0 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href0 %>" target="_blank"><%= link0 %></a>
             <a class="<%= strClass1 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href1 %>" target="_blank"><%= link1 %></a>
-            <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>
-          </div>
+            <a class="<%= strClass2 %> cfuwOpenInSmallWindow col-xs-4" href="javaScript:void(0);" data-href="<%= href2 %>" target="_blank"><%= link2 %></a>    
+          </div>      
         <hr class="horizontalRule col-xs-12" />
-        <p class="col-xs-12"><%=headerTextRightSide%></p>
+        <p class="col-xs-12"><%=headerTextRightSide%></p>      
       </div>
-      <div class="row">
+      <div class="row hide">
         <p class="namePresident col-xs-12"><%=namePresident%></p>
         <p class="bold titlePresident col-xs-12"><%=positionPresident%></p>
         <p class="vicePresident col-xs-12"><%=nameVicePresident%></p>
-        <p class="bold titleVicePresident col-xs-12"><%=positionVicePresident%></p>
-      </div>
+        <p class="bold titleVicePresident col-xs-12"><%=positionVicePresident%></p>   
+      </div>      
       <div class="row">
-        <p class="marginBottomZero col-xs-12"><%=headerEmail%></p>
+        <p class="marginBottomZero col-xs-12"><%=headerEmail%></p>   
         <p class="cfuwAnchorTagContainer col-xs-12">
-          <a class="cfuwAnchorTag" href="mailto:<%=email%>?subject=CFUW Contact Us:"><%=email%></a>
+          <a class="cfuwAnchorTag" href="mailto:<%=email%>?subject=CFUW Contact Us:"><%=email%></a>        
         </p>
       </div>
       <div class="row">
@@ -261,74 +274,74 @@
       <div class="row">
         <p class="col-xs-12"><%=moreInfo%></p>
       </div>
-
+      
     </div>
   </section> <!-- .sectionContactUs.row -->
-</script>
-<script type="text/template" id="templateEvents">
+</script>       
+<script type="text/template" id="templateEvents">    
 <p class="<%= strTagName%> marginContactUs"><%= strName%></p>
-</script>
+</script>       
 <script type="text/template" id="templateHome">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>       
 <p class="<%= strClassHeading %>"><%= heading %></p>
 <p class="<%= strClassContent %>"><%= content %></p>
-</script>
+</script> 
 <script type="text/template" id="templateInterestGroups">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>           
   <section class="interestGroups row">
     <p class="marginBottomZero bold name col-xs-12"><%=name%></p>
     <p class="marginBottomZero dateTime col-xs-12"><%=dateTime%></p>
     <p class="marginBottomZero contactPerson col-xs-12"><%=contactPerson%></p>
     <p class="marginBottomZero contactPerson col-xs-12 <%=contactPersonSecond.length > 1? 'marginBottomIncrease': ''%>"><%=contactPersonSecond%></p>
   </section>
-</script>
+</script>     
 <script type="text/template" id="templateMeetings">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>       
   <p class= <%= '"'+ strClassDate + '"' %> > <%= dateNode%></p>
   <p class= <%= '"'+ strClassTime + '"' %> > <%= timeNode%></p>
-  <a
-    class= <%= '"'+ strClassInfo + '"' %>
-    target="_blank"
+  <a 
+    class= <%= '"'+ strClassInfo + '"' %> 
+    target="_blank" 
     href= <%= typeof strHref != 'undefined' ? strHref: ''%> > <%= info%>
   </a>
   <p class= <%= '"'+ strClassLocation + '"' %> > <%= location%></p>
   <p class="<%= typeof strClassOtherInfo != 'undefined' ? strClassOtherInfo: ''%>"><%= otherInfo%></p>
-</script>
+</script>   
 <script type="text/template" id="templateMembershipApplication">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>    
   <div class="row">
     <a class="cfuwAnchorTag <%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
     <a class="cfuwAnchorTag <%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
   </div>
-</script>
+</script>    
 <script type="text/template" id="templateMissionStatement">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>    
   <p class="<%= strClassHeading %>"><%= heading%></p>
   <p class="<%= strClassText %> <%= strNodeName %>"><%= textNode%></p>
-  </script>
-  <script type="text/template" id="templateNews">
+  </script>  
+  <script type="text/template" id="templateNews"> 
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>        
   <div class="row">
     <a class="cfuwAnchorTag <%= strClassWord%> col-xs-12" target="_blank" href= <%= '"'+ hrefWord + '"' %> > <%= word %> </a>
     <a class="cfuwAnchorTag <%= strClassPdf%> col-xs-12" target="_blank" href= <%= '"'+ hrefPdf + '"' %> > <%= pdf %> </a>
   </div>
-</script>
+</script>          
 <script type="text/template" id="templateScholarships">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
-  <% } %>
+  <% } %>          
   <% if (typeof(paragraph0) !== 'undefined') { %>
     <p class="<%=strClass0%>"><%= paragraph0%></p>
   <% } %>
@@ -368,9 +381,13 @@
   <% if (typeof(link) !== 'undefined') { %>
     <a class="cfuwAnchorTag <%=strClassAnchor%>" href="<%=href%>" target="_blank"><%= link %></a>
   <% } %>
-</script>
+</script>         
 </div> <!-- End #templatesOnly -->
   <!-- scripts / config defines script dependencies in a single location -->
 <script data-main="scripts/config" type="text/javascript" src="bower_components/requirejs/require.js?version=4.6"></script>
+
+
+
+
 </body>
 </html>
