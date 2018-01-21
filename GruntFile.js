@@ -28,7 +28,7 @@ module.exports = function(grunt){
 		cssmin: {
 		  combine: {
 		    files: {
-		      'minified/indexMinified.css': ['styles/index.css', 
+		      'styles/indexMinified.css': ['styles/index.css', 
 		      'styles/theme.css',
 		      'styles/booksale.css',
 		      'styles/animations.css'
