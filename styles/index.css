@@ -11,7 +11,7 @@
 .visibilityNone{
     visibility:hidden;
 }
-.displayNone{
+.displayNone, h1.displayNone{
     display:none;
 }
 .letterSpacing{
@@ -23,7 +23,7 @@
 .boldest{
     font-weight:900;
 }
-.notBold{
+.notBold, h1.override.notBold{
     font-weight:normal;
 }
 .block{
@@ -727,6 +727,9 @@ ul>li>a:hover{
 .cfuwBlue{
     background-color:#041D7B;   
 }
+.marginBottomZero[data-content="helloworld"]{
+    color:red;
+}
 
 /* End Generics */
 
@@ -1030,5 +1033,11 @@ ul>li>a:hover{
     .horizontalRule{
         margin-top:0;
     }   
+}
+/* Hide footer on mobile */
+@media (max-width:767px) and (orientation:landscape), (max-width:767px) and (orientation:portrait){
+    .footerMain{
+        display:none;
+    }
 }
 /* End Media Queries */

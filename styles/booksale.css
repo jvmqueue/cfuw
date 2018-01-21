@@ -9,6 +9,9 @@
 .visibleHidden{
     visibility:hidden;
 }
+.displayNone{
+    display:none;
+}
 .overflowHidden{
     overflow:hidden;
 }
@@ -37,7 +40,6 @@
     text-align:center;
 }
 .letters.fontDesignRow0{
-    font-size:64px;
     letter-spacing:-2px;    
 }
 .letters.fontDesignRow1{
@@ -52,17 +54,26 @@
     margin-top:0.3em;
 }
 .letters.fontDesignRow4{
+    font-family:'EBGaramondInitialsFill2Regular sans-serif';
     letter-spacing:-1px;
     text-indent:-0.1em;
     font-size:69px; 
 }
 .letters.fontDesignRow5{
-    font-size:30px; 
+    font-family:'EBGaramondInitialsFill2Regular';
+    font-size:70px; 
+    font-weight:normal;
+    letter-spacing:.02em;
+}
+.bookSaleDate.fontDesignRow6{
+    font-family:'EBGaramondInitialsFill2Regular';
+    font-size:70px;
+    letter-spacing:.02em;
 }
 .bigBoldText .letters.fontDesignRow6{
-    font-size:33px;
-    line-height:1;
-    text-align:justify;
+    text-align:center;
+    font-size:0.6em;
+    width:12em;
 }
 .bigBoldText .letters.fontDesignRow7{
     font-size:36px;
@@ -80,7 +91,7 @@
     color:#FFDD18;
 }
 .yellowBackground{
-    background-color:#FFDD18;
+    background-color:#E18A2D;
 }
 .yellowFontSize, div.yellowFontSize, div.yellowFontSize h2{
     font-size:32px;
@@ -106,19 +117,24 @@ div.fontFrancoisOne{
 
 }
 .bigBoldText .letters{
-    line-height:0.6;
+    line-height:1.0;
     text-align:center;
 }
 .bigBoldText h1 , .bigBoldText{
     font-size:94px;
     font-weight:bolder;
-    text-transform:uppercase;    
 }
 
 .stretch {
     width: 100%;
     display: block;
     
+}
+.hide{
+    display:none;
+}
+.uppercase{
+    text-transform:uppercase;
 }
 .wrapper .line0{
     font-weight:bold;
@@ -130,6 +146,23 @@ div.fontFrancoisOne{
 .line2{
     font-size:6.0em;
 }
+.booksaleTextDonateBlock{
+    height:102px;
+}
+.marginBottomBookSaleIncrease{
+    margin-bottom:0.3em;
+}
+.bookSaleDate.fontDesignRow6{
+    font-family:'EBGaramondInitialsFill2Regular';
+    font-weight:normal;
+    width:100%;
+}
+.xmlDefinedBookSaleImage{
+    height:3.5em;
+    margin-top:0;    
+    background:#ffffff url("../images/BookSaleBookShelved.png") no-repeat;
+    background-position:center;
+}
 @media (max-width:767px) and (orientation:landscape), (max-width:767px) and (orientation:portrait){
     .letters.fontDesignRow0{
         font-size:228%;
@@ -137,7 +170,7 @@ div.fontFrancoisOne{
     .letters.fontDesignRow1{
         letter-spacing:0;
         text-indent:0em;
-        font-size:4.3em;
+        font-size:2.0em;
     }    
     .letters.fontDesignRow2{
         font-size:4.7em;
@@ -146,7 +179,6 @@ div.fontFrancoisOne{
     }
     .letters.fontDesignRow3{
         font-size:4.5em;
-        letter-spacing:0;
         text-indent:0;
     }    
     .letters.fontDesignRow4{
@@ -157,6 +189,13 @@ div.fontFrancoisOne{
     .letters.fontDesignRow5{
         font-size:100%; 
     }
+    .bookSaleDate.fontDesignRow6{
+        font-size:1.2em;
+    }
+    .xmlDefinedBookSaleImage{
+        height:6em;
+        margin-top:1.0em;
+    }        
     .bigBoldText .letters.fontDesignRow6{
         font-size:90%;
     }
@@ -169,8 +208,11 @@ div.fontFrancoisOne{
     .yellowBackground{
         height:150%;
     }
+    .bookSaleDate.fontDesignRow6{
+    
+    }
     .centerContents{
-        height:7.0em;
+        height:71px;
     }
     .bigBoldText h1 , .bigBoldText{
         font-size:1.5em;
@@ -183,6 +225,17 @@ div.fontFrancoisOne{
     }
 }
 @media(max-width:767px) and (orientation:portrait){
+    .letters.fontDesignRow4{
+        font-size:1.0em;;
+    }
+    .visibleHidden{
+        display:none;
+    }    
+    .yellowBackground{
+        width:100%;
+        height:80px;
+        overflow:hidden;
+    }
     .letters.fontDesignRow5{
         font-size:1.0em;
         line-height:1.2em; 
