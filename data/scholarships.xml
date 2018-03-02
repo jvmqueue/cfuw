@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <page>
-    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">SCHOLARSHIPS</title>
+    <title strClassViewPageTitle="span2 cfuwWhite text-right containerPageTitle rotateGoLeft transitionIn">AWARDS</title>
 	<sections>
 		<section>
 			<paragraph0 strClass0="">The Canadian Federation of University Women/Saskatoon Inc. has been offering scholarships to female students at the University of Saskatchewan since 1940. Over $300,000 has been awarded since the programs' inception. Funding in support of these scholarships comes from members, families and friends of members, and bequests. Our largest annual infusion of money comes from our gigantic fall book sale.</paragraph0>
@@ -33,7 +33,11 @@
             <paragraph1 strClass1="inline">There are additional requirements specific to each of the six graduate scholarships, please see the detailed information further down this page.</paragraph1>
         </section>
         <section>
-            <paragraph0 strClass0="h3">Detailed Information</paragraph0>
+            <paragraph0 strClass0="h2">Detailed Information</paragraph0>
+	        <anchorlink1 strClassAnchor="bold block" anchorLinkName1="undergrad">Undergraduate Scholarships</anchorlink1>
+	        <anchorlink2 strClassAnchor="bold block" anchorLinkName2="grad">Graduate Scholarships</anchorlink2>
+	        <anchorlink3 strClassAnchor="bold block" anchorLinkName3="skpoly"> Saskatchewan Polytechnic Bursary</anchorlink3>
+	        <anchor1 strClassAnchor="bold block" anchorName1="undergrad">&#160;</anchor1>
         </section>
         <section>
             <paragraph0 strClass0="h3">Undergraduate Scholarships</paragraph0>
@@ -54,9 +58,9 @@
             <paragraph11 strClass11="bullet">The Florence E. Bennee Fine Arts Scholarship is new in 2012.  It is open to a student in Fine Arts studies (Drama, Music or Art &#038; Art History).  It is available to both male and female applicants, at the request of the donor.</paragraph11>
         </section>
         <section>
+	        <anchor2 strClassAnchor="bold block" anchorName2="grad">&#160;</anchor2>
             <paragraph0 strClass0="">&#160;</paragraph0>
-            <link strClassAnchor="bold block" href="https://students.usask.ca/documents/awards/cfuw.pdf">Undergraduate
-                Scholarship Application (on University of Saskatchewan web site)</link>
+            <link strClassAnchor="bold block" href="https://students.usask.ca/documents/awards/cfuw.pdf">Undergraduate Scholarship Application (on University of Saskatchewan web site)</link>
         </section>
         <section>
             <paragraph0 strClass0="h3">Graduate Scholarships</paragraph0>
@@ -105,8 +109,22 @@
             <paragraph1 strClass1="marginBottomZero">Email: gradstudies.awards@usask.ca</paragraph1>
         </section>
         <section>
+	        <anchor3 strClassAnchor="bold block" anchorName3="skpoly">&#160;</anchor3>
             <paragraph0 strClass0="bold inline">Deadline: </paragraph0>
             <paragraph1 strClass1="inline">February 01</paragraph1>
+        </section>
+        <section>
+        	<paragraph0 strClass0="h3">Saskatchewan Polytechnic Bursary</paragraph0>
+        	<paragraph1 strClass1="">CFUW-Saskatoon has established a new award, the Saskatchewan Polytechnic Bursary.  Two bursaries of $1,000 each will be awarded the first time this fall (September 2018) to mark the 100th anniversary of our club.  The SK Polytechnic bursaries  are intended to encourage and recognize Saskatchewan female students in programs underrepresented by women.</paragraph1>
+   			<paragraph2 strClass2="">Application and Selection will be handled by the Saskatchewan Polytechnic Donor and Alumni Relations Office.  A link to the application form will be provided to CFUW-Saskatoon by this office and will also be posted on the CFUW-Saskatoon website. The application will be open in the spring, for awards in the fall.</paragraph2>
+        	<paragraph3 strClass3="">To be eligible to apply for the CFUW-Saskatoon Polytechnic Bursary, a student must</paragraph3>
+        	<paragraph4 strClass4="bullet">Be a female student</paragraph4>
+        	<paragraph5 strClass5="bullet">Be enrolled full-time at Saskatchewan Polytechnic Saskatoon campus in year one of a diploma program that has less than 30% female enrolment</paragraph5>
+            <paragraph6 strClass6="">&#160;</paragraph6>
+        	<paragraph7 strClass7="">To be eligible to receive the CFUW-Saskatoon Bursary, a student must</paragraph7>
+        	<paragraph8 strClass8="bullet">have successfully completed year one of the program and be</paragraph8>
+        	<paragraph9 strClass9="bullet">enrolled in year two of the program</paragraph9>
+            <paragraph10 strClass10="">&#160;</paragraph10>
         </section>
 	</sections>
 </page>

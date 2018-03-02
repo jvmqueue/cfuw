@@ -79,7 +79,7 @@
             </ul>
           </li>
           <li><a id="btnBookSale" data-index-number="2" href="JavaScript:void(0);">Book Sale</a></li> 
-          <li><a id="btnScholarships" data-index-number="11" href="JavaScript:void(0);">Scholarships</a></li> 
+          <li><a id="btnScholarships" data-index-number="11" href="JavaScript:void(0);">Awards</a></li> 
         </ul>
       </div>
     </div>
@@ -380,6 +380,24 @@
   <% } %>
   <% if (typeof(link) !== 'undefined') { %>
     <a class="cfuwAnchorTag <%=strClassAnchor%>" href="<%=href%>" target="_blank"><%= link %></a>
+  <% } %>
+  <% if (typeof(anchor1) !== 'undefined') { %>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" name="<%=anchorName1%>"><%= anchor1 %></a>
+  <% } %>
+  <% if (typeof(anchor2) !== 'undefined') { %>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" name="<%=anchorName2%>"><%= anchor2 %></a>
+  <% } %>
+  <% if (typeof(anchor3) !== 'undefined') { %>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" name="<%=anchorName3%>"><%= anchor3 %></a>
+  <% } %>
+  <% if (typeof(anchorlink1) !== 'undefined') { %>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" href="#<%=anchorLinkName1%>"><%= anchorlink1 %></a>
+  <% } %>
+  <% if (typeof(anchorlink2) !== 'undefined') { %>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" href="#<%=anchorLinkName2%>"><%= anchorlink2 %></a>
+  <% } %>
+  <% if (typeof(anchorlink3) !== 'undefined') { %>
+    <a class="cfuwAnchorTag <%=strClassAnchor%>" href="#<%=anchorLinkName3%>"><%= anchorlink3 %></a>
   <% } %>
 </script>         
 </div> <!-- End #templatesOnly -->
