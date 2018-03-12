@@ -43,9 +43,11 @@
           <p class="marginTopZero canadianFederationOfUniversity letterSpacing">CANADIAN FEDERATION OF UNIVERSITY WOMEN</p>
         </div>                    
       </div>
-      <div id="rowPowerOfWomen" class="row powerOfWomen cfuwWhite">
-        <h2 class="col-xs-12">The Power Of Women Working Together</h2>
-      </div>
+<div id="rowPowerOfWomen" class="row powerOfWomen cfuwWhite">
+        <h2 class="col-xs-8">The Power Of Women Working Together</h2>
+        <div class="col-xs-4 isLink"><p id="btnBadge" data-index-number="12" class="col-xs-12 floatRight badgeCfuw">&nbsp;</p></div>
+      </div>      
+
     </section><!-- .jumbotron -->
   <!-- Begin Nav -->
   <nav class="navbar navbar-inverse marginBottomZero">
@@ -154,6 +156,29 @@
     <a class="col-xs-12 cfuwOpenInSmallWindow cfuwAnchorTag <%=strClass%>" data-href="<%= href %>" href="javaScript:void(0);" target="_blank"><%=affiliationName%></a>
   </div>
 </script>
+<script type="text/template" id="templateBadge">
+  <% if (typeof(strNameTitle) !== 'undefined') { %>
+    <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
+  <% } %>   
+  <h2><%= heading%></h2>
+  <p class="<%= strClassText %>"><%= paragraph0%></p>
+  <h3 class="<%= strClassText %> <%= strNodeName %>"><%= paragraph1%></h3>
+  <p class="<%= strClassText %> <%= strNodeName %>"><%= paragraph2%></p>
+  <h5 class="<%= strClassTextSubHeading %> <%= strNodeName %>"><%= subHeading0%></h5>
+  <ol>
+    <li class="<%= strClassLineItem %> <%= strNodeName %>"><%= lineItem0%></li>
+    <li class="<%= strClassLineItem %> <%= strNodeName %>"><%= lineItem1%></li>
+    <li class="<%= strClassLineItem %> <%= strNodeName %>"><%= lineItem2%></li>
+  </ol>
+  <h5 class="<%= strClassTextSubHeading %> <%= strNodeName %>"><%= subHeading1%></h5> 
+  <p class="<%= strParagraphDefault %> <%= strNodeName %>"><%= paragraph3%></p> 
+  <h5 class="<%= strClassTextSubHeading %> <%= strNodeName %>"><%= subHeading2%></h5> 
+  <ul>
+    <li class="<%= strClassLineItem %> <%= strNodeName %>">
+      <a href="<%= strHref0%>"><%= link0%></a>
+    </li>
+  </ul>
+</script>
 <script type="text/template" id="templateBoardMembers">
   <% if (typeof(strNameTitle) !== 'undefined') { %>
     <h3 class=" <%= strClassViewPageTitle %> "><%= strNameTitle%></h3>
@@ -197,8 +222,8 @@
           <h2 class="col-xs-12 marginZero displayNone">&#160;</h2>
           <h2 class="col-xs-12 marginZero"><%= yellowBlock0%></h2>
           <h2 class="col-xs-12 marginZero"><%= yellowBlock1%></h2>
-          <h2 class="col-xs-12 marginZero"><%= yellowBlock2%></h2>
-          <h2 class="col-xs-12 marginZero"><%= typeof yellowBlock3 != 'undefined' ? yellowBlock3: ''%></h2>
+          <h2 class="col-xs-12 marginZero <%= yellowBlock2.length==1?'displayNone':'' %>"><%= yellowBlock2%></h2>
+          <h2 class="col-xs-12 marginZero <%= yellowBlock3.length==1?'displayNone':'' %>"><%= typeof yellowBlock3 != 'undefined' ? yellowBlock3: ''%></h2>
         </div>
 
       </div>                  
