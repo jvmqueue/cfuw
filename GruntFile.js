@@ -1,3 +1,24 @@
+Skip to content
+Please note that GitHub no longer supports your web browser.
+We recommend upgrading to the latest Google Chrome or Firefox.
+
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @jvmqueue
+Sign out
+2
+0 1 geoffdcotton/cfuw
+forked from jvmqueue/cfuw
+ Code  Pull requests 0  Projects 0  Wiki  Insights
+cfuw/GruntFile.js
+Fetching contributors…
+Cannot retrieve contributors at this time
+     
+82 lines (71 sloc)  1.62 KB
 /* Reference: http://adrianmejia.com/blog/2014/10/07/grunt-js-tutorial-from-beginner-to-ninja/ */
 /* Reference installing grunt packages: https://developer.tizen.org/dev-guide/2.2.0/org.tizen.web.appprogramming/html/guide/w3c_guide/perf_guide/install_use_grunt.htm Glenn */
 var grunt = require('grunt');
@@ -79,3 +100,16 @@ grunt.registerTask('lintmin', [
 ]);
 grunt.registerTask('lintclean', ['clean']);
 
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
